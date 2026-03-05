@@ -1,0 +1,20 @@
+name: AM11
+pattern: (?<=[\[-])AM11\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[AM11] Naruto Shippuden 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Naruto.Shippuden.1080p.BluRay.Dual.Audio.x264-AM11"
+- expected: true
+  id: 3
+  input: "Boruto S01 1080p BluRay FLAC-AM11"
+- expected: false
+  id: 4
+  input: "One Piece 1080p BluRay Dual Audio-iAHD"

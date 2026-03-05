@@ -1,0 +1,20 @@
+name: Pyon
+pattern: (?<=[\[-])Pyon\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[Pyon] Kaguya-sama Love is War S03 1080p BluRay Dual Audio"
+- expected: true
+  id: 2
+  input: "Kaguya-sama.Love.is.War.S03.1080p.BluRay.Dual.Audio-Pyon"
+- expected: true
+  id: 3
+  input: "Kaguya-sama S02 1080p BluRay FLAC-Pyon"
+- expected: false
+  id: 4
+  input: "Horimiya 1080p BluRay Dual Audio-YURI"

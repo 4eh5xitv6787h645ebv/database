@@ -1,0 +1,14 @@
+name: 3D Half-SBS (HSBS)
+description: Matches Half Side-by-Side 3D format. Most common format, native support
+  on VR headsets (Meta Quest, Pico). 960x1080 per eye resolution.
+tags:
+- 3D
+- SBS
+- HSBS
+conditions:
+- name: Half SBS
+  type: release_title
+  pattern: Half SBS
+  negate: false
+  required: true
+tests: []

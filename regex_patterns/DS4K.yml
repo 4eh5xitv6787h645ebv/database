@@ -1,5 +1,5 @@
 name: DS4K
-pattern: \b(DS4K)\b
+pattern: \bH\.?265\b
 description: ''
 tags:
 - Enhancements

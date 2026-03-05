@@ -1,0 +1,20 @@
+name: Aether
+pattern: (?<=[\[-])Aether\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[Aether] Re Zero S03 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Re.Zero.S03.1080p.BluRay.Dual.Audio.x264-Aether"
+- expected: true
+  id: 3
+  input: "Overlord S04 1080p BluRay FLAC-Aether"
+- expected: false
+  id: 4
+  input: "Steins Gate 1080p BluRay Dual Audio-Kametsu"

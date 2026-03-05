@@ -360,6 +360,42 @@ qualities:
     name: WEBDL-480p
   - id: 22
     name: DVD
+- id: -5
+  name: Everything Else
+  description: ''
+  qualities:
+  - id: 1
+    name: Raw-HD
+  - id: 2
+    name: BR-Disk
+  - id: 6
+    name: WEBRip-2160p
+  - id: 7
+    name: HDTV-2160p
+  - id: 12
+    name: HDTV-1080p
+  - id: 16
+    name: HDTV-720p
+  - id: 20
+    name: WEBRip-480p
+  - id: 21
+    name: DVD-R
+  - id: 23
+    name: DVDSCR
+  - id: 24
+    name: SDTV
+  - id: 25
+    name: Telecine
+  - id: 26
+    name: Telesync
+  - id: 27
+    name: REGIONAL
+  - id: 28
+    name: WORKPRINT
+  - id: 29
+    name: CAM
+  - id: 30
+    name: Unknown
 upgrade_until:
   id: -4
   name: 2160p Remux

@@ -1,0 +1,5 @@
+name: OtakuLoser
+pattern: (?<=^|[\s.-])OtakuLoser\b
+description: ''
+tags: []
+tests: []

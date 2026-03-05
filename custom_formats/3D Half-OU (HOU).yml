@@ -1,0 +1,14 @@
+name: 3D Half-OU (HOU)
+description: Matches Half Over-Under 3D format. Common for passive 3D TVs. 1920x540
+  per eye resolution.
+tags:
+- 3D
+- OU
+- HOU
+conditions:
+- name: Half OU
+  type: release_title
+  pattern: Half OU
+  negate: false
+  required: true
+tests: []

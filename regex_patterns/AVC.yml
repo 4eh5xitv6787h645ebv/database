@@ -1,5 +1,5 @@
 name: AVC
-pattern: '[xh][ ._-]?264|\bAVC(\b|\d)'
+pattern: (?i)^(?=.*(?:[xh]\.?265|\bHEVC\b))(?!.*(?:x264|h\.264|avc)).*
 description: 'An open source encoder that produces AVC videos. '
 tags:
 - Encoder

@@ -1,0 +1,14 @@
+name: 3D MVC
+description: Matches Multiview Video Coding (MVC) - the native BluRay 3D codec. Best
+  quality with full resolution per eye. Ideal for active 3D TVs and 3D projectors.
+tags:
+- 3D
+- MVC
+- Codec
+conditions:
+- name: MVC Codec
+  type: release_title
+  pattern: MVC Codec Extended
+  negate: false
+  required: true
+tests: []

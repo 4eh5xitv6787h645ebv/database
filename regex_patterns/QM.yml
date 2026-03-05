@@ -1,0 +1,20 @@
+name: QM
+pattern: (?<=[\[-])QM\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[QM] Fullmetal Alchemist Brotherhood 1080p BluRay Dual Audio"
+- expected: true
+  id: 2
+  input: "Fullmetal.Alchemist.Brotherhood.1080p.BluRay.Dual.Audio-QM"
+- expected: true
+  id: 3
+  input: "FMA Brotherhood 1080p BluRay FLAC-QM"
+- expected: false
+  id: 4
+  input: "Death Note 1080p BluRay Dual Audio-Kametsu"

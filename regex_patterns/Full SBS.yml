@@ -1,0 +1,93 @@
+name: Full SBS
+pattern: \bf(?:ull)?[-. _]?sbs\b|\bfsbs\b
+description: Matches Full Side-by-Side 3D format (FSBS, F-SBS, Full-SBS). Higher quality
+  SBS with full 1920x1080 per eye resolution.
+tags:
+- 3D
+- SBS
+- FSBS
+tests:
+- expected: true
+  input: Interstellar.2014.3D.1080p.BluRay.Full-SBS.x264-IMAX
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan:
+    end: 42
+    start: 34
+  matchedContent: Full-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Walk.2015.3D.1080p.BluRay.FSBS.x264-SPARKS
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan:
+    end: 34
+    start: 30
+  matchedContent: FSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Everest.2015.3D.1080p.BluRay.F-SBS.x264-ROVERS
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan:
+    end: 34
+    start: 29
+  matchedContent: F-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: San.Andreas.2015.3D.1080p.BluRay.Full.SBS.x264-GECKOS
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan:
+    end: 41
+    start: 33
+  matchedContent: Full.SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Mad.Max.Fury.Road.2015.3D.1080p.BluRay.FullSBS.x264-SPARKS
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan:
+    end: 46
+    start: 39
+  matchedContent: FullSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Godzilla.vs.Kong.2021.3D.1080p.BluRay.Full-SBS.x264.DTS-HD.MA.5.1-DiSPOSABLE
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan:
+    end: 46
+    start: 38
+  matchedContent: Full-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Release.2020.Full_SBS.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan:
+    end: 21
+    start: 13
+  matchedContent: Full_SBS
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Harry.Potter.and.the.Deathly.Hallows.Pt2.2011.720p.3D.HSBS.BluRay.x264-CULTHD
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: MasterChef.Australia.S15E01.SBS.HDTV.x264-CCT
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:08.894003'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

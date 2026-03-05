@@ -1,0 +1,33 @@
+name: Anime Dual Audio
+description: Matches releases with Dual Audio or Multi Audio tags in the release title
+tags:
+- Anime
+- Dual Audio
+conditions:
+- name: Dual Audio
+  negate: false
+  pattern: Dual Audio
+  required: false
+  type: release_title
+tests:
+- expected: true
+  id: 1
+  input: "[LostYears] Sword Art Online - Alicization (BD 1080p Hi10 FLAC Dual Audio)"
+- expected: true
+  id: 2
+  input: "Attack on Titan S04 2020 1080p USA Blu-ray AVC TrueHD 5.1 Dual Audio -ZR-"
+- expected: true
+  id: 3
+  input: "Bleach.S12.1080p.BluRay.REMUX.AVC.Dual-Audio.DTS-HD.MA.2.0-ZR-"
+- expected: true
+  id: 4
+  input: "[YURI] The Garden of Words (Kotonoha no Niwa) (Dual Audio) [BD 1080p x264 10bit FLAC]"
+- expected: false
+  id: 5
+  input: "[SubsPlease] Frieren Beyond Journeys End S01 1080p WEB-DL"
+- expected: false
+  id: 6
+  input: "[MTBB] Chainsaw Man S01 1080p BluRay x264"
+- expected: false
+  id: 7
+  input: "Dual.2022.1080p.BluRay.DDP5.1.x264-iFT.mkv"

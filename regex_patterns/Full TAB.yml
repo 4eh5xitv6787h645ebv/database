@@ -1,0 +1,75 @@
+name: Full TAB
+pattern: \bf(?:ull)?[-. _]?tab\b|\bftab\b
+description: Matches Full Top-and-Bottom 3D format (FTAB, F-TAB, Full-TAB). Same as
+  FOU with different naming convention.
+tags:
+- 3D
+- TAB
+- FTAB
+tests:
+- expected: true
+  input: Minions.2015.3D.1080p.BluRay.Full-TAB.x264-SPARKS
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan:
+    end: 37
+    start: 29
+  matchedContent: Full-TAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Martian.2015.3D.1080p.BluRay.FTAB.x264-BLOW
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan:
+    end: 37
+    start: 33
+  matchedContent: FTAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Spectre.2015.3D.1080p.BluRay.F-TAB.x264-DiSPOSABLE
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan:
+    end: 34
+    start: 29
+  matchedContent: F-TAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Movie.2023.Full.TAB.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan:
+    end: 19
+    start: 11
+  matchedContent: Full.TAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Film.2022.FullTAB.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan:
+    end: 17
+    start: 10
+  matchedContent: FullTAB
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: The.Hobbit.An.Unexpected.Journey.2012.3D.HTAB.1080p.BluRay.x264-GECKOS
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Tab.Hunter.Confidential.2015.1080p.BluRay.x264-BIPOLAR
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:22.464091'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

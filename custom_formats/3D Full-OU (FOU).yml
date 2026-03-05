@@ -1,0 +1,14 @@
+name: 3D Full-OU (FOU)
+description: Matches Full Over-Under 3D format. Higher quality OU with full 1920x1080
+  per eye resolution.
+tags:
+- 3D
+- OU
+- FOU
+conditions:
+- name: Full OU
+  type: release_title
+  pattern: Full OU
+  negate: false
+  required: true
+tests: []

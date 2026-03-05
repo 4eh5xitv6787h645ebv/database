@@ -1,12 +1,38 @@
 name: 3D
-pattern: (?<=\b[12]\d{3}\b).*\b((bluray|bd)?3d|sbs|half[ .-]ou|half[ .-]sbs)\b
+pattern: (?<=\b[12]\d{3}\b).*?\b(?:(?:blu-?ray|bd)[-. _]?3d|3d[-. _]?(?:blu-?ray|bd|sbs|ou|tab)|(?:sbs|ou|tab)[-.
+  _]?3d|h[-. _]?(?:sbs|ou|tab)|half[-. _]?(?:sbs|ou|tab)|f(?:ull)?[-. _]?(?:sbs|ou|tab)|(?:avc[-.
+  _]?)?mvc|3d(?=[-. _]?(?:\d{3,4}p|(?:complete[-. _]?)?(?:blu-?ray|bdrip|brrip|remux|hddvd))))\b
 description: 'Matches terms related to 3D video formats:
 
   - `bluray3d` or `bd3d` (optional `bluray` or `bd` followed by `3d`).
 
   - `sbs` (side-by-side).
 
-  - `half ou` or `half sbs` with space (` `), dot (`.`), or hyphen (`-`) as separators.'
+  - `half ou` or `half sbs` with space (` `), dot (`.`), or hyphen (`-`) as separators.
+
+
+
+  Regex orginal:
+
+  (?<=\b[12]\d{3}\b).*\b((bluray|bd)?3d|sbs|half[ .-]ou|half[ .-]sbs)\b
+
+
+  V1
+
+  (?<=\b[12]\d{3}\b).*?\b(?:(?:(?:blu-?ray|bd(?:rip)?|br(?:rip)?|hdtv|web(?:dl)?|hddvd)[-.
+  ]?)?3d(?:[-. ]?(?:blu-?ray|bd|sbs|h(?:alf)?[-. ]?sbs|ou|h(?:alf)?[-. ]?ou|tab|full[-.
+  ]?(?:sbs|ou)|avc|mvc|remux))?|(?:h(?:alf)?|full)[-. ]?(?:sbs|ou|tab)|h[-._ ]?sbs|h[-._
+  ]?ou|[fh]?sbs|[fh]?ou|mvc(?:[-. ]?3d)?|3d[-. ]?(?:anaglyph|mvc)|anaglyph)\b
+
+
+  v1.1
+
+  (?<=\b[12]\d{3}\b).*?\b(?:(?:blu-?ray|bd)[-. _]?3d|3d[-. _]?(?:blu-?ray|bd|sbs|ou|tab)|(?:sbs|ou|tab)[-.
+  _]?3d|h[-. _]?(?:sbs|ou|tab)|half[-. _]?(?:sbs|ou|tab)|f(?:ull)?[-. _]?(?:sbs|ou|tab)|(?:avc[-.
+  _]?)?mvc|3d(?=[-. _]?(?:\d{3,4}p|(?:complete[-. _]?)?(?:blu-?ray|bdrip|brrip|remux|hddvd))))\b
+
+
+  '
 tags:
 - Enhancement
 - Banned
@@ -14,31 +40,61 @@ tests:
 - expected: true
   id: 1
   input: Universal.Soldier.Day.of.Reckoning.2012.1080p.BluRay.3D.H-SBS.DTS.x264-BluRay3D
-  lastRun: '2025-08-18T23:32:02.252678'
+  lastRun: '2025-12-01T19:32:32.728682'
   matchSpan:
-    end: 79
+    end: 55
     start: 39
-  matchedContent: .1080p.BluRay.3D.H-SBS.DTS.x264-BluRay3D
-  matchedGroups:
-  - BluRay3D
-  - BluRay
+  matchedContent: .1080p.BluRay.3D
+  matchedGroups: []
   passes: true
 - expected: true
   id: 2
   input: Justin.And.The.Knights.Of.Valour.3D.2013.1080p.BluRay.Half-SBS.x264-BluRay3D
-  lastRun: '2025-08-18T23:32:02.252678'
+  lastRun: '2025-12-01T19:32:32.728682'
   matchSpan:
-    end: 76
+    end: 62
     start: 40
-  matchedContent: .1080p.BluRay.Half-SBS.x264-BluRay3D
-  matchedGroups:
-  - BluRay3D
-  - BluRay
+  matchedContent: .1080p.BluRay.Half-SBS
+  matchedGroups: []
   passes: true
 - expected: false
   id: 3
   input: Step Up 3D 2010 1080p BluRay DTS-ES 6.1 x264-xander
-  lastRun: '2025-08-18T23:32:02.252678'
+  lastRun: '2025-12-01T19:32:32.728682'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 4
+  input: Spy.Kids.3D.Game.Over.2003
+  lastRun: '2025-12-01T19:32:32.728682'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 5
+  input: Avatar.2009.3D.HSBS.1080p
+  lastRun: '2025-12-01T19:32:32.728682'
+  matchSpan:
+    end: 19
+    start: 11
+  matchedContent: .3D.HSBS
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 6
+  input: Drama.Name.E01.SBS.720p
+  lastRun: '2025-12-01T19:32:32.728682'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 7
+  input: Show.Name.S01E02.SBS.AU.HDTV
+  lastRun: '2025-12-01T19:32:32.728682'
   matchSpan: null
   matchedContent: null
   matchedGroups: []

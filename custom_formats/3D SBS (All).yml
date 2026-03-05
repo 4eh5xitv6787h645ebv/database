@@ -1,0 +1,13 @@
+name: 3D SBS (All)
+description: Matches all Side-by-Side 3D formats. General SBS preference for any SBS
+  release (HSBS, FSBS, Half-SBS, Full-SBS).
+tags:
+- 3D
+- SBS
+conditions:
+- name: Any SBS Format
+  type: release_title
+  pattern: Any SBS Format
+  negate: false
+  required: true
+tests: []

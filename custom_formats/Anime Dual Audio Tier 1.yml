@@ -1,0 +1,85 @@
+name: Anime Dual Audio Tier 1
+description: Tier 1 Dual Audio groups from SeaDex - Most prominent groups known for high-quality dual audio anime releases
+tags:
+- Anime
+- Dual Audio
+conditions:
+- name: LostYears
+  negate: false
+  pattern: LostYears
+  required: false
+  type: release_group
+- name: Kametsu
+  negate: false
+  pattern: Kametsu
+  required: false
+  type: release_group
+- name: YURI
+  negate: false
+  pattern: YURI
+  required: false
+  type: release_group
+- name: ZR
+  negate: false
+  pattern: ZR
+  required: false
+  type: release_group
+- name: iAHD
+  negate: false
+  pattern: iAHD
+  required: false
+  type: release_group
+- name: KH
+  negate: false
+  pattern: KH
+  required: false
+  type: release_group
+- name: deanzel
+  negate: false
+  pattern: deanzel
+  required: false
+  type: release_group
+- name: Arid
+  negate: false
+  pattern: Arid
+  required: false
+  type: release_group
+- name: Chotab
+  negate: false
+  pattern: Chotab
+  required: false
+  type: release_group
+tests:
+- expected: true
+  id: 1
+  input: "[LostYears] Sword Art Online - Alicization (BD 1080p Hi10 FLAC Dual Audio)"
+- expected: true
+  id: 2
+  input: "Attack.on.Titan.S04.1080p.BluRay.Dual.Audio.x264-Kametsu"
+- expected: true
+  id: 3
+  input: "[YURI] The Garden of Words (Kotonoha no Niwa) (Dual Audio) [BD 1080p x264 10bit FLAC]"
+- expected: true
+  id: 4
+  input: "Bleach.S12.1080p.BluRay.REMUX.AVC.Dual-Audio.DTS-HD.MA.2.0-ZR-"
+- expected: true
+  id: 5
+  input: "[iAHD] Demon Slayer Kimetsu no Yaiba S01 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 6
+  input: "My.Hero.Academia.S06.1080p.BluRay.Dual.Audio.FLAC-KH"
+- expected: true
+  id: 7
+  input: "[deanzel] Jujutsu Kaisen S01 1080p BluRay Dual Audio"
+- expected: true
+  id: 8
+  input: "Vinland.Saga.S02.1080p.BluRay.Dual.Audio.x264-Arid"
+- expected: true
+  id: 9
+  input: "[Chotab] Spy x Family S01 1080p BluRay Dual Audio"
+- expected: false
+  id: 10
+  input: "[SubsPlease] Frieren Beyond Journeys End S01 1080p WEB-DL"
+- expected: false
+  id: 11
+  input: "[MTBB] Chainsaw Man S01 1080p BluRay x264"

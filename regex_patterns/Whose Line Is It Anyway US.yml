@@ -1,0 +1,154 @@
+name: Whose Line Is It Anyway US
+pattern: (?i)^whose[\s.]+line(?!.*(?:\.AU\.|\.UK\.|4OD)).*(?:[\s.\-(\[]US[\s.\-)\]]|\(1998\)|\.CWS\.|\.e\d{3}[-\[\s(]|\(e\d{3}\)|\.e\d{3}$|\d+x\d+\s*\(\d{3}|\d+x\d+\s+\d{3}\[|show\.\d{3}|[\s.-]S(?:0[89]|[1-9]\d)E|-\d+x\d+-|\.AMZN\.|S\d+E\d+\.\d{4}\.\d{2}\.\d{2}|S\d+E\d+\.(?:[A-Z][a-z]+\.)+(?:DVDRip|HDTV))
+description: 'Works v1.0
+
+  (?i)^whose[\s.]+line(?!.*(?:\.AU\.|\.UK\.|4OD)).*(?:[\s.\-(\[]US[\s.\-)\]]|\(1998\)|\.CWS\.|\.e\d{3}[-\[\s(]|\(e\d{3}\)|\.e\d{3}$|\d+x\d+\s*\(\d{3}|\d+x\d+\s+\d{3}\[|show\.\d{3}|[\s.-]S(?:0[89]|[1-9]\d)E|-\d+x\d+-|\.AMZN\.|S\d+E\d+\.\d{4}\.\d{2}\.\d{2}|S\d+E\d+\.(?:[A-Z][a-z]+\.)+(?:DVDRip|HDTV))'
+tags: []
+tests:
+- expected: true
+  id: 1
+  input: Whose Line Is It Anyway (1998) S01E01 (1080p AMZN WEB-DL H265 SDR DDP 2.0
+    English - HONE) [INCOMPLETE]
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 30
+    start: 0
+  matchedContent: Whose Line Is It Anyway (1998)
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 2
+  input: Whose.Line.Is.It.Anyway.S01E01.Greg.Proops.DVDRip.x264-BUYMORE
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 49
+    start: 0
+  matchedContent: Whose.Line.Is.It.Anyway.S01E01.Greg.Proops.DVDRip
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 3
+  input: Whose.Line.US-1x01.show.103
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 27
+    start: 0
+  matchedContent: Whose.Line.US-1x01.show.103
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 4
+  input: Whose.Line.Is.It.Anyway.S01E01.Archie.Hahn.Josie.Lawrence.Paul.Merton.John.Sessions.4OD.WEBRip.AAC2.0.x264
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 5
+  input: Whose.Line.Is.It.Anyway.S07E01.Greg.Proops.Colin.Mochrie.Niall.Ashdown.Ryan.Stiles.HULU.WEBRip.AAC2.0.H.264
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 6
+  input: Whose.Line.Is.It.Anyway.S07E01.Brad.Sherwood.HDTV.XviD-BUYMORE
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 49
+    start: 0
+  matchedContent: Whose.Line.Is.It.Anyway.S07E01.Brad.Sherwood.HDTV
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 7
+  input: Whose.Line.Is.It.Anyway.S12E20.Cheryl.Hines.1080p.CW.WEBRip.AAC2.0.x264-monkee
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 28
+    start: 0
+  matchedContent: Whose.Line.Is.It.Anyway.S12E
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 8
+  input: Whose.Line.Is.It.Anyway.S07E09.Josie.Lawrence.Caroline.Quentin.Colin.Mochrie.Ryan.Stiles.HULU.WEBRip.AAC2.0.H.264
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 9
+  input: Whose.Line.Is.It.Anyway.S08E11.Greg.Proops.Rory.Bremner.Colin.Mochrie.Ryan.Stiles.4OD.WEBRip.AAC2.0.x264
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 10
+  input: Whose.Line.Is.It.Anyway.US.S08E14.2006.11.08.Brad.Sherwood-Ian.Gomez.720p.CWS.WEB-DL.AAC2.0.H.264-NYH-xpost
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 78
+    start: 0
+  matchedContent: Whose.Line.Is.It.Anyway.US.S08E14.2006.11.08.Brad.Sherwood-Ian.Gomez.720p.CWS.
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 11
+  input: Whose.Line.Is.It.Anyway.S09E03.Mike.McShane.Brad.Sherwood.Colin.Mochrie.Ryan.Stiles.4OD.WEBRip.AAC2.0.x264
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 12
+  input: Whose.Line.Is.It.Anyway.S10E01.Brad.Sherwood.Wayne.Brady.Colin.Mochrie.Ryan.Stiles.4OD.WEBRip.AAC2.0.x264
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 13
+  input: Whose.Line.Is.It.Anyway.S10E03.Verne.Troyer.HDTV.x264-BUYMORE
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 48
+    start: 0
+  matchedContent: Whose.Line.Is.It.Anyway.S10E03.Verne.Troyer.HDTV
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 14
+  input: Whose.Line.Is.It.Anyway.S10E03.Greg.Proops.Karen.Maruyama.Colin.Mochrie.Ryan.Stiles.4OD.WEBRip.AAC2.0.x264
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 15
+  input: Whose.Line.is.it.Anyway.S11E01.Cedric.the.Entertainer.HDTV-720p
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 58
+    start: 0
+  matchedContent: Whose.Line.is.it.Anyway.S11E01.Cedric.the.Entertainer.HDTV
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 16
+  input: Whose.Line.Is.It.Anyway.S03E29.2001.04.26.Kathy.Greenwood.720p.CWS.WEB-DL.AAC2.0.H.264-NYH-xpost
+  lastRun: '2025-12-03T20:15:16.291650'
+  matchSpan:
+    end: 67
+    start: 0
+  matchedContent: Whose.Line.Is.It.Anyway.S03E29.2001.04.26.Kathy.Greenwood.720p.CWS.
+  matchedGroups: []
+  passes: true

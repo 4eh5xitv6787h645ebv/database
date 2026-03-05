@@ -1,0 +1,20 @@
+name: vyral
+pattern: (?<=[\[-])vyral\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[vyral] Vinland Saga S02 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Vinland.Saga.S02.1080p.BluRay.Dual.Audio.x264-vyral"
+- expected: true
+  id: 3
+  input: "Frieren Beyond Journeys End S01 1080p BluRay-vyral"
+- expected: false
+  id: 4
+  input: "Blue Lock S01 1080p BluRay-MTBB"

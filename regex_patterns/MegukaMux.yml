@@ -1,0 +1,20 @@
+name: MegukaMux
+pattern: (?<=[\[-])MegukaMux\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[MegukaMux] Puella Magi Madoka Magica 1080p BluRay Dual Audio"
+- expected: true
+  id: 2
+  input: "Puella.Magi.Madoka.Magica.1080p.BluRay.Dual.Audio-MegukaMux"
+- expected: true
+  id: 3
+  input: "Magia Record S02 1080p BluRay FLAC-MegukaMux"
+- expected: false
+  id: 4
+  input: "Kill la Kill 1080p BluRay-Commie"

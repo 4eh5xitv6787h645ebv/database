@@ -1,0 +1,14 @@
+name: 3D Half-TAB (HTAB)
+description: Matches Half Top-and-Bottom 3D format. Same as HOU with different naming
+  convention used by some release groups.
+tags:
+- 3D
+- TAB
+- HTAB
+conditions:
+- name: Half TAB
+  type: release_title
+  pattern: Half TAB
+  negate: false
+  required: true
+tests: []

@@ -1,0 +1,77 @@
+name: 3D Before Resolution
+pattern: (?<=[12]\d{3}[-. _])3d[-. _]?(?:\d{3,4}p|complete|remux)
+description: Matches 3D tag positioned after year and before resolution/source - the
+  standard scene naming position for 3D releases.
+tags:
+- 3D
+- Scene
+tests:
+- expected: true
+  input: Fantastic.Beasts.and.Where.to.Find.Them.2016.3D.1080p.BluRay.x264-SPRiNTER
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan:
+    end: 53
+    start: 45
+  matchedContent: 3D.1080p
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Avatar.2009.3D.1080p.BluRay.x264-SECTOR7
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan:
+    end: 20
+    start: 12
+  matchedContent: 3D.1080p
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Dolittle.2020.SAMPLEFiX.3D.MULTi.COMPLETE.BLURAY-GUACAMOLE
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: false
+- expected: true
+  input: Wonder.Woman.1984.2020.3D.COMPLETE.BLURAY-GUACAMOLE
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan:
+    end: 34
+    start: 23
+  matchedContent: 3D.COMPLETE
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Passengers.2016.3D.BluRay.Remux.1080p.AVC.DTS-HD.MA.7.1-NYDIC
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: Jackass.3D.2010.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Spy.Kids.3D.Game.Over.2003.1080p.BluRay.x264-ROVERS
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: History.of.3D.Cinema.2021.1080p.BluRay.x264-DOCU
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:35.293872'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

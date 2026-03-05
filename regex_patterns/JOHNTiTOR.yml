@@ -1,0 +1,20 @@
+name: JOHNTiTOR
+pattern: (?<=[\[-])JOHNTiTOR\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[JOHNTiTOR] Steins Gate 0 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Steins.Gate.0.1080p.BluRay.Dual.Audio.x264-JOHNTiTOR"
+- expected: true
+  id: 3
+  input: "Robotics Notes 1080p BluRay FLAC-JOHNTiTOR"
+- expected: false
+  id: 4
+  input: "Chaos Head 1080p BluRay Dual Audio-Kametsu"

@@ -1,0 +1,8 @@
+name: Anaglyph Format
+pattern: \banaglyph\b|\bred[-. _]?(?:cyan|blue)\b
+description: Matches Anaglyph 3D format (red/cyan or red/blue glasses). Legacy format,
+  rare in modern releases.
+tags:
+- 3D
+- Anaglyph
+tests: []

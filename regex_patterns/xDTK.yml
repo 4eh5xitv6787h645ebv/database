@@ -1,0 +1,20 @@
+name: xDTK
+pattern: (?<=[\[-])xDTK\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[xDTK] Sword Art Online Progressive 1080p BluRay Dual Audio"
+- expected: true
+  id: 2
+  input: "Sword.Art.Online.Progressive.1080p.BluRay.Dual.Audio-xDTK"
+- expected: true
+  id: 3
+  input: "SAO Alicization WoU S01 1080p BluRay-xDTK"
+- expected: false
+  id: 4
+  input: "Log Horizon S03 1080p BluRay Dual Audio-Kametsu"

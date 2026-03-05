@@ -1,0 +1,25 @@
+name: 3D Anaglyph
+description: Matches Anaglyph 3D format (red/cyan glasses). Legacy format, rare in
+  modern releases. Low priority unless specifically needed.
+tags:
+- 3D
+- Anaglyph
+conditions:
+- name: Anaglyph Format
+  negate: false
+  pattern: Anaglyph Format
+  required: true
+  type: release_title
+tests:
+- conditionResults:
+  - matches: true
+    name: Anaglyph Format
+    negate: false
+    pattern: Anaglyph Format
+    required: true
+    type: release_title
+  expected: true
+  id: 1
+  input: Classic.Movie.1983.3D.Anaglyph.DVDRip.x264-OLDIES
+  lastRun: '2025-12-01T20:12:30.659615'
+  passes: true

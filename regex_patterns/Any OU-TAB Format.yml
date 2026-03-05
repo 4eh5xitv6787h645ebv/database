@@ -1,0 +1,146 @@
+name: Any OU-TAB Format
+pattern: \b(?:3d[-. _]?)?(?:h(?:alf)?[-. _]?(?:ou|tab)|f(?:ull)?[-. _]?(?:ou|tab)|(?:ou|tab)[-.
+  _]?3d|3d[-. _](?:ou|tab))\b|\b(?<!\w)(?:h|f)[-. _]?(?:ou|tab)(?!\w)\b
+description: Matches all Over-Under/Top-and-Bottom 3D formats including HOU, FOU,
+  HTAB, FTAB, Half-OU, Full-TAB, H-OU, F-TAB.
+tags:
+- 3D
+- OU
+- TAB
+tests:
+- expected: true
+  input: X-Men.Zukunft.ist.Vergangenheit.3D.HOU.GERMAN.DL.1080p.BluRay.x264-EXQUiSiTE
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 38
+    start: 32
+  matchedContent: 3D.HOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Life.of.Pi.2012.3D.HOU.1080p.BluRay.x264-BLOW
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 22
+    start: 16
+  matchedContent: 3D.HOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Hugo.2011.3D.H-OU.1080p.BluRay.x264-DiSPOSABLE
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 17
+    start: 10
+  matchedContent: 3D.H-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Hobbit.An.Unexpected.Journey.2012.3D.HTAB.1080p.BluRay.x264-GECKOS
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 45
+    start: 38
+  matchedContent: 3D.HTAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Dredd.2012.3D.Half-OU.1080p.BluRay.x264-NYDIC
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 21
+    start: 11
+  matchedContent: 3D.Half-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Maleficent.2014.3D.1080p.BluRay.HalfOU.x264-RARBG
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 38
+    start: 32
+  matchedContent: HalfOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Jurassic.World.2015.3D.1080p.BluRay.Full-OU.x264-BLOW
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 43
+    start: 36
+  matchedContent: Full-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Ant-Man.2015.3D.1080p.BluRay.FOU.x264-DiSPOSABLE
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 32
+    start: 29
+  matchedContent: FOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Minions.2015.3D.1080p.BluRay.Full-TAB.x264-SPARKS
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 37
+    start: 29
+  matchedContent: Full-TAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Martian.2015.3D.1080p.BluRay.FTAB.x264-BLOW
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 37
+    start: 33
+  matchedContent: FTAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Movie.2023.3D.OU.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 16
+    start: 11
+  matchedContent: 3D.OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Film.2022.H_OU.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan:
+    end: 14
+    start: 10
+  matchedContent: H_OU
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: The.OU.2023.S01E01.1080p.AMZN.WEB-DL.x264-GROUP
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Tab.Hunter.Confidential.2015.1080p.BluRay.x264-BIPOLAR
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Guitar.Tab.Lessons.2022.720p.WEB-DL.x264-MUSIC
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:51.044955'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

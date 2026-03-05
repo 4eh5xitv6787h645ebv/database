@@ -1,0 +1,97 @@
+name: MVC Codec
+pattern: \b(?:avc[-. _]?)?mvc\b|\bmvc[-. _]?3d\b
+description: Matches Multiview Video Coding (MVC) - the native BluRay 3D codec. Detects
+  MVC, AVC-MVC, MVC-3D patterns.
+tags:
+- 3D
+- MVC
+- Codec
+tests:
+- expected: true
+  input: Avatar.2009.MVC.1080p.3D.BluRay.x264-SECTOR7
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 15
+    start: 12
+  matchedContent: MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Gravity.2013.AVC.MVC.1080p.BluRay.3D-ROVERS
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 20
+    start: 13
+  matchedContent: AVC.MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Jungle.Book.2016.3D.MVC.1080p.BluRay-SPARKS
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 27
+    start: 24
+  matchedContent: MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Rogue.One.2016.MVC.3D.1080p.BluRay.Remux-GECKOS
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 18
+    start: 15
+  matchedContent: MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Doctor.Strange.2016.AVC-MVC.1080p.3D.BluRay.Remux-BLOW
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 27
+    start: 20
+  matchedContent: AVC-MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Matrix.Resurrections.2021.3D.1080p.BluRay.AVC.MVC.DTS-HD.MA.7.1-LAZERS
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 53
+    start: 46
+  matchedContent: AVC.MVC
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: MVC.Architecture.Explained.2023.1080p.WEB-DL.x264-DEV
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 3
+    start: 0
+  matchedContent: MVC
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: Spring.MVC.Tutorial.2022.720p.WEB-DL.x264-CODE
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 10
+    start: 7
+  matchedContent: MVC
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: ASP.NET.MVC.Course.2021.1080p.WEB-DL.x264-LEARN
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan:
+    end: 11
+    start: 8
+  matchedContent: MVC
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:43.610354'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

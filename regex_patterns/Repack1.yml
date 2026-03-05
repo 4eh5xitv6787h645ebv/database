@@ -1,5 +1,5 @@
 name: Repack1
-pattern: \b(re(pack|rip)|proper)\b
+pattern: (?i)((?<=\b\d{4}\b.*)|(?<=\bS\d{1,2}\b.*))\b(re(pack|rip)|proper)\b
 description: 'Matches ''PROPER'' or ''REPACK'' or ''RERIP'' only when they appear
   after a year (4 digits) but not before one.
 

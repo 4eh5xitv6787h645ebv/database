@@ -1,0 +1,14 @@
+name: 3D Full-SBS (FSBS)
+description: Matches Full Side-by-Side 3D format. Higher quality SBS with full 1920x1080
+  per eye resolution. Larger file size.
+tags:
+- 3D
+- SBS
+- FSBS
+conditions:
+- name: Full SBS
+  type: release_title
+  pattern: Full SBS
+  negate: false
+  required: true
+tests: []

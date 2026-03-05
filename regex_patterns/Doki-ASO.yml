@@ -1,0 +1,20 @@
+name: Doki-ASO
+pattern: (?<=[\[-])Doki-ASO\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[Doki-ASO] K-On S02 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "K-On.S02.1080p.BluRay.Dual.Audio.x264-Doki-ASO"
+- expected: true
+  id: 3
+  input: "Lucky Star 1080p BluRay FLAC-Doki-ASO"
+- expected: false
+  id: 4
+  input: "Clannad 1080p BluRay-Doki"

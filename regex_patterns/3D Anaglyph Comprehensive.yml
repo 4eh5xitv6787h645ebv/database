@@ -1,0 +1,40 @@
+name: 3D Anaglyph Comprehensive
+pattern: \b3d[-. _]?anaglyph\b|\banaglyph[-. _]?3d\b
+description: Matches 3D Anaglyph format (red/cyan glasses). Used in the 3D (All) comprehensive
+  format.
+tags:
+- 3D
+- Anaglyph
+tests:
+- expected: true
+  input: Classic.Movie.1983.3D.Anaglyph.DVDRip.x264-OLDIES
+  lastRun: '2025-12-01T19:57:30.991561'
+  matchSpan:
+    end: 30
+    start: 19
+  matchedContent: 3D.Anaglyph
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Retro.Film.1985.Anaglyph.3D.DVDRip.x264-VINTAGE
+  lastRun: '2025-12-01T19:57:30.991561'
+  matchSpan:
+    end: 27
+    start: 16
+  matchedContent: Anaglyph.3D
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:30.991561'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Regular.Movie.2020.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:57:30.991561'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

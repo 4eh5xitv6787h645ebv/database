@@ -1,0 +1,102 @@
+name: Half OU
+pattern: \bh(?:alf)?[-. _]?ou\b|\bhou\b
+description: Matches Half Over-Under 3D format (HOU, H-OU, Half-OU). Common for passive
+  3D TVs. 1920x540 per eye resolution.
+tags:
+- 3D
+- OU
+- HOU
+tests:
+- expected: true
+  input: X-Men.Zukunft.ist.Vergangenheit.3D.HOU.GERMAN.DL.1080p.BluRay.x264-EXQUiSiTE
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 38
+    start: 35
+  matchedContent: HOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Life.of.Pi.2012.3D.HOU.1080p.BluRay.x264-BLOW
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 22
+    start: 19
+  matchedContent: HOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Hugo.2011.3D.H-OU.1080p.BluRay.x264-DiSPOSABLE
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 17
+    start: 13
+  matchedContent: H-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Dredd.2012.3D.Half-OU.1080p.BluRay.x264-NYDIC
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 21
+    start: 14
+  matchedContent: Half-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Maleficent.2014.3D.1080p.BluRay.HalfOU.x264-RARBG
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 38
+    start: 32
+  matchedContent: HalfOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Black.Widow.2021.3D.1080p.BluRay.Half-OU.x264.DTS-NYDIC
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 40
+    start: 33
+  matchedContent: Half-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Frozen.II.2019.3D.HOU.GERMAN.DL.1080p.BluRay.x264-EXQUiSiTE
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 21
+    start: 18
+  matchedContent: HOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Film.2022.H_OU.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan:
+    end: 14
+    start: 10
+  matchedContent: H_OU
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Jurassic.World.2015.3D.1080p.BluRay.Full-OU.x264-BLOW
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: The.OU.2023.S01E01.1080p.AMZN.WEB-DL.x264-GROUP
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:24.698141'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

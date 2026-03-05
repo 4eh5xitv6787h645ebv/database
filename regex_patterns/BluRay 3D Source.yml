@@ -1,0 +1,9 @@
+name: BluRay 3D Source
+pattern: \b(?:blu-?ray|bd)[-. _]?3d\b|\b3d[-. _]?(?:blu-?ray|bd)\b|\bbd3d\b|\b3dbd\b
+description: Matches BluRay 3D source indicators. Detects BluRay3D, BD3D, 3DBD, Blu-Ray-3D,
+  3D-BluRay. Full disc or BD3D encodes.
+tags:
+- 3D
+- BluRay
+- BD3D
+tests: []

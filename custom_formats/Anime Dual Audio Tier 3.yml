@@ -1,0 +1,165 @@
+name: Anime Dual Audio Tier 3
+description: Tier 3 Dual Audio groups from SeaDex - Additional groups known to release dual audio anime
+tags:
+- Anime
+- Dual Audio
+conditions:
+- name: WBDP
+  negate: false
+  pattern: WBDP
+  required: false
+  type: release_group
+- name: Vanilla
+  negate: false
+  pattern: Vanilla
+  required: false
+  type: release_group
+- name: Aether
+  negate: false
+  pattern: Aether
+  required: false
+  type: release_group
+- name: Dawn
+  negate: false
+  pattern: Dawn
+  required: false
+  type: release_group
+- name: SneedOlympics
+  negate: false
+  pattern: SneedOlympics
+  required: false
+  type: release_group
+- name: AM11
+  negate: false
+  pattern: AM11
+  required: false
+  type: release_group
+- name: Drag
+  negate: false
+  pattern: Drag
+  required: false
+  type: release_group
+- name: xDTK
+  negate: false
+  pattern: xDTK
+  required: false
+  type: release_group
+- name: CW
+  negate: false
+  pattern: CW
+  required: false
+  type: release_group
+- name: Moxie
+  negate: false
+  pattern: Moxie
+  required: false
+  type: release_group
+- name: QM
+  negate: false
+  pattern: QM
+  required: false
+  type: release_group
+- name: Doki-ASO
+  negate: false
+  pattern: Doki-ASO
+  required: false
+  type: release_group
+- name: Pyon
+  negate: false
+  pattern: Pyon
+  required: false
+  type: release_group
+- name: NH
+  negate: false
+  pattern: NH
+  required: false
+  type: release_group
+- name: Kawaii
+  negate: false
+  pattern: Kawaii
+  required: false
+  type: release_group
+- name: AOmundson
+  negate: false
+  pattern: AOmundson
+  required: false
+  type: release_group
+- name: DIY
+  negate: false
+  pattern: DIY
+  required: false
+  type: release_group
+- name: derp
+  negate: false
+  pattern: derp
+  required: false
+  type: release_group
+- name: JOHNTiTOR
+  negate: false
+  pattern: JOHNTiTOR
+  required: false
+  type: release_group
+tests:
+- expected: true
+  id: 1
+  input: "[WBDP] Naruto Shippuden 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Code.Geass.1080p.BluRay.Dual.Audio-Vanilla"
+- expected: true
+  id: 3
+  input: "[Aether] Steins Gate 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 4
+  input: "Cowboy.Bebop.1080p.BluRay.Dual.Audio-Dawn"
+- expected: true
+  id: 5
+  input: "[SneedOlympics] Fate Stay Night UBW 1080p BluRay Dual Audio"
+- expected: true
+  id: 6
+  input: "One.Piece.1080p.BluRay.Dual.Audio.x264-AM11"
+- expected: true
+  id: 7
+  input: "[Drag] Hunter x Hunter 2011 1080p BluRay Dual Audio"
+- expected: true
+  id: 8
+  input: "SAO.Progressive.1080p.BluRay.Dual.Audio-xDTK"
+- expected: true
+  id: 9
+  input: "[CW] Cyberpunk Edgerunners 1080p WEB-DL Dual Audio"
+- expected: true
+  id: 10
+  input: "Ranking.of.Kings.S02.1080p.BluRay.Dual.Audio-Moxie"
+- expected: true
+  id: 11
+  input: "[QM] Fullmetal Alchemist Brotherhood 1080p BluRay Dual Audio"
+- expected: true
+  id: 12
+  input: "K-On.S02.1080p.BluRay.Dual.Audio-Doki-ASO"
+- expected: true
+  id: 13
+  input: "[Pyon] Kaguya-sama S03 1080p BluRay Dual Audio"
+- expected: true
+  id: 14
+  input: "Trigun.Stampede.1080p.BluRay.Dual.Audio-NH"
+- expected: true
+  id: 15
+  input: "[Kawaii] Toradora 1080p BluRay Dual Audio"
+- expected: true
+  id: 16
+  input: "Samurai.Champloo.1080p.BluRay.Dual.Audio-AOmundson"
+- expected: true
+  id: 17
+  input: "[DIY] Serial Experiments Lain 1080p BluRay Dual Audio"
+- expected: true
+  id: 18
+  input: "Psycho-Pass.S03.1080p.BluRay.Dual.Audio-derp"
+- expected: true
+  id: 19
+  input: "[JOHNTiTOR] Steins Gate 0 1080p BluRay Dual Audio"
+- expected: false
+  id: 20
+  input: "[SubsPlease] Pluto 2023 1080p WEB-DL"
+- expected: false
+  id: 21
+  input: "[HorribleSubs] Your Name 1080p WEB-DL"

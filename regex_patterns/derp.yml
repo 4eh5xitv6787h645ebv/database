@@ -1,0 +1,66 @@
+name: derp
+pattern: (?<=[\[-])derp\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: '[derp] Psycho-Pass S03 1080p BluRay Dual Audio x264'
+  lastRun: '2025-12-19T11:00:17.850483'
+  matchSpan:
+    end: 5
+    start: 1
+  matchedContent: derp
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 2
+  input: Psycho-Pass.S03.1080p.BluRay.Dual.Audio.x264-derp
+  lastRun: '2025-12-19T11:00:17.850483'
+  matchSpan:
+    end: 49
+    start: 45
+  matchedContent: derp
+  matchedGroups: []
+  passes: true
+- expected: true
+  id: 3
+  input: Psycho-Pass Movie 1080p BluRay FLAC-derp
+  lastRun: '2025-12-19T11:00:17.850483'
+  matchSpan:
+    end: 40
+    start: 36
+  matchedContent: derp
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 4
+  input: Ghost in the Shell SAC 1080p BluRay Dual Audio-ZR
+  lastRun: '2025-12-19T11:00:17.850483'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 5
+  input: '[DerpDesuYo] Owari no Seraph - 08 (1536x864 10bit AAC) [1ECE920C]'
+  lastRun: '2025-12-19T11:00:17.850483'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  id: 6
+  input: 'Pass the Monster Meat Milady S01E10 The Blood-Mad Dukes was a derp Intentions
+    1080p CR WEB-DL DUAL AAC2.0 H 264-VARYG (Akujiki Reijou to Kyouketsu Koushaku:
+    Sono Mamono, Watashi ga Oishiku Itadakimasu!, Dual-Audio, Multi-Subs) '
+  lastRun: '2025-12-19T11:00:17.850483'
+  matchSpan:
+    end: 66
+    start: 62
+  matchedContent: derp
+  matchedGroups: []
+  passes: false

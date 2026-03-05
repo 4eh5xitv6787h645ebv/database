@@ -1,0 +1,20 @@
+name: koala
+pattern: (?<=[\[-])koala\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[koala] Bocchi the Rock S01 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Bocchi.the.Rock.S01.1080p.BluRay.Dual.Audio.x264-koala"
+- expected: true
+  id: 3
+  input: "Oshi no Ko S01 1080p BluRay FLAC-koala"
+- expected: false
+  id: 4
+  input: "Made in Abyss S02 1080p BluRay Dual Audio-YURI"

@@ -1,0 +1,20 @@
+name: SRLS
+pattern: (?<=[\[-])SRLS\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[SRLS] Dr Stone S03 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Dr.Stone.S03.1080p.BluRay.Dual.Audio.x264-SRLS"
+- expected: true
+  id: 3
+  input: "Hells Paradise S01 1080p BluRay FLAC-SRLS"
+- expected: false
+  id: 4
+  input: "Bleach TYBW S01 1080p BluRay Dual Audio-ZR"

@@ -1,0 +1,75 @@
+name: Full OU
+pattern: \bf(?:ull)?[-. _]?ou\b|\bfou\b
+description: Matches Full Over-Under 3D format (FOU, F-OU, Full-OU). Higher quality
+  OU with full 1920x1080 per eye resolution.
+tags:
+- 3D
+- OU
+- FOU
+tests:
+- expected: true
+  input: Jurassic.World.2015.3D.1080p.BluRay.Full-OU.x264-BLOW
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan:
+    end: 43
+    start: 36
+  matchedContent: Full-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Ant-Man.2015.3D.1080p.BluRay.FOU.x264-DiSPOSABLE
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan:
+    end: 32
+    start: 29
+  matchedContent: FOU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Inside.Out.2015.3D.1080p.BluRay.F-OU.x264-NYDIC
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan:
+    end: 36
+    start: 32
+  matchedContent: F-OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Terminator.Genisys.2015.3D.1080p.BluRay.Full.OU.x264-ROVERS
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan:
+    end: 47
+    start: 40
+  matchedContent: Full.OU
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Mission.Impossible.Rogue.Nation.2015.3D.1080p.BluRay.FullOU.x264-GECKOS
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan:
+    end: 59
+    start: 53
+  matchedContent: FullOU
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: X-Men.Zukunft.ist.Vergangenheit.3D.HOU.GERMAN.DL.1080p.BluRay.x264-EXQUiSiTE
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: The.OU.2023.S01E01.1080p.AMZN.WEB-DL.x264-GROUP
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:02.574151'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

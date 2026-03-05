@@ -1,0 +1,115 @@
+name: MVC Codec Extended
+pattern: \b(?:avc[-. _]?)?mvc\b|\bmvc[-. _]?3d\b|\b3d[-. _]?mvc\b
+description: Matches Multiview Video Coding (MVC) with extended patterns. Native BluRay
+  3D codec - best quality. Detects MVC, AVC-MVC, MVC-3D, 3D-MVC.
+tags:
+- 3D
+- MVC
+- Codec
+tests:
+- expected: true
+  input: Avatar.2009.MVC.1080p.3D.BluRay.x264-SECTOR7
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 15
+    start: 12
+  matchedContent: MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Gravity.2013.AVC.MVC.1080p.BluRay.3D-ROVERS
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 20
+    start: 13
+  matchedContent: AVC.MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Jungle.Book.2016.3D.MVC.1080p.BluRay-SPARKS
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 27
+    start: 21
+  matchedContent: 3D.MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Rogue.One.2016.MVC.3D.1080p.BluRay.Remux-GECKOS
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 18
+    start: 15
+  matchedContent: MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Doctor.Strange.2016.AVC-MVC.1080p.3D.BluRay.Remux-BLOW
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 27
+    start: 20
+  matchedContent: AVC-MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Finding.Dory.2016.3D-MVC.1080p.BluRay.Remux-DiSPOSABLE
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 24
+    start: 18
+  matchedContent: 3D-MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Star.Wars.The.Rise.of.Skywalker.2019.3D.MVC.1080p.BluRay.Remux.AVC.DTS-HD.MA.7.1-GECKOS
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 43
+    start: 37
+  matchedContent: 3D.MVC
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Matrix.Resurrections.2021.3D.1080p.BluRay.AVC.MVC.DTS-HD.MA.7.1-LAZERS
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 53
+    start: 46
+  matchedContent: AVC.MVC
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: MVC.Architecture.Explained.2023.1080p.WEB-DL.x264-DEV
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 3
+    start: 0
+  matchedContent: MVC
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: Spring.MVC.Tutorial.2022.720p.WEB-DL.x264-CODE
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 10
+    start: 7
+  matchedContent: MVC
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: Django.MVT.vs.MVC.2023.720p.WEB-DL.x264-PYTHON
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan:
+    end: 17
+    start: 14
+  matchedContent: MVC
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:37.063040'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

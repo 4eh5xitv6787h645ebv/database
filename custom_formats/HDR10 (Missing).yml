@@ -8,48 +8,53 @@ conditions:
 - name: 2160p
   negate: false
   required: true
-  resolution: 2160p
   type: resolution
+  resolution: 2160p
 - name: Bluray
   negate: false
   required: true
-  source: bluray
   type: source
+  source: bluray
+- name: Missing Groups
+  negate: false
+  required: true
+  type: release_title
+  pattern: HDR10 (Missing Groups)
 - name: Release Groups
-  negate: true
-  pattern: HDR10 (Negation)
+  negate: false
   required: true
   type: release_group
+  pattern: HDR10 (Negation)
 - name: Not SDR
   negate: true
-  pattern: SDR
   required: true
   type: release_title
+  pattern: SDR
 - name: Not PQ
   negate: true
-  pattern: PQ
   required: true
   type: release_title
+  pattern: PQ
 - name: Not HLG
   negate: true
-  pattern: HLG
   required: true
   type: release_title
+  pattern: HLG
 - name: Not HDR
   negate: true
-  pattern: HDR
   required: true
   type: release_title
+  pattern: HDR
 - name: Not HDR10
   negate: true
-  pattern: HDR10
   required: true
   type: release_title
+  pattern: HDR10
 - name: Not HDR10+
   negate: true
-  pattern: HDR10+
   required: true
   type: release_title
+  pattern: HDR10+
 tests:
 - conditionResults:
   - matches: false

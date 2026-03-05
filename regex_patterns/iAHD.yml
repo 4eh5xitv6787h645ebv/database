@@ -1,0 +1,20 @@
+name: iAHD
+pattern: (?<=[\[-])iAHD\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[iAHD] Demon Slayer Kimetsu no Yaiba S01 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Demon.Slayer.Kimetsu.no.Yaiba.S01.1080p.BluRay.Dual.Audio.x264-iAHD"
+- expected: true
+  id: 3
+  input: "One Punch Man S02 1080p BluRay FLAC x264-iAHD"
+- expected: false
+  id: 4
+  input: "Jujutsu Kaisen S01 1080p BluRay Dual Audio-Kametsu"

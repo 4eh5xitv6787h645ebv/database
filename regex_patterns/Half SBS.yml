@@ -1,0 +1,120 @@
+name: Half SBS
+pattern: \bh(?:alf)?[-. _]?sbs\b|\bhsbs\b
+description: Matches Half Side-by-Side 3D format (HSBS, H-SBS, Half-SBS). Most common
+  3D format for VR headsets. 960x1080 per eye resolution.
+tags:
+- 3D
+- SBS
+- HSBS
+tests:
+- expected: true
+  input: Harry.Potter.and.the.Deathly.Hallows.Pt2.2011.720p.3D.HSBS.BluRay.x264-CULTHD
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 58
+    start: 54
+  matchedContent: HSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: 300.Rise.of.an.Empire.3D.HSBS.German.DL.1080p.BluRay.x264-EXQUiSiTE
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 29
+    start: 25
+  matchedContent: HSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Avengers.2012.3D.HSBS.1080p.BluRay.x264-YIFY
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 25
+    start: 21
+  matchedContent: HSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Pacific.Rim.2013.3D.H-SBS.1080p.BluRay.x264-Manning
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 25
+    start: 20
+  matchedContent: H-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Prometheus.2012.3D.H.SBS.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 24
+    start: 19
+  matchedContent: H.SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: World.War.Z.2013.3D.BluRay.1080p.5.1CH.Half-SBS.x264-Ganool
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 47
+    start: 39
+  matchedContent: Half-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Frozen.2013.3D.1080p.BluRay.Half.SBS.DTS.x264-PublicHD
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 36
+    start: 28
+  matchedContent: Half.SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Big.Hero.6.2014.3D.1080p.BluRay.HalfSBS.x264-Ganool
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 39
+    start: 32
+  matchedContent: HalfSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Avengers.Endgame.2019.3D.1080p.BluRay.HSBS.x264.DTS-HD.MA.7.1-SPARKS
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 42
+    start: 38
+  matchedContent: HSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Movie.2023.H_SBS.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan:
+    end: 16
+    start: 11
+  matchedContent: H_SBS
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: The.Walk.2015.3D.1080p.BluRay.FSBS.x264-SPARKS
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: MasterChef.Australia.S15E01.SBS.HDTV.x264-CCT
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:15.271167'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

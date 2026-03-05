@@ -1,5 +1,5 @@
 name: x264
-pattern: ^(?!.*(?i:remux)).*([xh](\.?264)|DVDRip)
+pattern: (?i)^(?!.*remux)(?!.*x265)(?!.*hevc)(?!.*av1)(?!.*xvid)(?=.*[xh]\.?264).*
 description: 'An open source encoder that produces H.264 videos. '
 tags:
 - Encoder

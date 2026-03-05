@@ -1,5 +1,5 @@
 name: HDR10 (Missing Groups)
-pattern: \b(3L|CiNEPHiLES|c0kE|EDV|ElNeekster|FraMeSToR|HDH|HQMUX|Kenobi|mimic|NTb|playBD|RYU|SiCFoI|STRiKES|TekMUX|TRiToN|W4NK3R)\b
+pattern: (?:(?<![A-Za-z0-9])Aisha@RFX(?![A-Za-z0-9])|\b(3L|CiNEPHiLES|c0kE|EDV|ElNeekster|FraMeSToR|HDH|HDS|HQMUX|Kenobi|mimic|NTb|playBD|RYU|SiCFoI|STRiKES|TekMUX|TRiToN|W4NK3R|BHDStudio)\b)
 description: Matches groups who mislabel HDR10
 tags:
 - Release Group

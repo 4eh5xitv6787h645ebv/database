@@ -1,116 +1,213 @@
 name: Dual Audio
-pattern: \b((multi[^a-zA-Z]*)|(dual[\s.-](audio|complete)))\b
-description: Matches releases with Dual Audio; Media releases that contain two language
-  tracks - typically the original language (such as Japanese) along with an English
-  dub, allowing viewers to switch between either audio track while watching the same
-  video content.
-tags: []
+pattern: (?i)(\bdual[ ._-]?(?:audio|complete)\b|[\[(]dual[\])]|\b2[ ._-]?audio\b|\bbilingual\b|\bmulti(?:[^a-zA-Z]|\b)|\b(?:JA|JP|JPN|JAP|ZH|CHN|CHI|KO|KOR|Japanese|Chinese|Korean)\b[ ._+&/\-]+\b(?:EN|ENG|English)\b|\b(?:EN|ENG|English)\b[ ._+&/\-]+\b(?:JA|JP|JPN|JAP|ZH|CHN|CHI|KO|KOR|Japanese|Chinese|Korean)\b|\b(?:JA|JP|JPN|JAP|ZH|CHN|CHI|KO|KOR)(?:EN|ENG)\b|\b(?:EN|ENG)(?:JA|JP|JPN|JAP|ZH|CHN|CHI|KO|KOR)\b|(?:\b(?:\d{3,4}[pi]|4K|8K|UHD|UltraHD)\b[^()\[\]]{0,40})\bDUAL\b(?![ ._-]?(?:layer|dl)\b)(?![ ._-]?\d{4}\b))
+description: Matches releases with Dual Audio - releases containing BOTH original language
+  (Japanese, Korean, Chinese) AND English audio. Supports MULTi, Dual Audio/Complete,
+  2Audio, Bilingual, language code pairs with various separators (JPN.ENG, JA+EN,
+  KOR/ENG, JPNENG), and DUAL after quality indicators. Excludes Dual Layer/DL discs,
+  English-dub-only, and movie titles containing "Dual".
+tags:
+- Anime
+- Audio
 tests:
+# MULTi pattern - multiple audio tracks
 - expected: true
   id: 1
-  input: "\t The.Hunger.Games.2012.MULTi.1080p.BluRay.DTS.HD.MA.x264-HeavyWeight"
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan:
-    end: 30
-    start: 24
-  matchedContent: MULTi.
-  matchedGroups:
-  - MULTi.
-  - MULTi.
-  - null
-  - null
-  passes: true
+  input: The.Hunger.Games.2012.MULTi.1080p.BluRay.DTS.HD.MA.x264-HeavyWeight
 - expected: true
   id: 2
   input: The.Hunger.Games.2012.1080p.AMZN.WEB-DL.Multi.DDP5.1.H.264-DHRUB_DXD
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan:
-    end: 46
-    start: 40
-  matchedContent: Multi.
-  matchedGroups:
-  - Multi.
-  - Multi.
-  - null
-  - null
-  passes: true
-- expected: false
+- expected: true
   id: 3
-  input: 'We Don''t Die, We Multiply: The Robin Harris Story'
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan: null
-  matchedContent: null
-  matchedGroups: []
-  passes: true
+  input: Cyberpunk 2077 Phantom Liberty MULTi19 v2 2 DINOByTES
+
+# Dual Audio/Complete pattern
 - expected: true
   id: 4
-  input: Cyberpunk 2077 Phantom Liberty MULTi19 v2 2 DINOByTES
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan:
-    end: 39
-    start: 31
-  matchedContent: 'MULTi19 '
-  matchedGroups:
-  - 'MULTi19 '
-  - 'MULTi19 '
-  - null
-  - null
-  passes: true
+  input: Attack on Titan S04 2020 1080p USA Blu-ray AVC TrueHD 5.1 Dual Audio -ZR-
 - expected: true
   id: 5
-  input: Attack on Titan S04 2020 1080p USA Blu-ray AVC TrueHD 5.1 Dual Audio -ZR-
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan:
-    end: 68
-    start: 58
-  matchedContent: Dual Audio
-  matchedGroups:
-  - Dual Audio
-  - null
-  - Dual Audio
-  - Audio
-  passes: true
+  input: DanMachi Sword Oratoria Vol 01-04 2017 ANiME DUAL COMPLETE BLURAY-iFPD
 - expected: true
   id: 6
-  input: DanMachi Sword Oratoria Vol 01-04 2017 ANiME DUAL COMPLETE BLURAY-iFPD
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan:
-    end: 58
-    start: 45
-  matchedContent: DUAL COMPLETE
-  matchedGroups:
-  - DUAL COMPLETE
-  - null
-  - DUAL COMPLETE
-  - COMPLETE
-  passes: true
+  input: Bleach.S12.1080p.BluRay.REMUX.AVC.Dual-Audio.DTS-HD.MA.2.0-ZR-
 - expected: true
   id: 7
-  input: Bleach.S12.1080p.BluRay.REMUX.AVC.Dual-Audio.DTS-HD.MA.2.0-ZR-
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan:
-    end: 44
-    start: 34
-  matchedContent: Dual-Audio
-  matchedGroups:
-  - Dual-Audio
-  - null
-  - Dual-Audio
-  - Audio
-  passes: true
-- expected: false
+  input: "[LostYears] Sword Art Online - Alicization (BD 1080p Hi10 FLAC Dual Audio)"
+- expected: true
   id: 8
-  input: Dual.2022.1080p.BluRay.DDP5.1.x264-iFT.mkv
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan: null
-  matchedContent: null
-  matchedGroups: []
-  passes: true
-- expected: false
+  input: "[Kametsu] Attack on Titan S04 1080p BluRay Dual.Audio x264"
+
+# 2Audio pattern (common in Chinese releases)
+- expected: true
   id: 9
-  input: uality.A.Graffiti.Story.2022.1080p.WEB.H264-AEROHOLiCS.mkv
-  lastRun: '2024-12-18T11:58:49.979470'
-  matchSpan: null
-  matchedContent: null
-  matchedGroups: []
-  passes: true
+  input: "[雄狮少年]I.Am.What.I.Am.2021.WEB-DL.2160p.DDP5.1.2Audio-BTBTT"
+- expected: true
+  id: 10
+  input: Nausicaa.Of.The.Valley.Of.The.Wind.1984.BluRay.1080p.AC3.2Audio.x264-CHDremix
+
+# Bilingual pattern
+- expected: true
+  id: 11
+  input: "[EG] Gundam Wing - Endless Waltz: Special Edition (1080P, FLAC, Bilingual)"
+- expected: true
+  id: 12
+  input: Pokemon - season 1 - Indigo League (RAW, bilingual and subbed)
+
+# [DUAL] or (DUAL) in brackets
+- expected: true
+  id: 13
+  input: "[Group] Anime Title 1080p BluRay [DUAL]"
+- expected: true
+  id: 14
+  input: "Anime Title (DUAL) 1080p WEB-DL"
+
+# Language codes with dot/hyphen separators
+- expected: true
+  id: 15
+  input: Jujutsu.Kaisen.0.2021.1080p.BluRay.DDP5.1.x264.JPN.ENG-VARYG
+- expected: true
+  id: 16
+  input: Black.Clover.S04.1080p.BluRay.AAC2.0.x264.JPN.ENG-VARYG
+- expected: true
+  id: 17
+  input: Batman.Ninja.vs.Yakuza.League.2025.JAP-ENG.1080p.10bit.WEBRip
+- expected: true
+  id: 18
+  input: "[DashWatson] Paranoia Agent (2004) [BD 1080p 10bit x265 HEVC Jpn-Eng]"
+- expected: true
+  id: 19
+  input: Some.Anime.ENG.JPN.1080p.BluRay-Group
+
+# Plus sign language codes
+- expected: true
+  id: 20
+  input: "[Group] Anime Title [1080p] [JA + EN]"
+- expected: true
+  id: 21
+  input: "[Group] Anime Title [EN + JA]"
+- expected: true
+  id: 22
+  input: Anime.Title.1080p.JPN+ENG.x264
+
+# Slash separator (NEW)
+- expected: true
+  id: 23
+  input: "[Group] Anime Title [JPN/ENG Audio]"
+- expected: true
+  id: 24
+  input: Movie.English/Japanese.1080p.BluRay
+- expected: true
+  id: 25
+  input: "[Group] K-Drama [KOR/ENG]"
+
+# Compact language codes without separator (NEW)
+- expected: true
+  id: 26
+  input: Anime.JPNENG.1080p.BluRay
+- expected: true
+  id: 27
+  input: Movie.ENGJPN.BluRay
+- expected: true
+  id: 28
+  input: Show.JAENG.WEB-DL
+- expected: true
+  id: 29
+  input: Anime.KORENG.1080p.WEB-DL
+
+# Chinese + English
+- expected: true
+  id: 30
+  input: Chinese.Movie.CHN.ENG.1080p.BluRay
+- expected: true
+  id: 31
+  input: Anime.Chinese.English.1080p.WEB-DL
+- expected: true
+  id: 32
+  input: "[Group] Title [ZH + EN]"
+
+# Korean + English
+- expected: true
+  id: 33
+  input: Korean.Drama.KOR-ENG.WEB-DL
+- expected: true
+  id: 34
+  input: Drama.Korean.English.WEB-DL
+- expected: true
+  id: 35
+  input: "[Group] K-Drama [KO + EN]"
+
+# Full language names with separators
+- expected: true
+  id: 36
+  input: Title.Japanese.English.1080p.BluRay
+- expected: true
+  id: 37
+  input: Title.English.Japanese.1080p.BluRay
+- expected: true
+  id: 38
+  input: "Movie (Japanese & English Audio)"
+
+# DUAL after quality indicator (including 8K - NEW)
+- expected: true
+  id: 39
+  input: Anime.Title.1080p.DUAL.x264-Group
+- expected: true
+  id: 40
+  input: Movie.4K.DUAL.BluRay
+- expected: true
+  id: 41
+  input: Movie.8K.DUAL.UHD.BluRay
+- expected: true
+  id: 42
+  input: Series.720p.DUAL.WEB-DL
+- expected: true
+  id: 43
+  input: Anime.2160p.UHD.DUAL.HDR
+
+# FALSE - Movie titled "Dual" (not dual audio)
+- expected: false
+  id: 44
+  input: Dual.2022.1080p.BluRay.DDP5.1.x264-iFT.mkv
+
+# FALSE - Dual Layer / DUAL DL (disc format, NOT audio - NEW)
+- expected: false
+  id: 45
+  input: Movie.1080p.Dual.Layer.BluRay
+- expected: false
+  id: 46
+  input: Movie.4K.DUAL.DL.UHD
+
+# FALSE - DUAL followed by year (NEW)
+- expected: false
+  id: 47
+  input: Movie.1080p.DUAL.2024.BluRay
+- expected: false
+  id: 48
+  input: Anime.4K.DUAL.1999.Remaster
+
+# FALSE - "Multiply" in title
+- expected: false
+  id: 49
+  input: 'We Don''t Die, We Multiply: The Robin Harris Story'
+
+# FALSE - English Dub ONLY (NOT dual audio)
+- expected: false
+  id: 50
+  input: "[Yameii] My Hero Academia - S08E09 [English Dub] [CR WEB-DL 1080p]"
+- expected: false
+  id: 51
+  input: "[AnimeRG] Pokemon (EP 0001-1001) 480p [English-Dubbed]"
+- expected: false
+  id: 52
+  input: Ghost in the Shell Stand Alone Complex S01 1080p BluRay (English Dubbed)
+
+# FALSE - Sub-only releases
+- expected: false
+  id: 53
+  input: "[SubsPlease] Frieren Beyond Journeys End S01 1080p WEB-DL"
+- expected: false
+  id: 54
+  input: "[Erai-raws] Solo Leveling S01 1080p WEB-DL"
+- expected: false
+  id: 55
+  input: "[HorribleSubs] Your Name 1080p WEB-DL"

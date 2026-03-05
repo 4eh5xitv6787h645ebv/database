@@ -1,0 +1,109 @@
+name: Anime Dual Audio Tier 2
+description: Tier 2 Dual Audio groups from SeaDex - Well-known groups that regularly release dual audio anime
+tags:
+- Anime
+- Dual Audio
+conditions:
+- name: hchcsen
+  negate: false
+  pattern: hchcsen
+  required: false
+  type: release_group
+- name: LYS1TH3A
+  negate: false
+  pattern: LYS1TH3A
+  required: false
+  type: release_group
+- name: ZeroBuild
+  negate: false
+  pattern: ZeroBuild
+  required: false
+  type: release_group
+- name: Flugel
+  negate: false
+  pattern: Flugel
+  required: false
+  type: release_group
+- name: vyral
+  negate: false
+  pattern: vyral
+  required: false
+  type: release_group
+- name: koala
+  negate: false
+  pattern: koala
+  required: false
+  type: release_group
+- name: Headpatter
+  negate: false
+  pattern: Headpatter
+  required: false
+  type: release_group
+- name: Harkonnen
+  negate: false
+  pattern: Harkonnen
+  required: false
+  type: release_group
+- name: SRLS
+  negate: false
+  pattern: SRLS
+  required: false
+  type: release_group
+- name: Holomux
+  negate: false
+  pattern: Holomux
+  required: false
+  type: release_group
+- name: Bunny-Apocalypse
+  negate: false
+  pattern: Bunny-Apocalypse
+  required: false
+  type: release_group
+- name: MegukaMux
+  negate: false
+  pattern: MegukaMux
+  required: false
+  type: release_group
+tests:
+- expected: true
+  id: 1
+  input: "[hchcsen] Blue Lock S01 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Mob.Psycho.100.S03.1080p.BluRay.Dual.Audio-LYS1TH3A"
+- expected: true
+  id: 3
+  input: "[ZeroBuild] Oshi no Ko S01 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 4
+  input: "Bocchi.the.Rock.S01.1080p.BluRay.Dual.Audio-Flugel"
+- expected: true
+  id: 5
+  input: "[vyral] Dandadan S01 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 6
+  input: "Tokyo.Revengers.S03.1080p.BluRay.Dual.Audio-koala"
+- expected: true
+  id: 7
+  input: "[Headpatter] Mushoku Tensei S02 1080p BluRay Dual Audio"
+- expected: true
+  id: 8
+  input: "Re.Zero.S03.1080p.WEB-DL.Dual.Audio-Harkonnen"
+- expected: true
+  id: 9
+  input: "[SRLS] Dr Stone S03 1080p BluRay Dual Audio"
+- expected: true
+  id: 10
+  input: "Overlord.S04.1080p.BluRay.Dual.Audio-Holomux"
+- expected: true
+  id: 11
+  input: "[Bunny-Apocalypse] Made in Abyss S02 1080p BluRay Dual Audio"
+- expected: true
+  id: 12
+  input: "Puella.Magi.Madoka.Magica.1080p.BluRay.Dual.Audio-MegukaMux"
+- expected: false
+  id: 13
+  input: "[SubsPlease] Solo Leveling S01 1080p WEB-DL"
+- expected: false
+  id: 14
+  input: "[Erai-raws] Delicious in Dungeon S01 1080p WEB-DL"

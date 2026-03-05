@@ -1,0 +1,20 @@
+name: Harkonnen
+pattern: (?<=[\[-])Harkonnen\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[Harkonnen] Tokyo Revengers S03 1080p WEB-DL Dual Audio"
+- expected: true
+  id: 2
+  input: "Tokyo.Revengers.S03.1080p.WEB-DL.Dual.Audio-Harkonnen"
+- expected: true
+  id: 3
+  input: "Mushoku Tensei S02 1080p WEB-DL AAC-Harkonnen"
+- expected: false
+  id: 4
+  input: "Jujutsu Kaisen S02 1080p WEB-DL-SubsPlease"

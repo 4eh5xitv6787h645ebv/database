@@ -1,0 +1,79 @@
+name: 3D (All)
+description: Matches any 3D release. Use to block or prefer ALL 3D content. Combines
+  BluRay 3D source, SBS formats, OU/TAB formats, MVC codec, and positional 3D indicators.
+tags:
+- 3D
+conditions:
+- name: 3D with Source
+  negate: false
+  pattern: 3D with Source
+  required: false
+  type: release_title
+- name: 3D SBS Formats
+  negate: false
+  pattern: 3D SBS Formats
+  required: false
+  type: release_title
+- name: 3D OU-TAB Formats
+  negate: false
+  pattern: 3D OU-TAB Formats
+  required: false
+  type: release_title
+- name: MVC Codec
+  negate: false
+  pattern: MVC Codec
+  required: false
+  type: release_title
+- name: 3D Before Resolution
+  negate: false
+  pattern: 3D Before Resolution
+  required: false
+  type: release_title
+- name: 3D Anaglyph
+  negate: false
+  pattern: 3D Anaglyph Comprehensive
+  required: false
+  type: release_title
+tests:
+- conditionResults:
+  - matches: true
+    name: 3D with Source
+    negate: false
+    pattern: 3D with Source
+    required: false
+    type: release_title
+  - matches: false
+    name: 3D SBS Formats
+    negate: false
+    pattern: 3D SBS Formats
+    required: false
+    type: release_title
+  - matches: false
+    name: 3D OU-TAB Formats
+    negate: false
+    pattern: 3D OU-TAB Formats
+    required: false
+    type: release_title
+  - matches: false
+    name: MVC Codec
+    negate: false
+    pattern: MVC Codec
+    required: false
+    type: release_title
+  - matches: false
+    name: 3D Before Resolution
+    negate: false
+    pattern: 3D Before Resolution
+    required: false
+    type: release_title
+  - matches: false
+    name: 3D Anaglyph
+    negate: false
+    pattern: 3D Anaglyph Comprehensive
+    required: false
+    type: release_title
+  expected: true
+  id: 1
+  input: Moana.2016.BluRay3D.1080p.AVC.DTS-HD.MA.7.1-LAZERS
+  lastRun: '2025-12-01T20:06:17.480593'
+  passes: true

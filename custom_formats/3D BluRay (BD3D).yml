@@ -1,0 +1,14 @@
+name: 3D BluRay (BD3D)
+description: Matches BluRay 3D source releases. Full disc or BD3D encodes. Detects
+  BluRay3D, BD3D, 3DBD patterns.
+tags:
+- 3D
+- BluRay
+- BD3D
+conditions:
+- name: BluRay 3D Source
+  type: release_title
+  pattern: BluRay 3D Source
+  negate: false
+  required: true
+tests: []

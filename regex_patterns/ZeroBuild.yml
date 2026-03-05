@@ -1,0 +1,20 @@
+name: ZeroBuild
+pattern: (?<=[\[-])ZeroBuild\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[ZeroBuild] Mob Psycho 100 S03 1080p BluRay Dual Audio x264"
+- expected: true
+  id: 2
+  input: "Mob.Psycho.100.S03.1080p.BluRay.Dual.Audio.x264-ZeroBuild"
+- expected: true
+  id: 3
+  input: "Chainsaw Man S01 1080p BluRay FLAC2.0 x264-ZeroBuild"
+- expected: false
+  id: 4
+  input: "Spy x Family S01 1080p BluRay-MTBB"

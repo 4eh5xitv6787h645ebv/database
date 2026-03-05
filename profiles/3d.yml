@@ -1,0 +1,131 @@
+name: 3d
+description: ''
+tags: []
+upgradesAllowed: false
+minCustomFormatScore: 0
+upgradeUntilScore: 0
+minScoreIncrement: 0
+custom_formats: []
+custom_formats_radarr:
+- name: 3D
+  score: 0
+- name: 3D (All)
+  score: 0
+- name: 3D Anaglyph
+  score: 0
+- name: 3D BluRay (BD3D)
+  score: 0
+- name: 3D Full-OU (FOU)
+  score: 0
+- name: 3D Full-SBS (FSBS)
+  score: 0
+- name: 3D Full-TAB (FTAB)
+  score: 0
+- name: 3D Half-OU (HOU)
+  score: 0
+- name: 3D Half-SBS (HSBS)
+  score: 0
+- name: 3D Half-TAB (HTAB)
+  score: 0
+- name: 3D MVC
+  score: 0
+- name: 3D OU-TAB (All)
+  score: 0
+- name: 3D SBS (All)
+  score: 0
+custom_formats_sonarr:
+- name: 3D
+  score: 1
+- name: 3D (All)
+  score: 1
+- name: 3D Anaglyph
+  score: 1
+- name: 3D BluRay (BD3D)
+  score: 1
+- name: 3D Full-OU (FOU)
+  score: 1
+- name: 3D Full-SBS (FSBS)
+  score: 1
+- name: 3D Full-TAB (FTAB)
+  score: 1
+- name: 3D Half-OU (HOU)
+  score: 1
+- name: 3D Half-SBS (HSBS)
+  score: 1
+- name: 3D Half-TAB (HTAB)
+  score: 1
+- name: 3D MVC
+  score: 1
+- name: 3D OU-TAB (All)
+  score: 1
+- name: 3D SBS (All)
+  score: 1
+qualities:
+- id: -1
+  name: ee
+  description: ''
+  qualities:
+  - id: 2
+    name: BR-Disk
+  - id: 1
+    name: Raw-HD
+  - id: 3
+    name: Remux-2160p
+  - id: 4
+    name: Bluray-2160p
+  - id: 5
+    name: WEBDL-2160p
+  - id: 6
+    name: WEBRip-2160p
+  - id: 30
+    name: Unknown
+  - id: 29
+    name: CAM
+  - id: 28
+    name: WORKPRINT
+  - id: 27
+    name: REGIONAL
+  - id: 26
+    name: Telesync
+  - id: 20
+    name: WEBRip-480p
+  - id: 21
+    name: DVD-R
+  - id: 19
+    name: WEBDL-480p
+  - id: 18
+    name: Bluray-480p
+  - id: 17
+    name: Bluray-576p
+  - id: 16
+    name: HDTV-720p
+  - id: 15
+    name: WEBRip-720p
+  - id: 25
+    name: Telecine
+  - id: 24
+    name: SDTV
+  - id: 23
+    name: DVDSCR
+  - id: 22
+    name: DVD
+  - id: 14
+    name: WEBDL-720p
+  - id: 13
+    name: Bluray-720p
+  - id: 12
+    name: HDTV-1080p
+  - id: 11
+    name: WEBRip-1080p
+  - id: 10
+    name: Bluray-1080p
+  - id: 8
+    name: Remux-1080p
+  - id: 7
+    name: HDTV-2160p
+  - id: 9
+    name: WEBDL-1080p
+upgrade_until:
+  id: -1
+  name: ee
+language: must_english

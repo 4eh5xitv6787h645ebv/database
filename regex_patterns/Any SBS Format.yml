@@ -1,0 +1,145 @@
+name: Any SBS Format
+pattern: \b(?:3d[-. _]?)?(?:h(?:alf)?[-. _]?sbs|f(?:ull)?[-. _]?sbs|sbs[-. _]?3d|3d[-.
+  _]sbs)\b|\b(?<!\w)(?:h|f)[-. _]?sbs(?!\w)\b
+description: Matches all Side-by-Side 3D formats including HSBS, FSBS, Half-SBS, Full-SBS,
+  3D-SBS, SBS-3D, H-SBS, F-SBS.
+tags:
+- 3D
+- SBS
+tests:
+- expected: true
+  input: Harry.Potter.and.the.Deathly.Hallows.Pt2.2011.720p.3D.HSBS.BluRay.x264-CULTHD
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 58
+    start: 51
+  matchedContent: 3D.HSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: 300.Rise.of.an.Empire.3D.HSBS.German.DL.1080p.BluRay.x264-EXQUiSiTE
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 29
+    start: 22
+  matchedContent: 3D.HSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Avengers.2012.3D.HSBS.1080p.BluRay.x264-YIFY
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 25
+    start: 18
+  matchedContent: 3D.HSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Pacific.Rim.2013.3D.H-SBS.1080p.BluRay.x264-Manning
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 25
+    start: 17
+  matchedContent: 3D.H-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Prometheus.2012.3D.H.SBS.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 24
+    start: 16
+  matchedContent: 3D.H.SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: World.War.Z.2013.3D.BluRay.1080p.5.1CH.Half-SBS.x264-Ganool
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 47
+    start: 39
+  matchedContent: Half-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Frozen.2013.3D.1080p.BluRay.Half.SBS.DTS.x264-PublicHD
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 36
+    start: 28
+  matchedContent: Half.SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Big.Hero.6.2014.3D.1080p.BluRay.HalfSBS.x264-Ganool
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 39
+    start: 32
+  matchedContent: HalfSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Interstellar.2014.3D.1080p.BluRay.Full-SBS.x264-IMAX
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 42
+    start: 34
+  matchedContent: Full-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Walk.2015.3D.1080p.BluRay.FSBS.x264-SPARKS
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 34
+    start: 30
+  matchedContent: FSBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Everest.2015.3D.1080p.BluRay.F-SBS.x264-ROVERS
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 34
+    start: 29
+  matchedContent: F-SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Movie.2023.3D.SBS.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan:
+    end: 17
+    start: 11
+  matchedContent: 3D.SBS
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Title.2021.3DSBS.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: false
+- expected: false
+  input: MasterChef.Australia.S15E01.SBS.HDTV.x264-CCT
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Running.Man.E650.SBS.720p.HDTV.x264-NEXT
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:56.086595'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

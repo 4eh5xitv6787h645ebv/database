@@ -1,0 +1,20 @@
+name: SneedOlympics
+pattern: (?<=[\[-])SneedOlympics\b
+description: ''
+tags:
+- Release Group
+- Anime
+- Dual Audio
+tests:
+- expected: true
+  id: 1
+  input: "[SneedOlympics] Fate Stay Night UBW 1080p BluRay Dual Audio"
+- expected: true
+  id: 2
+  input: "Fate.Stay.Night.UBW.1080p.BluRay.Dual.Audio-SneedOlympics"
+- expected: true
+  id: 3
+  input: "Fate Zero S02 1080p BluRay FLAC-SneedOlympics"
+- expected: false
+  id: 4
+  input: "Fate Grand Order 1080p BluRay Dual Audio-ZR"

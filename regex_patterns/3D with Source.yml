@@ -1,0 +1,101 @@
+name: 3D with Source
+pattern: \b(?:blu-?ray|bd)[-. _]?3d\b|\b3d[-. _]?(?:blu-?ray|bd(?:rip)?|br(?:rip)?)\b
+description: Matches 3D releases with BluRay/BD source indicators. Detects patterns
+  like BluRay-3D, BD3D, 3D-BluRay, 3D-BDRip.
+tags:
+- 3D
+- Source
+tests:
+- expected: true
+  input: Water.Life.S01E17.Die.Grenzen.des.Meeres.GERMAN.DL.DOKU.1080p.BluRay3D.x264-TVP
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 70
+    start: 62
+  matchedContent: BluRay3D
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Moana.2016.BluRay3D.1080p.AVC.DTS-HD.MA.7.1-LAZERS
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 19
+    start: 11
+  matchedContent: BluRay3D
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Sing.2016.BD3D.1080p.AVC.DTS-HD.MA.7.1-NYDIC
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 14
+    start: 10
+  matchedContent: BD3D
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Trolls.2016.3DBD.1080p.AVC.TrueHD.7.1-ROVERS
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 16
+    start: 12
+  matchedContent: 3DBD
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Storks.2016.Blu-Ray.3D.1080p.AVC.DTS-HD.MA.7.1-SPARKS
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 22
+    start: 12
+  matchedContent: Blu-Ray.3D
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: The.Secret.Life.of.Pets.2016.BD-3D.1080p.AVC-BLOW
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 34
+    start: 29
+  matchedContent: BD-3D
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Ice.Age.Collision.Course.2016.3D.Blu-Ray.1080p-DiSPOSABLE
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 40
+    start: 30
+  matchedContent: 3D.Blu-Ray
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Tenet.2020.3D.BluRay3D.1080p.AVC.Atmos.TrueHD.7.1-BLOW
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan:
+    end: 22
+    start: 14
+  matchedContent: BluRay3D
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Jackass.3D.2010.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: The.Avengers.2012.1080p.BluRay.x264-GECKOS
+  lastRun: '2025-12-01T19:57:45.424266'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

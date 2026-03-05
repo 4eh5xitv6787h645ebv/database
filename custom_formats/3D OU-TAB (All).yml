@@ -1,0 +1,14 @@
+name: 3D OU-TAB (All)
+description: Matches all Over-Under/Top-and-Bottom 3D formats. General OU/TAB preference,
+  best for passive 3D TVs (LG Cinema 3D).
+tags:
+- 3D
+- OU
+- TAB
+conditions:
+- name: Any OU-TAB Format
+  type: release_title
+  pattern: Any OU-TAB Format
+  negate: false
+  required: true
+tests: []

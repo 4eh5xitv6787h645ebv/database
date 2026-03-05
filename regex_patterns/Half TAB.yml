@@ -1,0 +1,73 @@
+name: Half TAB
+pattern: \bh(?:alf)?[-. _]?tab\b|\bhtab\b
+description: Matches Half Top-and-Bottom 3D format (HTAB, H-TAB, Half-TAB). Same as
+  HOU with different naming convention.
+tags:
+- 3D
+- TAB
+- HTAB
+tests:
+- expected: true
+  input: The.Hobbit.An.Unexpected.Journey.2012.3D.HTAB.1080p.BluRay.x264-GECKOS
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan:
+    end: 45
+    start: 41
+  matchedContent: HTAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Star.Wars.The.Force.Awakens.2015.3D.1080p.BluRay.Half-TAB.x264-NYDIC
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan:
+    end: 57
+    start: 49
+  matchedContent: Half-TAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Movie.2023.H-TAB.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan:
+    end: 16
+    start: 11
+  matchedContent: H-TAB
+  matchedGroups: []
+  passes: true
+- expected: true
+  input: Film.2022.H.TAB.1080p.BluRay.x264-GROUP
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan:
+    end: 15
+    start: 10
+  matchedContent: H.TAB
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Minions.2015.3D.1080p.BluRay.Full-TAB.x264-SPARKS
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Tab.Hunter.Confidential.2015.1080p.BluRay.x264-BIPOLAR
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Guitar.Tab.Lessons.2022.720p.WEB-DL.x264-MUSIC
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true
+- expected: false
+  input: Avatar.2009.1080p.BluRay.x264-SPARKS
+  lastRun: '2025-12-01T19:58:31.651324'
+  matchSpan: null
+  matchedContent: null
+  matchedGroups: []
+  passes: true

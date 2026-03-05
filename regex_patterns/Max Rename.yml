@@ -1,5 +1,5 @@
 name: Max Rename
-pattern: \[(MAX)\b|\b(MAX)\]
+pattern: (?-i:(?<![A-Za-z0-9])MAX(?![A-Za-z0-9]))
 description: Max, formerly (and in some regions still) known as HBO Max, is an American
   subscription video on-demand over-the-top streaming service. The platform offers
   content from the libraries of Warner Bros., Discovery, HBO, CNN, Cartoon Network,
