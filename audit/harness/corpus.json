@@ -688,9 +688,13 @@
     },
     {
       "title": "Movie.2005.PAL.DVDRip.XviD-GROUP",
-      "note": "KNOWN BUG left open (documented, not fixed): Full Disc's unguarded (?i)(...PAL...) tail matches PAL/NTSC DVDRips; fixing requires restructuring the alternation - maintainer judgment",
+      "note": "fixed by op 219: PAL DVDRip no longer reads as Full Disc (tail rip-guard); was a documented KNOWN BUG",
       "expect": {
-        "CF:Full Disc(title-part)": true
+        "CF:Full Disc(title-part)": false,
+        "Full Disc": false,
+        "CAM": false,
+        "Dolby Vision": false,
+        "Basic HDR Formats": false
       }
     },
     {
@@ -945,6 +949,62 @@
       "expect": {
         "Movie Extras": false,
         "CF:Extras": false
+      }
+    },
+    {
+      "title": "Movie.1988.NTSC.DVDRip.XviD-GROUP",
+      "note": "fixed by op 219: NTSC DVDRip victim class",
+      "expect": {
+        "Full Disc": false,
+        "CF:Full Disc(title-part)": false
+      }
+    },
+    {
+      "title": "Palm.Springs.2020.1080p.WEB-DL.DD5.1.AV1-GROUP",
+      "note": "fixed by op 219: PAL substring inside Palm no longer matches (token now \\b-bounded)",
+      "expect": {
+        "Full Disc": false,
+        "CF:Full Disc(title-part)": false
+      }
+    },
+    {
+      "title": "1945.2017.COMPLETE.BLURAY-CiNEMATiC",
+      "note": "REAL (Prowlarr): genuine full disc must keep matching",
+      "expect": {
+        "Full Disc": true,
+        "CF:Full Disc(title-part)": true
+      }
+    },
+    {
+      "title": "Andor.S01D01.COMPLETE.UHD.BLURAY-OPTiCAL-4P",
+      "note": "REAL (Prowlarr): TV UHD full disc",
+      "expect": {
+        "Full Disc": true,
+        "CF:Full Disc(title-part)": true
+      }
+    },
+    {
+      "title": "1991.The.Year.Punk.Broke.2011.NTSC.DVD9.MDVDR-OMA",
+      "note": "REAL (Prowlarr): NTSC DVD9 disc",
+      "expect": {
+        "Full Disc": true,
+        "CF:Full Disc(title-part)": true
+      }
+    },
+    {
+      "title": "A.Secret.2007.DVD9.FR.Untouched.PRoDJiDisc",
+      "note": "REAL (Prowlarr): untouched DVD9",
+      "expect": {
+        "Full Disc": true,
+        "CF:Full Disc(title-part)": true
+      }
+    },
+    {
+      "title": "Aai (2004) Tamil Ai Deinterlaced - 480P - DVD9 - HEVC - DD5.1 - 2.8GB - TMV",
+      "note": "REAL (Prowlarr): DVD9-sourced HEVC re-encode - Full Disc regex matches (DVD9, no rip token) but the format is rescued by Not x265; codecs deliberately not in the tail guard",
+      "expect": {
+        "Full Disc": true,
+        "CF:Full Disc(title-part)": false
       }
     }
   ]
