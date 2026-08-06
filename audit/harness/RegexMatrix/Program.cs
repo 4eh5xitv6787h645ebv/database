@@ -21,13 +21,14 @@ var patterns = new Dictionary<string, Regex>();
 foreach (var p in input.GetProperty("patterns").EnumerateObject())
     patterns[p.Name] = new Regex(p.Value.GetString()!, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
-var composites = new List<(string Name, string[] All, string[] None)>();
+var composites = new List<(string Name, string[] All, string[] None, string[] Any)>();
 if (input.TryGetProperty("composites", out var comps))
     foreach (var c in comps.EnumerateArray())
         composites.Add((
             c.GetProperty("name").GetString()!,
             c.TryGetProperty("all", out var a) ? a.EnumerateArray().Select(x => x.GetString()!).ToArray() : [],
-            c.TryGetProperty("none", out var n) ? n.EnumerateArray().Select(x => x.GetString()!).ToArray() : []));
+            c.TryGetProperty("none", out var n) ? n.EnumerateArray().Select(x => x.GetString()!).ToArray() : [],
+            c.TryGetProperty("any", out var y) ? y.EnumerateArray().Select(x => x.GetString()!).ToArray() : []));
 
 int failures = 0, checks = 0;
 foreach (var c in input.GetProperty("cases").EnumerateArray())
@@ -37,8 +38,9 @@ foreach (var c in input.GetProperty("cases").EnumerateArray())
 
     var actuals = new Dictionary<string, bool>();
     foreach (var (name, rx) in patterns) actuals[name] = rx.IsMatch(title);
-    foreach (var (name, all, none) in composites)
-        actuals[name] = all.All(p => actuals[p]) && none.All(p => !actuals[p]);
+    foreach (var (name, all, none, any) in composites)
+        actuals[name] = all.All(p => actuals[p]) && none.All(p => !actuals[p])
+            && (any.Length == 0 || any.Any(p => actuals[p]));
 
     foreach (var e in expect.EnumerateObject())
     {

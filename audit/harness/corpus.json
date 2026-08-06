@@ -865,6 +865,44 @@
       "expect": {
         "CAM": false
       }
+    },
+    {
+      "title": "Arac.Attack.Angriff.der.achtbeinigen.Monster.2002.GERMAN.DUBBED.DL.1080P.BLURAY.X264-WATCHABLE",
+      "note": "REAL (Prowlarr): movie-form German dubbed; DUBBED CF must fire via Movie DUBBED alone (op 217)",
+      "expect": {
+        "Movie DUBBED": true,
+        "TV DUBBED": false,
+        "CF:DUBBED": true,
+        "German DL": true
+      }
+    },
+    {
+      "title": "2.Broke.Girls.S01E22.And.The.Big.Buttercream.Breakthrough.GERMAN.DL.DUBBED.1080p.BluRay.x264-TVP",
+      "note": "REAL (Prowlarr): TV-form German dubbed; DUBBED CF must fire via TV DUBBED alone (op 217)",
+      "expect": {
+        "Movie DUBBED": false,
+        "TV DUBBED": true,
+        "CF:DUBBED": true,
+        "German DL": true
+      }
+    },
+    {
+      "title": "Brand.Of.Shame.1968.GERMAN.DUB.1080p.BluRay.x264.AAC-LAMA",
+      "note": "REAL (Prowlarr): bare DUB token after year",
+      "expect": {
+        "Movie DUBBED": true,
+        "CF:DUBBED": true
+      }
+    },
+    {
+      "title": "Apparition.German.AC3.Dubbed.1080p.BluRay.Merry.Xmas.x264-Pleaders",
+      "note": "KNOWN GAP (OPEN in ledger): German scene omits year, Movie DUBBED year-anchor cannot fire; also no DL token so German DL correctly false; DUBBED CF unscored so no live impact",
+      "expect": {
+        "Movie DUBBED": false,
+        "TV DUBBED": false,
+        "CF:DUBBED": false,
+        "German DL": false
+      }
     }
   ]
 }
