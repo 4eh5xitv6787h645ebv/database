@@ -108,9 +108,9 @@
 </header>
 
 <div class="stats">
-  <div class="stat"><b>5</b>migrations (ops 211–215)</div>
-  <div class="stat"><b>6</b>regexes changed</div>
-  <div class="stat"><b>236 / 236</b>.NET matrix checks green</div>
+  <div class="stat"><b>6</b>migrations (ops 211–216)</div>
+  <div class="stat"><b>7</b>regexes changed</div>
+  <div class="stat"><b>242 / 242</b>.NET matrix checks green</div>
   <div class="stat"><b>120 / 120</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
@@ -172,6 +172,24 @@
   </ul>
 </section>
 
+<section class="card">
+  <div class="card-head"><span class="op">OP 216</span><h2>CAM</h2><span class="sev ban">cam releases escaped the ban</span></div>
+  <p class="why">Underscore-separated names defeat regex word boundaries (underscore is a
+  word character), so neither the year anchor nor the CAM token could fire — real cams
+  slipped past a −999999 ban. Verified against Radarr source: custom formats match the
+  raw title, underscores intact. Boundaries now accept underscores as separators.</p>
+  <div class="diff">
+    <div class="pat before">(?&lt;=<mark class="del">\b</mark>[12]\d{3}<mark class="del">\b</mark>).*(<mark class="del">\b</mark>(CAM[ ._-]?(Rip)?|DVD[ ._-]?(SCR(EENER)?)|HD[ ._-]?(CAM|SCR|TC|TS)|SCREENER|TELE(CINE|SYNC)|WORKPRINT)<mark class="del">\b</mark>)</div>
+    <div class="pat after">(?&lt;=<mark class="add">(\b|_)</mark>[12]\d{3}<mark class="add">(\b|_)</mark>).*(<mark class="add">(\b|_)</mark>(CAM[ ._-]?(Rip)?|DVD[ ._-]?(SCR(EENER)?)|HD[ ._-]?(CAM|SCR|TC|TS)|SCREENER|TELE(CINE|SYNC)|WORKPRINT)<mark class="add">(\b|_)</mark>)</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">escaped the ban</span>28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>28.Years.Later.2025.1080p.HDCAM.V1.x264-SyncUP <span class="src">· dotted, still banned</span></li>
+    <li><span class="tag ctl">control</span>The.Notebook.2004.1080p.BluRay.x264-CAMELOT <span class="src">· no false positive</span></li>
+  </ul>
+</section>
+
 <h3 class="grp">Missed matches before · scores that never applied</h3>
 
 <section class="card">
@@ -229,10 +247,10 @@
 
 <footer>
   <p>Every fix was validated two ways: a .NET-semantics regex matrix (same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 98-title corpus — before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 104-title corpus — before/after diffs must show
   only the intended rows — and Profilarr’s own parser-backed test runner
   (database&nbsp;2 in the audit container at <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–215. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–216. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
