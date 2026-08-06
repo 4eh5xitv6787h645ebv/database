@@ -1,0 +1,15 @@
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/bin/Release/net10.0/RegexMatrix
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/bin/Release/net10.0/RegexMatrix.deps.json
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/bin/Release/net10.0/RegexMatrix.runtimeconfig.json
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/bin/Release/net10.0/RegexMatrix.dll
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/bin/Release/net10.0/RegexMatrix.pdb
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.GeneratedMSBuildEditorConfig.editorconfig
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.AssemblyInfoInputs.cache
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.AssemblyInfo.cs
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.csproj.CoreCompileInputs.cache
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.sourcelink.json
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.dll
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/refint/RegexMatrix.dll
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.pdb
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/RegexMatrix.genruntimeconfig.cache
+/home/jake/work/dictionarry-fix-loop/database/audit/harness/RegexMatrix/obj/Release/net10.0/ref/RegexMatrix.dll

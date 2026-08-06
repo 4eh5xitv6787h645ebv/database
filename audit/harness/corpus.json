@@ -1,0 +1,712 @@
+{
+  "_comment": [
+    "Hand-labeled truth corpus for the Dictionarry HDR/DV cluster.",
+    "Pattern names refer to regular_expressions.name in the replayed DB (fetched live by build_input.py).",
+    "CF:* names are composites defined in build_input.py mirroring custom_format_conditions:",
+    "  CF:Dolby Vision (Without Fallback) = WF-regex AND NOT HDR AND NOT HDR10+",
+    "  CF:HDR                             = HDR AND NOT HDR10+",
+    "  CF:SDR(title-part)                 = NOT 'Basic HDR Formats' AND NOT 'Movies Anywhere'  (context: 2160p WEB-DL)",
+    "  CF:HDR10 (Missing)(title-part)     = NOT HDR AND NOT HDR10+ AND NOT SDR                 (context: 2160p BluRay/Remux, group not BHDStudio)",
+    "  CF:HDR (Missing)(title-part)       = 'Dolby Vision' AND NOT HDR AND NOT HDR10+ AND NOT SDR AND x265 (context: 1080p BluRay)",
+    "Titles are real-world naming conventions: Radarr QualityParserFixture.cs, TRaSH-Guides HDR CF cluster, and common P5/P7/P8 WEB-DL / hybrid remux forms."
+  ],
+  "cases": [
+    {
+      "title": "Movie.Name.2023.2160p.DSNP.WEB-DL.DDP5.1.DV.H.265-FLUX",
+      "note": "Disney+ profile-5 WEB-DL: DV with no fallback",
+      "expect": {
+        "Dolby Vision": true,
+        "Basic HDR Formats": true,
+        "HDR": false,
+        "HDR10+": false,
+        "SDR": false,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Movie.Name.2023.2160p.ATVP.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FLUX",
+      "note": "Apple TV+ dual-layer DV+HDR10 fallback",
+      "expect": {
+        "Dolby Vision": true,
+        "Basic HDR Formats": true,
+        "HDR": true,
+        "HDR10+": false,
+        "CF:Dolby Vision (Without Fallback)": false,
+        "CF:HDR": true
+      }
+    },
+    {
+      "title": "Movie.Name.2023.2160p.MA.WEB-DL.DDP5.1.DV.HDR10.H.265-CMRG",
+      "note": "Movies Anywhere hybrid with explicit HDR10 fallback",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "HDR10+": false,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.Name.2024.2160p.AMZN.WEB-DL.DDP5.1.HDR10+.DV.HEVC-CMRG",
+      "note": "hybrid combo, HDR10+ listed before DV",
+      "expect": {
+        "Dolby Vision": true,
+        "Basic HDR Formats": true,
+        "HDR": true,
+        "HDR10+": true,
+        "CF:Dolby Vision (Without Fallback)": false,
+        "CF:HDR": false
+      }
+    },
+    {
+      "title": "Movie.Name.2024.German.AC3D.DL.2160p.Hybrid.WEB.DV.HDR10Plus.HEVC-GROUP",
+      "note": "Radarr parser fixture (real German scene form), HDR10Plus spelling",
+      "expect": {
+        "Dolby Vision": true,
+        "Basic HDR Formats": true,
+        "HDR10+": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "The.Movie.2022.NORDiC.2160p.DV.HDR.WEB.H.265-NiDHUG",
+      "note": "Radarr parser fixture",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2021.2160p.UHD.BluRay.Remux.HEVC.DV.HDR10.DTS-HD.MA.5.1-FraMeSToR",
+      "note": "hybrid remux, P7 dual layer",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2011.2160p.UHD.BluRay.REMUX.HEVC.DTS-HD.MA.5.1-FraMeSToR",
+      "note": "untagged 2160p remux; HDR10 (Missing) should classify it as assumed-HDR10",
+      "expect": {
+        "Dolby Vision": false,
+        "HDR": false,
+        "SDR": false,
+        "CF:HDR10 (Missing)(title-part)": true
+      }
+    },
+    {
+      "title": "Movie.2019.2160p.HULU.WEB-DL.DDP5.1.DV.H.265-NTb",
+      "note": "Hulu WEB-DL: house rule treats HULU DV as having fallback (op 0 description)",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2018.2160p.WEB-DL.DoVi.DDP5.1.HEVC-GROUP",
+      "note": "DoVi spelling, bare P5",
+      "expect": {
+        "Dolby Vision": true,
+        "Basic HDR Formats": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Movie.2016.2160p.WEB-DL.Dolby.Vision.HEVC-GROUP",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Movie 2016 2160p WEB-DL Dolby Vision HEVC-GROUP",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Movie.2016.2160p.WEB-DL.DolbyVision.HEVC-GROUP",
+      "expect": {
+        "Dolby Vision": true
+      }
+    },
+    {
+      "title": "[DV] Movie 2023 2160p WEB-DL HEVC",
+      "note": "bracketed DV tag",
+      "expect": {
+        "Dolby Vision": true,
+        "Basic HDR Formats": true
+      }
+    },
+    {
+      "title": "movie.2023.2160p.web-dl.dv.hdr.h.265-group",
+      "note": "lowercase; Radarr matches case-insensitively",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2020.2160p.UHD.BluRay.HEVC.HDR10.DTS-HD.MA.5.1-GROUP",
+      "note": "plain HDR10 UHD BluRay",
+      "expect": {
+        "Dolby Vision": false,
+        "HDR": true,
+        "HDR10+": false,
+        "Basic HDR Formats": true,
+        "CF:HDR": true
+      }
+    },
+    {
+      "title": "Show.S01E01.2160p.HLG.WEB-DL.AAC2.0.H.265-GROUP",
+      "note": "HLG broadcast",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true,
+        "Dolby Vision": false,
+        "SDR": false
+      }
+    },
+    {
+      "title": "Movie.2020.2160p.WEBRip.PQ10.x265-GROUP",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true
+      }
+    },
+    {
+      "title": "Movie.2020.2160p.WEB-DL.PQ.HEVC-GROUP",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true
+      }
+    },
+    {
+      "title": "Movie.2022.2160p.WEB-DL.HDR10+.DDP5.1.HEVC-GROUP",
+      "expect": {
+        "HDR10+": true,
+        "Basic HDR Formats": true,
+        "CF:HDR": false
+      }
+    },
+    {
+      "title": "Movie.2022.2160p.WEB-DL.HDR10Plus.DDP5.1.HEVC-GROUP",
+      "expect": {
+        "HDR10+": true,
+        "Basic HDR Formats": true,
+        "CF:HDR": false
+      }
+    },
+    {
+      "title": "Movie.2020.2160p.MA.WEB-DL.SDR.H.265-GROUP",
+      "note": "Movies Anywhere SDR strip",
+      "expect": {
+        "SDR": true,
+        "Basic HDR Formats": false,
+        "HDR": false,
+        "CF:SDR(title-part)": false
+      }
+    },
+    {
+      "title": "Movie.2023.2160p.AMZN.WEB-DL.DDP5.1.SDR.H.265-GROUP",
+      "note": "non-MA SDR strip: SDR CF should fire (score 0 highlight)",
+      "expect": {
+        "SDR": true,
+        "CF:SDR(title-part)": true
+      }
+    },
+    {
+      "title": "Movie.2023.2160p.WEB-DL.DDP5.1.H.265-FLUX",
+      "note": "untagged 2160p WEB-DL: SDR CF fires as non-MA untagged release",
+      "expect": {
+        "Basic HDR Formats": false,
+        "SDR": false,
+        "CF:SDR(title-part)": true
+      }
+    },
+    {
+      "title": "Movie.2020.1080p.BluRay.x265.DV-GROUP",
+      "note": "1080p x265 encode carrying DV only: HDR (Missing) assumes untagged HDR base",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:HDR (Missing)(title-part)": true
+      }
+    },
+    {
+      "title": "Movie.Name.2019.1080p.HDRip.x264-GROUP",
+      "note": "HDRip is not HDR (op 206 guard)",
+      "expect": {
+        "Basic HDR Formats": false,
+        "HDR": false
+      }
+    },
+    {
+      "title": "Show.S01E01.720p.HDTV.x264-DVT",
+      "note": "group DVT must not read as DV",
+      "expect": {
+        "Dolby Vision": false,
+        "Basic HDR Formats": false
+      }
+    },
+    {
+      "title": "Movie.2007.HDV.1080i.MPEG2-GROUP",
+      "note": "HDV camera format",
+      "expect": {
+        "Dolby Vision": false,
+        "Basic HDR Formats": false,
+        "HDR": false
+      }
+    },
+    {
+      "title": "Movie.1999.DVDRip.XviD-GROUP",
+      "expect": {
+        "Dolby Vision": false,
+        "Basic HDR Formats": false
+      }
+    },
+    {
+      "title": "Movie.2005.PAL.MDVDR-SOMegRoUP",
+      "note": "Radarr parser fixture",
+      "expect": {
+        "Dolby Vision": false
+      }
+    },
+    {
+      "title": "Movie.Title.S02E13.1080p.BluRay.x264-AVCDVD",
+      "note": "Radarr parser fixture, group contains 'DVD'",
+      "expect": {
+        "Dolby Vision": false
+      }
+    },
+    {
+      "title": "MotoGP.2023.Round14.Race.1080p.HDTV.Dovizioso.Highlights-GROUP",
+      "note": "'Dovi' as prefix of a longer word",
+      "expect": {
+        "Dolby Vision": false
+      }
+    },
+    {
+      "title": "The.Vision.2015.1080p.WEB-DL.DD5.1.H.264-GROUP",
+      "note": "'Vision' without 'Dolby'; DD audio must not hit HDR cluster",
+      "expect": {
+        "Dolby Vision": false,
+        "Basic HDR Formats": false
+      }
+    },
+    {
+      "title": "Movie.2020.720p.WEB-DL.DD+5.1.H.264-GROUP",
+      "expect": {
+        "Dolby Vision": false,
+        "Basic HDR Formats": false
+      }
+    },
+    {
+      "title": "Movie.Name.2011.1080p.UHD.BluRay.DD5.1.HDR.x265-CtrlHD",
+      "note": "Radarr parser fixture: 1080p strip that keeps HDR",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true,
+        "CF:HDR (Missing)(title-part)": false
+      }
+    },
+    {
+      "title": "Movie.2020.2160p.BluRay.HDR10.x265-GROUP",
+      "note": "HDR10 alone must not read as HDR10+",
+      "expect": {
+        "HDR10+": false,
+        "HDR": true,
+        "CF:HDR10 (Missing)(title-part)": false
+      }
+    },
+    {
+      "title": "Movie.2023.2160p.WEB-DL.DV.HDR10+.HEVC-BiTOR",
+      "note": "banned fake-DV group; group regex evaluated on parsed group by arr, on title here",
+      "expect": {
+        "grp:BiTOR": true,
+        "Dolby Vision": true
+      }
+    },
+    {
+      "title": "Movie.2022.2160p.WEB-DL.HDR10.HEVC-SumVision",
+      "expect": {
+        "grp:SumVision": true
+      }
+    },
+    {
+      "title": "Movie.2022.2160p.WEB-DL.DV.HDR.HEVC-DepraveD",
+      "expect": {
+        "grp:DepraveD": true
+      }
+    },
+    {
+      "title": "Movie.2019.1080p.BluRay.x264-DEFLATE",
+      "note": "regression guard: unrelated group",
+      "expect": {
+        "grp:BiTOR": false,
+        "grp:DepraveD": false,
+        "grp:Flights": false,
+        "grp:SM737": false,
+        "grp:SumVision": false
+      }
+    },
+    {
+      "title": "Movie.2016.2160p.Blu-ray.x265.10bit.DV.TrueHD.7.1-GROUP",
+      "note": "P7 Blu-ray encode, hyphenated 'Blu-ray' spelling (Radarr fixtures use this spelling); has fallback by definition",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2019.2160p.COMPLETE.UHD.BLU-RAY.DV.HEVC-GROUP",
+      "note": "full-disc, hyphenated BLU-RAY",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2021.2160p.BDRemux.DV.HDR.HEVC-GROUP",
+      "note": "BDRemux contains REMUX token",
+      "expect": {
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2022.2160p.WEB-DL.DV.HLG.H.265-GROUP",
+      "note": "DV with HLG cross-compat stream: has non-DV playback path (old pre-op-200 guard covered this)",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2022.2160p.WEB-DL.DV.SDR.H.265-GROUP",
+      "note": "INTENDED BEHAVIOR: SDR base layer is not an HDR fallback (CF description: 'regular HDR Fallback'), so the WF ban applies; hypothetical naming - no verified wild sightings, banned by WF since op 0",
+      "expect": {
+        "Dolby Vision": true,
+        "SDR": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Movie.2023.2160p.WEBRip.DV.x265-GROUP",
+      "note": "WEBRip of a P5 stream: genuinely without fallback",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Show.S01.2160p.DSNP.WEB-DL.DDP5.1.DV.HDR.H.265-NOSiViD",
+      "note": "season pack folder name, dual-layer",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Movie.2016.1080p.BluRay.x264-HDR",
+      "note": "KNOWN LIMITATION kept as intended: release group literally named 'HDR' (title-level regex cannot distinguish); TRaSH \\bHDR(\\b|\\d) has the same behavior",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true
+      }
+    },
+    {
+      "title": "Unknown.Number.The.High.School.Catfish.2025.2160p.NF.WEB-DL.DDP5.1.DV.HDR.H.265-XEBEC",
+      "note": "REAL (hdencode): Netflix dual-layer",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Star.Trek.Strange.New.Worlds.S04E03.Human.Best.Friend.2160p.ATV.WEB-DL.DD5.1.DV.HEVC-NTb",
+      "note": "REAL (hdencode): DV-only WEB-DL (paired DV.HDR release exists separately) = P5 without fallback",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "X-Men.97.S02E08.DV.2160p.WEB.h265-GRACE",
+      "note": "REAL (hdencode): scene-style P5 DV-only tag order",
+      "expect": {
+        "Dolby Vision": true,
+        "Basic HDR Formats": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "ted.lasso.s04e01.dv.2160p.web.h265-cakes",
+      "note": "REAL (hdencode): lowercase scene naming",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Finding.Nemo.2003.2160p.UHD.BluRay.TrueHD.7.1.DV.x265-W4NK3R",
+      "note": "REAL (hdencode): disc-sourced DV without HDR token - BLURAY negation is what saves it",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Talladega.Nights.The.Ballad.of.Ricky.Bobby.2006.Unrated.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR",
+      "note": "REAL (hdencode): remux DV without HDR token",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "[BD]Dark.Blue.2002.2160p.AUS.UHD.Blu-ray.DV.HDR.HEVC.DTS-HD.MA.5.1-Tux",
+      "note": "REAL (hdencode): hyphenated 'Blu-ray' + DV full-disc naming - proves the Blu-ray+DV class exists in the wild",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Big.Chicken-A.Fast.Food.Conspiracy.2026.(2160p.NF.WEB-DL.Hybrid.H265.DV.HDR.DDP.Atmos.5.1.English-HONE)",
+      "note": "REAL (hdencode): HONE parenthesized hybrid form",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Evil.Dead.Burn.2026.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC",
+      "note": "REAL (hdencode): hybrid WEB-DL",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Armour.of.God.1986.International.Cut.UHD.BluRay.2160p.FLAC.2.0.DV.HEVC.REMUX-FraMeSToR",
+      "note": "REAL (hdencode): remux, DV only",
+      "expect": {
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "Antiviral.2012.2160p.UHD.BluRay.DTS-HD.MA.5.1.DV.HDR.x265-RandomBytes",
+      "note": "REAL (hdencode): UHD BluRay encode dual-tag",
+      "expect": {
+        "Dolby Vision": true,
+        "HDR": true,
+        "CF:Dolby Vision (Without Fallback)": false
+      }
+    },
+    {
+      "title": "A.Discovery.Of.Witches.S02E01.HLG.2160p.WEB.h265-BETTY",
+      "note": "REAL (srrdb): scene HLG broadcast rip",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true,
+        "Dolby Vision": false,
+        "SDR": false
+      }
+    },
+    {
+      "title": "A.Good.Girls.Guide.to.Murder.S01E01.GERMAN.DUBBED.DL.HLG.2160p.WEB.h265-TMSF",
+      "note": "REAL (srrdb): German DL HLG",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true
+      }
+    },
+    {
+      "title": "007.Road.To.A.Million.S01E01.HDR.2160p.WEB.H265-BIGCOX",
+      "note": "REAL (srrdb): bare HDR scene form",
+      "expect": {
+        "HDR": true,
+        "Basic HDR Formats": true,
+        "CF:HDR": true,
+        "Dolby Vision": false
+      }
+    },
+    {
+      "title": "007.Road.to.a.Million.S02E01.2160p.WEB.h265-GRACE",
+      "note": "REAL (srrdb): untagged web pair of the HDR release; non-MA untagged -> SDR CF highlights",
+      "expect": {
+        "Basic HDR Formats": false,
+        "SDR": false,
+        "CF:SDR(title-part)": true
+      }
+    },
+    {
+      "title": "007.Contra.Goldfinger.1964.LATiN.SPANiSH.MULTi.2160p.UHD.BluRay.x265-CEBRAY",
+      "note": "REAL (srrdb): untagged UHD BluRay encode; group ends in RAY (negation probe); HDR10 (Missing) assumes HDR10",
+      "expect": {
+        "Basic HDR Formats": false,
+        "Dolby Vision": false,
+        "CF:HDR10 (Missing)(title-part)": true
+      }
+    },
+    {
+      "title": "The.Da.Vinci.Code.2006.Theatrical.Cut.2160p.MA.WEB-DL.TrueHD.Atmos.7.1.SDR.H.265-TheFarm",
+      "note": "REAL (hdencode): 'Da.Vinci' letter-collision probe + MA SDR strip (Movies Anywhere excluded from SDR CF)",
+      "expect": {
+        "Dolby Vision": false,
+        "SDR": true,
+        "Movies Anywhere": true,
+        "CF:SDR(title-part)": false
+      }
+    },
+    {
+      "title": "Inception.2010.2160p.MA.WEB-DL.DTS-HD.MA.5.1.SDR.H.265-TheFarm",
+      "note": "REAL (hdencode): both MA service tag and DTS-HD.MA audio - exercises the dts-hd lookbehind",
+      "expect": {
+        "SDR": true,
+        "Movies Anywhere": true,
+        "CF:SDR(title-part)": false
+      }
+    },
+    {
+      "title": "Supergirl.2026.(2160p.YKW.WEB-DL.H265.SDR.DDP.Atmos.5.1.English-HONE)",
+      "note": "REAL (hdencode): YKW alt Movies Anywhere tag",
+      "expect": {
+        "SDR": true,
+        "Movies Anywhere": true,
+        "CF:SDR(title-part)": false
+      }
+    },
+    {
+      "title": "Force.of.Nature.2020.Extended.Cut.REPACK.UHD.BluRay.2160p.DTS-HD.MA.5.1.SDR.HEVC.REMUX-FraMeSToR",
+      "note": "REAL (hdencode): SDR remux - validates the SDR negation in HDR10 (Missing) with a real title; DTS-HD.MA must not read as Movies Anywhere",
+      "expect": {
+        "SDR": true,
+        "Movies Anywhere": false,
+        "CF:HDR10 (Missing)(title-part)": false
+      }
+    },
+    {
+      "title": "Cruel.Story.of.Youth.1960.2160p.UHD.Blu-ray.Remux.SDR.HEVC.FLAC.1.0-CiNEPHiLES",
+      "note": "REAL (hdencode): hyphenated Blu-ray remux, SDR master",
+      "expect": {
+        "SDR": true,
+        "Dolby Vision": false,
+        "CF:HDR10 (Missing)(title-part)": false
+      }
+    },
+    {
+      "title": "The.Elephant.Man.1980.SDR.2160p.UHD.BluRay.x265-4KDVS",
+      "note": "REAL (hdencode): 4KDVS group release - 'DV' letters inside group name must not match Dolby Vision",
+      "expect": {
+        "SDR": true,
+        "Dolby Vision": false,
+        "grp:4KDVS": true,
+        "CF:HDR10 (Missing)(title-part)": false
+      }
+    },
+    {
+      "title": "Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB",
+      "note": "REAL naming class (Russian trackers): joined BDRemux; must count as Remux and must NOT be Full Disc",
+      "expect": {
+        "Remux": true,
+        "CF:Full Disc(title-part)": false
+      }
+    },
+    {
+      "title": "Vengadores.Endgame.2019.2160p.UHDremux.HEVC.DTS-HD.MA.7.1-GRUPO",
+      "note": "REAL naming class (Spanish trackers): UHDremux",
+      "expect": {
+        "Remux": true
+      }
+    },
+    {
+      "title": "Movie.Name.2014.1080p.BDREMUX.AVC.DTS-HD.MA.5.1-LEGi0N",
+      "note": "joined BDREMUX; also the Banned Remux escape case",
+      "expect": {
+        "Remux": true,
+        "CF:Full Disc(title-part)": false
+      }
+    },
+    {
+      "title": "Movie.Name.2011.720p.DD.2.0.AVC.REMUX-FraMeSToR",
+      "note": "Radarr fixture control: plain REMUX still matches",
+      "expect": {
+        "Remux": true,
+        "CF:Full Disc(title-part)": false
+      }
+    },
+    {
+      "title": "Movie.2020.1080p.WEB-DL.x264-LazyRemux",
+      "note": "control: group name containing Remux must not match (no word boundary)",
+      "expect": {
+        "Remux": false
+      }
+    },
+    {
+      "title": "The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP",
+      "note": "English release, movie title contains 'German', dotted WEB.DL - must NOT read DL as Dual Language",
+      "expect": {
+        "German DL": false
+      }
+    },
+    {
+      "title": "A German Life 2016 720p WEB DL x264-GROUP",
+      "note": "space-separated WEB DL variant",
+      "expect": {
+        "German DL": false
+      }
+    },
+    {
+      "title": "The.German.Doctor.2013.1080p.WEB-DL.DD5.1.H264-GROUP",
+      "note": "control: hyphen spelling was already guarded",
+      "expect": {
+        "German DL": false
+      }
+    },
+    {
+      "title": "Der.Untergang.2004.German.DL.1080p.BluRay.x264-GROUP",
+      "note": "control: real dual-language tag must still match",
+      "expect": {
+        "German DL": true
+      }
+    },
+    {
+      "title": "Show.S01E01.German.DL.1080p.WEB-DL.h264-GROUP",
+      "note": "control: DL token present alongside WEB-DL",
+      "expect": {
+        "German DL": true
+      }
+    },
+    {
+      "title": "Movie.2005.PAL.DVDRip.XviD-GROUP",
+      "note": "KNOWN BUG left open (documented, not fixed): Full Disc's unguarded (?i)(...PAL...) tail matches PAL/NTSC DVDRips; fixing requires restructuring the alternation - maintainer judgment",
+      "expect": {
+        "CF:Full Disc(title-part)": true
+      }
+    },
+    {
+      "title": "Movie.2019.2160p.COMPLETE.UHD.BLURAY-GROUP",
+      "note": "control: genuine full disc still matches",
+      "expect": {
+        "CF:Full Disc(title-part)": true
+      }
+    },
+    {
+      "title": "Kingdom.S04E01.1080p.WEB-DL.E-AC-3.2.0.H.264-GRP",
+      "note": "KNOWN GAP left open (documented): canonical E-AC-3 matches neither Dolby Digital nor Dolby Digital + - audio-family fix needs maintainer decision",
+      "expect": {
+        "Dolby Digital": false,
+        "Dolby Digital +": false
+      }
+    }
+  ]
+}
