@@ -830,9 +830,10 @@
     },
     {
       "title": "28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP",
-      "note": "REAL (Prowlarr): underscore-separated HDCAM - was escaping the CAM ban (underscores defeat \\b)",
+      "note": "REAL (Prowlarr): underscore-separated HDCAM - was escaping the CAM ban (underscores defeat \\b); also underscore REPACK token (op 222)",
       "expect": {
-        "CAM": true
+        "CAM": true,
+        "Repack1": true
       }
     },
     {
@@ -1050,6 +1051,20 @@
       "note": "control: Apple TV in a movie title without WEB following stays unmatched",
       "expect": {
         "Apple TV+": false
+      }
+    },
+    {
+      "title": "Movie.2019.PROPER.1080p.BluRay.x264-GROUP",
+      "note": "control: dotted PROPER unchanged",
+      "expect": {
+        "Repack1": true
+      }
+    },
+    {
+      "title": "Movie.2019.Properly.Broken.1080p.WEB-DL-GRP",
+      "note": "control: 'Properly' must not read as PROPER",
+      "expect": {
+        "Repack1": false
       }
     }
   ]

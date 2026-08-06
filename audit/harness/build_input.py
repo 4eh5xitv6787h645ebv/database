@@ -12,7 +12,7 @@ db = sqlite3.connect(db_path)
 REGEX_NAMES = [
     "Dolby Vision", "Dolby Vision (Without Fallback)", "Basic HDR Formats",
     "HDR", "HDR10+", "SDR", "x265", "Movies Anywhere", "Remux", "UHD Bluray",
-    "iTunes", "Dolby Digital", "Dolby Digital +", "German DL", "Full Disc", "x264", "Special Edition", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED", "Movie Extras", "TV Extras",
+    "iTunes", "Dolby Digital", "Dolby Digital +", "German DL", "Full Disc", "x264", "Special Edition", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED", "Movie Extras", "TV Extras", "Repack1",
 ]
 GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS"]
 
