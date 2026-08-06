@@ -1164,7 +1164,14 @@
       "expect": {
         "Movie Extras": true,
         "TV Extras": false,
-        "CF:Extras": true
+        "CF:Extras": true,
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": true
       }
     },
     {
@@ -1183,6 +1190,162 @@
         "Movie Extras": false,
         "TV Extras": false,
         "CF:Extras": false
+      }
+    },
+    {
+      "title": "The_Shining_1980_Directors_Cut_1080p_BDRip_AAC_5_1_x265_10bit_MarkII",
+      "note": "REAL (Prowlarr): fully underscore-separated year and Directors Cut markers; a live +1000 Special Edition miss",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": true
+      }
+    },
+    {
+      "title": "Avatar.2009._edition-Theatrical_.1080p.BluRay.DDP.5.1.10bit.H.265-iVy",
+      "note": "REAL (Prowlarr): underscore-wrapped edition metadata; widening only the positive would falsely award Special Edition unless the Theatrical negation is hardened with it",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": true,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Aliens.1986.Special.Edition.Open.Matte.1080p.x265.DTS-HD.MA.5.1.Kira.SEV",
+      "note": "REAL (Prowlarr): dotted Special Edition plus Open Matte compound remains excluded",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": true,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Hancock.2008.{edition-Theatrical}.1080p.BluRay.TrueHD.7.1.Atmos.10bit.H.265-iVy",
+      "note": "REAL (Prowlarr): braces keep the generic Edition token out while the Theatrical negation remains visible",
+      "expect": {
+        "Special Edition": false,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": true,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Movie_2009_Special_Edition_IMAX_1080p_BluRay-GROUP",
+      "note": "constructed compound control from real underscore edition/IMAX naming classes: positive-only hardening must not bypass the IMAX negation",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": true,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Movie_2009_Special_Edition_Open_Matte_1080p_BluRay-GROUP",
+      "note": "constructed compound control from real underscore edition/Open Matte naming classes: positive-only hardening must not bypass the Open Matte negation",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": true,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Movie_2009_Special_Edition_Theatrical_1080p_BluRay-GROUP",
+      "note": "constructed compound control from real underscore edition/theatrical naming classes: positive-only hardening must not bypass the Theatrical negation",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": true,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Movie_2009_Special_Edition_Extended_Clip_1080p_BluRay-GROUP",
+      "note": "constructed compound control from real underscore edition/Extended Clip naming classes: positive-only hardening must not bypass the clip negation",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": true,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Movie_2009_Special_Edition_Sing_Along_1080p_BluRay-GROUP",
+      "note": "constructed compound control from real underscore edition/Sing Along naming classes: positive-only hardening must not bypass the Sing Along negation",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": true,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Movie_2009_NON_IMAX_Special_Edition_1080p_BluRay-GROUP",
+      "note": "constructed boundary control: NON_IMAX must retain the existing IMAX exclusion while the underscore Special Edition marker matches",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": true
+      }
+    },
+    {
+      "title": "Directors_Cut_Movie_2009_1080p_BluRay-GROUP",
+      "note": "constructed boundary control: an edition-like phrase before the year remains title text and must not score",
+      "expect": {
+        "Special Edition": false,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false
+      }
+    },
+    {
+      "title": "Movie.2009.Cut2.1080p.BluRay-GROUP",
+      "note": "constructed compatibility control: the existing numeric suffix alternative remains accepted",
+      "expect": {
+        "Special Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": true
       }
     }
   ]
