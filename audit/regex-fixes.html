@@ -105,21 +105,47 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Fifteen fixes on
+  <p class="sub">Sixteen fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>14</b>migrations (ops 211–224)</div>
-  <div class="stat"><b>16</b>regexes + 2 format wirings</div>
-  <div class="stat"><b>321 / 321</b>.NET matrix checks green</div>
-  <div class="stat"><b>142 / 142</b>Profilarr parser tests green</div>
+  <div class="stat"><b>15</b>migrations (ops 211–225)</div>
+  <div class="stat"><b>23</b>regex updates + 2 format wirings</div>
+  <div class="stat"><b>432 / 432</b>.NET matrix checks green</div>
+  <div class="stat"><b>160 / 160</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 225</span><h2>Special / Extended Edition</h2><span class="sev miss">missed +1000 edition scores</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 17:23 UTC · op 225</p>
+  <p class="why">Word boundaries treat underscores as word characters, so real underscore-heavy
+  names missed the scored Special and Extended Edition positives. Both formats score +1000 in
+  11 Radarr profiles and share five required negations. Widening only the positives was unsafe:
+  seven negation matches still failed and nine corpus checks became false-positive formats.
+  The two positives and all five guards therefore move to separator-aware boundaries together.</p>
+  <div class="diff">
+    <div class="pat before">Special   (?&lt;=\b[12]\d{3}\b).*\b(Cut|Directors|DC|Extended|Redux|Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(\b|\d)
+Extended  (?&lt;=\b[12]\d{3}\b).*\b(Extended)(\b|\d)
+Guards    \b-anchored IMAX · Open Matte · Theatrical · Extended Clip · Sing Along</div>
+    <div class="pat after"><mark class="add">Special   (?&lt;![^\W_])[12]\d{3}(?![^\W_]).*(?&lt;![^\W_])(?:Cut|Directors|DC|Extended|Redux|Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(?:(?![^\W_])|\d)
+Extended  (?&lt;![^\W_])[12]\d{3}(?![^\W_]).*(?&lt;![^\W_])(Extended)(?:(?![^\W_])|\d)
+Guards    separator-aware IMAX · Open Matte · Theatrical · Extended Clip · Sing Along</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes — and controls it preserves</p>
+  <ul class="rels">
+    <li><span class="tag miss">score fixed</span>Avatar_2009_Collectors_Edition_With_Bonus <span class="src">· bundled PassThePopcorn metadata · Special +1000</span></li>
+    <li><span class="tag miss">score fixed</span>The_Shining_1980_Directors_Cut_1080p_BDRip_AAC_5_1_x265_10bit_MarkII <span class="src">· Prowlarr · Special +1000</span></li>
+    <li><span class="tag miss">score fixed</span>A.Grand.Ole.Opry.Christmas.2025._edition-Extended_.1080p.WEBRip.DDP.2.0.10bit.H.265-iVy <span class="src">· Prowlarr · Extended +1000; also Special by existing design</span></li>
+    <li><span class="tag ctl">control</span>Avatar.2009._edition-Theatrical_.1080p.BluRay.DDP.5.1.10bit.H.265-iVy <span class="src">· Prowlarr · remains excluded from Special</span></li>
+    <li><span class="tag ctl">control</span>Aliens.1986.Special.Edition.Open.Matte.1080p.x265.DTS-HD.MA.5.1.Kira.SEV <span class="src">· Prowlarr · remains excluded from Special</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 224</span><h2>Extras / Bonus markers</h2><span class="sev ban">escaped a live hard ban</span><span class="ver both">bug in v1 + v2</span></div>
@@ -425,11 +451,11 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 
 <footer>
   <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 144-title corpus; before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 158-title corpus; before/after diffs must show
   only intended rows. Format wiring and representative CF behavior are additionally
-  covered by 142 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  covered by 160 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–224. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–225. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
