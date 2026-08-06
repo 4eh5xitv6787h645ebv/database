@@ -792,6 +792,37 @@
         "Dolby Digital +": false,
         "Dolby Digital": false
       }
+    },
+    {
+      "title": "Infinite.2021.2160p.WEB-DL.Paramount.Plus.Dolby.Vision.HEVC.E-AC-3.5.1-MZABI",
+      "note": "REAL (hdencode): dotted Paramount.Plus; also P5 DV + E-AC-3 cross-checks",
+      "expect": {
+        "Paramount+": true,
+        "Dolby Vision": true,
+        "Dolby Digital +": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "Movie (2023) (2160p Paramount Plus WEB-DL H265 DDP 5.1 English - HONE)",
+      "note": "control: HONE parenthesized space form already worked",
+      "expect": {
+        "Paramount+": true
+      }
+    },
+    {
+      "title": "Movie.2023.2160p.PMTP.WEB-DL.DDP5.1.H.265-GROUP",
+      "note": "control: PMTP tag",
+      "expect": {
+        "Paramount+": true
+      }
+    },
+    {
+      "title": "Paramount.Pictures.90th.Anniversary.Collection.1080p.BluRay.x264-GROUP",
+      "note": "control: 'Paramount' without Plus must not match the service",
+      "expect": {
+        "Paramount+": false
+      }
     }
   ]
 }
