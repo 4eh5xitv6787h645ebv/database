@@ -1288,12 +1288,14 @@
       "note": "constructed compound control from real underscore edition/Extended Clip naming classes: positive-only hardening must not bypass the clip negation",
       "expect": {
         "Special Edition": true,
+        "Extended Edition": true,
         "IMAX": false,
         "Open Matte": false,
         "Theatrical Edition": false,
         "Extended Clip": true,
         "Sing Along": false,
-        "CF:Special Edition": false
+        "CF:Special Edition": false,
+        "CF:Extended Edition": false
       }
     },
     {
@@ -1346,6 +1348,36 @@
         "Extended Clip": false,
         "Sing Along": false,
         "CF:Special Edition": true
+      }
+    },
+    {
+      "title": "A.Grand.Ole.Opry.Christmas.2025._edition-Extended_.1080p.WEBRip.DDP.2.0.10bit.H.265-iVy",
+      "note": "REAL (Prowlarr): underscore-wrapped Extended edition metadata misses both +1000 edition formats under the old word boundaries",
+      "expect": {
+        "Special Edition": true,
+        "Extended Edition": true,
+        "IMAX": false,
+        "Open Matte": false,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": true,
+        "CF:Extended Edition": true
+      }
+    },
+    {
+      "title": "Movie_2009_Extended_Edition_Open_Matte_1080p_BluRay-GROUP",
+      "note": "constructed compound control from real underscore Extended Edition/Open Matte naming classes: widening either positive must not bypass the shared Open Matte negation",
+      "expect": {
+        "Special Edition": true,
+        "Extended Edition": true,
+        "IMAX": false,
+        "Open Matte": true,
+        "Theatrical Edition": false,
+        "Extended Clip": false,
+        "Sing Along": false,
+        "CF:Special Edition": false,
+        "CF:Extended Edition": false
       }
     }
   ]
