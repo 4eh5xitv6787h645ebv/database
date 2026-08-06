@@ -4,7 +4,7 @@
 Only labels that correspond 1:1 to a custom format's full/title-level semantics are
 exported (regex-level labels that differ from CF semantics are harness-only).
 """
-import json, sys
+import json, re, sys
 
 corpus_path, out_path = sys.argv[1], sys.argv[2]
 
@@ -35,7 +35,11 @@ lines = [
 n = 0
 for case in corpus["cases"]:
     title = case["title"]
-    kind = "series" if ".S01" in title or "S01E" in title else "movie"
+    kind = (
+        "series"
+        if re.search(r"(?i)(?<![^\W_])S\d{1,4}(?:E\d{1,4})?(?![^\W_])", title)
+        else "movie"
+    )
     note = case.get("note", "HDR/DV audit corpus")
     for label, cf in LABEL_TO_CF.items():
         if label in case["expect"]:
