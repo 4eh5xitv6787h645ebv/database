@@ -1,8 +1,8 @@
 # Audit-and-fix loop ledger
 
 started_at: 2026-08-06T15:35:00Z
-consecutive_dry: 1
-iteration: 11
+consecutive_dry: 0
+iteration: 12
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
@@ -24,6 +24,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **Extras CF: both conditions required=1 made a LIVE -999999 ban unmatchable** → op 218 (both optional). Real escapes: `American.Reunion.2012.EXTRAS.1080p.BluRay.H264-RMXTRAS`, `Avatar.Fire.and.Ash.2025.EXTRAS...-RiSEHD` (movie form, no S##), `Boardwalk.Empire.S01.EXTRAS.1080p.AV1.10bit-MeGusta` (TV form, no year). Verified 137/137 via profilarr parser. Control: `The.Extra.Man.2010` title stays unmatched (year anchor). **Additionally verified on REAL arr instances** (throwaway lscr Radarr + Sonarr, /api/v3/parse with both wirings side by side): upstream both-required wiring matches NOTHING on the real movie/TV extras titles in either arr; op 218 wiring matches all of them; both-markers `11.22.63.2016...S01.+.Extras` matches under both (the only shape upstream ever caught); normal-episode/title controls match neither. IMPORTANT context: the user's live Sonarr "works" because their production profilarr DB is v1, whose Extras CF is a SINGLE condition (`git show c156dfa:custom_formats/Extras.yml` — one required release_title condition) — the split-into-two-required bug was introduced by the v2 translation. Same mechanism validates op 217 (DUBBED).
 - **Full Disc: unguarded tail alternative banned ordinary DVDRips** → op 219 (tail gets its own rip/remux guard incl. joined BDRemux, all tokens \b-bounded; codecs deliberately excluded from guard — UHD discs are HEVC, DVD9 re-encodes rescued by Not-x265). Victims fixed: PAL/NTSC DVDRip XviD class, `Palm.Springs...AV1` (PAL-in-Palm). Real discs verified still matching: `1945.2017.COMPLETE.BLURAY-CiNEMATiC`, `Andor.S01D01.COMPLETE.UHD.BLURAY-OPTiCAL-4P`, `1991...NTSC.DVD9.MDVDR-OMA`, `A.Secret.2007.DVD9.FR.Untouched.PRoDJiDisc` (Prowlarr). Long-standing OPEN item CLOSED.
 - **Dolby Digital: plain spelled-out form unmatched** → op 220 (`Dolby[ ._-]?Digital` with Plus-guard). Real titles: `Criminal.Minds.S01E03.720p.WEB-DL.Dolby.Digital.5.1.h264-Obfuscated` (Prowlarr, usenet obfuscated-repost class), Jawan-style NF naming. v1 also abbreviation-only (`\bDD[^a-z+]|(?<!e)ac3`) → bug in BOTH. DD-family OPEN item now fully closed (op 214 + op 220).
+- **Apple TV+: spelled-out form space-only + broken trailing anchor after "+."** → op 221 (separator class + WEB guard, Max/iTunes style; same class as op 215 Paramount+). Real titles: `Drops.of.God.S01E01...2160p.Apple.TV+.WEB-DL...-BlackTV`, plus-less `...Apple.TV.WEB-DL...` (Prowlarr "Apple TV 2160p"). v1 identical → bug in BOTH. Control: `Apple.TV.Repair.Man...BluRay` unmatched.
 - **German DL: guard `(?<!WEB-)` missed WEB.DL / WEB DL spellings** → op 212 (`(?<!WEB[-_. ])`). Titles: `The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP`, `A German Life 2016 720p WEB DL x264-GROUP` (−999999 in 11 profiles). Controls: hyphen spelling still guarded; real `German.DL` still matches.
 
 ### FALSE-ALARM (withdrawn — do not re-propose)
@@ -46,8 +47,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **Full Disc structural flaw**: trailing `(?i)(DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2|…)` alternative sits OUTSIDE the `^(?!…)` guard, largely unanchored. Demonstrated CF-level FPs surviving source-condition rescue: `Movie.2005.PAL.DVDRip.XviD-GROUP`, `Movie.1988.NTSC.DVDRip.XviD-GROUP` (DVD source not excluded). CANNOT simply move tail under guard (DVD9/PAL discs must survive the `DVD` guard token). A safe fix = \b-bound the loose tokens + add a scoped rip-exclusion to the tail only; needs a full-disc-titles corpus before attempting.
 - ~~Dolby Digital (plain, spelled-out)~~ FIXED by op 220 (real-title evidence found: Prowlarr "WEB-DL Dolby Digital 5.1").
 - **Orphan regexes** (zero conditions reference them; fix-or-delete before wiring): `Non Retail HDR Formats` (DV branch reproduces the pre-fix WF bug — flags retail DV.HDR/DV.HDR10Plus/REMUX hybrids), `Non Retail HDR Groups` (missing parens: `(?<=^|[\s.-])VECTOR|BiTOR|…|Flights\b` — middle six names match as bare substrings, e.g. BiTOR inside "Inhibitor"), `HDR10 (Missing Groups)`, `TrueHD (Missing Groups)`.
-- **Apple TV+ literal `Apple TV\+` is space-only** (same class as the fixed Paramount+) — no real dotted "Apple.TV+" title found yet; fix held for evidence.
-- **Service short-tags without a web guard**: `iQIYI` = `\b(IQIYI|IQ)\b` and `Youku` = `\b(Youku|YK)\b` have no WEB lookahead (unlike Max/iTunes/MA) — hypothesis: FP on titles like "I.Q.1994" variants spelled "IQ"; needs a real colliding title before acting.
+- ~~IQ/YK unguarded short tags~~ CLEARED: real usage shows bare `IQ.WEB-DL` is legitimate iQIYI service naming (`Hail.the.Judge.1994.2160p.IQ.WEB-DL.HEVC.AAC-ZmWeb`), and the film "I.Q." is always dotted (no `\bIQ\b` match). No realistic collision found; no guard needed.
 - **Movie DUBBED year-anchor misses year-less German scene naming** (`Verblendung.German.DL.AC3.Dubbed.1080p.BluRay.AVC.REMUX.Repack-LameHD`, `Apparition.German.AC3.Dubbed.1080p...-Pleaders` — real, Prowlarr). Zero live impact: DUBBED CF unscored, and DL-carrying titles are already banned by German DL. Fix only when DUBBED gets scored; corpus pins current behavior.
 - **No underscore generalization for DUBBED/edition regexes yet** — Prowlarr "German Dubbed 1080p" showed no real underscore release names (only rar-part filenames). Op 216's (\b|_) hardening stays CAM-only until evidence appears.
 - `2160p Quality Tier 6` description says "Tier 5" (cosmetic copy-paste).
@@ -70,6 +70,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 
 - Prowlarr search "WEB-DL Dolby Digital 5.1" (real plain spelled-out class found) (2026-08-06)
 
+- Prowlarr search "IQ 1994" (collision hypothesis cleared), "Apple TV 2160p" (real dotted Apple.TV+ titles found) (2026-08-07)
+
 ## Searched sources/queries (exhausted — don't repeat)
 - Prowlarr search "Apocalypse Now Redux" (2026-08-06, 85 titles)
 - api.srrdb.com/v1/search/group:redux (EMPTY — no such group)
@@ -81,6 +83,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 
 ## Iteration log
 - **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: rotation nearly exhausted — remaining: tier-group parse sanity (D-Z0N3/.QxR-style suffixes), orphan-regex cleanup decision, Apple TV+ space-only literal (needs evidence), IQ/YK unguarded short tags (needs evidence). Expect dry iterations ahead.
+- **Iteration 11 (2026-08-07)**: areas = the two evidence-gated hypotheses. Result: **1 new bug fixed (op 221, Apple TV+ separators)**; IQ/YK hypothesis CLEARED with counter-evidence. Gate 296/296, 2 intended flips. consecutive_dry 1 → 0.
 - **Iteration 10 (2026-08-06)**: area = tier-group parse sanity. Result: **DRY** — no unescaped metachars in group patterns; D-Z0N3/EbP parse+match verified; QxR dual-CF wiring adjudicated INTENDED (complementary pair); dash-less member-suffix gap logged OPEN (policy). Page restructured chronological+timestamps (user request). consecutive_dry 0 → 1.
 - **Iteration 9 (2026-08-06)**: area = OPEN item DD plain spelled-out. Result: **1 new bug fixed (op 220)** — gate 291/291, 2 intended flips, Plus-guard verified by DDP rows staying put. consecutive_dry stays 0.
 - **Iteration 8 (2026-08-06)**: area = OPEN item Full Disc tail. Result: **1 new bug fixed (op 219)** — gate 287/287 with exactly 6 intended row flips; container 133/133 (Full Disc tests incl. DVD9-HEVC rescue case). Searched: prowlarr "COMPLETE BLURAY", "DVD9". consecutive_dry reset 1 → 0.
