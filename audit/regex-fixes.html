@@ -101,17 +101,17 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Six regular expressions changed on
+  <p class="sub">Seven fixes (six regexes + one format wiring) on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>6</b>migrations (ops 211–216)</div>
-  <div class="stat"><b>7</b>regexes changed</div>
-  <div class="stat"><b>242 / 242</b>.NET matrix checks green</div>
-  <div class="stat"><b>120 / 120</b>Profilarr parser tests green</div>
+  <div class="stat"><b>7</b>migrations (ops 211–217)</div>
+  <div class="stat"><b>7</b>regexes + 1 format wiring</div>
+  <div class="stat"><b>256 / 256</b>.NET matrix checks green</div>
+  <div class="stat"><b>132 / 132</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
@@ -245,12 +245,32 @@
   </ul>
 </section>
 
+<h3 class="grp">Format wiring · conditions that could never fire</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 217</span><h2>DUBBED (format wiring)</h2><span class="sev miss">format could never match</span></div>
+  <p class="why">Not a regex bug: the format required its movie condition (year-anchored)
+  AND its series condition (SxxExx-anchored) at the same time — impossible for any real
+  title. Both are now optional, which Radarr treats as either-or. The format is not yet
+  scored in any profile, so this changes no current scoring; it makes the format usable.</p>
+  <div class="diff">
+    <div class="pat before">Movie DUBBED <mark class="del">required</mark> · TV DUBBED <mark class="del">required</mark>&nbsp;&nbsp;(AND — unsatisfiable)</div>
+    <div class="pat after">Movie DUBBED <mark class="add">optional</mark> · TV DUBBED <mark class="add">optional</mark>&nbsp;&nbsp;(OR — either form fires)</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">never matched</span>Arac.Attack.Angriff.der.achtbeinigen.Monster.2002.GERMAN.DUBBED.DL.1080P.BLURAY.X264-WATCHABLE <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">never matched</span>2.Broke.Girls.S01E22.And.The.Big.Buttercream.Breakthrough.GERMAN.DL.DUBBED.1080p.BluRay.x264-TVP <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>Apparition.German.AC3.Dubbed.1080p.BluRay.Merry.Xmas.x264-Pleaders <span class="src">· year-less, stays unmatched (documented OPEN)</span></li>
+  </ul>
+</section>
+
 <footer>
   <p>Every fix was validated two ways: a .NET-semantics regex matrix (same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 104-title corpus — before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 108-title corpus — before/after diffs must show
   only the intended rows — and Profilarr’s own parser-backed test runner
   (database&nbsp;2 in the audit container at <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–216. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–217. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
