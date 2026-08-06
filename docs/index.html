@@ -105,21 +105,51 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Twenty fixes on
+  <p class="sub">Twenty-one fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>19</b>migrations (ops 211–229)</div>
-  <div class="stat"><b>27</b>regex updates + 4 format-graph fixes</div>
+  <div class="stat"><b>20</b>migrations (ops 211–230)</div>
+  <div class="stat"><b>27</b>regex updates + 5 format-graph fixes</div>
   <div class="stat"><b>588 / 588</b>.NET matrix checks green</div>
-  <div class="stat"><b>216 / 216</b>Profilarr parser tests green</div>
+  <div class="stat"><b>221 / 221</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 230</span><h2>Remux detector union</h2><span class="sev ban">escaped a −999999 Remux ban</span><span class="ver v2">v2 only · v1 kept separate detectors</span></div>
+  <p class="when">Changed 2026-08-06 23:10 UTC · op 230</p>
+  <p class="why">V2 ops 9–11 collapsed the title, Radarr quality-modifier, and
+  Sonarr <code>bluray_raw</code> Remux detectors into one custom format. Arr ANDs
+  different condition implementation types, so Radarr effectively required both a
+  Remux title token and a parsed Remux modifier; title-only and parser-only releases
+  both escaped the hard ban. Sonarr ignored the optional raw-source sibling beside its
+  required source condition. OP 230 restores the two app-native fallback formats,
+  negates the shared title on each fallback so the branches cannot double-score, and
+  applies <code>Not DVD</code> to every branch. The same −999999 policy now covers the
+  intended union in the same nine profiles while DVD Remux eligibility is preserved.</p>
+  <div class="diff">
+    <div class="pat before">Radarr  title <mark class="del">AND</mark> Not DVD <mark class="del">AND</mark> modifier:remux
+Sonarr  title AND Not DVD  <mark class="del">(bluray_raw fallback ignored)</mark></div>
+    <div class="pat after"><mark class="add">Base    title AND Not DVD
+Radarr  OR modifier:remux AND NOT title AND Not DVD
+Sonarr  OR source:bluray_raw AND NOT title AND Not DVD</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes — and controls it preserves</p>
+  <ul class="rels">
+    <li><span class="tag ban">escaped the ban</span>AVATAR 2009 4K REMASTER REMUX [RoB] <span class="src">· bundled TorrentLeech · native Radarr modifier None · title arm restored</span></li>
+    <li><span class="tag ban">escaped the ban</span>The Dark Knight (2008) UHD MKVRemux 2160p DTS-HD NL <span class="src">· bundled TorrentLeech · native Radarr Remux-2160p · parser arm restored</span></li>
+    <li><span class="tag ban">escaped the ban</span>A.White.Spot.in.the.Back.of.the.Head.1979.720p.BluRay.Remux.DD.2.0-PTP <span class="src">· real Prowlarr · native Radarr 720p modifier None</span></li>
+    <li><span class="tag ban">escaped the ban</span>Ricky.Bobby.Koenig.Der.Rennfahrer.2006.THEATRICAL.GERMAN.DL.1080P.BLURAY.AVC-UNDERTAKERS <span class="src">· real Prowlarr · native Radarr parser-only Remux</span></li>
+    <li><span class="tag ctl">one score</span>Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB <span class="src">· title + parser classifier · remains exactly one −999999</span></li>
+    <li><span class="tag ctl">DVD control</span>Scary.Godmother.Halloween.Spooktakular.2003.720p.DVD.Remux.MPEG2.DD.2.0 <span class="src">· remains outside the Remux ban</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 229</span><h2>EA release-group tier overlap</h2><span class="sev miss">stacked +283,000 tier score</span><span class="ver both">bug in v1 + v2</span></div>
@@ -549,10 +579,10 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
   <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
   IgnoreCase flag Radarr/Sonarr use) over a 181-title corpus; before/after diffs must show
   only intended rows. Format wiring and representative CF behavior are additionally
-  covered by 216 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  covered by 221 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
   The regex loop stopped after five consecutive dry iterations; the custom-format loop is
-  active. This page reflects ops 211–229. Full reasoning lives in the
+  active. This page reflects ops 211–230. Full reasoning lives in the
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">regex ledger</a>
   and <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/CUSTOM-FORMAT-AUDIT-LEDGER.md">custom-format ledger</a>.
   Generated 2026-08-06.</p>
