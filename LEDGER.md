@@ -1,8 +1,12 @@
 # Audit-and-fix loop ledger
 
 started_at: 2026-08-06T15:35:00Z
+stopped_at: 2026-08-06T19:07:48Z
+status: stopped
+stop_reason: five consecutive dry iterations (18–22)
 consecutive_dry: 5
 iteration: 23
+iterations_completed: 22
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
@@ -12,6 +16,15 @@ MANDATORY end of EVERY iteration that lands an op: copy the updated audit/regex-
 ARTIFACT STATUS after iteration 17: scratchpad source is regenerated through op 227, but the current Claude runtime has Artifact disabled. User explicitly said they will republish it later; do not block the loop on this. GitHub Pages is the current published report target.
 Profilarr container :6869 now links THE FORK directly as database 2 "Jakes Fork (fix-regex-audit)" (auto_pull on, 60min sync) — loop pushes appear in its UI (/databases/2/changes, ops list, CF Testing pages) after sync; file-injection into db 1's clone is no longer needed (iteration step 7 = just push, then trigger/await pull).
 Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec prowlarr sh -c 'grep -oE "<ApiKey>[^<]*</ApiKey>" /config/config.xml'`. Never download content; names only. If names can't settle a hypothesis → NEEDS-MANUAL-VERIFICATION.
+
+## Final loop summary
+
+- Stop rule reached after iterations 18–22 were consecutively dry; no time-limit stop was needed.
+- Delivered **18 documented fixes in 17 append-only migrations**, ops 211–227, without modifying the fork's live v1 `stable`/`custom` branches or any upstream repository.
+- Final authoritative gates remain **588/588 exact .NET matrix checks** and **206/206 Profilarr parser tests**, with the 181-title labeled corpus, 1,734-row bundled-release sweeps, fresh metadata unions, and optional 632-item local-media controls used where relevant.
+- The final report is published from both `audit/regex-fixes.html` and `docs/index.html`; the two files are byte-identical at SHA-256 `833ac42aa31dd3d57be90a610f92bdadbb925e4f68d687c785b1d955fe0fec3d`.
+- `/home/jake/media-tests-video-files/` is documented as an optional local-only test source in `audit/LOCAL-TEST-ASSETS.md`; repository tests do not depend on it.
+- Remaining non-fixes are explicitly classified below as intended, inert, ambiguous, or maintainer-policy decisions. Resume only with new evidence, a new consumer/score path, or an explicit policy choice.
 
 ## Settled verdicts (do NOT re-test)
 
