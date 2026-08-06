@@ -1096,6 +1096,55 @@
       }
     },
     {
+      "title": "Inception 3D BluRay 1080p Half SBS DTS-TehDiNGO",
+      "note": "REAL (bundled test release, TorrentLeech): yearless but unambiguous 3D plus Half-SBS packing; op 174's global year gate is a false negative",
+      "expect": {
+        "3D": true
+      }
+    },
+    {
+      "title": "Free.Guy.3D_2021.Full-SBS.x-JFC_4k_hevc",
+      "note": "REAL (Prowlarr): title-side 3D before the year plus an unambiguous post-year Full-SBS packing tag",
+      "expect": {
+        "3D": true
+      }
+    },
+    {
+      "title": "Step.Up.3D.2010.BluRay.1080p.DTS-HD.MA.7.1.AVC.3D-Left-Eye.REMUX-FraMeSToR",
+      "note": "REAL (Prowlarr): movie title contains pre-year 3D, but the release also has an explicit post-year 3D tag",
+      "expect": {
+        "3D": true
+      }
+    },
+    {
+      "title": "Jaws.3D.1983.1080p.HMAX.WEB.DL.DD2.0.x264.DUAL.Yatogam1",
+      "note": "REAL (Prowlarr): 3D is only part of the movie title before the year; ordinary WEB-DL must remain unmatched",
+      "expect": {
+        "3D": false
+      }
+    },
+    {
+      "title": "The.Dark.Knight.2008.INTERNAL.UHD.DYNAMIC.HDR-X.DTS-HD.MA.5.1-TEKNO3D",
+      "note": "REAL (bundled test release, TorrentLeech): banned group TEKNO3D is not a stereoscopic marker",
+      "expect": {
+        "3D": false
+      }
+    },
+    {
+      "title": "Hikari.no.Ou.S02.2024.1080p.friDay.WEB-DL.H.264.AAC-ADWeb",
+      "note": "REAL (Prowlarr): Ou is part of the title before the year, not an Over-Under packing marker",
+      "expect": {
+        "3D": false
+      }
+    },
+    {
+      "title": "SBS.Courtside.2019.12.07.1080p.HDTV.x264-WiNNiNG",
+      "note": "REAL (Prowlarr): SBS is part of the program title before the year, not stereoscopic packing",
+      "expect": {
+        "3D": false
+      }
+    },
+    {
       "title": "Movie.2019.PROPER.1080p.BluRay.x264-GROUP",
       "note": "control: dotted PROPER unchanged",
       "expect": {
