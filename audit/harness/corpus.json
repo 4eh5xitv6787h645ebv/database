@@ -903,6 +903,49 @@
         "CF:DUBBED": false,
         "German DL": false
       }
+    },
+    {
+      "title": "American.Reunion.2012.EXTRAS.1080p.BluRay.H264-RMXTRAS",
+      "note": "REAL (Prowlarr): movie-form extras (RMXTRAS, dedicated extras group); was escaping the -999999 ban until op 218",
+      "expect": {
+        "Movie Extras": true,
+        "TV Extras": false,
+        "CF:Extras": true
+      }
+    },
+    {
+      "title": "Avatar.Fire.and.Ash.2025.EXTRAS.1080p.BluRay.H264-RiSEHD",
+      "note": "REAL (Prowlarr): movie-form extras",
+      "expect": {
+        "Movie Extras": true,
+        "CF:Extras": true
+      }
+    },
+    {
+      "title": "Boardwalk.Empire.S01.EXTRAS.1080p.AV1.10bit-MeGusta",
+      "note": "REAL (Prowlarr): TV-form extras pack without year; was escaping the ban until op 218",
+      "expect": {
+        "Movie Extras": false,
+        "TV Extras": true,
+        "CF:Extras": true
+      }
+    },
+    {
+      "title": "11.22.63.2016.Season.1.S01.+.Extras.1080p.BluRay.x265.HEVC.10bit.AAC.5.1.Silence.QxR",
+      "note": "REAL (Prowlarr): both markers present - the only shape the broken wiring caught (control)",
+      "expect": {
+        "Movie Extras": true,
+        "TV Extras": true,
+        "CF:Extras": true
+      }
+    },
+    {
+      "title": "The.Extra.Man.2010.1080p.BluRay.x264-GROUP",
+      "note": "control: 'Extra' in the movie title sits BEFORE the year; the year anchor keeps it unmatched",
+      "expect": {
+        "Movie Extras": false,
+        "CF:Extras": false
+      }
     }
   ]
 }

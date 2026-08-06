@@ -12,7 +12,7 @@ db = sqlite3.connect(db_path)
 REGEX_NAMES = [
     "Dolby Vision", "Dolby Vision (Without Fallback)", "Basic HDR Formats",
     "HDR", "HDR10+", "SDR", "x265", "Movies Anywhere", "Remux", "UHD Bluray",
-    "iTunes", "Dolby Digital", "Dolby Digital +", "German DL", "Full Disc", "x264", "Special Edition", "Paramount+", "CAM", "Movie DUBBED", "TV DUBBED",
+    "iTunes", "Dolby Digital", "Dolby Digital +", "German DL", "Full Disc", "x264", "Special Edition", "Paramount+", "CAM", "Movie DUBBED", "TV DUBBED", "Movie Extras", "TV Extras",
 ]
 GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS"]
 
@@ -41,6 +41,7 @@ composites = [
     {"name": "CF:Full Disc(title-part)",
      "all": ["Full Disc"], "none": ["Remux", "x264", "x265"]},
     {"name": "CF:DUBBED", "any": ["Movie DUBBED", "TV DUBBED"]},
+    {"name": "CF:Extras", "any": ["Movie Extras", "TV Extras"]},
 ]
 
 corpus = json.load(open(corpus_path))

@@ -20,6 +20,7 @@ LABEL_TO_CF = {
     "Remux": "Remux",
     "German DL": "German DL",
     "CF:DUBBED": "DUBBED",
+    "CF:Extras": "Extras",
 }
 
 def esc(s: str) -> str:
