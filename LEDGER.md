@@ -2,7 +2,7 @@
 
 started_at: 2026-08-06T15:35:00Z
 consecutive_dry: 0
-iteration: 2
+iteration: 3
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
@@ -15,6 +15,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **Dolby Vision (Without Fallback): BLURAY negation missed Blu-ray/BLU-RAY spellings** → op 211 (`BLU[-]?RAY`, matching house precedent PR #31/e39014f). Titles: `Movie.2016.2160p.Blu-ray.x265.10bit.DV.TrueHD.7.1-GROUP`, `Movie.2019.2160p.COMPLETE.UHD.BLU-RAY.DV.HEVC-GROUP`; class proven real by `[BD]Dark.Blue.2002.2160p.AUS.UHD.Blu-ray.DV.HDR.HEVC.DTS-HD.MA.5.1-Tux` (hdencode).
 - **Remux: `\b(Remux)\b` missed joined BDRemux/BDREMUX/UHDremux** → op 212 (`\b((BD|UHD)[-_. ]?)?Remux\b`, Radarr-parser-aligned). Feeds 49 CFs; worst compound was Full Disc −999999 on `Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB`. Control: `-LazyRemux` group still unmatched.
 - **Special Edition: token list missing `Redux`** → op 213 (post-year-anchored `|Redux`). Real titles: `Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD`, `…REDUX.2160p.UHD.BLURAY.REMUX…-EXTREME` (Prowlarr metadata). No group named REDUX (srrdb group search empty) → no new FP surface. Note: Radarr's EditionRegex does NOT know Redux either — evidence is real-title based. Pre-year "Apocalypse Now Redux (1979)" intentionally unmatched (year-lookbehind design, same as all tokens).
+- **Dolby Digital +: missed canonical `E-AC-3` and spelled-out `Dolby.Digital.Plus`** → op 214 (`e[-_. ]?ac[-_. ]?3` + `Dolby[ ._-]?Digital[ ._-]?(P(lus)?\b|\+)`). Real titles: `Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS`, `The.Browns.S01.1080p.WEB-DL.E-AC-3.H.264-BTN` (hdencode), `Agent.Elvis...NF.WEBRip.Dolby.Digital.Plus.with.Dolby.Atmos...-iVy`, `Black.Widow.2021...-CAPTCHA` (Prowlarr). DD's `(?<!e-?)` guard keeps these out of plain DD. Control: `Dolby.Atmos` alone stays unmatched.
 - **German DL: guard `(?<!WEB-)` missed WEB.DL / WEB DL spellings** → op 212 (`(?<!WEB[-_. ])`). Titles: `The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP`, `A German Life 2016 720p WEB DL x264-GROUP` (−999999 in 11 profiles). Controls: hyphen spelling still guarded; real `German.DL` still matches.
 
 ### FALSE-ALARM (withdrawn — do not re-propose)
@@ -31,7 +32,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 
 ### OPEN (documented, not fixed — needs maintainer-grade judgment or better evidence)
 - **Full Disc structural flaw**: trailing `(?i)(DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2|…)` alternative sits OUTSIDE the `^(?!…)` guard, largely unanchored. Demonstrated CF-level FPs surviving source-condition rescue: `Movie.2005.PAL.DVDRip.XviD-GROUP`, `Movie.1988.NTSC.DVDRip.XviD-GROUP` (DVD source not excluded). CANNOT simply move tail under guard (DVD9/PAL discs must survive the `DVD` guard token). A safe fix = \b-bound the loose tokens + add a scoped rip-exclusion to the tail only; needs a full-disc-titles corpus before attempting.
-- **Dolby Digital family**: spelled-out `Dolby.Digital` (Jawan-style Indian WEB naming) matches neither DD nor DD+; canonical `E-AC-3` matches neither (`e[-_. ]?ac3` lacks `ac[-_. ]?3`). False negatives (score 0) + negated uses fail open on multi-audio titles. Fix direction: `e[-_. ]?ac[-_. ]?3` + spelled-out alternation; needs decision on DD vs DD+ boundary for spelled-out form.
+- **Dolby Digital (plain, spelled-out)**: `Dolby.Digital.5.1` without Plus still matches neither DD nor DD+ — NO real title found yet (Prowlarr "Dolby Digital Plus" search returned only Plus forms). Fix direction ready (`Dolby[ ._-]?Digital\b(?![ ._-]?(P(lus)?\b|\+))` on the DD regex) but held for real-title evidence. E-AC-3/DDP-spelled-out half FIXED in op 214.
 - **Orphan regexes** (zero conditions reference them; fix-or-delete before wiring): `Non Retail HDR Formats` (DV branch reproduces the pre-fix WF bug — flags retail DV.HDR/DV.HDR10Plus/REMUX hybrids), `Non Retail HDR Groups` (missing parens: `(?<=^|[\s.-])VECTOR|BiTOR|…|Flights\b` — middle six names match as bare substrings, e.g. BiTOR inside "Inhibitor"), `HDR10 (Missing Groups)`, `TrueHD (Missing Groups)`.
 - `2160p Quality Tier 6` description says "Tier 5" (cosmetic copy-paste).
 
@@ -40,6 +41,9 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - All 24 negation-bearing regexes adjudicated (IMAX/NON guards, HBO-Max, Movies Anywhere dts-hd lookbehind incl. both-directions tests, Opus res-guard, DTS-X, edition `{edition-` guard, B&W family end-guards, iTunes Rename).
 - HDR/DV long tail: DTS family cross-negations, Atmos, TrueHD, 4KDVS anchoring, HDR10 (Negation), group-name lists other than NRHG all correctly parenthesize anchors.
 - Main HDR/DV cluster (Dolby Vision, Basic HDR Formats, HDR, HDR10+, SDR + their CF graphs) — deep-audited with 210-check corpus incl. 21 real titles; all green post-211/212.
+
+- Prowlarr search "E-AC-3 1080p" (noise, no E-AC-3 titles), "Dolby Digital Plus 1080p" (iVy/CAPTCHA spelled-out titles) (2026-08-06)
+- hdencode.org ?s=E-AC-3 (6 real E-AC-3 titles) (2026-08-06)
 
 ## Searched sources/queries (exhausted — don't repeat)
 - Prowlarr search "Apocalypse Now Redux" (2026-08-06, 85 titles)
@@ -51,4 +55,5 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - TRaSH radarr CF JSONs (dv*, hdr*, hlg, sdr*); Radarr QualityParserFixture.cs (in audit/harness sources notes)
 
 ## Iteration log
-- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: audio family (DD/DDP fixes are pre-scoped in OPEN) or streaming-service long tail.
+- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: streaming-service long tail or resolution+source tokens.
+- **Iteration 2 (2026-08-06)**: area = audio family (pre-scoped OPEN item). Result: **1 new bug fixed (op 214, Dolby Digital + spellings)** — E-AC-3 + spelled-out DDP, 6 corpus rows flipped, gate clean (229/229). Plain spelled-out DD kept OPEN (no real title evidence). consecutive_dry stays 0.
