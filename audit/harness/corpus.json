@@ -1720,6 +1720,20 @@
     },
     {
       "custom_format": "720p Quality Tier 4",
+      "title": "My.Hero.Academia.S03E24.720p.BluRay.AAC.2.0.x264-EA",
+      "type": "series",
+      "should_match": false,
+      "note": "REAL (Prowlarr): Sonarr path must not retain stale Tier 4 EA membership after op 229"
+    },
+    {
+      "custom_format": "720p Quality Tier 5",
+      "title": "My.Hero.Academia.S03E24.720p.BluRay.AAC.2.0.x264-EA",
+      "type": "series",
+      "should_match": true,
+      "note": "REAL (Prowlarr): Sonarr path retains authoritative Tier 5 EA membership"
+    },
+    {
+      "custom_format": "720p Quality Tier 4",
       "title": "1883.S01.720p.BluRay.DD5.1.x264-NTb",
       "type": "series",
       "should_match": true,
