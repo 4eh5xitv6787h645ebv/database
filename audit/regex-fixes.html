@@ -105,21 +105,50 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Sixteen fixes on
+  <p class="sub">Seventeen fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>15</b>migrations (ops 211–225)</div>
-  <div class="stat"><b>23</b>regex updates + 2 format wirings</div>
-  <div class="stat"><b>432 / 432</b>.NET matrix checks green</div>
-  <div class="stat"><b>160 / 160</b>Profilarr parser tests green</div>
+  <div class="stat"><b>16</b>migrations (ops 211–226)</div>
+  <div class="stat"><b>26</b>regex updates + 2 format wirings</div>
+  <div class="stat"><b>516 / 516</b>.NET matrix checks green</div>
+  <div class="stat"><b>188 / 188</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 226</span><h2>Atmos / 7.1 Surround</h2><span class="sev miss">missed +400 + wrong Atmos bucket</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 17:59 UTC · op 226</p>
+  <p class="why">The 7.1 regex required a literal dot and consumed one character on each side,
+  missing real space- and underscore-normalized channel markers plus a bundled end-of-title
+  marker. Its only consumer drives the +400 Atmos (Missing) score in four profiles. Expanding
+  that regex alone was unsafe: real <code>_Atmos_</code>, <code>TrueHDAtmos</code>, BTN, and
+  contextual <code>Atoms</code> spellings would land in the wrong bucket. The three-pattern
+  graph fix adds two genuine Missing matches and moves 18 false Missing matches to Atmos in
+  the fresh 1,166-title query union, with no raw-regex match losses.</p>
+  <div class="diff">
+    <div class="pat before">7.1    \D7\.1\D
+Atmos  \bATMOS|DDPA(\b|\d)
+BTN    \bTrue[ .-]?HDA[ .-]?[57]\.1</div>
+    <div class="pat after"><mark class="add">7.1    (?&lt;!\d)7[ ._]1(?!\d)
+Atmos  \bATMOS|(?&lt;![^\W_])(?:ATMOS(?:(?![^\W_])|\d)|True[ .-]?HD(?:ATMOS(?:(?![^\W_])|\d)|[ ._-]?[57][ ._]1[ ._-]+ATOMS(?![^\W_])))|DDPA(\b|\d)
+BTN    \bTrue[ .-]?HDA[ .-]?[57]\.1|(?&lt;![^\W_])True[ .-]?HDA[ ._-]?[57][ ._]1(?!\d)</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes — and controls it preserves</p>
+  <ul class="rels">
+    <li><span class="tag miss">score fixed</span>Bridget Jones Mad About The Boy 2025 1080p BluRay REMUX AVC TrueHD 7 1-UnKn0wn <span class="src">· Prowlarr · Atmos (Missing) +400</span></li>
+    <li><span class="tag miss">score fixed</span>Avatar 2009 2160p UHD Blu-ray HDR10 HEVC TrueHD 7.1 <span class="src">· bundled HDBits/BeyondHD metadata · end-title +400</span></li>
+    <li><span class="tag miss">score fixed</span>The_Devil_Wears_Prada_2_2026_2160p_UHD_BluRay_DV_REMUX_HDR10_HEVC_TrueHD_7_1_Atmos-UnKn0wn <span class="src">· Prowlarr · Atmos +400</span></li>
+    <li><span class="tag miss">score fixed</span>Avatar 2009 UHD Blu-ray 2160p 10bit HDR 4Audio TrueHDAtmos 7 1 x265-beAst <span class="src">· bundled TorrentLeech metadata · Atmos +400</span></li>
+    <li><span class="tag miss">score fixed</span>Pusher 1996 DANiSH 1080p BluRay REMUX AVC TrueHD7 1 Atoms-ADDICTION <span class="src">· Prowlarr · contextual typo safely scores Atmos</span></li>
+    <li><span class="tag ctl">control</span>The.Last.Of.Us.S01.1080p.BluRay.TrueHDA7.1.H.264-WiKi <span class="src">· bundled BTN metadata · remains Atmos, never Missing</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 225</span><h2>Special / Extended Edition</h2><span class="sev miss">missed +1000 edition scores</span><span class="ver both">bug in v1 + v2</span></div>
@@ -451,11 +480,11 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 
 <footer>
   <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 158-title corpus; before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 172-title corpus; before/after diffs must show
   only intended rows. Format wiring and representative CF behavior are additionally
-  covered by 160 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  covered by 188 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–225. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–226. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
