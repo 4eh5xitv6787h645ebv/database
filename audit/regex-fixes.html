@@ -101,17 +101,17 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Seven fixes (six regexes + one format wiring) on
+  <p class="sub">Eight fixes (six regexes + two format wirings) on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>7</b>migrations (ops 211–217)</div>
-  <div class="stat"><b>7</b>regexes + 1 format wiring</div>
-  <div class="stat"><b>256 / 256</b>.NET matrix checks green</div>
-  <div class="stat"><b>132 / 132</b>Profilarr parser tests green</div>
+  <div class="stat"><b>8</b>migrations (ops 211–218)</div>
+  <div class="stat"><b>7</b>regexes + 2 format wirings</div>
+  <div class="stat"><b>269 / 269</b>.NET matrix checks green</div>
+  <div class="stat"><b>137 / 137</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
@@ -265,12 +265,30 @@
   </ul>
 </section>
 
+<section class="card">
+  <div class="card-head"><span class="op">OP 218</span><h2>Extras (format wiring)</h2><span class="sev ban">live ban never fired</span></div>
+  <p class="why">Same wiring bug as DUBBED, but live: Extras bans bonus-content releases at
+  −999999 in 20 profile entries, yet required its movie condition (year anchor) AND its
+  series condition (S## anchor) at once. Movie extras carry no season marker and TV extras
+  packs usually no year — both classes sailed past the ban. Conditions are now either-or.</p>
+  <div class="diff">
+    <div class="pat before">Movie Extras <mark class="del">required</mark> · TV Extras <mark class="del">required</mark>&nbsp;&nbsp;(AND — needs year + S## together)</div>
+    <div class="pat after">Movie Extras <mark class="add">optional</mark> · TV Extras <mark class="add">optional</mark>&nbsp;&nbsp;(OR — either form fires)</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">escaped the ban</span>American.Reunion.2012.EXTRAS.1080p.BluRay.H264-RMXTRAS <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ban">escaped the ban</span>Boardwalk.Empire.S01.EXTRAS.1080p.AV1.10bit-MeGusta <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>The.Extra.Man.2010.1080p.BluRay.x264-GROUP <span class="src">· title word, still unmatched</span></li>
+  </ul>
+</section>
+
 <footer>
   <p>Every fix was validated two ways: a .NET-semantics regex matrix (same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 108-title corpus — before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 113-title corpus — before/after diffs must show
   only the intended rows — and Profilarr’s own parser-backed test runner
   (database&nbsp;2 in the audit container at <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–217. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–218. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
