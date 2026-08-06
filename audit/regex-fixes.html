@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dictionarry v2 — Fork Regex Fixes</title>
+<style>
+  :root {
+    --bg: #f3f5f7; --surface: #ffffff; --ink: #1c2430; --muted: #5c6878;
+    --accent: #46608c; --accent-ink: #ffffff; --line: #dde3ea;
+    --del-bg: #fbe9e6; --del-ink: #a13327; --add-bg: #e5f3e8; --add-ink: #24693c;
+    --chip-ban: #a13327; --chip-miss: #8a6100; --chip-ctl: #5c6878;
+    --code-bg: #eef1f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131820; --surface: #1a212c; --ink: #e2e8f0; --muted: #93a0b0;
+      --accent: #93b0dc; --accent-ink: #131820; --line: #2a3442;
+      --del-bg: #3a2320; --del-ink: #eb9385; --add-bg: #1f3527; --add-ink: #83c896;
+      --chip-ban: #eb9385; --chip-miss: #d9ac4f; --chip-ctl: #93a0b0;
+      --code-bg: #10151d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131820; --surface: #1a212c; --ink: #e2e8f0; --muted: #93a0b0;
+    --accent: #93b0dc; --accent-ink: #131820; --line: #2a3442;
+    --del-bg: #3a2320; --del-ink: #eb9385; --add-bg: #1f3527; --add-ink: #83c896;
+    --chip-ban: #eb9385; --chip-miss: #d9ac4f; --chip-ctl: #93a0b0;
+    --code-bg: #10151d;
+  }
+  :root[data-theme="light"] {
+    --bg: #f3f5f7; --surface: #ffffff; --ink: #1c2430; --muted: #5c6878;
+    --accent: #46608c; --accent-ink: #ffffff; --line: #dde3ea;
+    --del-bg: #fbe9e6; --del-ink: #a13327; --add-bg: #e5f3e8; --add-ink: #24693c;
+    --chip-ban: #a13327; --chip-miss: #8a6100; --chip-ctl: #5c6878;
+    --code-bg: #eef1f5;
+  }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 16px/1.6 "Avenir Next", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+    margin: 0; padding: 2.5rem 1.25rem 5rem;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  header h1 { font-size: 1.85rem; line-height: 1.2; margin: 0 0 .4rem; letter-spacing: -.015em; text-wrap: balance; }
+  header p.sub { color: var(--muted); margin: 0; max-width: 62ch; }
+  .stats { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.4rem 0 2.4rem; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+    padding: .55rem .9rem; font-size: .82rem; color: var(--muted);
+  }
+  .stat b { display: block; font-size: 1.15rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 1.4rem 1.5rem 1.2rem; margin-bottom: 1.6rem;
+  }
+  .card-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem; margin-bottom: .35rem; }
+  .op {
+    background: var(--accent); color: var(--accent-ink); border-radius: 4px;
+    font: 700 .72rem/1 ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+    padding: .3rem .5rem; letter-spacing: .04em;
+  }
+  .card h2 { font-size: 1.15rem; margin: 0; letter-spacing: -.01em; }
+  .sev { font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .07em; }
+  .sev.ban { color: var(--chip-ban); }
+  .sev.miss { color: var(--chip-miss); }
+  .why { color: var(--muted); font-size: .92rem; margin: .3rem 0 1rem; max-width: 68ch; }
+  .diff { display: grid; gap: 2px; margin-bottom: 1.1rem; }
+  .pat {
+    font: .8rem/1.55 ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px;
+    padding: .55rem .75rem .55rem 2.2rem; position: relative;
+    overflow-x: auto; white-space: pre;
+  }
+  .pat::before { position: absolute; left: .75rem; font-weight: 700; }
+  .pat.before::before { content: "−"; color: var(--del-ink); }
+  .pat.after::before { content: "+"; color: var(--add-ink); }
+  mark { border-radius: 3px; padding: .05em .15em; font-weight: 600; }
+  mark.del { background: var(--del-bg); color: var(--del-ink); text-decoration: line-through; text-decoration-thickness: 1px; }
+  mark.add { background: var(--add-bg); color: var(--add-ink); text-decoration: none; }
+  .rel-label { font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin: 0 0 .45rem; }
+  ul.rels { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+  ul.rels li {
+    font: .78rem/1.5 ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+    overflow-x: auto; white-space: nowrap; display: flex; gap: .6rem; align-items: baseline;
+  }
+  .tag {
+    flex: none; font: 650 .66rem/1 "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    text-transform: uppercase; letter-spacing: .05em; border-radius: 3px; padding: .22rem .4rem;
+  }
+  .tag.ban  { background: var(--del-bg); color: var(--del-ink); }
+  .tag.miss { background: color-mix(in srgb, var(--chip-miss) 16%, transparent); color: var(--chip-miss); }
+  .tag.ok   { background: var(--add-bg); color: var(--add-ink); }
+  .tag.ctl  { background: var(--code-bg); color: var(--chip-ctl); }
+  .src { color: var(--muted); }
+  footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.2rem; max-width: 72ch; }
+  footer a, header a { color: var(--accent); }
+  h3.grp { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 2.6rem 0 1rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Dictionarry v2 — what the fork fixes</h1>
+  <p class="sub">Six regular expressions changed on
+  <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
+  versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
+  Every change is proven by real release names and gated so nothing else moves.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>5</b>migrations (ops 211–215)</div>
+  <div class="stat"><b>6</b>regexes changed</div>
+  <div class="stat"><b>236 / 236</b>.NET matrix checks green</div>
+  <div class="stat"><b>120 / 120</b>Profilarr parser tests green</div>
+  <div class="stat"><b>0</b>new false positives (diff-gated)</div>
+</div>
+
+<h3 class="grp">Wrongly hard-banned before · −999999 false positives</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 211</span><h2>Dolby Vision (Without Fallback)</h2><span class="sev ban">was banning legit releases</span></div>
+  <p class="why">The negation list only knew the spelling <code>BLURAY</code>, so hyphenated
+  Blu-ray disc releases — which always carry an HDR10 base layer — were treated as
+  fallback-less DV and hard-banned in 7 profiles. Same fix the project itself made for
+  its <em>UHD Blu-ray</em> regex in PR&nbsp;#31.</p>
+  <div class="diff">
+    <div class="pat before">(?&lt;=^(?!.*(HDR|HULU|REMUX|<mark class="del">BLURAY</mark>)).*?)\b(DV|Dovi|Dolby[ .]?Vision)\b</div>
+    <div class="pat after">(?&lt;=^(?!.*(HDR|HULU|REMUX|<mark class="add">BLU[-]?RAY</mark>)).*?)\b(DV|Dovi|Dolby[ .]?Vision)\b</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was banned</span>Movie.2016.2160p.Blu-ray.x265.10bit.DV.TrueHD.7.1-GROUP</li>
+    <li><span class="tag ban">was banned</span>Movie.2019.2160p.COMPLETE.UHD.BLU-RAY.DV.HEVC-GROUP</li>
+    <li><span class="tag ok">class proof</span>[BD]Dark.Blue.2002.2160p.AUS.UHD.Blu-ray.DV.HDR.HEVC.DTS-HD.MA.5.1-Tux <span class="src">· hdencode</span></li>
+    <li><span class="tag ctl">control</span>Finding.Nemo.2003.2160p.UHD.BluRay.TrueHD.7.1.DV.x265-W4NK3R <span class="src">· unchanged</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 212</span><h2>German DL</h2><span class="sev ban">was banning legit releases</span></div>
+  <p class="why">The guard that stops the <code>DL</code> of WEB-DL reading as “Dual Language”
+  only covered the hyphen spelling. Dotted or spaced WEB-DL made English releases of
+  “German”-titled films look dual-language — a −999999 ban in 11 profiles.</p>
+  <div class="diff">
+    <div class="pat before">(?=.*\bGERMAN\b)(?=.*\b(?&lt;!<mark class="del">WEB-</mark>)[DM]L\b).*</div>
+    <div class="pat after">(?=.*\bGERMAN\b)(?=.*\b(?&lt;!<mark class="add">WEB[-_. ]</mark>)[DM]L\b).*</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was banned</span>The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP</li>
+    <li><span class="tag ban">was banned</span>A German Life 2016 720p WEB DL x264-GROUP</li>
+    <li><span class="tag ctl">control</span>Der.Untergang.2004.German.DL.1080p.BluRay.x264-GROUP <span class="src">· real dual-language, still matches</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 212</span><h2>Remux</h2><span class="sev ban">fed a wrongful Full Disc ban</span></div>
+  <p class="why"><code>\b(Remux)\b</code> never matched the joined spellings used by Russian and
+  Spanish trackers. This regex is the “Not Remux” gate in 49 formats — worst case, a
+  BDRemux with an AVC tag fired the <em>Full Disc</em> format’s −999999 ban in every profile,
+  and joined-spelling remuxes escaped the Remux and Banned&nbsp;Remux formats entirely.</p>
+  <div class="diff">
+    <div class="pat before">\b(<mark class="del">Remux</mark>)\b</div>
+    <div class="pat after">\b(<mark class="add">(BD|UHD)[-_. ]?)?Remux</mark>\b</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was full-disc-banned</span>Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB</li>
+    <li><span class="tag miss">was not a remux</span>Vengadores.Endgame.2019.2160p.UHDremux.HEVC.DTS-HD.MA.7.1-GRUPO</li>
+    <li><span class="tag miss">escaped Banned Remux</span>Movie.Name.2014.1080p.BDREMUX.AVC.DTS-HD.MA.5.1-LEGi0N</li>
+    <li><span class="tag ctl">control</span>Movie.2020.1080p.WEB-DL.x264-LazyRemux <span class="src">· group name, still unmatched</span></li>
+  </ul>
+</section>
+
+<h3 class="grp">Missed matches before · scores that never applied</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 213</span><h2>Special Edition</h2><span class="sev miss">missed +1000 edition score</span></div>
+  <p class="why">The post-year token list had no <code>Redux</code>, so Redux cuts neither earned
+  the edition score nor tripped the “Not Special Edition” gate in the Theatrical formats.
+  No release group named REDUX exists, so the token adds no false-positive surface.</p>
+  <div class="diff">
+    <div class="pat before">(?&lt;=\b[12]\d{3}\b).*\b(Cut|Directors|DC|Extended|Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(\b|\d)</div>
+    <div class="pat after">(?&lt;=\b[12]\d{3}\b).*\b(Cut|Directors|DC|Extended|<mark class="add">Redux|</mark>Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(\b|\d)</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">was unscored</span>Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was unscored</span>Apocalypse.Now.1979.REDUX.2160p.UHD.BLURAY.REMUX.HDR.HEVC.MULTi.VFF.DTS-HDMA.x265-EXTREME <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>Movie.2006.Directors.Cut.1080p.BluRay.x264-GROUP <span class="src">· unchanged</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 214</span><h2>Dolby Digital +</h2><span class="sev miss">missed audio score</span></div>
+  <p class="why">Canonical <code>E-AC-3</code> (Dolby’s own spelling) and spelled-out
+  <code>Dolby.Digital.Plus</code> matched neither DD nor DD+ — those releases got no audio
+  format at all, and the DD+ negations inside AAC/DTS/FLAC/TrueHD failed open.</p>
+  <div class="diff">
+    <div class="pat before">\bDD[P+]|\b(<mark class="del">e[-_. ]?ac3</mark>)\b</div>
+    <div class="pat after">\bDD[P+]|\b(<mark class="add">e[-_. ]?ac[-_. ]?3</mark>)\b<mark class="add">|\bDolby[ ._-]?Digital[ ._-]?(P(lus)?\b|\+)</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">was unscored</span>Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS <span class="src">· hdencode</span></li>
+    <li><span class="tag miss">was unscored</span>The.Browns.S01.1080p.WEB-DL.E-AC-3.H.264-BTN <span class="src">· hdencode</span></li>
+    <li><span class="tag miss">was unscored</span>Gatillero.2025.1080p.WEB-DL.x264.E-AC-3-5.1.TTR <span class="src">· hdencode</span></li>
+    <li><span class="tag miss">was unscored</span>Agent.Elvis.S01E01.Full.Tilt.1080p.NF.WEBRip.Dolby.Digital.Plus.with.Dolby.Atmos.5.1.H.265.-iVy <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was unscored</span>Black.Widow.2021.Web-Dl.1080p.HEVC.10bit.HDR.Dolby.Digital.Plus.with.Dolby.Atmos.6ch-CAPTCHA <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>Movie.2021.1080p.WEB-DL.Dolby.Atmos.7.1.H.264-GRP <span class="src">· Atmos alone, still unmatched</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 215</span><h2>Paramount+</h2><span class="sev miss">missed service tag</span></div>
+  <p class="why">“Paramount Plus” was matched with a literal space only, while dotted scene
+  names write <code>Paramount.Plus</code>. Sibling service regexes (Disney+, HBO&nbsp;Max, Crave)
+  already use separator classes; this brings Paramount+ in line.</p>
+  <div class="diff">
+    <div class="pat before">\b(PMTP|<mark class="del">Paramount Plus</mark>)\b</div>
+    <div class="pat after">\b(PMTP|<mark class="add">Paramount[ ._-]?Plus</mark>)\b</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">was untagged</span>Infinite.2021.2160p.WEB-DL.Paramount.Plus.Dolby.Vision.HEVC.E-AC-3.5.1-MZABI <span class="src">· hdencode</span></li>
+    <li><span class="tag ctl">control</span>Paramount.Pictures.90th.Anniversary.Collection.1080p.BluRay.x264-GROUP <span class="src">· no false positive</span></li>
+  </ul>
+</section>
+
+<footer>
+  <p>Every fix was validated two ways: a .NET-semantics regex matrix (same engine and
+  IgnoreCase flag Radarr/Sonarr use) over a 98-title corpus — before/after diffs must show
+  only the intended rows — and Profilarr’s own parser-backed test runner
+  (database&nbsp;2 in the audit container at <code>localhost:6869</code>).
+  The audit loop is still running; this page reflects ops 211–215. Full reasoning and the
+  verdict ledger live in
+  <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
+  Generated 2026-08-06.</p>
+</footer>
+</div>
+
+</body>
+</html>
