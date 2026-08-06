@@ -1022,6 +1022,35 @@
         "Dolby Digital": true,
         "Dolby Digital +": false
       }
+    },
+    {
+      "title": "Drops.of.God.S01E01.A.Father.2160p.Apple.TV+.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV",
+      "note": "REAL (Prowlarr): dotted Apple.TV+ naming; fixed by op 221; also a P5 DV WEB-DL",
+      "expect": {
+        "Apple TV+": true,
+        "Dolby Vision": true
+      }
+    },
+    {
+      "title": "Drops.Of.God.S01E02.Sky.Earth.Humans.2160p.Apple.TV.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV",
+      "note": "REAL (Prowlarr): dotted plus-less Apple.TV.WEB-DL",
+      "expect": {
+        "Apple TV+": true
+      }
+    },
+    {
+      "title": "Movie 2023 (2160p Apple TV+ WEB-DL H265 DDP 5.1 - HONE)",
+      "note": "control: space form already worked",
+      "expect": {
+        "Apple TV+": true
+      }
+    },
+    {
+      "title": "Apple.TV.Repair.Man.2020.1080p.BluRay.x264-GRP",
+      "note": "control: Apple TV in a movie title without WEB following stays unmatched",
+      "expect": {
+        "Apple TV+": false
+      }
     }
   ]
 }
