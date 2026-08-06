@@ -702,10 +702,10 @@
     },
     {
       "title": "Kingdom.S04E01.1080p.WEB-DL.E-AC-3.2.0.H.264-GRP",
-      "note": "KNOWN GAP left open (documented): canonical E-AC-3 matches neither Dolby Digital nor Dolby Digital + - audio-family fix needs maintainer decision",
+      "note": "canonical E-AC-3: fixed by op 214 - matches Dolby Digital + (was a documented gap); DD stays false (e- lookbehind)",
       "expect": {
         "Dolby Digital": false,
-        "Dolby Digital +": false
+        "Dolby Digital +": true
       }
     },
     {
@@ -741,6 +741,56 @@
       "note": "control: plain release, no edition tokens",
       "expect": {
         "Special Edition": false
+      }
+    },
+    {
+      "title": "Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS",
+      "note": "REAL (hdencode): canonical E-AC-3; also a P5 DSNP DV title (WF should fire)",
+      "expect": {
+        "Dolby Digital +": true,
+        "Dolby Digital": false,
+        "Dolby Vision": true,
+        "CF:Dolby Vision (Without Fallback)": true
+      }
+    },
+    {
+      "title": "The.Browns.S01.1080p.WEB-DL.E-AC-3.H.264-BTN",
+      "note": "REAL (hdencode): E-AC-3 series pack",
+      "expect": {
+        "Dolby Digital +": true,
+        "Dolby Digital": false
+      }
+    },
+    {
+      "title": "Gatillero.2025.1080p.WEB-DL.x264.E-AC-3-5.1.TTR",
+      "note": "REAL (hdencode): E-AC-3 with hyphenated channels",
+      "expect": {
+        "Dolby Digital +": true
+      }
+    },
+    {
+      "title": "Agent.Elvis.S01E01.Full.Tilt.1080p.NF.WEBRip.Dolby.Digital.Plus.with.Dolby.Atmos.5.1.H.265.-iVy",
+      "note": "REAL (Prowlarr metadata): spelled-out Dolby Digital Plus (NF WEBRip naming)",
+      "expect": {
+        "Dolby Digital +": true,
+        "Dolby Digital": false,
+        "Dolby Vision": false
+      }
+    },
+    {
+      "title": "Black.Widow.2021.Web-Dl.1080p.HEVC.10bit.HDR.Dolby.Digital.Plus.with.Dolby.Atmos.6ch-CAPTCHA",
+      "note": "REAL (Prowlarr metadata): spelled-out DDP, HDR 1080p",
+      "expect": {
+        "Dolby Digital +": true,
+        "HDR": true
+      }
+    },
+    {
+      "title": "Movie.2021.1080p.WEB-DL.Dolby.Atmos.7.1.H.264-GRP",
+      "note": "control: Dolby Atmos alone must not read as Dolby Digital family",
+      "expect": {
+        "Dolby Digital +": false,
+        "Dolby Digital": false
       }
     }
   ]
