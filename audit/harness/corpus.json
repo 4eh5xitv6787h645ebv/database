@@ -1379,6 +1379,174 @@
         "CF:Special Edition": false,
         "CF:Extended Edition": false
       }
+    },
+    {
+      "title": "Bridget Jones Mad About The Boy 2025 1080p BluRay REMUX AVC TrueHD 7 1-UnKn0wn",
+      "note": "REAL (Prowlarr/NZBgeek): space-normalized 7.1 marker currently misses the +400 Atmos (Missing) format",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": true
+      }
+    },
+    {
+      "title": "Avatar 2009 2160p UHD Blu-ray HDR10 HEVC TrueHD 7.1",
+      "note": "REAL (bundled HDBits/BeyondHD metadata): end-of-title 7.1 has no trailing character for the old consuming boundary",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": true
+      }
+    },
+    {
+      "title": "The_Devil_Wears_Prada_2_2026_2160p_UHD_BluRay_DV_REMUX_HDR10_HEVC_TrueHD_7_1_Atmos-UnKn0wn",
+      "note": "REAL (Prowlarr/DrunkenSlug): underscore-normalized channel and Atmos markers must score Atmos, never Atmos (Missing)",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": true,
+        "BTN Atmos": false,
+        "CF:Atmos": true,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "Avatar 2009 UHD Blu-ray 2160p 10bit HDR 4Audio TrueHDAtmos 7 1 x265-beAst",
+      "note": "REAL (bundled TorrentLeech metadata): joined TrueHDAtmos is an Atmos guard for the newly recognized space-normalized channel",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": true,
+        "BTN Atmos": false,
+        "CF:Atmos": true,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "Pusher 1996 DANiSH 1080p BluRay REMUX AVC TrueHD7 1 Atoms-ADDICTION",
+      "note": "REAL (Prowlarr/NZBFinder): contextual Atoms typo after TrueHD 7.1 is Atmos metadata, not a missing-Atmos release",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": true,
+        "BTN Atmos": false,
+        "CF:Atmos": true,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "Pusher.II.2004.DANiSH.1080p.BluRay.x264.TrueHD7.1.Atoms-ADDICTION",
+      "note": "REAL (Prowlarr/NZBFinder): dotted contextual Atoms typo was already misclassified as Atmos (Missing)",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": true,
+        "BTN Atmos": false,
+        "CF:Atmos": true,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "The.Last.Of.Us.S01.1080p.BluRay.TrueHDA7.1.H.264-WiKi",
+      "note": "REAL (bundled BroadcasTheNet metadata): canonical BTN Atmos spelling remains recognized and excluded from Atmos (Missing)",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": true,
+        "CF:Atmos": true,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "Movie_2026_TrueHDA7_1_1080p_BluRay-GROUP",
+      "note": "constructed full-graph control: separator normalization of a known BTN marker must not become a false Atmos (Missing) match",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": true,
+        "CF:Atmos": true,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.TrueHD.7.1-GROUP",
+      "note": "constructed compatibility control: ordinary dotted TrueHD 7.1 without Atmos remains Atmos (Missing)",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": true
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.TrueHD.7-1-GROUP",
+      "note": "constructed collision control: unsupported dash channel punctuation remains outside the 7.1 regex",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": false,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.TrueHD.17.10-GROUP",
+      "note": "constructed numeric collision control: 7.1 embedded in a larger channel-like number remains excluded",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": false,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": false
+      }
+    },
+    {
+      "title": "Movie_2026_1080p_BluRay_TrueHD_7_1_Atmosphere_GROUP",
+      "note": "constructed prefix collision: new underscore support must not mistake Atmosphere for an Atmos marker",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": true
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.TrueHDAtmospheric.7.1-GROUP",
+      "note": "constructed joined-prefix collision: the targeted TrueHDAtmos branch must stop before trailing letters",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": true
+      }
+    },
+    {
+      "title": "Atoms.2026.1080p.BluRay.TrueHD.7.1-GROUP",
+      "note": "constructed title collision: bare Atoms is not Atmos unless it occurs in the evidenced TrueHD channel metadata sequence",
+      "expect": {
+        "TrueHD": true,
+        "7.1 Surround": true,
+        "Atmos": false,
+        "BTN Atmos": false,
+        "CF:Atmos": false,
+        "CF:Atmos (Missing)": true
+      }
     }
   ]
 }
