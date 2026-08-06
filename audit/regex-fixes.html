@@ -105,21 +105,50 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Twenty-one fixes on
+  <p class="sub">Twenty-two fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>20</b>migrations (ops 211–230)</div>
-  <div class="stat"><b>27</b>regex updates + 5 format-graph fixes</div>
+  <div class="stat"><b>21</b>migrations (ops 211–231)</div>
+  <div class="stat"><b>27</b>regex updates + 6 format-graph fixes</div>
   <div class="stat"><b>588 / 588</b>.NET matrix checks green</div>
   <div class="stat"><b>221 / 221</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 231</span><h2>Compact Extras hard ban</h2><span class="sev ban">escaped Compact’s −999999 ban</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 23:36 UTC · op 231</p>
+  <p class="why">Every shipped profile except <code>1080p Compact</code> hard-banned
+  Extras in both apps. Compact’s direct v1 ancestor originally carried the same Radarr
+  <code>Extras</code> and Sonarr <code>TV Extras</code> scores, but commit
+  <code>c156dfad</code> removed both during an unrelated source/tier rewrite explicitly
+  marked “DO NOT USE COMPACT PROFILE TESTING ONLY.” No policy rationale accompanied the
+  deletion, the other special-content bans stayed, and the initial v2 translation
+  inherited the omission. OP 231 restores only Compact’s two missing −999999 rows after
+  verifying the repaired two-branch Extras graph and the exact 10-profile peer matrix.
+  The resulting 11-profile × 2-app policy is enforced by a database-level regression
+  check.</p>
+  <div class="diff">
+    <div class="pat before">1080p Compact · Radarr Extras = <mark class="del">missing</mark>
+1080p Compact · Sonarr Extras = <mark class="del">missing</mark></div>
+    <div class="pat after">1080p Compact · Radarr Extras = <mark class="add">−999999</mark>
+1080p Compact · Sonarr Extras = <mark class="add">−999999</mark></div>
+  </div>
+  <p class="rel-label">Bundled releases this rejects — and paired controls it preserves</p>
+  <ul class="rels">
+    <li><span class="tag ban">now rejected</span>Avengers Endgame Digital Extras <span class="src">· movie · Compact 863,660 → −136,339; minimum 200,000</span></li>
+    <li><span class="tag ctl">main feature</span>Avengers Endgame <span class="src">· paired movie control remains 863,660</span></li>
+    <li><span class="tag ban">now rejected</span>The Last of Us S01 Extras 1080p HMAX WEB-DL <span class="src">· series · 862,510 → −137,489</span></li>
+    <li><span class="tag ctl">main season</span>The Last of Us S01 1080p HMAX WEB-DL <span class="src">· paired series control remains 863,110</span></li>
+    <li><span class="tag ctl">title control</span>Extras.S02E01.1080p.HMAX.WEB-DL.DD2.0.H.264-PeDRO <span class="src">· show title, not an extras pack; remains unmatched</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 230</span><h2>Remux detector union</h2><span class="sev ban">escaped a −999999 Remux ban</span><span class="ver v2">v2 only · v1 kept separate detectors</span></div>
@@ -582,7 +611,7 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
   covered by 221 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
   The regex loop stopped after five consecutive dry iterations; the custom-format loop is
-  active. This page reflects ops 211–230. Full reasoning lives in the
+  active. This page reflects ops 211–231. Full reasoning lives in the
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">regex ledger</a>
   and <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/CUSTOM-FORMAT-AUDIT-LEDGER.md">custom-format ledger</a>.
   Generated 2026-08-06.</p>
