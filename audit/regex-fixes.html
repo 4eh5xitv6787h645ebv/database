@@ -104,16 +104,16 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Nine fixes (seven regexes + two format wirings) on
+  <p class="sub">Eleven fixes (nine regexes + two format wirings) on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>9</b>migrations (ops 211–219)</div>
-  <div class="stat"><b>8</b>regexes + 2 format wirings</div>
-  <div class="stat"><b>287 / 287</b>.NET matrix checks green</div>
+  <div class="stat"><b>10</b>migrations (ops 211–220)</div>
+  <div class="stat"><b>9</b>regexes + 2 format wirings</div>
+  <div class="stat"><b>291 / 291</b>.NET matrix checks green</div>
   <div class="stat"><b>138 / 138</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
@@ -269,6 +269,24 @@
   </ul>
 </section>
 
+<section class="card">
+  <div class="card-head"><span class="op">OP 220</span><h2>Dolby Digital</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="why">Plain spelled-out <code>Dolby.Digital.5.1</code> matched neither DD nor DD+ —
+  only the abbreviation was known, even though the Dolby Vision regex has always accepted
+  its spelled-out form. The new branch is Plus-guarded so spelled-out Dolby Digital Plus
+  stays with the DD+ regex from OP&nbsp;214.</p>
+  <div class="diff">
+    <div class="pat before">\bDD[^a-z+]|(?&lt;!e-?)\b(ac-?3)\b</div>
+    <div class="pat after">\bDD[^a-z+]|(?&lt;!e-?)\b(ac-?3)\b<mark class="add">|\bDolby[ ._-]?Digital\b(?![ ._-]?(P(lus)?\b|\+))</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">was unscored</span>Criminal.Minds.S01E03.720p.WEB-DL.Dolby.Digital.5.1.h264-Obfuscated <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was unscored</span>Jawan.2023.1080p.NF.WEB-DL.Dolby.Digital.5.1.H.264-Telly</li>
+    <li><span class="tag ctl">control</span>Agent.Elvis.S01E01...Dolby.Digital.Plus.with.Dolby.Atmos...-iVy <span class="src">· stays DD+ only</span></li>
+  </ul>
+</section>
+
 <h3 class="grp">Format wiring · conditions that could never fire</h3>
 
 <section class="card">
@@ -309,10 +327,10 @@
 
 <footer>
   <p>Every fix was validated two ways: a .NET-semantics regex matrix (same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 120-title corpus — before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 122-title corpus — before/after diffs must show
   only the intended rows — and Profilarr’s own parser-backed test runner
   (database&nbsp;2 in the audit container at <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–219. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–220. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
