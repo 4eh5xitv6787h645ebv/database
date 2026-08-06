@@ -101,17 +101,17 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Eight fixes (six regexes + two format wirings) on
+  <p class="sub">Nine fixes (seven regexes + two format wirings) on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>8</b>migrations (ops 211–218)</div>
-  <div class="stat"><b>7</b>regexes + 2 format wirings</div>
-  <div class="stat"><b>269 / 269</b>.NET matrix checks green</div>
-  <div class="stat"><b>137 / 137</b>Profilarr parser tests green</div>
+  <div class="stat"><b>9</b>migrations (ops 211–219)</div>
+  <div class="stat"><b>8</b>regexes + 2 format wirings</div>
+  <div class="stat"><b>287 / 287</b>.NET matrix checks green</div>
+  <div class="stat"><b>138 / 138</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
@@ -245,6 +245,27 @@
   </ul>
 </section>
 
+<section class="card">
+  <div class="card-head"><span class="op">OP 219</span><h2>Full Disc</h2><span class="sev ban">was banning ordinary DVDRips</span></div>
+  <p class="why">The regex's trailing alternative sat outside its own rip-exclusion guard and
+  used unanchored tokens, so ordinary PAL/NTSC DVDRips — whose DVD source the format's
+  conditions don't exclude — took the −999999 full-disc ban, and PAL matched inside words
+  like "Palm". The tail now carries its own rip/remux guard and word-bounded tokens.
+  Codecs stay out of the guard on purpose: UHD discs are HEVC, and DVD9-sourced re-encodes
+  are already rescued by the format's Not-x265 condition.</p>
+  <div class="diff">
+    <div class="pat before">…|(?i)(<mark class="del">DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2</mark>|\bCOMPLETE[-.\s]?(?:UHD[-.\s])?BLU[-.\s]?RAY\b|…)</div>
+    <div class="pat after">…|(?i)<mark class="add">^(?!.*\b(BDRip|BRRip|DVD[._ -]?Rip|WEB[._ -]?(DL|Rip)|XviD|((BD|UHD)[._ -]?)?Remux)\b).*\b(</mark>DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2|COMPLETE[-.\s]?(?:UHD[-.\s])?BLU[-.\s]?RAY|…<mark class="add">)\b</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was banned</span>Movie.2005.PAL.DVDRip.XviD-GROUP <span class="src">· Radarr fixture class</span></li>
+    <li><span class="tag ban">was banned</span>Palm.Springs.2020.1080p.WEB-DL.DD5.1.AV1-GROUP <span class="src">· PAL inside "Palm"</span></li>
+    <li><span class="tag ctl">control</span>1945.2017.COMPLETE.BLURAY-CiNEMATiC <span class="src">· real disc, still matches</span></li>
+    <li><span class="tag ctl">control</span>1991.The.Year.Punk.Broke.2011.NTSC.DVD9.MDVDR-OMA <span class="src">· real DVD9 disc, still matches</span></li>
+  </ul>
+</section>
+
 <h3 class="grp">Format wiring · conditions that could never fire</h3>
 
 <section class="card">
@@ -285,10 +306,10 @@
 
 <footer>
   <p>Every fix was validated two ways: a .NET-semantics regex matrix (same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 113-title corpus — before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 120-title corpus — before/after diffs must show
   only the intended rows — and Profilarr’s own parser-backed test runner
   (database&nbsp;2 in the audit container at <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–218. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–219. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
