@@ -1,8 +1,8 @@
 # Audit-and-fix loop ledger
 
 started_at: 2026-08-06T15:35:00Z
-consecutive_dry: 0
-iteration: 7
+consecutive_dry: 1
+iteration: 8
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
@@ -25,6 +25,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **German DL: guard `(?<!WEB-)` missed WEB.DL / WEB DL spellings** → op 212 (`(?<!WEB[-_. ])`). Titles: `The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP`, `A German Life 2016 720p WEB DL x264-GROUP` (−999999 in 11 profiles). Controls: hyphen spelling still guarded; real `German.DL` still matches.
 
 ### FALSE-ALARM (withdrawn — do not re-propose)
+- **Op 210 "PrimeFix/ViSTA/PMI created with ABM patterns"**: not a bug — the same op's later statements (12556-12558) update all three to their correct patterns; final DB state verified right. The ABM template is just the exporter's create-then-edit flow.
 - **DV.SDR added to Without-Fallback negation**: withdrawn. No verified real `DV.SDR` release names (web-searched; only DV→SDR conversion tooling exists); WF has matched DV.SDR since op 0 (NOT an op-200 regression — that guard lived on the main `Dolby Vision` regex); CF description says "regular HDR Fallback" — SDR base is not an HDR fallback. Corpus pins DV.SDR → WF matches, as intended.
 
 ### INTENDED (leave alone)
@@ -47,7 +48,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **No underscore generalization for DUBBED/edition regexes yet** — Prowlarr "German Dubbed 1080p" showed no real underscore release names (only rar-part filenames). Op 216's (\b|_) hardening stays CAM-only until evidence appears.
 - `2160p Quality Tier 6` description says "Tier 5" (cosmetic copy-paste).
 
-### CLEARED areas (3-agent sweep of all 533 regexes, 2026-08-06 — don't redo without a NEW hypothesis)
+### CLEARED areas
+- **Banned-group pipeline end-to-end (iteration 7)**: real modern naming parsed through the profilarr-parser sidecar and matched against the ban regexes — `[YTS.MX]`→YTS.MX ✓, `.YIFY` dashless ✓, `-megusta[eztv.re]` lowercase+postfix ✓, `-LAMA[TGx]` ✓, PSA ✓, d3g ✓. Group extraction and anchors are sound; no spelling drift between current group tags and the DB patterns. (3-agent sweep of all 533 regexes, 2026-08-06 — don't redo without a NEW hypothesis)
 - Blu-ray/BD/WEB token spellings in all other regexes (incl. `WEB-DL` = `\b(WEB[ ._-]?DL)\b`, streaming-service `web[ ._-]?(dl|rip)` classes, x264/x265 substring remux guards).
 - All 24 negation-bearing regexes adjudicated (IMAX/NON guards, HBO-Max, Movies Anywhere dts-hd lookbehind incl. both-directions tests, Opus res-guard, DTS-X, edition `{edition-` guard, B&W family end-guards, iTunes Rename).
 - HDR/DV long tail: DTS family cross-negations, Atmos, TrueHD, 4KDVS anchoring, HDR10 (Negation), group-name lists other than NRHG all correctly parenthesize anchors.
@@ -70,7 +72,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - TRaSH radarr CF JSONs (dv*, hdr*, hlg, sdr*); Radarr QualityParserFixture.cs (in audit/harness sources notes)
 
 ## Iteration log
-- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: banned-group activity check or quality-tier group membership. CF wiring sweep is now COMPLETE (see iteration 6 clearance below).
+- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: quality-tier group membership vs real releases, or the OPEN items (Full Disc tail needs a full-disc corpus; Dolby Digital plain spelled-out needs a real title).
+- **Iteration 7 (2026-08-06)**: area = banned/scored group regexes vs real naming. Result: **DRY** — op 210 ABM-template hypothesis was a false alarm; banned-group pipeline cleared end-to-end with real parsed groups. consecutive_dry 0 → 1. CF wiring sweep is now COMPLETE (see iteration 6 clearance below).
 - **Iteration 6 (2026-08-06)**: area = full CF condition-wiring sweep. Result: **1 new bug fixed (op 218, Extras wiring — the only OTHER mutually-exclusive-required CF besides DUBBED)**. Sweep clearance: zero CFs have negated-optional conditions; all other multi-required-title-regex CFs are conjunctively compatible (576p+WEB-DL, 7.1+TrueHD, HONE/QxR/TAoE/Vialle+x265(Efficient), UHD Bluray stack, Remux+HEVC, Better Theatricals pair, HDR (Missing) stack — all can co-occur in one title). Area settled; do not re-sweep without schema changes. consecutive_dry stays 0.
 - **Iteration 5 (2026-08-06)**: area = German/multi-language + CF wiring. Result: **1 new bug fixed (op 217, DUBBED CF wiring)**; Movie DUBBED year-gap + underscore-absence documented OPEN; German DL re-verified on real usenet titles; Nordic/sign-language regexes clean. Harness gained OR-composites. Searched: prowlarr "German Dubbed 1080p". consecutive_dry stays 0. NOTE: the underscore-defeats-\b issue is likely present in OTHER year-anchored regexes too (Special Edition, Extended/Theatrical Edition, B&W family) — a future iteration may generalize op 216's fix there IF real underscore titles with those tokens are found (log evidence first).
 - **Iteration 4 (2026-08-06)**: area = resolution/source tokens. Result: **1 new bug fixed (op 216, CAM underscore escape)**; x265 [x]-vs-[xh] hypothesis adjudicated INTENDED via op-59 history; AVC/HDTV/AV1/HEVC regexes reviewed clean. Searched: prowlarr "HDCAM 2025", srrdb "hqcam" (empty). consecutive_dry stays 0.
