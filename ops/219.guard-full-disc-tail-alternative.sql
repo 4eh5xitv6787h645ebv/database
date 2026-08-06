@@ -1,0 +1,22 @@
+-- @operation: export
+-- @entity: batch
+-- @name: Guard Full Disc Tail Alternative
+-- @exportedAt: 2026-08-06T20:15:00.000Z
+-- @opIds: 12573
+
+-- --- BEGIN op 12573 ( update regular_expression "Full Disc" )
+-- The trailing (?i)(DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2|...) alternative sat
+-- OUTSIDE the regex's own ^(?!...BDRip|XviD|REMUX...) guard and its first eight tokens
+-- were unanchored substrings. Real victims: "Movie.2005.PAL.DVDRip.XviD-GROUP" /
+-- NTSC DVDRips (DVD source is not excluded by the format's source conditions, so the
+-- -999999 ban fired on ordinary DVDRips), and PAL matched inside words ("Palm").
+-- The tail cannot simply move under the main guard - genuine DVD9/PAL discs must
+-- survive its DVD token - so the tail gets its own rip/remux guard (incl. joined
+-- BDRemux per op 212) and \b bounds on every token. Codec tokens (HEVC/x265) are
+-- deliberately NOT in the tail guard: UHD full discs are HEVC; DVD9-sourced
+-- re-encodes ("...DVD9 - HEVC - ...") are already rescued by the format's
+-- "Not x265" condition. Real discs still matching (Prowlarr):
+-- "1945.2017.COMPLETE.BLURAY-CiNEMATiC", "Andor.S01D01.COMPLETE.UHD.BLURAY-OPTiCAL-4P",
+-- "1991.The.Year.Punk.Broke.2011.NTSC.DVD9.MDVDR-OMA", "A.Secret.2007.DVD9.FR.Untouched.PRoDJiDisc".
+update "regular_expressions" set "pattern" = '^(?!.*\b((?<!HD[._ -]|HD)DVD|BDRip|MKV|XviD|WMV|d3g|BDREMUX|REMUX|^(?=.*1080p)(?=.*HEVC)|[xh][-_. ]?26[45]|German.*DL|((?<=\d{4}).*German.*(DL)?)(?=.*\b(AVC|HEVC|VC[-_. ]?1|MVC|MPEG[-_. ]?2)\b))\b)(((?=.*\b(Blu[-_. ]?ray|BD|HD[-_. ]?DVD)\b)(?=.*\b(AVC|HEVC|VC[-_. ]?1|MVC|MPEG[-_. ]?2|BDMV|ISO)\b))|^((?=.*\b(^((?=.*\b((.*_)?COMPLETE.*|Dis[ck])\b)(?=.*(Blu[-_. ]?ray|HD[-_. ]?DVD)))|3D[-_. ]?BD|BR[-_. ]?DISK|Full[-_. ]?Blu[-_. ]?ray|^((?=.*((BD|UHD)[-_. ]?(25|50|66|100|ISO)))))))).*|(?i)^(?!.*\b(BDRip|BRRip|DVD[._ -]?Rip|WEB[._ -]?(DL|Rip)|XviD|((BD|UHD)[._ -]?)?Remux)\b).*\b(DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2|COMPLETE[-.\s]?(?:UHD[-.\s])?BLU[-.\s]?RAY|COMPLETE BLURAY|BR-Disk)\b' where "name" = 'Full Disc' and "pattern" = '^(?!.*\b((?<!HD[._ -]|HD)DVD|BDRip|MKV|XviD|WMV|d3g|BDREMUX|REMUX|^(?=.*1080p)(?=.*HEVC)|[xh][-_. ]?26[45]|German.*DL|((?<=\d{4}).*German.*(DL)?)(?=.*\b(AVC|HEVC|VC[-_. ]?1|MVC|MPEG[-_. ]?2)\b))\b)(((?=.*\b(Blu[-_. ]?ray|BD|HD[-_. ]?DVD)\b)(?=.*\b(AVC|HEVC|VC[-_. ]?1|MVC|MPEG[-_. ]?2|BDMV|ISO)\b))|^((?=.*\b(^((?=.*\b((.*_)?COMPLETE.*|Dis[ck])\b)(?=.*(Blu[-_. ]?ray|HD[-_. ]?DVD)))|3D[-_. ]?BD|BR[-_. ]?DISK|Full[-_. ]?Blu[-_. ]?ray|^((?=.*((BD|UHD)[-_. ]?(25|50|66|100|ISO)))))))).*|(?i)(DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2|\bCOMPLETE[-.\s]?(?:UHD[-.\s])?BLU[-.\s]?RAY\b|\bCOMPLETE BLURAY\b|\bBR-Disk\b)';
+-- --- END op 12573
