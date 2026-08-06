@@ -1157,6 +1157,33 @@
       "expect": {
         "Repack1": false
       }
+    },
+    {
+      "title": "Avatar_2009_Collectors_Edition_With_Bonus",
+      "note": "REAL (bundled PassThePopcorn metadata): underscore-separated movie year and Bonus marker currently escape the live -999999 Extras ban",
+      "expect": {
+        "Movie Extras": true,
+        "TV Extras": false,
+        "CF:Extras": true
+      }
+    },
+    {
+      "title": "Mr._Robot_S01_Extras_720p_BluRay_DD2.0_x264-VietHD",
+      "note": "REAL (Prowlarr): underscore-separated season and Extras marker currently escape the live -999999 Extras ban",
+      "expect": {
+        "Movie Extras": false,
+        "TV Extras": true,
+        "CF:Extras": true
+      }
+    },
+    {
+      "title": "Extras.S02E01.1080p.HMAX.WEB-DL.DD2.0.H.264-PeDRO",
+      "note": "REAL (Prowlarr): the show title is Extras, but no extras marker follows the season; must remain outside the ban",
+      "expect": {
+        "Movie Extras": false,
+        "TV Extras": false,
+        "CF:Extras": false
+      }
     }
   ]
 }
