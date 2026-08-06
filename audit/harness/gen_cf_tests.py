@@ -20,6 +20,7 @@ LABEL_TO_CF = {
     "Remux": "Remux",
     "German DL": "German DL",
     "CF:Special Edition": "Special Edition",
+    "CF:Extended Edition": "Extended Edition",
     "CF:DUBBED": "DUBBED",
     "CF:Extras": "Extras",
 }
