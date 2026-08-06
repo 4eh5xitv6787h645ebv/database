@@ -105,21 +105,44 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Fourteen fixes on
+  <p class="sub">Fifteen fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>13</b>migrations (ops 211–223)</div>
-  <div class="stat"><b>14</b>regexes + 2 format wirings</div>
-  <div class="stat"><b>312 / 312</b>.NET matrix checks green</div>
+  <div class="stat"><b>14</b>migrations (ops 211–224)</div>
+  <div class="stat"><b>16</b>regexes + 2 format wirings</div>
+  <div class="stat"><b>321 / 321</b>.NET matrix checks green</div>
   <div class="stat"><b>138 / 138</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 224</span><h2>Extras / Bonus markers</h2><span class="sev ban">escaped a live hard ban</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 16:53 UTC · op 224</p>
+  <p class="why">The movie and TV Extras regexes used word boundaries around their year,
+  season, and extras markers. Because underscore is a word character, real underscore-heavy
+  names matched none of those boundaries and escaped the −999999 Extras score in 10 Radarr
+  and 10 Sonarr profiles. Separator-aware lookarounds now admit underscores while preserving
+  the post-year and post-season gates that protect movie and show titles.</p>
+  <div class="diff">
+    <div class="pat before">Movie  (?&lt;=\b[12]\d{3}\b).*(\b|\.)\b(Extras?|Bonus|Extended[ ._-]Clip|Special Feature[s]?)\b
+TV     (?&lt;=\bS\d+\b).*\b(Extras|Bonus|Extended[ ._-]Clip)\b</div>
+    <div class="pat after"><mark class="add">Movie  (?&lt;![^\W_])[12]\d{3}(?![^\W_]).*(?&lt;![^\W_])(?:Extras?|Bonus|Extended[ ._-]Clip|Special Feature[s]?)(?![^\W_])
+TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-]Clip)(?![^\W_])</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">escaped ban</span>Avatar_2009_Collectors_Edition_With_Bonus <span class="src">· bundled PassThePopcorn metadata</span></li>
+    <li><span class="tag ban">escaped ban</span>Mr._Robot_S01_Extras_720p_BluRay_DD2.0_x264-VietHD <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>Extras.S02E01.1080p.HMAX.WEB-DL.DD2.0.H.264-PeDRO <span class="src">· show title stays outside the ban</span></li>
+    <li><span class="tag ctl">control</span>The.Extra.Man.2010.1080p.BluRay.x264-GROUP <span class="src">· movie title stays outside the ban</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 223</span><h2>3D / SBS packing</h2><span class="sev ban">wrong hard bans + missed 3D</span><span class="ver both">bug in v1 + v2</span></div>
