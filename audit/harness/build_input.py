@@ -12,7 +12,7 @@ db = sqlite3.connect(db_path)
 REGEX_NAMES = [
     "Dolby Vision", "Dolby Vision (Without Fallback)", "Basic HDR Formats",
     "HDR", "HDR10+", "SDR", "x265", "Movies Anywhere", "Remux", "UHD Bluray",
-    "iTunes", "Dolby Digital", "Dolby Digital +", "German DL", "Full Disc", "x264", "Special Edition", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED", "Movie Extras", "TV Extras", "Repack1", "3D",
+    "iTunes", "Dolby Digital", "Dolby Digital +", "German DL", "Full Disc", "x264", "Special Edition", "IMAX", "Open Matte", "Theatrical Edition", "Extended Clip", "Sing Along", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED", "Movie Extras", "TV Extras", "Repack1", "3D",
 ]
 GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS"]
 
@@ -40,6 +40,9 @@ composites = [
      "all": ["Dolby Vision", "x265"], "none": ["HDR", "HDR10+", "SDR"]},
     {"name": "CF:Full Disc(title-part)",
      "all": ["Full Disc"], "none": ["Remux", "x264", "x265"]},
+    {"name": "CF:Special Edition",
+     "all": ["Special Edition"],
+     "none": ["IMAX", "Open Matte", "Theatrical Edition", "Extended Clip", "Sing Along"]},
     {"name": "CF:DUBBED", "any": ["Movie DUBBED", "TV DUBBED"]},
     {"name": "CF:Extras", "any": ["Movie Extras", "TV Extras"]},
 ]
