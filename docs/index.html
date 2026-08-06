@@ -105,21 +105,45 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Seventeen fixes on
+  <p class="sub">Eighteen fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>16</b>migrations (ops 211–226)</div>
-  <div class="stat"><b>26</b>regex updates + 2 format wirings</div>
-  <div class="stat"><b>516 / 516</b>.NET matrix checks green</div>
-  <div class="stat"><b>188 / 188</b>Profilarr parser tests green</div>
+  <div class="stat"><b>17</b>migrations (ops 211–227)</div>
+  <div class="stat"><b>27</b>regex updates + 2 format wirings</div>
+  <div class="stat"><b>588 / 588</b>.NET matrix checks green</div>
+  <div class="stat"><b>206 / 206</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 227</span><h2>DTS / Hi10P video profiles</h2><span class="sev miss">missed +300 DTS score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 18:21 UTC · op 227</p>
+  <p class="why">The shared DTS-HD HRA/ES negator ended its legacy <code>Hi</code>
+  shorthand without a boundary. Real releases that put the Hi10P or Hi444PP H.264 video
+  profile after ordinary DTS therefore looked like higher-tier DTS audio and lost the +300
+  DTS score in 11 profiles. The new separator-aware end guard rejects a following letter or
+  digit while preserving underscore separators and the existing DTS-ES, HR, and HRA forms.
+  Across the fresh 251-title Prowlarr union, exactly eight real titles regain DTS; the full
+  1,734-row bundled sweep changes only the HDBits Avatar release.</p>
+  <div class="diff">
+    <div class="pat before">dts[-. ]?(es|(hd[. ]?)?<mark class="del">(hr|hi)</mark>)</div>
+    <div class="pat after">dts[-. ]?(es|(hd[. ]?)?<mark class="add">(hra?|hi(?![^\W_]))</mark>)</div>
+  </div>
+  <p class="rel-label">Releases this fixes — and controls it preserves</p>
+  <ul class="rels">
+    <li><span class="tag miss">score fixed</span>Avatar.2009.Extended.Hybrid.720p.BluRay.DTS.Hi444PP.x264-NiP <span class="src">· bundled HDBits + Prowlarr · DTS +300</span></li>
+    <li><span class="tag miss">score fixed</span>Big.Hero.6.2014.1080p.BluRay.DTS.Hi10p.x264-NTb <span class="src">· Prowlarr · DTS +300</span></li>
+    <li><span class="tag miss">score fixed</span>The Hobbit An Unexpected Journey 2012 Extended Edition 1080p BluRay DTS Hi10P x264-DON <span class="src">· Prowlarr · space spelling</span></li>
+    <li><span class="tag ctl">control</span>up.2009.1080p.bluray.dts-es.hi10p.x264-don <span class="src">· Prowlarr · genuine DTS-ES remains excluded from plain DTS</span></li>
+    <li><span class="tag ctl">control</span>Resident.Evil.Apocalypse.2004.EXTENDED.EDITION.1080p.Blu-ray.DTS-HD.HRA.X264-ViSTA <span class="src">· Prowlarr · HRA remains intact</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 226</span><h2>Atmos / 7.1 Surround</h2><span class="sev miss">missed +400 + wrong Atmos bucket</span><span class="ver both">bug in v1 + v2</span></div>
@@ -480,11 +504,11 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 
 <footer>
   <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 172-title corpus; before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 181-title corpus; before/after diffs must show
   only intended rows. Format wiring and representative CF behavior are additionally
-  covered by 188 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  covered by 206 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–226. Full reasoning and the
+  The audit loop is still running; this page reflects ops 211–227. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
