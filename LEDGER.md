@@ -7,6 +7,7 @@ iteration: 3
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
 Harness: `audit/harness/` (schema dependency clone expected at `../../schema` relative to repo root, i.e. `~/work/dictionarry-fix-loop/schema`).
+Profilarr container :6869 now links THE FORK directly as database 2 "Jakes Fork (fix-regex-audit)" (auto_pull on, 60min sync) — loop pushes appear in its UI (/databases/2/changes, ops list, CF Testing pages) after sync; file-injection into db 1's clone is no longer needed (iteration step 7 = just push, then trigger/await pull).
 Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec prowlarr sh -c 'grep -oE "<ApiKey>[^<]*</ApiKey>" /config/config.xml'`. Never download content; names only. If names can't settle a hypothesis → NEEDS-MANUAL-VERIFICATION.
 
 ## Settled verdicts (do NOT re-test)
