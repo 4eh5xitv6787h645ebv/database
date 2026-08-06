@@ -1006,6 +1006,22 @@
         "Full Disc": true,
         "CF:Full Disc(title-part)": false
       }
+    },
+    {
+      "title": "Criminal.Minds.S01E03.720p.WEB-DL.Dolby.Digital.5.1.h264-Obfuscated",
+      "note": "REAL (Prowlarr): plain spelled-out Dolby Digital (usenet obfuscated-repost class); fixed by op 220",
+      "expect": {
+        "Dolby Digital": true,
+        "Dolby Digital +": false
+      }
+    },
+    {
+      "title": "Jawan.2023.1080p.NF.WEB-DL.Dolby.Digital.5.1.H.264-Telly",
+      "note": "REAL naming class: plain spelled-out Dolby Digital - fixed by op 220",
+      "expect": {
+        "Dolby Digital": true,
+        "Dolby Digital +": false
+      }
     }
   ]
 }
