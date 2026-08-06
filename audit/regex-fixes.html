@@ -97,6 +97,7 @@
   .src { color: var(--muted); }
   footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.2rem; max-width: 72ch; }
   footer a, header a { color: var(--accent); }
+  .when { font: 500 .72rem/1 ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; color: var(--muted); margin: .15rem 0 .6rem; }
   h3.grp { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 2.6rem 0 1rem; }
 </style>
 </head>
@@ -118,138 +119,30 @@
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
-<h3 class="grp">Wrongly hard-banned before · −999999 false positives</h3>
+<h3 class="grp">Changelog · newest first</h3>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 211</span><h2>Dolby Vision (Without Fallback)</h2><span class="sev ban">was banning legit releases</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="why">The negation list only knew the spelling <code>BLURAY</code>, so hyphenated
-  Blu-ray disc releases — which always carry an HDR10 base layer — were treated as
-  fallback-less DV and hard-banned in 7 profiles. Same fix the project itself made for
-  its <em>UHD Blu-ray</em> regex in PR&nbsp;#31.</p>
+  <div class="card-head"><span class="op">OP 220</span><h2>Dolby Digital</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 20:55 UTC · op 220</p>
+  <p class="why">Plain spelled-out <code>Dolby.Digital.5.1</code> matched neither DD nor DD+ —
+  only the abbreviation was known, even though the Dolby Vision regex has always accepted
+  its spelled-out form. The new branch is Plus-guarded so spelled-out Dolby Digital Plus
+  stays with the DD+ regex from OP&nbsp;214.</p>
   <div class="diff">
-    <div class="pat before">(?&lt;=^(?!.*(HDR|HULU|REMUX|<mark class="del">BLURAY</mark>)).*?)\b(DV|Dovi|Dolby[ .]?Vision)\b</div>
-    <div class="pat after">(?&lt;=^(?!.*(HDR|HULU|REMUX|<mark class="add">BLU[-]?RAY</mark>)).*?)\b(DV|Dovi|Dolby[ .]?Vision)\b</div>
+    <div class="pat before">\bDD[^a-z+]|(?&lt;!e-?)\b(ac-?3)\b</div>
+    <div class="pat after">\bDD[^a-z+]|(?&lt;!e-?)\b(ac-?3)\b<mark class="add">|\bDolby[ ._-]?Digital\b(?![ ._-]?(P(lus)?\b|\+))</mark></div>
   </div>
   <p class="rel-label">Releases this fixes</p>
   <ul class="rels">
-    <li><span class="tag ban">was banned</span>Movie.2016.2160p.Blu-ray.x265.10bit.DV.TrueHD.7.1-GROUP</li>
-    <li><span class="tag ban">was banned</span>Movie.2019.2160p.COMPLETE.UHD.BLU-RAY.DV.HEVC-GROUP</li>
-    <li><span class="tag ok">class proof</span>[BD]Dark.Blue.2002.2160p.AUS.UHD.Blu-ray.DV.HDR.HEVC.DTS-HD.MA.5.1-Tux <span class="src">· hdencode</span></li>
-    <li><span class="tag ctl">control</span>Finding.Nemo.2003.2160p.UHD.BluRay.TrueHD.7.1.DV.x265-W4NK3R <span class="src">· unchanged</span></li>
-  </ul>
-</section>
-
-<section class="card">
-  <div class="card-head"><span class="op">OP 212</span><h2>German DL</h2><span class="sev ban">was banning legit releases</span><span class="ver v2">v2 only · new in v2</span></div>
-  <p class="why">The guard that stops the <code>DL</code> of WEB-DL reading as “Dual Language”
-  only covered the hyphen spelling. Dotted or spaced WEB-DL made English releases of
-  “German”-titled films look dual-language — a −999999 ban in 11 profiles.</p>
-  <div class="diff">
-    <div class="pat before">(?=.*\bGERMAN\b)(?=.*\b(?&lt;!<mark class="del">WEB-</mark>)[DM]L\b).*</div>
-    <div class="pat after">(?=.*\bGERMAN\b)(?=.*\b(?&lt;!<mark class="add">WEB[-_. ]</mark>)[DM]L\b).*</div>
-  </div>
-  <p class="rel-label">Releases this fixes</p>
-  <ul class="rels">
-    <li><span class="tag ban">was banned</span>The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP</li>
-    <li><span class="tag ban">was banned</span>A German Life 2016 720p WEB DL x264-GROUP</li>
-    <li><span class="tag ctl">control</span>Der.Untergang.2004.German.DL.1080p.BluRay.x264-GROUP <span class="src">· real dual-language, still matches</span></li>
-  </ul>
-</section>
-
-<section class="card">
-  <div class="card-head"><span class="op">OP 212</span><h2>Remux</h2><span class="sev ban">fed a wrongful Full Disc ban</span><span class="ver v2">v2 only · regression (v1 matched BDRemux)</span></div>
-  <p class="why"><code>\b(Remux)\b</code> never matched the joined spellings used by Russian and
-  Spanish trackers. This regex is the “Not Remux” gate in 49 formats — worst case, a
-  BDRemux with an AVC tag fired the <em>Full Disc</em> format’s −999999 ban in every profile,
-  and joined-spelling remuxes escaped the Remux and Banned&nbsp;Remux formats entirely.</p>
-  <div class="diff">
-    <div class="pat before">\b(<mark class="del">Remux</mark>)\b</div>
-    <div class="pat after">\b(<mark class="add">(BD|UHD)[-_. ]?)?Remux</mark>\b</div>
-  </div>
-  <p class="rel-label">Releases this fixes</p>
-  <ul class="rels">
-    <li><span class="tag ban">was full-disc-banned</span>Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB</li>
-    <li><span class="tag miss">was not a remux</span>Vengadores.Endgame.2019.2160p.UHDremux.HEVC.DTS-HD.MA.7.1-GRUPO</li>
-    <li><span class="tag miss">escaped Banned Remux</span>Movie.Name.2014.1080p.BDREMUX.AVC.DTS-HD.MA.5.1-LEGi0N</li>
-    <li><span class="tag ctl">control</span>Movie.2020.1080p.WEB-DL.x264-LazyRemux <span class="src">· group name, still unmatched</span></li>
-  </ul>
-</section>
-
-<section class="card">
-  <div class="card-head"><span class="op">OP 216</span><h2>CAM</h2><span class="sev ban">cam releases escaped the ban</span><span class="ver v2">v2 only · new in v2</span></div>
-  <p class="why">Underscore-separated names defeat regex word boundaries (underscore is a
-  word character), so neither the year anchor nor the CAM token could fire — real cams
-  slipped past a −999999 ban. Verified against Radarr source: custom formats match the
-  raw title, underscores intact. Boundaries now accept underscores as separators.</p>
-  <div class="diff">
-    <div class="pat before">(?&lt;=<mark class="del">\b</mark>[12]\d{3}<mark class="del">\b</mark>).*(<mark class="del">\b</mark>(CAM[ ._-]?(Rip)?|DVD[ ._-]?(SCR(EENER)?)|HD[ ._-]?(CAM|SCR|TC|TS)|SCREENER|TELE(CINE|SYNC)|WORKPRINT)<mark class="del">\b</mark>)</div>
-    <div class="pat after">(?&lt;=<mark class="add">(\b|_)</mark>[12]\d{3}<mark class="add">(\b|_)</mark>).*(<mark class="add">(\b|_)</mark>(CAM[ ._-]?(Rip)?|DVD[ ._-]?(SCR(EENER)?)|HD[ ._-]?(CAM|SCR|TC|TS)|SCREENER|TELE(CINE|SYNC)|WORKPRINT)<mark class="add">(\b|_)</mark>)</div>
-  </div>
-  <p class="rel-label">Releases this fixes</p>
-  <ul class="rels">
-    <li><span class="tag ban">escaped the ban</span>28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP <span class="src">· Prowlarr</span></li>
-    <li><span class="tag ctl">control</span>28.Years.Later.2025.1080p.HDCAM.V1.x264-SyncUP <span class="src">· dotted, still banned</span></li>
-    <li><span class="tag ctl">control</span>The.Notebook.2004.1080p.BluRay.x264-CAMELOT <span class="src">· no false positive</span></li>
-  </ul>
-</section>
-
-<h3 class="grp">Missed matches before · scores that never applied</h3>
-
-<section class="card">
-  <div class="card-head"><span class="op">OP 213</span><h2>Special Edition</h2><span class="sev miss">missed +1000 edition score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="why">The post-year token list had no <code>Redux</code>, so Redux cuts neither earned
-  the edition score nor tripped the “Not Special Edition” gate in the Theatrical formats.
-  No release group named REDUX exists, so the token adds no false-positive surface.</p>
-  <div class="diff">
-    <div class="pat before">(?&lt;=\b[12]\d{3}\b).*\b(Cut|Directors|DC|Extended|Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(\b|\d)</div>
-    <div class="pat after">(?&lt;=\b[12]\d{3}\b).*\b(Cut|Directors|DC|Extended|<mark class="add">Redux|</mark>Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(\b|\d)</div>
-  </div>
-  <p class="rel-label">Releases this fixes</p>
-  <ul class="rels">
-    <li><span class="tag miss">was unscored</span>Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD <span class="src">· Prowlarr</span></li>
-    <li><span class="tag miss">was unscored</span>Apocalypse.Now.1979.REDUX.2160p.UHD.BLURAY.REMUX.HDR.HEVC.MULTi.VFF.DTS-HDMA.x265-EXTREME <span class="src">· Prowlarr</span></li>
-    <li><span class="tag ctl">control</span>Movie.2006.Directors.Cut.1080p.BluRay.x264-GROUP <span class="src">· unchanged</span></li>
-  </ul>
-</section>
-
-<section class="card">
-  <div class="card-head"><span class="op">OP 214</span><h2>Dolby Digital +</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="why">Canonical <code>E-AC-3</code> (Dolby’s own spelling) and spelled-out
-  <code>Dolby.Digital.Plus</code> matched neither DD nor DD+ — those releases got no audio
-  format at all, and the DD+ negations inside AAC/DTS/FLAC/TrueHD failed open.</p>
-  <div class="diff">
-    <div class="pat before">\bDD[P+]|\b(<mark class="del">e[-_. ]?ac3</mark>)\b</div>
-    <div class="pat after">\bDD[P+]|\b(<mark class="add">e[-_. ]?ac[-_. ]?3</mark>)\b<mark class="add">|\bDolby[ ._-]?Digital[ ._-]?(P(lus)?\b|\+)</mark></div>
-  </div>
-  <p class="rel-label">Releases this fixes</p>
-  <ul class="rels">
-    <li><span class="tag miss">was unscored</span>Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS <span class="src">· hdencode</span></li>
-    <li><span class="tag miss">was unscored</span>The.Browns.S01.1080p.WEB-DL.E-AC-3.H.264-BTN <span class="src">· hdencode</span></li>
-    <li><span class="tag miss">was unscored</span>Gatillero.2025.1080p.WEB-DL.x264.E-AC-3-5.1.TTR <span class="src">· hdencode</span></li>
-    <li><span class="tag miss">was unscored</span>Agent.Elvis.S01E01.Full.Tilt.1080p.NF.WEBRip.Dolby.Digital.Plus.with.Dolby.Atmos.5.1.H.265.-iVy <span class="src">· Prowlarr</span></li>
-    <li><span class="tag miss">was unscored</span>Black.Widow.2021.Web-Dl.1080p.HEVC.10bit.HDR.Dolby.Digital.Plus.with.Dolby.Atmos.6ch-CAPTCHA <span class="src">· Prowlarr</span></li>
-    <li><span class="tag ctl">control</span>Movie.2021.1080p.WEB-DL.Dolby.Atmos.7.1.H.264-GRP <span class="src">· Atmos alone, still unmatched</span></li>
-  </ul>
-</section>
-
-<section class="card">
-  <div class="card-head"><span class="op">OP 215</span><h2>Paramount+</h2><span class="sev miss">missed service tag</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="why">“Paramount Plus” was matched with a literal space only, while dotted scene
-  names write <code>Paramount.Plus</code>. Sibling service regexes (Disney+, HBO&nbsp;Max, Crave)
-  already use separator classes; this brings Paramount+ in line.</p>
-  <div class="diff">
-    <div class="pat before">\b(PMTP|<mark class="del">Paramount Plus</mark>)\b</div>
-    <div class="pat after">\b(PMTP|<mark class="add">Paramount[ ._-]?Plus</mark>)\b</div>
-  </div>
-  <p class="rel-label">Releases this fixes</p>
-  <ul class="rels">
-    <li><span class="tag miss">was untagged</span>Infinite.2021.2160p.WEB-DL.Paramount.Plus.Dolby.Vision.HEVC.E-AC-3.5.1-MZABI <span class="src">· hdencode</span></li>
-    <li><span class="tag ctl">control</span>Paramount.Pictures.90th.Anniversary.Collection.1080p.BluRay.x264-GROUP <span class="src">· no false positive</span></li>
+    <li><span class="tag miss">was unscored</span>Criminal.Minds.S01E03.720p.WEB-DL.Dolby.Digital.5.1.h264-Obfuscated <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was unscored</span>Jawan.2023.1080p.NF.WEB-DL.Dolby.Digital.5.1.H.264-Telly</li>
+    <li><span class="tag ctl">control</span>Agent.Elvis.S01E01...Dolby.Digital.Plus.with.Dolby.Atmos...-iVy <span class="src">· stays DD+ only</span></li>
   </ul>
 </section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 219</span><h2>Full Disc</h2><span class="sev ban">was banning ordinary DVDRips</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 20:15 UTC · op 219</p>
   <p class="why">The regex's trailing alternative sat outside its own rip-exclusion guard and
   used unanchored tokens, so ordinary PAL/NTSC DVDRips — whose DVD source the format's
   conditions don't exclude — took the −999999 full-disc ban, and PAL matched inside words
@@ -270,27 +163,27 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 220</span><h2>Dolby Digital</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="why">Plain spelled-out <code>Dolby.Digital.5.1</code> matched neither DD nor DD+ —
-  only the abbreviation was known, even though the Dolby Vision regex has always accepted
-  its spelled-out form. The new branch is Plus-guarded so spelled-out Dolby Digital Plus
-  stays with the DD+ regex from OP&nbsp;214.</p>
+  <div class="card-head"><span class="op">OP 218</span><h2>Extras (format wiring)</h2><span class="sev ban">live ban never fired</span><span class="ver v2">v2 only · v1 wiring was fine</span></div>
+  <p class="when">Changed 2026-08-06 19:20 UTC · op 218</p>
+  <p class="why">Same wiring bug as DUBBED, but live: Extras bans bonus-content releases at
+  −999999 in 20 profile entries, yet required its movie condition (year anchor) AND its
+  series condition (S## anchor) at once. Movie extras carry no season marker and TV extras
+  packs usually no year — both classes sailed past the ban. Conditions are now either-or.</p>
   <div class="diff">
-    <div class="pat before">\bDD[^a-z+]|(?&lt;!e-?)\b(ac-?3)\b</div>
-    <div class="pat after">\bDD[^a-z+]|(?&lt;!e-?)\b(ac-?3)\b<mark class="add">|\bDolby[ ._-]?Digital\b(?![ ._-]?(P(lus)?\b|\+))</mark></div>
+    <div class="pat before">Movie Extras <mark class="del">required</mark> · TV Extras <mark class="del">required</mark>&nbsp;&nbsp;(AND — needs year + S## together)</div>
+    <div class="pat after">Movie Extras <mark class="add">optional</mark> · TV Extras <mark class="add">optional</mark>&nbsp;&nbsp;(OR — either form fires)</div>
   </div>
   <p class="rel-label">Releases this fixes</p>
   <ul class="rels">
-    <li><span class="tag miss">was unscored</span>Criminal.Minds.S01E03.720p.WEB-DL.Dolby.Digital.5.1.h264-Obfuscated <span class="src">· Prowlarr</span></li>
-    <li><span class="tag miss">was unscored</span>Jawan.2023.1080p.NF.WEB-DL.Dolby.Digital.5.1.H.264-Telly</li>
-    <li><span class="tag ctl">control</span>Agent.Elvis.S01E01...Dolby.Digital.Plus.with.Dolby.Atmos...-iVy <span class="src">· stays DD+ only</span></li>
+    <li><span class="tag ban">escaped the ban</span>American.Reunion.2012.EXTRAS.1080p.BluRay.H264-RMXTRAS <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ban">escaped the ban</span>Boardwalk.Empire.S01.EXTRAS.1080p.AV1.10bit-MeGusta <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>The.Extra.Man.2010.1080p.BluRay.x264-GROUP <span class="src">· title word, still unmatched</span></li>
   </ul>
 </section>
 
-<h3 class="grp">Format wiring · conditions that could never fire</h3>
-
 <section class="card">
   <div class="card-head"><span class="op">OP 217</span><h2>DUBBED (format wiring)</h2><span class="sev miss">format could never match</span><span class="ver v2">v2 only · format absent in v1</span></div>
+  <p class="when">Changed 2026-08-06 18:40 UTC · op 217</p>
   <p class="why">Not a regex bug: the format required its movie condition (year-anchored)
   AND its series condition (SxxExx-anchored) at the same time — impossible for any real
   title. Both are now optional, which Radarr treats as either-or. The format is not yet
@@ -308,20 +201,135 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 218</span><h2>Extras (format wiring)</h2><span class="sev ban">live ban never fired</span><span class="ver v2">v2 only · v1 wiring was fine</span></div>
-  <p class="why">Same wiring bug as DUBBED, but live: Extras bans bonus-content releases at
-  −999999 in 20 profile entries, yet required its movie condition (year anchor) AND its
-  series condition (S## anchor) at once. Movie extras carry no season marker and TV extras
-  packs usually no year — both classes sailed past the ban. Conditions are now either-or.</p>
+  <div class="card-head"><span class="op">OP 216</span><h2>CAM</h2><span class="sev ban">cam releases escaped the ban</span><span class="ver v2">v2 only · new in v2</span></div>
+  <p class="when">Changed 2026-08-06 18:05 UTC · op 216</p>
+  <p class="why">Underscore-separated names defeat regex word boundaries (underscore is a
+  word character), so neither the year anchor nor the CAM token could fire — real cams
+  slipped past a −999999 ban. Verified against Radarr source: custom formats match the
+  raw title, underscores intact. Boundaries now accept underscores as separators.</p>
   <div class="diff">
-    <div class="pat before">Movie Extras <mark class="del">required</mark> · TV Extras <mark class="del">required</mark>&nbsp;&nbsp;(AND — needs year + S## together)</div>
-    <div class="pat after">Movie Extras <mark class="add">optional</mark> · TV Extras <mark class="add">optional</mark>&nbsp;&nbsp;(OR — either form fires)</div>
+    <div class="pat before">(?&lt;=<mark class="del">\b</mark>[12]\d{3}<mark class="del">\b</mark>).*(<mark class="del">\b</mark>(CAM[ ._-]?(Rip)?|DVD[ ._-]?(SCR(EENER)?)|HD[ ._-]?(CAM|SCR|TC|TS)|SCREENER|TELE(CINE|SYNC)|WORKPRINT)<mark class="del">\b</mark>)</div>
+    <div class="pat after">(?&lt;=<mark class="add">(\b|_)</mark>[12]\d{3}<mark class="add">(\b|_)</mark>).*(<mark class="add">(\b|_)</mark>(CAM[ ._-]?(Rip)?|DVD[ ._-]?(SCR(EENER)?)|HD[ ._-]?(CAM|SCR|TC|TS)|SCREENER|TELE(CINE|SYNC)|WORKPRINT)<mark class="add">(\b|_)</mark>)</div>
   </div>
   <p class="rel-label">Releases this fixes</p>
   <ul class="rels">
-    <li><span class="tag ban">escaped the ban</span>American.Reunion.2012.EXTRAS.1080p.BluRay.H264-RMXTRAS <span class="src">· Prowlarr</span></li>
-    <li><span class="tag ban">escaped the ban</span>Boardwalk.Empire.S01.EXTRAS.1080p.AV1.10bit-MeGusta <span class="src">· Prowlarr</span></li>
-    <li><span class="tag ctl">control</span>The.Extra.Man.2010.1080p.BluRay.x264-GROUP <span class="src">· title word, still unmatched</span></li>
+    <li><span class="tag ban">escaped the ban</span>28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>28.Years.Later.2025.1080p.HDCAM.V1.x264-SyncUP <span class="src">· dotted, still banned</span></li>
+    <li><span class="tag ctl">control</span>The.Notebook.2004.1080p.BluRay.x264-CAMELOT <span class="src">· no false positive</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 215</span><h2>Paramount+</h2><span class="sev miss">missed service tag</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 17:20 UTC · op 215</p>
+  <p class="why">“Paramount Plus” was matched with a literal space only, while dotted scene
+  names write <code>Paramount.Plus</code>. Sibling service regexes (Disney+, HBO&nbsp;Max, Crave)
+  already use separator classes; this brings Paramount+ in line.</p>
+  <div class="diff">
+    <div class="pat before">\b(PMTP|<mark class="del">Paramount Plus</mark>)\b</div>
+    <div class="pat after">\b(PMTP|<mark class="add">Paramount[ ._-]?Plus</mark>)\b</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">was untagged</span>Infinite.2021.2160p.WEB-DL.Paramount.Plus.Dolby.Vision.HEVC.E-AC-3.5.1-MZABI <span class="src">· hdencode</span></li>
+    <li><span class="tag ctl">control</span>Paramount.Pictures.90th.Anniversary.Collection.1080p.BluRay.x264-GROUP <span class="src">· no false positive</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 214</span><h2>Dolby Digital +</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 16:45 UTC · op 214</p>
+  <p class="why">Canonical <code>E-AC-3</code> (Dolby’s own spelling) and spelled-out
+  <code>Dolby.Digital.Plus</code> matched neither DD nor DD+ — those releases got no audio
+  format at all, and the DD+ negations inside AAC/DTS/FLAC/TrueHD failed open.</p>
+  <div class="diff">
+    <div class="pat before">\bDD[P+]|\b(<mark class="del">e[-_. ]?ac3</mark>)\b</div>
+    <div class="pat after">\bDD[P+]|\b(<mark class="add">e[-_. ]?ac[-_. ]?3</mark>)\b<mark class="add">|\bDolby[ ._-]?Digital[ ._-]?(P(lus)?\b|\+)</mark></div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">was unscored</span>Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS <span class="src">· hdencode</span></li>
+    <li><span class="tag miss">was unscored</span>The.Browns.S01.1080p.WEB-DL.E-AC-3.H.264-BTN <span class="src">· hdencode</span></li>
+    <li><span class="tag miss">was unscored</span>Gatillero.2025.1080p.WEB-DL.x264.E-AC-3-5.1.TTR <span class="src">· hdencode</span></li>
+    <li><span class="tag miss">was unscored</span>Agent.Elvis.S01E01.Full.Tilt.1080p.NF.WEBRip.Dolby.Digital.Plus.with.Dolby.Atmos.5.1.H.265.-iVy <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was unscored</span>Black.Widow.2021.Web-Dl.1080p.HEVC.10bit.HDR.Dolby.Digital.Plus.with.Dolby.Atmos.6ch-CAPTCHA <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>Movie.2021.1080p.WEB-DL.Dolby.Atmos.7.1.H.264-GRP <span class="src">· Atmos alone, still unmatched</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 213</span><h2>Special Edition</h2><span class="sev miss">missed +1000 edition score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 15:55 UTC · op 213</p>
+  <p class="why">The post-year token list had no <code>Redux</code>, so Redux cuts neither earned
+  the edition score nor tripped the “Not Special Edition” gate in the Theatrical formats.
+  No release group named REDUX exists, so the token adds no false-positive surface.</p>
+  <div class="diff">
+    <div class="pat before">(?&lt;=\b[12]\d{3}\b).*\b(Cut|Directors|DC|Extended|Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(\b|\d)</div>
+    <div class="pat after">(?&lt;=\b[12]\d{3}\b).*\b(Cut|Directors|DC|Extended|<mark class="add">Redux|</mark>Special|Uncensored|Uncut|Unrated|Version|(?&lt;!{)Edition)(\b|\d)</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag miss">was unscored</span>Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was unscored</span>Apocalypse.Now.1979.REDUX.2160p.UHD.BLURAY.REMUX.HDR.HEVC.MULTi.VFF.DTS-HDMA.x265-EXTREME <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>Movie.2006.Directors.Cut.1080p.BluRay.x264-GROUP <span class="src">· unchanged</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 212</span><h2>German DL</h2><span class="sev ban">was banning legit releases</span><span class="ver v2">v2 only · new in v2</span></div>
+  <p class="when">Changed 2026-08-06 14:55 UTC · op 212</p>
+  <p class="why">The guard that stops the <code>DL</code> of WEB-DL reading as “Dual Language”
+  only covered the hyphen spelling. Dotted or spaced WEB-DL made English releases of
+  “German”-titled films look dual-language — a −999999 ban in 11 profiles.</p>
+  <div class="diff">
+    <div class="pat before">(?=.*\bGERMAN\b)(?=.*\b(?&lt;!<mark class="del">WEB-</mark>)[DM]L\b).*</div>
+    <div class="pat after">(?=.*\bGERMAN\b)(?=.*\b(?&lt;!<mark class="add">WEB[-_. ]</mark>)[DM]L\b).*</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was banned</span>The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP</li>
+    <li><span class="tag ban">was banned</span>A German Life 2016 720p WEB DL x264-GROUP</li>
+    <li><span class="tag ctl">control</span>Der.Untergang.2004.German.DL.1080p.BluRay.x264-GROUP <span class="src">· real dual-language, still matches</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 212</span><h2>Remux</h2><span class="sev ban">fed a wrongful Full Disc ban</span><span class="ver v2">v2 only · regression (v1 matched BDRemux)</span></div>
+  <p class="when">Changed 2026-08-06 14:55 UTC · op 212</p>
+  <p class="why"><code>\b(Remux)\b</code> never matched the joined spellings used by Russian and
+  Spanish trackers. This regex is the “Not Remux” gate in 49 formats — worst case, a
+  BDRemux with an AVC tag fired the <em>Full Disc</em> format’s −999999 ban in every profile,
+  and joined-spelling remuxes escaped the Remux and Banned&nbsp;Remux formats entirely.</p>
+  <div class="diff">
+    <div class="pat before">\b(<mark class="del">Remux</mark>)\b</div>
+    <div class="pat after">\b(<mark class="add">(BD|UHD)[-_. ]?)?Remux</mark>\b</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was full-disc-banned</span>Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB</li>
+    <li><span class="tag miss">was not a remux</span>Vengadores.Endgame.2019.2160p.UHDremux.HEVC.DTS-HD.MA.7.1-GRUPO</li>
+    <li><span class="tag miss">escaped Banned Remux</span>Movie.Name.2014.1080p.BDREMUX.AVC.DTS-HD.MA.5.1-LEGi0N</li>
+    <li><span class="tag ctl">control</span>Movie.2020.1080p.WEB-DL.x264-LazyRemux <span class="src">· group name, still unmatched</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 211</span><h2>Dolby Vision (Without Fallback)</h2><span class="sev ban">was banning legit releases</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 13:25 UTC · op 211</p>
+  <p class="why">The negation list only knew the spelling <code>BLURAY</code>, so hyphenated
+  Blu-ray disc releases — which always carry an HDR10 base layer — were treated as
+  fallback-less DV and hard-banned in 7 profiles. Same fix the project itself made for
+  its <em>UHD Blu-ray</em> regex in PR&nbsp;#31.</p>
+  <div class="diff">
+    <div class="pat before">(?&lt;=^(?!.*(HDR|HULU|REMUX|<mark class="del">BLURAY</mark>)).*?)\b(DV|Dovi|Dolby[ .]?Vision)\b</div>
+    <div class="pat after">(?&lt;=^(?!.*(HDR|HULU|REMUX|<mark class="add">BLU[-]?RAY</mark>)).*?)\b(DV|Dovi|Dolby[ .]?Vision)\b</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was banned</span>Movie.2016.2160p.Blu-ray.x265.10bit.DV.TrueHD.7.1-GROUP</li>
+    <li><span class="tag ban">was banned</span>Movie.2019.2160p.COMPLETE.UHD.BLU-RAY.DV.HEVC-GROUP</li>
+    <li><span class="tag ok">class proof</span>[BD]Dark.Blue.2002.2160p.AUS.UHD.Blu-ray.DV.HDR.HEVC.DTS-HD.MA.5.1-Tux <span class="src">· hdencode</span></li>
+    <li><span class="tag ctl">control</span>Finding.Nemo.2003.2160p.UHD.BluRay.TrueHD.7.1.DV.x265-W4NK3R <span class="src">· unchanged</span></li>
   </ul>
 </section>
 
