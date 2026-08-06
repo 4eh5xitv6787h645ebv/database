@@ -2,7 +2,7 @@
 
 started_at: 2026-08-06T15:35:00Z
 consecutive_dry: 0
-iteration: 5
+iteration: 6
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
@@ -19,6 +19,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **Dolby Digital +: missed canonical `E-AC-3` and spelled-out `Dolby.Digital.Plus`** → op 214 (`e[-_. ]?ac[-_. ]?3` + `Dolby[ ._-]?Digital[ ._-]?(P(lus)?\b|\+)`). Real titles: `Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS`, `The.Browns.S01.1080p.WEB-DL.E-AC-3.H.264-BTN` (hdencode), `Agent.Elvis...NF.WEBRip.Dolby.Digital.Plus.with.Dolby.Atmos...-iVy`, `Black.Widow.2021...-CAPTCHA` (Prowlarr). DD's `(?<!e-?)` guard keeps these out of plain DD. Control: `Dolby.Atmos` alone stays unmatched.
 - **Paramount+: "Paramount Plus" was space-only, missing dotted `Paramount.Plus`** → op 215 (`Paramount[ ._-]?Plus`, sibling-style separator class, superset of old). Real title: `Infinite.2021.2160p.WEB-DL.Paramount.Plus.Dolby.Vision.HEVC.E-AC-3.5.1-MZABI` (hdencode). Control: bare "Paramount" (Pictures) unmatched.
 - **CAM: underscore-separated releases escaped the ban** → op 216 (`\b` → `(\b|_)` at year anchor + token edges). Real title: `28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP` (Prowlarr, multiple indexers). Verified at Radarr source level that CF matching sees raw underscores (SimpleReleaseTitle strips only `<>?*|`). Controls: `-CAMELOT` group, `Camp.Rock`, DVDRip all stay unmatched.
+- **DUBBED CF: both conditions required=1 made the format unmatchable** → op 217 (both set optional; Radarr ORs optionals). Real proof titles: `Arac.Attack...2002.GERMAN.DUBBED.DL.1080P.BLURAY.X264-WATCHABLE` (movie form), `2.Broke.Girls.S01E22...GERMAN.DL.DUBBED.1080p.BluRay.x264-TVP` (TV form) — verified via profilarr parser (132/132 incl. new DUBBED tests). CF is unscored (op 196 "future use"), so no current scoring changes — this makes it usable.
 - **German DL: guard `(?<!WEB-)` missed WEB.DL / WEB DL spellings** → op 212 (`(?<!WEB[-_. ])`). Titles: `The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP`, `A German Life 2016 720p WEB DL x264-GROUP` (−999999 in 11 profiles). Controls: hyphen spelling still guarded; real `German.DL` still matches.
 
 ### FALSE-ALARM (withdrawn — do not re-propose)
@@ -40,6 +41,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **Orphan regexes** (zero conditions reference them; fix-or-delete before wiring): `Non Retail HDR Formats` (DV branch reproduces the pre-fix WF bug — flags retail DV.HDR/DV.HDR10Plus/REMUX hybrids), `Non Retail HDR Groups` (missing parens: `(?<=^|[\s.-])VECTOR|BiTOR|…|Flights\b` — middle six names match as bare substrings, e.g. BiTOR inside "Inhibitor"), `HDR10 (Missing Groups)`, `TrueHD (Missing Groups)`.
 - **Apple TV+ literal `Apple TV\+` is space-only** (same class as the fixed Paramount+) — no real dotted "Apple.TV+" title found yet; fix held for evidence.
 - **Service short-tags without a web guard**: `iQIYI` = `\b(IQIYI|IQ)\b` and `Youku` = `\b(Youku|YK)\b` have no WEB lookahead (unlike Max/iTunes/MA) — hypothesis: FP on titles like "I.Q.1994" variants spelled "IQ"; needs a real colliding title before acting.
+- **Movie DUBBED year-anchor misses year-less German scene naming** (`Verblendung.German.DL.AC3.Dubbed.1080p.BluRay.AVC.REMUX.Repack-LameHD`, `Apparition.German.AC3.Dubbed.1080p...-Pleaders` — real, Prowlarr). Zero live impact: DUBBED CF unscored, and DL-carrying titles are already banned by German DL. Fix only when DUBBED gets scored; corpus pins current behavior.
+- **No underscore generalization for DUBBED/edition regexes yet** — Prowlarr "German Dubbed 1080p" showed no real underscore release names (only rar-part filenames). Op 216's (\b|_) hardening stays CAM-only until evidence appears.
 - `2160p Quality Tier 6` description says "Tier 5" (cosmetic copy-paste).
 
 ### CLEARED areas (3-agent sweep of all 533 regexes, 2026-08-06 — don't redo without a NEW hypothesis)
@@ -53,6 +56,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 
 - Prowlarr search "HDCAM 2025" (real cam titles incl. underscore variants); api.srrdb.com/v1/search/hqcam (EMPTY) (2026-08-06)
 
+- Prowlarr search "German Dubbed 1080p" (real German scene forms incl. year-less class) (2026-08-06)
+
 ## Searched sources/queries (exhausted — don't repeat)
 - Prowlarr search "Apocalypse Now Redux" (2026-08-06, 85 titles)
 - api.srrdb.com/v1/search/group:redux (EMPTY — no such group)
@@ -63,7 +68,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - TRaSH radarr CF JSONs (dv*, hdr*, hlg, sdr*); Radarr QualityParserFixture.cs (in audit/harness sources notes)
 
 ## Iteration log
-- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: German/multi-language cluster, CF condition-graph wiring, or banned-group activity check. NOTE: the underscore-defeats-\b issue is likely present in OTHER year-anchored regexes too (Special Edition, Extended/Theatrical Edition, B&W family) — a future iteration may generalize op 216's fix there IF real underscore titles with those tokens are found (log evidence first).
+- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: banned-group activity check, quality-tier group membership, or remaining CF condition-graph sweep (op 217 proved the area is fertile: audit ALL multi-condition CFs for required/optional wiring errors).
+- **Iteration 5 (2026-08-06)**: area = German/multi-language + CF wiring. Result: **1 new bug fixed (op 217, DUBBED CF wiring)**; Movie DUBBED year-gap + underscore-absence documented OPEN; German DL re-verified on real usenet titles; Nordic/sign-language regexes clean. Harness gained OR-composites. Searched: prowlarr "German Dubbed 1080p". consecutive_dry stays 0. NOTE: the underscore-defeats-\b issue is likely present in OTHER year-anchored regexes too (Special Edition, Extended/Theatrical Edition, B&W family) — a future iteration may generalize op 216's fix there IF real underscore titles with those tokens are found (log evidence first).
 - **Iteration 4 (2026-08-06)**: area = resolution/source tokens. Result: **1 new bug fixed (op 216, CAM underscore escape)**; x265 [x]-vs-[xh] hypothesis adjudicated INTENDED via op-59 history; AVC/HDTV/AV1/HEVC regexes reviewed clean. Searched: prowlarr "HDCAM 2025", srrdb "hqcam" (empty). consecutive_dry stays 0.
 - **Iteration 3 (2026-08-06)**: area = streaming-service tag lists. Result: **1 new bug fixed (op 215, Paramount+ dotted spelling)**; all 22 service regexes reviewed — Amazon/NF/DSNP/HBO Max/Peacock/Crave/Bravia spelled-out forms already separator-tolerant; two new OPEN hypotheses logged (Apple TV+ space-only literal; IQ/YK unguarded short tags). Earlier "space form also fails" scare was an echo-quoting artifact — harness re-verified with printf. consecutive_dry stays 0.
 - **Iteration 2 (2026-08-06)**: area = audio family (pre-scoped OPEN item). Result: **1 new bug fixed (op 214, Dolby Digital + spellings)** — E-AC-3 + spelled-out DDP, 6 corpus rows flipped, gate clean (229/229). Plain spelled-out DD kept OPEN (no real title evidence). consecutive_dry stays 0.
