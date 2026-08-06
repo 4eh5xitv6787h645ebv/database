@@ -2,7 +2,7 @@
 
 started_at: 2026-08-06T15:35:00Z
 consecutive_dry: 0
-iteration: 4
+iteration: 5
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
@@ -18,12 +18,14 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **Special Edition: token list missing `Redux`** → op 213 (post-year-anchored `|Redux`). Real titles: `Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD`, `…REDUX.2160p.UHD.BLURAY.REMUX…-EXTREME` (Prowlarr metadata). No group named REDUX (srrdb group search empty) → no new FP surface. Note: Radarr's EditionRegex does NOT know Redux either — evidence is real-title based. Pre-year "Apocalypse Now Redux (1979)" intentionally unmatched (year-lookbehind design, same as all tokens).
 - **Dolby Digital +: missed canonical `E-AC-3` and spelled-out `Dolby.Digital.Plus`** → op 214 (`e[-_. ]?ac[-_. ]?3` + `Dolby[ ._-]?Digital[ ._-]?(P(lus)?\b|\+)`). Real titles: `Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS`, `The.Browns.S01.1080p.WEB-DL.E-AC-3.H.264-BTN` (hdencode), `Agent.Elvis...NF.WEBRip.Dolby.Digital.Plus.with.Dolby.Atmos...-iVy`, `Black.Widow.2021...-CAPTCHA` (Prowlarr). DD's `(?<!e-?)` guard keeps these out of plain DD. Control: `Dolby.Atmos` alone stays unmatched.
 - **Paramount+: "Paramount Plus" was space-only, missing dotted `Paramount.Plus`** → op 215 (`Paramount[ ._-]?Plus`, sibling-style separator class, superset of old). Real title: `Infinite.2021.2160p.WEB-DL.Paramount.Plus.Dolby.Vision.HEVC.E-AC-3.5.1-MZABI` (hdencode). Control: bare "Paramount" (Pictures) unmatched.
+- **CAM: underscore-separated releases escaped the ban** → op 216 (`\b` → `(\b|_)` at year anchor + token edges). Real title: `28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP` (Prowlarr, multiple indexers). Verified at Radarr source level that CF matching sees raw underscores (SimpleReleaseTitle strips only `<>?*|`). Controls: `-CAMELOT` group, `Camp.Rock`, DVDRip all stay unmatched.
 - **German DL: guard `(?<!WEB-)` missed WEB.DL / WEB DL spellings** → op 212 (`(?<!WEB[-_. ])`). Titles: `The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP`, `A German Life 2016 720p WEB DL x264-GROUP` (−999999 in 11 profiles). Controls: hyphen spelling still guarded; real `German.DL` still matches.
 
 ### FALSE-ALARM (withdrawn — do not re-propose)
 - **DV.SDR added to Without-Fallback negation**: withdrawn. No verified real `DV.SDR` release names (web-searched; only DV→SDR conversion tooling exists); WF has matched DV.SDR since op 0 (NOT an op-200 regression — that guard lived on the main `Dolby Vision` regex); CF description says "regular HDR Fallback" — SDR base is not an HDR fallback. Corpus pins DV.SDR → WF matches, as intended.
 
 ### INTENDED (leave alone)
+- **`x265` regex is `[x]`-only while `x264`/`HEVC`/`x265 (Efficient)` use `[xh]`** — deliberate: op 59 rewrote plain and Efficient side-by-side and preserved the split, and a dedicated `h265` regex exists. The h/x distinction is a design choice, not an oversight. Do not "fix".
 - `DV.HLG` raw-WF-regex gap — rescued at CF level by op-182 negated `HDR` condition (HDR regex matches HLG). Unobservable; becomes live only if that condition is removed.
 - Op 200 dropping `dv(?![ .](HLG|SDR))` from main `Dolby Vision` — deliberate simplification; both scoring directions defensible.
 - Release group literally named "HDR" matches HDR cluster — unfixable at title level; TRaSH identical.
@@ -49,6 +51,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - Prowlarr search "E-AC-3 1080p" (noise, no E-AC-3 titles), "Dolby Digital Plus 1080p" (iVy/CAPTCHA spelled-out titles) (2026-08-06)
 - hdencode.org ?s=E-AC-3 (6 real E-AC-3 titles) (2026-08-06)
 
+- Prowlarr search "HDCAM 2025" (real cam titles incl. underscore variants); api.srrdb.com/v1/search/hqcam (EMPTY) (2026-08-06)
+
 ## Searched sources/queries (exhausted — don't repeat)
 - Prowlarr search "Apocalypse Now Redux" (2026-08-06, 85 titles)
 - api.srrdb.com/v1/search/group:redux (EMPTY — no such group)
@@ -59,6 +63,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - TRaSH radarr CF JSONs (dv*, hdr*, hlg, sdr*); Radarr QualityParserFixture.cs (in audit/harness sources notes)
 
 ## Iteration log
-- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: resolution+source tokens or release-group activity check.
+- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: German/multi-language cluster, CF condition-graph wiring, or banned-group activity check. NOTE: the underscore-defeats-\b issue is likely present in OTHER year-anchored regexes too (Special Edition, Extended/Theatrical Edition, B&W family) — a future iteration may generalize op 216's fix there IF real underscore titles with those tokens are found (log evidence first).
+- **Iteration 4 (2026-08-06)**: area = resolution/source tokens. Result: **1 new bug fixed (op 216, CAM underscore escape)**; x265 [x]-vs-[xh] hypothesis adjudicated INTENDED via op-59 history; AVC/HDTV/AV1/HEVC regexes reviewed clean. Searched: prowlarr "HDCAM 2025", srrdb "hqcam" (empty). consecutive_dry stays 0.
 - **Iteration 3 (2026-08-06)**: area = streaming-service tag lists. Result: **1 new bug fixed (op 215, Paramount+ dotted spelling)**; all 22 service regexes reviewed — Amazon/NF/DSNP/HBO Max/Peacock/Crave/Bravia spelled-out forms already separator-tolerant; two new OPEN hypotheses logged (Apple TV+ space-only literal; IQ/YK unguarded short tags). Earlier "space form also fails" scare was an echo-quoting artifact — harness re-verified with printf. consecutive_dry stays 0.
 - **Iteration 2 (2026-08-06)**: area = audio family (pre-scoped OPEN item). Result: **1 new bug fixed (op 214, Dolby Digital + spellings)** — E-AC-3 + spelled-out DDP, 6 corpus rows flipped, gate clean (229/229). Plain spelled-out DD kept OPEN (no real title evidence). consecutive_dry stays 0.
