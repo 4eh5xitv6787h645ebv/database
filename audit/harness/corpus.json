@@ -707,6 +707,41 @@
         "Dolby Digital": false,
         "Dolby Digital +": false
       }
+    },
+    {
+      "title": "Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD",
+      "note": "REAL (Prowlarr metadata): Redux in post-year edition position",
+      "expect": {
+        "Special Edition": true
+      }
+    },
+    {
+      "title": "Apocalypse.Now.1979.REDUX.2160p.UHD.BLURAY.REMUX.HDR.HEVC.MULTi.VFF.DTS-HDMA.x265-EXTREME",
+      "note": "REAL (Prowlarr metadata): uppercase REDUX remux",
+      "expect": {
+        "Special Edition": true
+      }
+    },
+    {
+      "title": "Apocalypse Now Redux (1979).1080p.Blu-Ray .DTS-NoGroup",
+      "note": "REAL (Prowlarr): Redux BEFORE the year = title position; the year-lookbehind design intentionally skips pre-year tokens (same for Directors/Cut/etc.)",
+      "expect": {
+        "Special Edition": false
+      }
+    },
+    {
+      "title": "Movie.2006.Directors.Cut.1080p.BluRay.x264-GROUP",
+      "note": "control: existing token unchanged",
+      "expect": {
+        "Special Edition": true
+      }
+    },
+    {
+      "title": "Movie.Name.2023.2160p.DSNP.WEB-DL.DDP5.1.DV.H.265-FLUX2",
+      "note": "control: plain release, no edition tokens",
+      "expect": {
+        "Special Edition": false
+      }
     }
   ]
 }
