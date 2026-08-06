@@ -19,6 +19,8 @@ LABEL_TO_CF = {
     "CF:HDR (Missing)(title-part)": "HDR (Missing)",
     "CF:Atmos": "Atmos",
     "CF:Atmos (Missing)": "Atmos (Missing)",
+    "CF:DTS": "DTS",
+    "CF:DTS-HD MA": "DTS-HD MA",
     "Remux": "Remux",
     "German DL": "German DL",
     "CF:Special Edition": "Special Edition",
