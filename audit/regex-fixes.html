@@ -61,6 +61,9 @@
   }
   .card h2 { font-size: 1.15rem; margin: 0; letter-spacing: -.01em; }
   .sev { font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .07em; }
+  .ver { margin-left: auto; font: 650 .64rem/1 ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; letter-spacing: .05em; border: 1px solid var(--line); border-radius: 999px; padding: .28rem .55rem; white-space: nowrap; }
+  .ver.both { color: var(--chip-miss); border-color: color-mix(in srgb, var(--chip-miss) 45%, transparent); }
+  .ver.v2 { color: var(--muted); }
   .sev.ban { color: var(--chip-ban); }
   .sev.miss { color: var(--chip-miss); }
   .why { color: var(--muted); font-size: .92rem; margin: .3rem 0 1rem; max-width: 68ch; }
@@ -104,7 +107,7 @@
   <p class="sub">Nine fixes (seven regexes + two format wirings) on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
-  Every change is proven by real release names and gated so nothing else moves.</p>
+  Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
@@ -118,7 +121,7 @@
 <h3 class="grp">Wrongly hard-banned before · −999999 false positives</h3>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 211</span><h2>Dolby Vision (Without Fallback)</h2><span class="sev ban">was banning legit releases</span></div>
+  <div class="card-head"><span class="op">OP 211</span><h2>Dolby Vision (Without Fallback)</h2><span class="sev ban">was banning legit releases</span><span class="ver both">bug in v1 + v2</span></div>
   <p class="why">The negation list only knew the spelling <code>BLURAY</code>, so hyphenated
   Blu-ray disc releases — which always carry an HDR10 base layer — were treated as
   fallback-less DV and hard-banned in 7 profiles. Same fix the project itself made for
@@ -137,7 +140,7 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 212</span><h2>German DL</h2><span class="sev ban">was banning legit releases</span></div>
+  <div class="card-head"><span class="op">OP 212</span><h2>German DL</h2><span class="sev ban">was banning legit releases</span><span class="ver v2">v2 only · new in v2</span></div>
   <p class="why">The guard that stops the <code>DL</code> of WEB-DL reading as “Dual Language”
   only covered the hyphen spelling. Dotted or spaced WEB-DL made English releases of
   “German”-titled films look dual-language — a −999999 ban in 11 profiles.</p>
@@ -154,7 +157,7 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 212</span><h2>Remux</h2><span class="sev ban">fed a wrongful Full Disc ban</span></div>
+  <div class="card-head"><span class="op">OP 212</span><h2>Remux</h2><span class="sev ban">fed a wrongful Full Disc ban</span><span class="ver v2">v2 only · regression (v1 matched BDRemux)</span></div>
   <p class="why"><code>\b(Remux)\b</code> never matched the joined spellings used by Russian and
   Spanish trackers. This regex is the “Not Remux” gate in 49 formats — worst case, a
   BDRemux with an AVC tag fired the <em>Full Disc</em> format’s −999999 ban in every profile,
@@ -173,7 +176,7 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 216</span><h2>CAM</h2><span class="sev ban">cam releases escaped the ban</span></div>
+  <div class="card-head"><span class="op">OP 216</span><h2>CAM</h2><span class="sev ban">cam releases escaped the ban</span><span class="ver v2">v2 only · new in v2</span></div>
   <p class="why">Underscore-separated names defeat regex word boundaries (underscore is a
   word character), so neither the year anchor nor the CAM token could fire — real cams
   slipped past a −999999 ban. Verified against Radarr source: custom formats match the
@@ -193,7 +196,7 @@
 <h3 class="grp">Missed matches before · scores that never applied</h3>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 213</span><h2>Special Edition</h2><span class="sev miss">missed +1000 edition score</span></div>
+  <div class="card-head"><span class="op">OP 213</span><h2>Special Edition</h2><span class="sev miss">missed +1000 edition score</span><span class="ver both">bug in v1 + v2</span></div>
   <p class="why">The post-year token list had no <code>Redux</code>, so Redux cuts neither earned
   the edition score nor tripped the “Not Special Edition” gate in the Theatrical formats.
   No release group named REDUX exists, so the token adds no false-positive surface.</p>
@@ -210,7 +213,7 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 214</span><h2>Dolby Digital +</h2><span class="sev miss">missed audio score</span></div>
+  <div class="card-head"><span class="op">OP 214</span><h2>Dolby Digital +</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
   <p class="why">Canonical <code>E-AC-3</code> (Dolby’s own spelling) and spelled-out
   <code>Dolby.Digital.Plus</code> matched neither DD nor DD+ — those releases got no audio
   format at all, and the DD+ negations inside AAC/DTS/FLAC/TrueHD failed open.</p>
@@ -230,7 +233,7 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 215</span><h2>Paramount+</h2><span class="sev miss">missed service tag</span></div>
+  <div class="card-head"><span class="op">OP 215</span><h2>Paramount+</h2><span class="sev miss">missed service tag</span><span class="ver both">bug in v1 + v2</span></div>
   <p class="why">“Paramount Plus” was matched with a literal space only, while dotted scene
   names write <code>Paramount.Plus</code>. Sibling service regexes (Disney+, HBO&nbsp;Max, Crave)
   already use separator classes; this brings Paramount+ in line.</p>
@@ -246,7 +249,7 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 219</span><h2>Full Disc</h2><span class="sev ban">was banning ordinary DVDRips</span></div>
+  <div class="card-head"><span class="op">OP 219</span><h2>Full Disc</h2><span class="sev ban">was banning ordinary DVDRips</span><span class="ver both">bug in v1 + v2</span></div>
   <p class="why">The regex's trailing alternative sat outside its own rip-exclusion guard and
   used unanchored tokens, so ordinary PAL/NTSC DVDRips — whose DVD source the format's
   conditions don't exclude — took the −999999 full-disc ban, and PAL matched inside words
@@ -269,7 +272,7 @@
 <h3 class="grp">Format wiring · conditions that could never fire</h3>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 217</span><h2>DUBBED (format wiring)</h2><span class="sev miss">format could never match</span></div>
+  <div class="card-head"><span class="op">OP 217</span><h2>DUBBED (format wiring)</h2><span class="sev miss">format could never match</span><span class="ver v2">v2 only · format absent in v1</span></div>
   <p class="why">Not a regex bug: the format required its movie condition (year-anchored)
   AND its series condition (SxxExx-anchored) at the same time — impossible for any real
   title. Both are now optional, which Radarr treats as either-or. The format is not yet
@@ -287,7 +290,7 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 218</span><h2>Extras (format wiring)</h2><span class="sev ban">live ban never fired</span></div>
+  <div class="card-head"><span class="op">OP 218</span><h2>Extras (format wiring)</h2><span class="sev ban">live ban never fired</span><span class="ver v2">v2 only · v1 wiring was fine</span></div>
   <p class="why">Same wiring bug as DUBBED, but live: Extras bans bonus-content releases at
   −999999 in 20 profile entries, yet required its movie condition (year anchor) AND its
   series condition (S## anchor) at once. Movie extras carry no season marker and TV extras
