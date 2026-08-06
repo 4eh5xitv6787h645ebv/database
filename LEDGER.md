@@ -2,7 +2,7 @@
 
 started_at: 2026-08-06T15:35:00Z
 consecutive_dry: 0
-iteration: 1
+iteration: 2
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
@@ -14,6 +14,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 ### TRUE-BUG-FIXED
 - **Dolby Vision (Without Fallback): BLURAY negation missed Blu-ray/BLU-RAY spellings** → op 211 (`BLU[-]?RAY`, matching house precedent PR #31/e39014f). Titles: `Movie.2016.2160p.Blu-ray.x265.10bit.DV.TrueHD.7.1-GROUP`, `Movie.2019.2160p.COMPLETE.UHD.BLU-RAY.DV.HEVC-GROUP`; class proven real by `[BD]Dark.Blue.2002.2160p.AUS.UHD.Blu-ray.DV.HDR.HEVC.DTS-HD.MA.5.1-Tux` (hdencode).
 - **Remux: `\b(Remux)\b` missed joined BDRemux/BDREMUX/UHDremux** → op 212 (`\b((BD|UHD)[-_. ]?)?Remux\b`, Radarr-parser-aligned). Feeds 49 CFs; worst compound was Full Disc −999999 on `Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB`. Control: `-LazyRemux` group still unmatched.
+- **Special Edition: token list missing `Redux`** → op 213 (post-year-anchored `|Redux`). Real titles: `Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD`, `…REDUX.2160p.UHD.BLURAY.REMUX…-EXTREME` (Prowlarr metadata). No group named REDUX (srrdb group search empty) → no new FP surface. Note: Radarr's EditionRegex does NOT know Redux either — evidence is real-title based. Pre-year "Apocalypse Now Redux (1979)" intentionally unmatched (year-lookbehind design, same as all tokens).
 - **German DL: guard `(?<!WEB-)` missed WEB.DL / WEB DL spellings** → op 212 (`(?<!WEB[-_. ])`). Titles: `The.German.Doctor.2013.1080p.WEB.DL.DD5.1.H264-GROUP`, `A German Life 2016 720p WEB DL x264-GROUP` (−999999 in 11 profiles). Controls: hyphen spelling still guarded; real `German.DL` still matches.
 
 ### FALSE-ALARM (withdrawn — do not re-propose)
@@ -41,10 +42,13 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - Main HDR/DV cluster (Dolby Vision, Basic HDR Formats, HDR, HDR10+, SDR + their CF graphs) — deep-audited with 210-check corpus incl. 21 real titles; all green post-211/212.
 
 ## Searched sources/queries (exhausted — don't repeat)
+- Prowlarr search "Apocalypse Now Redux" (2026-08-06, 85 titles)
+- api.srrdb.com/v1/search/group:redux (EMPTY — no such group)
+- Radarr Parser.cs EditionRegex (fetched; no Redux token)
 - hdencode.org `?s=2160p+DV`, `?s=2160p+SDR` (2026-08-06)
 - api.srrdb.com/v1/search/2160p/hlg, /2160p/pq (pq query useless — returns alphabetical list) (2026-08-06)
 - Web search: "DV.SDR"/"DoVi.SDR" release names (negative result, 2026-08-06)
 - TRaSH radarr CF JSONs (dv*, hdr*, hlg, sdr*); Radarr QualityParserFixture.cs (in audit/harness sources notes)
 
 ## Iteration log
-- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes (IMAX/Special Edition already cleared; auditing the rest). Result: recorded below after run.
+- **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: audio family (DD/DDP fixes are pre-scoped in OPEN) or streaming-service long tail.
