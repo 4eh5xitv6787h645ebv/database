@@ -105,21 +105,47 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Thirteen fixes on
+  <p class="sub">Fourteen fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>12</b>migrations (ops 211–222)</div>
-  <div class="stat"><b>13</b>regexes + 2 format wirings</div>
-  <div class="stat"><b>299 / 299</b>.NET matrix checks green</div>
+  <div class="stat"><b>13</b>migrations (ops 211–223)</div>
+  <div class="stat"><b>14</b>regexes + 2 format wirings</div>
+  <div class="stat"><b>312 / 312</b>.NET matrix checks green</div>
   <div class="stat"><b>138 / 138</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 223</span><h2>3D / SBS packing</h2><span class="sev ban">wrong hard bans + missed 3D</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 16:34 UTC · op 223</p>
+  <p class="why">Bare <code>SBS</code> is both a stereoscopic packing tag and a Korean
+  broadcaster tag. Three real <code>SBS.WEB-DL</code> releases therefore took the 3D
+  format’s −999999 score in all 11 Radarr profiles. In the other direction, the global
+  year gate and word boundaries missed real underscore-delimited and yearless 3D names.
+  Bare SBS immediately before WEB-DL/WEBRip is now excluded; underscore separators are
+  accepted; and a yearless path requires both an explicit 3D tag and a packing marker.</p>
+  <div class="diff">
+    <div class="pat before">(?&lt;=\b[12]\d{3}\b).*\b((Bluray|BD)?3D|((H(alf)?|F(ull)?).?)?(O(ver)?.?U(nder)?|S(ide)?[\W_]?B(y)?.?S(ide)?))\b</div>
+    <div class="pat after"><mark class="add">^(?=.*(?:\b|_)(?:BluRay|BD)?3D(?:\b|_))(?=.*(?:\b|_)(?!SBS[ ._-]?WEB[ ._-]?(?:DL|Rip)\b)(?:(?:H(?:alf)?|F(?:ull)?).?)?(?:O(?:ver)?.?U(?:nder)?|S(?:ide)?[\W_]?B(?:y)?.?S(?:ide)?)(?:\b|_))|</mark>(?&lt;=(?&lt;![A-Za-z0-9])[12]\d{3})(?![A-Za-z0-9]).*(?:\b|_)(?:(?:BluRay|BD)?3D|<mark class="add">(?!SBS[ ._-]?WEB[ ._-]?(?:DL|Rip)\b)</mark>(?:(?:H(?:alf)?|F(?:ull)?).?)?(?:O(?:ver)?.?U(?:nder)?|S(?:ide)?[\W_]?B(?:y)?.?S(?:ide)?))(?:\b|_)</div>
+  </div>
+  <p class="rel-label">Releases this fixes</p>
+  <ul class="rels">
+    <li><span class="tag ban">was 3D-banned</span>Cry.Wolf.2024.S01E06.720p.SBS.WEB-DL.AAC.2.0.H.264-4f8c4100292 <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ban">was 3D-banned</span>The.Ballad.Of.Us.2025.S01.1080p.SBS.WEB-DL.AAC.H.264-RSG <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ban">was 3D-banned</span>Night.Bloomers.2023.S01.720p.SBS.WEB-DL.AAC.2.0.H.264-MUNFAQQIHA <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was missed</span>Bad.Words.2013.BluRay.1080p-DTS_3D_SBS <span class="src">· Prowlarr</span></li>
+    <li><span class="tag miss">was missed</span>Inception 3D BluRay 1080p Half SBS DTS-TehDiNGO <span class="src">· bundled TorrentLeech metadata</span></li>
+    <li><span class="tag miss">was missed</span>Free.Guy.3D_2021.Full-SBS.x-JFC_4k_hevc <span class="src">· Prowlarr</span></li>
+    <li><span class="tag ctl">control</span>Jaws.3D.1983.1080p.HMAX.WEB.DL.DD2.0.x264.DUAL.Yatogam1 <span class="src">· title-only 3D stays unmatched</span></li>
+    <li><span class="tag ctl">control</span>The.Dark.Knight.2008...-TEKNO3D <span class="src">· group suffix stays unmatched</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 222</span><h2>Repack1 / 2 / 3</h2><span class="sev miss">missed repack score</span><span class="ver both">bug in v1 + v2</span></div>
@@ -375,11 +401,12 @@
 </section>
 
 <footer>
-  <p>Every fix was validated two ways: a .NET-semantics regex matrix (same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 128-title corpus — before/after diffs must show
-  only the intended rows — and Profilarr’s own parser-backed test runner
-  (database&nbsp;2 in the audit container at <code>localhost:6869</code>).
-  The audit loop is still running; this page reflects ops 211–222. Full reasoning and the
+  <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
+  IgnoreCase flag Radarr/Sonarr use) over a 141-title corpus; before/after diffs must show
+  only intended rows. Format wiring and representative CF behavior are additionally
+  covered by 138 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  <code>localhost:6869</code>).
+  The audit loop is still running; this page reflects ops 211–223. Full reasoning and the
   verdict ledger live in
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">LEDGER.md</a>.
   Generated 2026-08-06.</p>
@@ -388,5 +415,3 @@
 
 </body>
 </html>
-
-<!-- pages deploy trigger -->
