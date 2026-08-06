@@ -1703,6 +1703,34 @@
       "type": "series",
       "should_match": true,
       "note": "constructed resolution control: the 1080p tier remains functional after separating the duplicate graphs"
+    },
+    {
+      "custom_format": "720p Quality Tier 4",
+      "title": "Legiony.2019.720p.BluRay.DD5.1.x264-EA",
+      "type": "movie",
+      "should_match": false,
+      "note": "REAL (Prowlarr): stale Tier 4 EA membership is removed by op 229"
+    },
+    {
+      "custom_format": "720p Quality Tier 5",
+      "title": "Legiony.2019.720p.BluRay.DD5.1.x264-EA",
+      "type": "movie",
+      "should_match": true,
+      "note": "REAL (Prowlarr): authoritative commit a0a23ed moved EA to Tier 5"
+    },
+    {
+      "custom_format": "720p Quality Tier 4",
+      "title": "1883.S01.720p.BluRay.DD5.1.x264-NTb",
+      "type": "series",
+      "should_match": true,
+      "note": "REAL (bundled): Tier 4 remains functional through its NTb release-group member"
+    },
+    {
+      "custom_format": "720p Quality Tier 5",
+      "title": "1883.S01.720p.BluRay.DD5.1.x264-NTb",
+      "type": "series",
+      "should_match": false,
+      "note": "REAL (bundled) tier-separation control: NTb is not a Tier 5 member"
     }
   ]
 }
