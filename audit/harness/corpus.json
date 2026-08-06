@@ -1674,5 +1674,35 @@
         "CF:DTS-HD MA": false
       }
     }
+  ],
+  "cf_cases": [
+    {
+      "custom_format": "720p HDTV Tier 3",
+      "title": "ESPN.E60.WWE.Behind.The.Curtain.720p.HDTV.x264-HANDJOB",
+      "type": "series",
+      "should_match": true,
+      "note": "REAL (Prowlarr): 720p HDTV HANDJOB release must receive the +20000 Tier 3 score after op 228"
+    },
+    {
+      "custom_format": "720p HDTV Tier 3",
+      "title": "ESPN.E60.WWE.Behind.The.Curtain.1080p.HDTV.x264-HANDJOB",
+      "type": "series",
+      "should_match": false,
+      "note": "constructed resolution control: the 1080p variant must not also receive the 720p Tier 3 score"
+    },
+    {
+      "custom_format": "1080p HDTV Tier 3",
+      "title": "ESPN.E60.WWE.Behind.The.Curtain.720p.HDTV.x264-HANDJOB",
+      "type": "series",
+      "should_match": false,
+      "note": "REAL-title resolution control: the 720p release must not receive the +40000 1080p Tier 3 score"
+    },
+    {
+      "custom_format": "1080p HDTV Tier 3",
+      "title": "ESPN.E60.WWE.Behind.The.Curtain.1080p.HDTV.x264-HANDJOB",
+      "type": "series",
+      "should_match": true,
+      "note": "constructed resolution control: the 1080p tier remains functional after separating the duplicate graphs"
+    }
   ]
 }

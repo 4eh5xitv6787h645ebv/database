@@ -56,5 +56,22 @@ for case in corpus["cases"]:
                 f"('{esc(cf)}', '{esc(title)}', '{kind}', {should}, '{esc(note)}');"
             )
             n += 1
+
+# Full custom-format cases can exercise structured parser fields (resolution,
+# source, release group, and app scoping) that the title-regex matrix cannot
+# model faithfully. They are still emitted into the same Profilarr tweaks layer
+# so the native parser/evaluator remains the authority for their expectations.
+for case in corpus.get("cf_cases", []):
+    cf = case["custom_format"]
+    title = case["title"]
+    kind = case["type"]
+    should = 1 if case["should_match"] else 0
+    note = case["note"]
+    lines.append(
+        "INSERT OR IGNORE INTO custom_format_tests "
+        "(custom_format_name, title, type, should_match, description) VALUES "
+        f"('{esc(cf)}', '{esc(title)}', '{esc(kind)}', {should}, '{esc(note)}');"
+    )
+    n += 1
 open(out_path, "w").write("\n".join(lines) + "\n")
 print(f"wrote {n} test rows to {out_path}")
