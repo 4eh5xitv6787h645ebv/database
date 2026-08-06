@@ -12,7 +12,11 @@ db = sqlite3.connect(db_path)
 REGEX_NAMES = [
     "Dolby Vision", "Dolby Vision (Without Fallback)", "Basic HDR Formats",
     "HDR", "HDR10+", "SDR", "x265", "Movies Anywhere", "Remux", "UHD Bluray",
-    "iTunes", "Dolby Digital", "Dolby Digital +", "German DL", "Full Disc", "x264", "Special Edition", "Extended Edition", "IMAX", "Open Matte", "Theatrical Edition", "Extended Clip", "Sing Along", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED", "Movie Extras", "TV Extras", "Repack1", "3D",
+    "iTunes", "Dolby Digital", "Dolby Digital +", "TrueHD", "7.1 Surround",
+    "Atmos", "BTN Atmos", "German DL", "Full Disc", "x264", "Special Edition",
+    "Extended Edition", "IMAX", "Open Matte", "Theatrical Edition", "Extended Clip",
+    "Sing Along", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED",
+    "Movie Extras", "TV Extras", "Repack1", "3D",
 ]
 GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS"]
 
@@ -38,6 +42,9 @@ composites = [
     {"name": "CF:HDR10 (Missing)(title-part)", "all": [], "none": ["HDR", "HDR10+", "SDR"]},
     {"name": "CF:HDR (Missing)(title-part)",
      "all": ["Dolby Vision", "x265"], "none": ["HDR", "HDR10+", "SDR"]},
+    {"name": "CF:Atmos", "any": ["Atmos", "BTN Atmos"]},
+    {"name": "CF:Atmos (Missing)",
+     "all": ["TrueHD", "7.1 Surround"], "none": ["Atmos", "BTN Atmos"]},
     {"name": "CF:Full Disc(title-part)",
      "all": ["Full Disc"], "none": ["Remux", "x264", "x265"]},
     {"name": "CF:Special Edition",
