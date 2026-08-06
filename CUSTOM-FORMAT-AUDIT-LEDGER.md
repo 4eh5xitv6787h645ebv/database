@@ -3,7 +3,7 @@
 started_at: 2026-08-06T22:11:09Z
 status: active
 consecutive_dry: 0
-iteration: 2
+iteration: 3
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit`.
 Safety: the fork's live v1 `stable` and `custom` branches are read-only for this loop. Never write to any upstream repository.
@@ -21,7 +21,7 @@ Commit rule: every migration, harness change, corpus/test addition, report updat
 - Condition types: 818 release-group, 398 release-title, 258 source, 155 resolution, seven indexer-flag, four release-type, four language, and two quality-modifier rows.
 - Condition flags: 987 optional-positive, 416 required-positive, 243 required-negated, and zero optional-negated rows.
 
-## Inherited settled custom-format verdicts — do not repeat without new graph evidence
+## Settled custom-format verdicts — do not repeat without new graph evidence
 
 - **DUBBED wiring**: fixed by op 217; its mutually exclusive Radarr/Sonarr title conditions are optional and OR correctly. The format remains deliberately unscored.
 - **Extras wiring**: fixed by op 218; its mutually exclusive app-scoped title conditions are optional and OR correctly. It is live at −999999 in ten profiles per app.
@@ -31,10 +31,10 @@ Commit rule: every migration, harness change, corpus/test addition, report updat
 - The prior full title-regex conjunction sweep found no other mutually exclusive required title pair after ops 217–218. This loop will still audit different axes: source/resolution compatibility, app scoping, score reachability, stale/deleted wiring, and parser-test coverage.
 - **Score fallback precedence**: an `arr_type=all` score is intentionally shadowed by an app-specific score for the same profile/format/app. Profilarr selects both and the app-specific row overrides the fallback; the 72 fully shadowed triples in the quality-tier families are cleanup debt, not double scoring.
 - **App filtering**: Profilarr filters non-target conditions plus Radarr-only quality modifiers and Sonarr-only release types before evaluation. No scored format has zero conditions for either effective target app.
+- **EA tier membership**: fixed by op 229. The authoritative v1 move commit `a0a23ed` places EA in `720p Quality Tier 5`; its older Tier 4 membership was stale residue. Keep EA only in Tier 5 unless new policy evidence supersedes that history.
 
 ## Open hypotheses
 
-- **720p Quality Tier 4 / Tier 5 shared `EA` member**: both formats carry the same optional-positive `EA` release-group regex and otherwise identical effective app constraints. They overlap in all 22 profile/app slots at +142000 and +141000, so an eligible EA release appears to stack +283000. Trace v1 policy and obtain parser-backed release controls before changing membership.
 - **Remux v2 merge regression**: v1 independently scored title, Radarr quality-match, and Sonarr source formats. Ops 9–11 collapsed them into one graph, but Arr ANDs condition implementation groups; current Radarr is title AND not-DVD AND remux modifier, while Sonarr is title AND not-DVD and its optional `bluray_raw` sibling is ignored. A one-bit `required` change repairs only the dead sibling, not the lost cross-type union; remediation needs a full scoring/format design and app-backed controls.
 - **Golden Popcorn app scope (latent)**: all three unscored definitions scope required `ptp_golden` flags to `all` although Profilarr and their descriptions mark the flag Radarr-only. Fix before any built-in Sonarr score path is added; currently no shipped score changes.
 - **Extras coverage**: the live −999999 format covers ten profiles per app but omits `1080p Compact`; no explicit history rationale found. Treat as a policy question until release/profile evidence proves omission accidental.
@@ -48,8 +48,12 @@ Commit rule: every migration, harness change, corpus/test addition, report updat
 - v1 final YAML on the fork's read-only `stable`/`custom` branches: `720p HDTV Tier 3` carries the same erroneous 1080p condition; the initial v2 translation preserved it exactly.
 - Fresh metadata-only Prowlarr query `HANDJOB HDTV`: one real victim, `ESPN.E60.WWE.Behind.The.Curtain.720p.HDTV.x264-HANDJOB`. No content was downloaded.
 - Profilarr parser `/parse` and `/match/batch`: the real title parses as television, 720p, release group HANDJOB, with both title/group regexes matching; the constructed 1080p twin parses identically except for resolution.
+- EA history across v1 commits `99eb353`, `cf370415`, and `a0a23ed` plus merged PR 93: EA began in 720p Tier 4, was later added to Tier 6, then was explicitly moved to 1080p/720p Tier 5 without removing the old 720p Tier 4 row. The same PR's `fb05d23` move removes its source-tier member, and the neighboring 1080p family ends with EA only in Tier 5. Initial v2 op 0 copied the stale overlap; no later operation changed it.
+- Independent TRaSH Guides history carries EA in exactly one HD Bluray tier. Current whole-graph replay likewise found EA to be the only duplicated release group across the base `* Quality Tier N` families.
+- Fresh metadata-only Prowlarr controls: movie `Legiony.2019.720p.BluRay.DD5.1.x264-EA` and series `My.Hero.Academia.S03E24.720p.BluRay.AAC.2.0.x264-EA`; both parse as Bluray, 720p, release group EA. The bundled `1883.S01.720p.BluRay.DD5.1.x264-NTb` control parses into Tier 4 only. No content was downloaded. The optional local 12,464-file media corpus and local Arr history contained no exact EA release-group control.
 
 ## Iteration log
 
 - **Iteration 1 (2026-08-07)**: area = whole-database structural inventory, score reachability, v1/v2 translation, and parser-test coverage. Result: **1 live bug fixed (op 228)**. `720p HDTV Tier 3` required 1080p, making its full graph identical to `1080p HDTV Tier 3`; both formats overlap in all 11 profiles for both apps, so 1080p HANDJOB HDTV could stack +60000 while the intended 720p release missed +20000. Op 228 exact-guards both the condition name and backing resolution to 720p. Fresh replay of 229 ops plus the tweak is FK-clean with integrity `ok`; all 44 score rows are unchanged; 588/588 native regex checks and 210/210 Profilarr parser-backed tests pass. Profilarr validation database 2 synced through commit `100164e` in job 17 (229 base ops + one tweak). The report and `docs/index.html` were updated byte-identically (SHA-256 `7db189f4798fffaf29da7a9a0c3b8a682be82ca4840c1b9216f5178b0dd09aa7`) and pushed in `0266103`. The bug exists in both v1 and v2; the fork's live v1 branches were inspected read-only and not modified. `consecutive_dry` remains 0; iteration advances to 2.
-- Iteration 2 in progress: duplicated release-group tier membership, starting with the live `EA` overlap between 720p Quality Tier 4 and Tier 5.
+- **Iteration 2 (2026-08-07)**: area = duplicated release-group tier membership and the complete EA score/app graph. Result: **1 live bug fixed (op 229)**. `720p Quality Tier 4` retained stale EA membership after authoritative commit `a0a23ed` moved EA to Tier 5. The two formats otherwise have identical effective gates and are live at +142000 and +141000 in all 11 profiles for both apps, so eligible Bluray EA releases stacked +283000 in every one of 22 profile/app slots. Op 229 exact-guards and removes only the stale Tier 4 EA condition; its repeat is a no-op, the Tier 5 condition remains exactly once, all score rows are unchanged, foreign keys are clean, and integrity is `ok`. Fresh replay covers 230 base ops plus the tweak; 588/588 native regex checks and 216/216 Profilarr parser-backed tests pass. Direct entity evaluation proves real EA movie and series titles match Tier 5 only, while the real NTb control remains Tier 4 only. Migration `97b4375`, test commits `07d333a` and `bae6ab7`, and Profilarr sync job 19 were pushed to the safe fork. The report and `docs/index.html` were updated byte-identically (SHA-256 `870d0435cdff6adc65751e2e6057def022de58ead9ac70947778e99bd0ad6742`) and pushed in `716f84e`. The bug exists in both v1 and v2; all comparison branches were read-only. `consecutive_dry` remains 0; iteration advances to 3.
+- Iteration 3 in progress: v1-to-v2 Remux format merge and its app-specific title/source/quality-modifier score reachability.
