@@ -1,13 +1,13 @@
 # Audit-and-fix loop ledger
 
 started_at: 2026-08-06T15:35:00Z
-consecutive_dry: 0
-iteration: 10
+consecutive_dry: 1
+iteration: 11
 
 Repo: fork `4eh5xitv6787h645ebv/jakes-profilarr-database`, branch `fix/regex-audit` (based on upstream v2 @ op 210).
 NOTE: this fork also hosts the user's LIVE v1 profilarr branches `stable` and `custom` — NEVER touch those branches.
 Harness: `audit/harness/` (schema dependency clone expected at `../../schema` relative to repo root, i.e. `~/work/dictionarry-fix-loop/schema`).
-MANDATORY end of EVERY iteration that lands an op: every new card gets a v1/v2 presence badge (compare against v1 final state `git rev-parse 00c1b0d^` YAML: regex_patterns/ + custom_formats/) — update audit/regex-fixes.html (add a card, bump stats), commit+push, regenerate the scratchpad copy (title+style+body, no doctype skeleton) and republish the claude.ai artifact from this session (same file path keeps URL https://claude.ai/code/artifact/03d2d5f0-9dd7-4bb6-8b68-c7e40dfc7c87).
+MANDATORY end of EVERY iteration that lands an op: cards are CHRONOLOGICAL NEWEST-FIRST with a `.when` line from the op @exportedAt; every new card gets a v1/v2 presence badge (compare against v1 final state `git rev-parse 00c1b0d^` YAML: regex_patterns/ + custom_formats/) — update audit/regex-fixes.html (add a card, bump stats), commit+push, regenerate the scratchpad copy (title+style+body, no doctype skeleton) and republish the claude.ai artifact from this session (same file path keeps URL https://claude.ai/code/artifact/03d2d5f0-9dd7-4bb6-8b68-c7e40dfc7c87).
 Profilarr container :6869 now links THE FORK directly as database 2 "Jakes Fork (fix-regex-audit)" (auto_pull on, 60min sync) — loop pushes appear in its UI (/databases/2/changes, ops list, CF Testing pages) after sync; file-injection into db 1's clone is no longer needed (iteration step 7 = just push, then trigger/await pull).
 Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec prowlarr sh -c 'grep -oE "<ApiKey>[^<]*</ApiKey>" /config/config.xml'`. Never download content; names only. If names can't settle a hypothesis → NEEDS-MANUAL-VERIFICATION.
 
@@ -31,6 +31,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - **DV.SDR added to Without-Fallback negation**: withdrawn. No verified real `DV.SDR` release names (web-searched; only DV→SDR conversion tooling exists); WF has matched DV.SDR since op 0 (NOT an op-200 regression — that guard lived on the main `Dolby Vision` regex); CF description says "regular HDR Fallback" — SDR base is not an HDR fallback. Corpus pins DV.SDR → WF matches, as intended.
 
 ### INTENDED (leave alone)
+- **QxR/TAoE/HONE dual-CF wiring (title-positive + group-NEGATED member list) is deliberate**: nine tier CFs use the member-group regex POSITIVELY (parsed group, e.g. canonical `.Tigole.QxR` parses to group `QxR` — parser-verified both arrs); the `QxR WEB/Bluray`-style CFs are the complement for QxR-titled releases whose parsed group is NOT a listed member (group=None etc.). Do not "fix" the negation.
 - **`x265` regex is `[x]`-only while `x264`/`HEVC`/`x265 (Efficient)` use `[xh]`** — deliberate: op 59 rewrote plain and Efficient side-by-side and preserved the split, and a dedicated `h265` regex exists. The h/x distinction is a design choice, not an oversight. Do not "fix".
 - `DV.HLG` raw-WF-regex gap — rescued at CF level by op-182 negated `HDR` condition (HDR regex matches HLG). Unobservable; becomes live only if that condition is removed.
 - Op 200 dropping `dv(?![ .](HLG|SDR))` from main `Dolby Vision` — deliberate simplification; both scoring directions defensible.
@@ -40,7 +41,8 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 - `HDR10 (Missing)` broken in Sonarr (required source bluray vs bluray_raw remuxes) — documented in its own CF description.
 - `E.AC3` falsely matches `Dolby Digital` regex but rescued at CF level by DD+ negation.
 
-### OPEN (documented, not fixed — needs maintainer-grade judgment or better evidence)
+### OPEN (documented, not fixed
+- **Dash-less member-suffix titles fall through both QxR-family CFs**: real naming like `Batman...AAC.2.0.RCVR`, `Adventure.Time...AAC.2.0.ImE` (Prowlarr) parses to group None AND lacks the "QxR" title token → neither the positive tier CFs nor the QxR-title CFs fire. Fix = extend the family title regex to member names — a tier-membership policy call for upstream, not a mechanical bug. — needs maintainer-grade judgment or better evidence)
 - **Full Disc structural flaw**: trailing `(?i)(DVD9|DVD5|NTSC|PAL|VOB IFO|VC-1|AVC|MPEG-2|…)` alternative sits OUTSIDE the `^(?!…)` guard, largely unanchored. Demonstrated CF-level FPs surviving source-condition rescue: `Movie.2005.PAL.DVDRip.XviD-GROUP`, `Movie.1988.NTSC.DVDRip.XviD-GROUP` (DVD source not excluded). CANNOT simply move tail under guard (DVD9/PAL discs must survive the `DVD` guard token). A safe fix = \b-bound the loose tokens + add a scoped rip-exclusion to the tail only; needs a full-disc-titles corpus before attempting.
 - ~~Dolby Digital (plain, spelled-out)~~ FIXED by op 220 (real-title evidence found: Prowlarr "WEB-DL Dolby Digital 5.1").
 - **Orphan regexes** (zero conditions reference them; fix-or-delete before wiring): `Non Retail HDR Formats` (DV branch reproduces the pre-fix WF bug — flags retail DV.HDR/DV.HDR10Plus/REMUX hybrids), `Non Retail HDR Groups` (missing parens: `(?<=^|[\s.-])VECTOR|BiTOR|…|Flights\b` — middle six names match as bare substrings, e.g. BiTOR inside "Inhibitor"), `HDR10 (Missing Groups)`, `TrueHD (Missing Groups)`.
@@ -79,6 +81,7 @@ Prowlarr (metadata search ONLY): http://localhost:9696, API key via `docker exec
 
 ## Iteration log
 - **Iteration 1 (2026-08-06)**: setup (fork branches v2 + fix/regex-audit pushed additively; live stable/custom untouched), ops 211+212 + tweaks + harness + REPORT ported and pushed, harness verified green in fork (213 ops, 210/210). Prowlarr access verified (health 200, metadata only). Area picked: edition regexes. Result: **1 new bug fixed (op 213, Special Edition + Redux)**; `Theatrical Edition`/`Extended Edition`/`Extended Clip`/`Shush Cut`/`Criterion Channel` examined clean (year-anchored, no realistic spelling variants missed); "Remastered/Restored not in Special Edition" judged INTENDED (they are not cut changes; Radarr classes them separately). consecutive_dry reset to 0. Next area suggestion: rotation nearly exhausted — remaining: tier-group parse sanity (D-Z0N3/.QxR-style suffixes), orphan-regex cleanup decision, Apple TV+ space-only literal (needs evidence), IQ/YK unguarded short tags (needs evidence). Expect dry iterations ahead.
+- **Iteration 10 (2026-08-06)**: area = tier-group parse sanity. Result: **DRY** — no unescaped metachars in group patterns; D-Z0N3/EbP parse+match verified; QxR dual-CF wiring adjudicated INTENDED (complementary pair); dash-less member-suffix gap logged OPEN (policy). Page restructured chronological+timestamps (user request). consecutive_dry 0 → 1.
 - **Iteration 9 (2026-08-06)**: area = OPEN item DD plain spelled-out. Result: **1 new bug fixed (op 220)** — gate 291/291, 2 intended flips, Plus-guard verified by DDP rows staying put. consecutive_dry stays 0.
 - **Iteration 8 (2026-08-06)**: area = OPEN item Full Disc tail. Result: **1 new bug fixed (op 219)** — gate 287/287 with exactly 6 intended row flips; container 133/133 (Full Disc tests incl. DVD9-HEVC rescue case). Searched: prowlarr "COMPLETE BLURAY", "DVD9". consecutive_dry reset 1 → 0.
 - **Iteration 7 (2026-08-06)**: area = banned/scored group regexes vs real naming. Result: **DRY** — op 210 ABM-template hypothesis was a false alarm; banned-group pipeline cleared end-to-end with real parsed groups. consecutive_dry 0 → 1. CF wiring sweep is now COMPLETE (see iteration 6 clearance below).
