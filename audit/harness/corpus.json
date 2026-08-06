@@ -1547,6 +1547,132 @@
         "CF:Atmos": false,
         "CF:Atmos (Missing)": true
       }
+    },
+    {
+      "title": "Avatar.2009.Extended.Hybrid.720p.BluRay.DTS.Hi444PP.x264-NiP.mkv",
+      "note": "REAL (bundled HDBits metadata; corroborated by Prowlarr): Hi444PP is an H.264 video profile marker, not DTS-HD HRA/ES; ordinary DTS must retain its +300 score",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": false,
+        "DTS-HD MA": false,
+        "DTS-X": false,
+        "CF:DTS": true,
+        "CF:DTS-HD MA": false
+      }
+    },
+    {
+      "title": "Big.Hero.6.2014.1080p.BluRay.DTS.Hi10p.x264-NTb",
+      "note": "REAL (Prowlarr/NZBgeek and DrunkenSlug): Hi10P after DTS is a video profile marker, not the unbounded DTS Hi shorthand",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": false,
+        "DTS-HD MA": false,
+        "DTS-X": false,
+        "CF:DTS": true,
+        "CF:DTS-HD MA": false
+      }
+    },
+    {
+      "title": "The Hobbit An Unexpected Journey 2012 Extended Edition 1080p BluRay DTS Hi10P x264-DON",
+      "note": "REAL (Prowlarr/DrunkenSlug): space-separated DTS Hi10P proves the same false negation outside dotted naming",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": false,
+        "DTS-HD MA": false,
+        "DTS-X": false,
+        "CF:DTS": true,
+        "CF:DTS-HD MA": false
+      }
+    },
+    {
+      "title": "up.2009.1080p.bluray.dts-es.hi10p.x264-don",
+      "note": "REAL (Prowlarr/NzbPlanet): genuine DTS-ES immediately before Hi10P remains in the higher DTS family and must keep negating plain DTS",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": true,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": true,
+        "DTS-HD MA": false,
+        "DTS-X": false,
+        "CF:DTS": false,
+        "CF:DTS-HD MA": false
+      }
+    },
+    {
+      "title": "Resident.Evil.Apocalypse.2004.EXTENDED.EDITION.1080p.Blu-ray.DTS-HD.HRA.X264-ViSTA",
+      "note": "REAL (Prowlarr/NZBFinder): canonical DTS-HD HRA control requires the HRA branch to survive the Hi-prefix fix",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": true,
+        "DTS-HD HRA ES": true,
+        "DTS-HD MA": true,
+        "DTS-X": false,
+        "CF:DTS": false,
+        "CF:DTS-HD MA": false
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.DTS.Hi_5.1.x264-GROUP",
+      "note": "constructed compatibility control: underscore is a repository-standard separator, so a standalone DTS Hi shorthand remains a negator",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": true,
+        "DTS-HD MA": false,
+        "DTS-X": false,
+        "CF:DTS": false,
+        "CF:DTS-HD MA": false
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.DTS.Highlight.x264-GROUP",
+      "note": "constructed prefix collision: an ordinary word beginning Hi must not suppress the DTS custom format",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": false,
+        "DTS-HD MA": false,
+        "DTS-X": false,
+        "CF:DTS": true,
+        "CF:DTS-HD MA": false
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.DTS-HD.MA.5.1.x264-GROUP",
+      "note": "constructed full-graph control: DTS-HD MA remains excluded from plain DTS and retains its own custom format",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": false,
+        "DTS-HD MA": true,
+        "DTS-X": false,
+        "CF:DTS": false,
+        "CF:DTS-HD MA": true
+      }
+    },
+    {
+      "title": "Movie.2026.1080p.BluRay.DTS-X.7.1.x264-GROUP",
+      "note": "constructed full-graph control: DTS-X remains excluded from both lower DTS custom formats",
+      "expect": {
+        "DTS": true,
+        "DTS-ES": false,
+        "DTS-HD HRA": false,
+        "DTS-HD HRA ES": false,
+        "DTS-HD MA": false,
+        "DTS-X": true,
+        "CF:DTS": false,
+        "CF:DTS-HD MA": false
+      }
     }
   ]
 }
