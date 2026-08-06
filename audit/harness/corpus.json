@@ -823,6 +823,48 @@
       "expect": {
         "Paramount+": false
       }
+    },
+    {
+      "title": "28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP",
+      "note": "REAL (Prowlarr): underscore-separated HDCAM - was escaping the CAM ban (underscores defeat \\b)",
+      "expect": {
+        "CAM": true
+      }
+    },
+    {
+      "title": "28.Years.Later.2025.1080p.HDCAM.V1.x264-SyncUP",
+      "note": "REAL (Prowlarr): dotted HDCAM control",
+      "expect": {
+        "CAM": true
+      }
+    },
+    {
+      "title": "Den.Of.Thieves.2.Pantera.V2.2025.1080p.HDCAM-C1NEM4",
+      "note": "REAL (Prowlarr): HDCAM at title end",
+      "expect": {
+        "CAM": true
+      }
+    },
+    {
+      "title": "Final.Destination.Bloodlines.2025.1080p.HDCAM.X265-UKB",
+      "note": "REAL (Prowlarr): HDCAM x265",
+      "expect": {
+        "CAM": true
+      }
+    },
+    {
+      "title": "The.Notebook.2004.1080p.BluRay.x264-CAMELOT",
+      "note": "control: group containing CAM must not match",
+      "expect": {
+        "CAM": false
+      }
+    },
+    {
+      "title": "Camp.Rock.2008.1080p.WEB-DL.H264-GRP",
+      "note": "control: title word starting with Cam",
+      "expect": {
+        "CAM": false
+      }
     }
   ]
 }
