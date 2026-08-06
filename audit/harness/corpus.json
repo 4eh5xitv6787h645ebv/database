@@ -1054,6 +1054,48 @@
       }
     },
     {
+      "title": "Cry.Wolf.2024.S01E06.720p.SBS.WEB-DL.AAC.2.0.H.264-4f8c4100292",
+      "note": "REAL (Prowlarr): SBS network WEB-DL, not stereoscopic; current bare-SBS branch is a false positive",
+      "expect": {
+        "3D": false
+      }
+    },
+    {
+      "title": "The.Ballad.Of.Us.2025.S01.1080p.SBS.WEB-DL.AAC.H.264-RSG",
+      "note": "REAL (Prowlarr): SBS network WEB-DL, not stereoscopic",
+      "expect": {
+        "3D": false
+      }
+    },
+    {
+      "title": "Night.Bloomers.2023.S01.720p.SBS.WEB-DL.AAC.2.0.H.264-MUNFAQQIHA",
+      "note": "REAL (Prowlarr): SBS network WEB-DL, not stereoscopic",
+      "expect": {
+        "3D": false
+      }
+    },
+    {
+      "title": "Despicable.Me.4.2024.1080p.3D.BluRay.Hebrew.Dubbed.Also.English.Half-SBS.X264-T00LBAR",
+      "note": "REAL (Prowlarr): explicit 3D plus Half-SBS stereoscopic control",
+      "expect": {
+        "3D": true
+      }
+    },
+    {
+      "title": "Starship.Troopers.1997.Eng.Fre.Ger.Ita.Spa.1080P.Bluray.Remux.Hdr.Hevc.Atmos-.3D.Jesterko-HSBS",
+      "note": "REAL (Prowlarr): explicit 3D plus HSBS stereoscopic control",
+      "expect": {
+        "3D": true
+      }
+    },
+    {
+      "title": "Bad.Words.2013.BluRay.1080p-DTS_3D_SBS",
+      "note": "REAL (Prowlarr): underscore-separated explicit 3D/SBS control",
+      "expect": {
+        "3D": true
+      }
+    },
+    {
       "title": "Movie.2019.PROPER.1080p.BluRay.x264-GROUP",
       "note": "control: dotted PROPER unchanged",
       "expect": {
