@@ -1745,6 +1745,41 @@
       "type": "series",
       "should_match": false,
       "note": "REAL (bundled) tier-separation control: NTb is not a Tier 5 member"
+    },
+    {
+      "custom_format": "Remux",
+      "title": "AVATAR 2009 4K REMASTER REMUX [RoB]",
+      "type": "movie",
+      "should_match": true,
+      "note": "REAL bundled fixture 282: title arm preserves a Remux ban when Radarr parses no Remux quality modifier"
+    },
+    {
+      "custom_format": "Remux (Quality Match)",
+      "title": "AVATAR 2009 4K REMASTER REMUX [RoB]",
+      "type": "movie",
+      "should_match": false,
+      "note": "REAL bundled fixture 282: title-only Remux must not also enter the Radarr quality fallback"
+    },
+    {
+      "custom_format": "Remux",
+      "title": "The Dark Knight (2008) UHD MKVRemux 2160p DTS-HD NL",
+      "type": "movie",
+      "should_match": false,
+      "note": "REAL bundled fixture 1014: MKVRemux is not a Remux title token"
+    },
+    {
+      "custom_format": "Remux (Quality Match)",
+      "title": "The Dark Knight (2008) UHD MKVRemux 2160p DTS-HD NL",
+      "type": "movie",
+      "should_match": true,
+      "note": "REAL bundled fixture 1014: Radarr Remux-2160p quality catches a title-regex miss"
+    },
+    {
+      "custom_format": "Remux (Quality Match)",
+      "title": "Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB",
+      "type": "movie",
+      "should_match": false,
+      "note": "mutual-exclusion control: a title-and-quality Remux is scored only by the base branch"
     }
   ]
 }
