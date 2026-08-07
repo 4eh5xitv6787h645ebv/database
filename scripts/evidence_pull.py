@@ -33,6 +33,10 @@ FAMILY_TERMS = [
     "german dl 1080p", "hdcam telesync", "complete bluray", "dvd9 pal",
     "special edition remastered", "criterion 1080p", "hybrid remux",
     "e-ac-3 web-dl", "sing along edition", "extras bonus bluray",
+    # Targeted hunts for evidence-gated backlog items (#2 #4 #5 #6 #16 #18 #19)
+    "korsub hdrip", "hc webrip hardcoded", "german md dubbed", "german ld line dubbed",
+    "colorized bluray", "fanedit despecialized", "hidive web-dl", "b-global web-dl",
+    "itvx web-dl", "u-next web-dl",
 ]
 
 

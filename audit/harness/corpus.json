@@ -1206,7 +1206,9 @@
     "Theatrical Edition": false,
     "Extended Clip": false,
     "Sing Along": false,
-    "CF:Special Edition": true
+    "CF:Special Edition": true,
+    "10-bit Marker": true,
+    "CF:10-bit AVC": false
    }
   },
   {
@@ -1577,7 +1579,9 @@
     "DTS-HD MA": false,
     "DTS-X": false,
     "CF:DTS": true,
-    "CF:DTS-HD MA": false
+    "CF:DTS-HD MA": false,
+    "10-bit Marker": true,
+    "CF:10-bit AVC": true
    }
   },
   {
@@ -1591,7 +1595,9 @@
     "DTS-HD MA": false,
     "DTS-X": false,
     "CF:DTS": true,
-    "CF:DTS-HD MA": false
+    "CF:DTS-HD MA": false,
+    "10-bit Marker": true,
+    "CF:10-bit AVC": true
    }
   },
   {
@@ -1967,6 +1973,76 @@
    "expect": {
     "DS4K": false,
     "CF:DS4K": false
+   }
+  },
+  {
+   "title": "Seven.Samurai.1954.Criterion.1080p.BluRay.x264-GRP",
+   "note": "op 10244: canonical Criterion disc release",
+   "expect": {
+    "Criterion": true,
+    "CF:Criterion": true
+   }
+  },
+  {
+   "title": "Movie_2020_Criterion_Collection_1080p_BluRay_Remux_AVC-GRP",
+   "note": "op 10244: underscore boundaries",
+   "expect": {
+    "Criterion": true,
+    "CF:Criterion": true
+   }
+  },
+  {
+   "title": "Criterion.Channel.Exclusive.2023.1080p.WEB-DL.H264-GRP",
+   "note": "op 10244: Criterion CHANNEL web release — title regex fires; the real CF excludes it via the bluray/dvd source conditions (parser-level), leaving it to the CRiT streaming tag",
+   "expect": {
+    "Criterion": true
+   }
+  },
+  {
+   "title": "Anime.Movie.2012.1080p.BluRay.Hi10P.FLAC.x264-GRP",
+   "note": "op 10245: canonical Hi10P AVC encode takes the penalty",
+   "expect": {
+    "10-bit Marker": true,
+    "CF:10-bit AVC": true
+   }
+  },
+  {
+   "title": "Movie.2020.1080p.WEB-DL.10bit.HEVC.x265-GRP",
+   "note": "op 10245 control: 10-bit HEVC is fine; x265 negation blocks the penalty",
+   "expect": {
+    "10-bit Marker": true,
+    "CF:10-bit AVC": false
+   }
+  },
+  {
+   "title": "Movie.2020.1080p.BluRay.8bit.x264-GRP",
+   "note": "op 10245 control: no 10-bit marker",
+   "expect": {
+    "10-bit Marker": false,
+    "CF:10-bit AVC": false
+   }
+  },
+  {
+   "title": "Bangers.and.Cash.S14E03.Nash.Metropolitan-AC.Ace-Ariel.Atom-Vectra.1080p.ALL4.WEB-DL.AAC2.0.H.264-RAWR",
+   "note": "op 10246: live ALL4 evidence title",
+   "expect": {
+    "ALL4": true,
+    "CF:ALL4": true
+   }
+  },
+  {
+   "title": "Battle.on.the.Beach.S03.1080p.DSCP.WEB-DL.DDP2.0.H.264-FUZEER",
+   "note": "op 10246: live DSCP evidence title",
+   "expect": {
+    "DSCP": true,
+    "CF:DSCP": true
+   }
+  },
+  {
+   "title": "Basketball.Documentary.2023.ALL4ONE.1080p.WEB-DL",
+   "note": "op 10246 control: longer token stays unmatched",
+   "expect": {
+    "ALL4": false
    }
   }
  ],

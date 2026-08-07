@@ -112,14 +112,56 @@
 </header>
 
 <div class="stats">
-  <div class="stat"><b>33</b>migrations (fork ops 10211–10243)</div>
-  <div class="stat"><b>34</b>regex updates + 16 format-graph/score changes</div>
-  <div class="stat"><b>661 / 661</b>.NET labeled checks green</div>
+  <div class="stat"><b>36</b>migrations (fork ops 10211–10246)</div>
+  <div class="stat"><b>39</b>regex updates + 19 format-graph/score changes</div>
+  <div class="stat"><b>683 / 683</b>.NET labeled checks green</div>
   <div class="stat"><b>249 / 249</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10246</span><h2>ALL4 + DSCP service tags</h2><span class="sev miss">score 0 visibility rows</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 13:09 UTC · op 10246 · part of #17</p>
+  <p class="why">Channel 4 (ALL4) and Discovery+ (DSCP) WEB-DLs are live in the evidence
+  corpus (14 titles) but matched no service tag. Zero-score rows in every profile match
+  the existing niche-service convention (iP/NOW/CRAV). DSCP stays strict — TRaSH's
+  dcp/disc spelling variants collide with ordinary words. ITVX/MY5/STV/U-NEXT remain
+  deferred (zero evidence); the daily evidence feed now hunts for them.</p>
+  <ul class="rels">
+    <li><span class="tag ok">tagged</span>Bangers.and.Cash.S14E03…1080p.ALL4.WEB-DL-RAWR · Battle.on.the.Beach.S03.1080p.DSCP.WEB-DL-FUZEER <span class="src">· evidence corpus</span></li>
+    <li><span class="tag ctl">boundary</span>…ALL4ONE… <span class="src">· longer tokens stay unmatched</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10245</span><h2>10-bit AVC penalty</h2><span class="sev miss">−10000 Compact/Efficient</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 13:07 UTC · op 10245 · closes #13</p>
+  <p class="why">Hi10P (10-bit AVC) has no hardware decoder anywhere — it always forces a
+  software transcode — yet scored like ordinary x264. The AVC conjunction is mandatory:
+  the marker regex alone matches 78 evidence titles, most of them fine 10-bit HEVC, so
+  x264 is required and x265 required-negated; only true Hi10P encodes take the −10000
+  penalty in the hardware-oriented 1080p Compact/Efficient profiles.</p>
+  <ul class="rels">
+    <li><span class="tag miss">penalized</span>Big.Hero.6.2014…DTS.Hi10p.x264-NTb · The Hobbit…Hi10P x264-DON <span class="src">· real Hi10P encodes</span></li>
+    <li><span class="tag ctl">HEVC safe</span>The_Shining_1980…x265_10bit_MarkII <span class="src">· x265 negation blocks the penalty</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10244</span><h2>Criterion format</h2><span class="sev miss">+50 radarr Quality/Remux</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 13:05 UTC · op 10244 · closes #10</p>
+  <p class="why">Boutique disc labels matched nothing unless the title happened to contain
+  “Edition” (112 Criterion titles in the evidence corpus). Disc editions only: bluray/dvd
+  source conditions exclude Criterion CHANNEL web releases (which stay the CRiT streaming
+  tag's business), and a parsed release group literally named Criterion is
+  required-negated. Masters of Cinema / Vinegar Syndrome deferred — zero evidence.</p>
+  <ul class="rels">
+    <li><span class="tag ok">scored</span>Seven.Samurai.1954.Criterion.1080p.BluRay · Certified.Copy.2010.Criterion.BluRay.Remux…-HiFi</li>
+    <li><span class="tag ctl">channel guard</span>Criterion.Channel.Exclusive.2023.1080p.WEB-DL <span class="src">· excluded by source conditions (parser-level)</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 10243</span><h2>DS4K format</h2><span class="sev miss">+25 in 1080p profiles</span><span class="ver both">gap in v1 + v2</span></div>
