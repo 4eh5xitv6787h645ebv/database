@@ -1822,6 +1822,62 @@
       "type": "movie",
       "should_match": false,
       "note": "constructed graph control: Dual Audio without alfaHD or SiGLA must not trigger the conditional group ban"
+    },
+    {
+      "custom_format": "1080p Compact Movie Bluray Tier 4",
+      "title": "The Dark Knight 2008 PROPER IMAX 1080p BluRay DD+ 5.1 x265-Yogi HONE",
+      "type": "movie",
+      "should_match": false,
+      "note": "REAL bundled fixture 917: op 232 prevents the Yogi tier from stacking with the HONE title fallback"
+    },
+    {
+      "custom_format": "HONE Bluray",
+      "title": "The Dark Knight 2008 PROPER IMAX 1080p BluRay DD+ 5.1 x265-Yogi HONE",
+      "type": "movie",
+      "should_match": true,
+      "note": "REAL bundled fixture 917: the intended HONE title fallback remains after the overlapping Yogi tier is excluded"
+    },
+    {
+      "custom_format": "1080p Compact Movie Bluray Tier 4",
+      "title": "Inception 2010 1080p BluRay DD+ 5.1 x265-Yogi",
+      "type": "movie",
+      "should_match": true,
+      "note": "REAL bundled fixture 753: a plain Yogi release retains the Compact Bluray Tier 4 score"
+    },
+    {
+      "custom_format": "HONE Bluray",
+      "title": "Inception 2010 1080p BluRay DD+ 5.1 x265-Yogi",
+      "type": "movie",
+      "should_match": false,
+      "note": "REAL bundled fixture 753: a plain Yogi release does not enter the HONE title fallback"
+    },
+    {
+      "custom_format": "1080p Compact Movie WEB Tier 1",
+      "title": "Movie.2026.1080p.WEB-DL.H265.DDP5.1-Yogi HONE",
+      "type": "movie",
+      "should_match": false,
+      "note": "constructed WEB analogue of the real Yogi/HONE collision: op 232 keeps the Compact WEB tier and HONE fallback mutually exclusive"
+    },
+    {
+      "custom_format": "HONE WEB",
+      "title": "Movie.2026.1080p.WEB-DL.H265.DDP5.1-Yogi HONE",
+      "type": "movie",
+      "should_match": true,
+      "note": "constructed WEB analogue: the intended HONE title fallback remains active"
+    },
+    {
+      "custom_format": "1080p Compact Movie WEB Tier 1",
+      "title": "Movie.2026.1080p.WEB-DL.H265.DDP5.1-Yogi",
+      "type": "movie",
+      "should_match": true,
+      "note": "constructed WEB control: a plain parsed Yogi group retains the Compact WEB Tier 1 score"
+    },
+    {
+      "custom_format": "HONE WEB",
+      "title": "Movie.2026.1080p.WEB-DL.H265.DDP5.1-Yogi",
+      "type": "movie",
+      "should_match": false,
+      "note": "constructed WEB control: a plain Yogi release does not enter the HONE title fallback"
     }
   ]
 }
