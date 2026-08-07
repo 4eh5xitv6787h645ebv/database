@@ -105,17 +105,17 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Twenty-three fixes on
+  <p class="sub">Twenty-six fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
-  Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
+  Every change is evidence-backed and gated so nothing else moves; cards identify synthetic controls where no current real-world victim was found. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
   <div class="stat"><b>25</b>migrations (ops 211–235)</div>
   <div class="stat"><b>29</b>regex updates + 8 format-graph fixes</div>
-  <div class="stat"><b>601 / 601</b>.NET matrix checks green</div>
-  <div class="stat"><b>235 / 235</b>Profilarr parser tests green</div>
+  <div class="stat"><b>601 / 601</b>.NET labeled checks green</div>
+  <div class="stat"><b>249 / 249</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
@@ -137,7 +137,7 @@
     <div class="pat before"><mark class="del">\bATMOS</mark>|(?&lt;![^\W_])(?:ATMOS(?:(?![^\W_])|\d)|True[ .-]?HD(…))|DDPA(\b|\d)</div>
     <div class="pat after">(?&lt;![^\W_])(?:ATMOS(?:(?![^\W_])|\d)|True[ .-]?HD(…))|DDPA(\b|\d)</div>
   </div>
-  <p class="rel-label">Cleared collisions and controls</p>
+  <p class="rel-label">Constructed boundary cases and preserved markers</p>
   <ul class="rels">
     <li><span class="tag miss">FP cleared</span>Atmosphere.2023.1080p.WEB-DL.H264 <span class="src">· movie titled Atmosphere no longer earns the Atmos bonus</span></li>
     <li><span class="tag miss">Missing restored</span>Atmosphere.1997.Concert.1080p.BluRay.TrueHD.7.1-GRP <span class="src">· TrueHD 7.1 with no real marker now correctly reaches Atmos (Missing)</span></li>
@@ -163,7 +163,7 @@
     <div class="pat before">(?!SBS[ ._-]?<mark class="del">WEB[ ._-]?(?:DL|Rip)</mark>\b)</div>
     <div class="pat after">(?!SBS[ ._-]?<mark class="add">(?:WEB[ ._-]?(?:DL|Rip)?|HDTV|\d{3,4}[pi]|E\d+|\d{6})</mark>\b)</div>
   </div>
-  <p class="rel-label">Cleared collisions and controls</p>
+  <p class="rel-label">Representative broadcaster cases and stereoscopic controls</p>
   <ul class="rels">
     <li><span class="tag ban">ban cleared</span>Snowdrop.2021.E01.SBS.1080p.HDTV.H264-KOREAN <span class="src">· broadcaster tag after year no longer −999999 as 3D</span></li>
     <li><span class="tag ban">ban cleared</span>Running.Man.E653.2023.SBS.720p.HDTV.x264-NEXT <span class="src">· bare channel tag before resolution</span></li>
@@ -181,20 +181,24 @@
   creation/correction steps — neither links its regex to the named custom format, so
   both groups could never receive the intended remux-tier preference in the 1080p and
   2160p Remux profiles. OP 235 restores exactly the two omitted optional
-  release-group conditions, guarded so it only applies when the expected regex
-  pattern, format description, and +80/+60 profile scores are all still in place.
-  Scores and regex text are unchanged.</p>
+  release-group conditions, guarded as one all-or-none change so it only applies when
+  both complete pre-fix graphs, expected regex patterns, format descriptions, and
+  +80/+60 profile scores are all still in place. Scores, regex text, required Remux/DVD
+  gates, and existing tier members are unchanged.</p>
   <div class="diff">
     <div class="pat before">regex CONSORTiUM / SilentRogue exist
 Remux Tier 2/3  <mark class="del">no condition links the groups</mark></div>
     <div class="pat after">Remux Tier 2  <mark class="add">+ CONSORTiUM (optional release_group)</mark>
 Remux Tier 3  <mark class="add">+ SilentRogue (optional release_group)</mark></div>
   </div>
-  <p class="rel-label">Wiring restored</p>
+  <p class="rel-label">Synthetic parser proofs and safety controls</p>
   <ul class="rels">
-    <li><span class="tag miss">wiring fixed</span>Remux Tier 2 ← CONSORTiUM <span class="src">· op 154's named intent now effective (+80 in 1080p/2160p Remux)</span></li>
-    <li><span class="tag miss">wiring fixed</span>Remux Tier 3 ← SilentRogue <span class="src">· op 155's named intent now effective (+60)</span></li>
-    <li><span class="tag ok">gate</span>601/601 labeled checks · graph invariants green <span class="src">· guarded insert is a no-op if any expectation drifts</span></li>
+    <li><span class="tag miss">+80 restored</span>Dune.Part.Two.2024.1080p.BluRay.REMUX.AVC.TrueHD.7.1.Atmos-CONSORTiUM <span class="src">· synthetic Radarr control · Tier 2 only</span></li>
+    <li><span class="tag miss">+80 restored</span>The.Expanse.S01E01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-CONSORTiUM <span class="src">· synthetic Sonarr control · Tier 2 only</span></li>
+    <li><span class="tag miss">+60 restored</span>Blade.Runner.2049.2017.2160p.UHD.BluRay.REMUX.HEVC.TrueHD.7.1.Atmos-SilentRogue <span class="src">· synthetic Radarr control · Tier 3 only</span></li>
+    <li><span class="tag miss">+60 restored</span>The.Expanse.S01E01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-SilentRogue <span class="src">· synthetic Sonarr control · Tier 3 only</span></li>
+    <li><span class="tag ctl">evidence scope</span>No exact current victim was found in bundled releases, saved Prowlarr metadata, Arr history, or the optional local media corpus <span class="src">· eight positive/cross-tier controls prove both app paths without claiming a real hit</span></li>
+    <li><span class="tag ok">live gate</span>30 tested formats / 249 tests <span class="src">· 249 pass, zero fail, zero unknown in synced Profilarr database 2</span></li>
   </ul>
 </section>
 
@@ -713,15 +717,15 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 
 <footer>
   <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
-  IgnoreCase flag Radarr/Sonarr use) over a 181-title corpus; before/after diffs must show
+  IgnoreCase flag Radarr/Sonarr use) over a 188-title corpus; before/after diffs must show
   only intended rows. Format wiring and representative CF behavior are additionally
-  covered by 235 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  covered by 249 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
   The regex loop stopped after five consecutive dry iterations; the custom-format loop is
-  active. This page reflects ops 211–232. Full reasoning lives in the
+  active. This page reflects ops 211–235. Full reasoning lives in the
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">regex ledger</a>
   and <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/CUSTOM-FORMAT-AUDIT-LEDGER.md">custom-format ledger</a>.
-  Generated 2026-08-06.</p>
+  Generated 2026-08-07.</p>
 </footer>
 </div>
 
