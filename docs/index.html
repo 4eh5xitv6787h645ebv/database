@@ -112,14 +112,91 @@
 </header>
 
 <div class="stats">
-  <div class="stat"><b>22</b>migrations (ops 211–232)</div>
-  <div class="stat"><b>27</b>regex updates + 7 format-graph fixes</div>
-  <div class="stat"><b>588 / 588</b>.NET matrix checks green</div>
+  <div class="stat"><b>25</b>migrations (ops 211–235)</div>
+  <div class="stat"><b>29</b>regex updates + 8 format-graph fixes</div>
+  <div class="stat"><b>601 / 601</b>.NET matrix checks green</div>
   <div class="stat"><b>235 / 235</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 234</span><h2>Atmosphere prefix collision in Atmos</h2><span class="sev miss">false Atmos bonus · Missing suppressed</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 09:12 UTC · op 234</p>
+  <p class="why">Op 226 right-bounded its <em>new</em> Atmos branches against
+  Atmosphere-class collisions but kept the legacy unbounded <code>\bATMOS</code>
+  prefix branch, so word-boundary-delimited titles (<code>Atmosphere.2023.</code>,
+  start-of-title <code>Atmosphere…</code>) still classified as Atmos and wrongly
+  suppressed <code>Atmos (Missing)</code>. The legacy branch is a strict subset of the
+  bounded <code>(?&lt;![^\W_])ATMOS(?:(?![^\W_])|\d)</code> branch for every genuine
+  marker shape, so OP 234 simply drops it. Underscore-delimited
+  <code>_Atmosphere_</code> was already protected by <code>\b</code> failing between
+  word characters; this closes the remaining dot/start-delimited class.</p>
+  <div class="diff">
+    <div class="pat before"><mark class="del">\bATMOS</mark>|(?&lt;![^\W_])(?:ATMOS(?:(?![^\W_])|\d)|True[ .-]?HD(…))|DDPA(\b|\d)</div>
+    <div class="pat after">(?&lt;![^\W_])(?:ATMOS(?:(?![^\W_])|\d)|True[ .-]?HD(…))|DDPA(\b|\d)</div>
+  </div>
+  <p class="rel-label">Cleared collisions and controls</p>
+  <ul class="rels">
+    <li><span class="tag miss">FP cleared</span>Atmosphere.2023.1080p.WEB-DL.H264 <span class="src">· movie titled Atmosphere no longer earns the Atmos bonus</span></li>
+    <li><span class="tag miss">Missing restored</span>Atmosphere.1997.Concert.1080p.BluRay.TrueHD.7.1-GRP <span class="src">· TrueHD 7.1 with no real marker now correctly reaches Atmos (Missing)</span></li>
+    <li><span class="tag ctl">dotted marker</span>Movie.2026.1080p.WEB-DL.DDP5.1.Atmos.H.264-GROUP <span class="src">· bounded branch keeps every genuine shape: dotted, _ATMOS_, joined TrueHDAtmos, TrueHD 7.1 Atoms</span></li>
+    <li><span class="tag ok">full sweep</span>924-title flip matrix <span class="src">· exactly one intended flip; 601/601 labeled checks green</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 233</span><h2>SBS broadcaster context in 3D</h2><span class="sev ban">−999999 on Korean broadcaster releases</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 09:10 UTC · op 233</p>
+  <p class="why">Op 223 excluded bare <code>SBS</code> only when immediately followed by
+  WEB-DL/WEBRip — the evidenced class at the time. The same Korean-broadcaster
+  collision exists for the network's other forms: bare <code>SBS</code> immediately
+  followed by <code>HDTV</code>, a resolution token (<code>720p</code>/<code>1080i</code>),
+  an <code>E</code>-numbered episode marker, or a six-digit broadcast date stamp is a
+  channel tag, not a Side-by-Side packing marker. OP 233 extends both lookaheads
+  (yearless corroborated branch and post-year branch) to the full broadcaster-context
+  set. Genuine stereoscopic names keep matching: any explicit <code>3D</code> token
+  still matches directly, and H/Half/F/Full-prefixed packing forms (HSBS, Half-SBS,
+  FSBS) never enter the bare-SBS exclusion.</p>
+  <div class="diff">
+    <div class="pat before">(?!SBS[ ._-]?<mark class="del">WEB[ ._-]?(?:DL|Rip)</mark>\b)</div>
+    <div class="pat after">(?!SBS[ ._-]?<mark class="add">(?:WEB[ ._-]?(?:DL|Rip)?|HDTV|\d{3,4}[pi]|E\d+|\d{6})</mark>\b)</div>
+  </div>
+  <p class="rel-label">Cleared collisions and controls</p>
+  <ul class="rels">
+    <li><span class="tag ban">ban cleared</span>Snowdrop.2021.E01.SBS.1080p.HDTV.H264-KOREAN <span class="src">· broadcaster tag after year no longer −999999 as 3D</span></li>
+    <li><span class="tag ban">ban cleared</span>Running.Man.E653.2023.SBS.720p.HDTV.x264-NEXT <span class="src">· bare channel tag before resolution</span></li>
+    <li><span class="tag ctl">disc context</span>Movie.2010.1080p.SBS.BluRay.x264-GRP <span class="src">· bare SBS followed by BluRay stays a packing marker</span></li>
+    <li><span class="tag ctl">real 3D</span>Inception 3D … Half SBS · Free.Guy.3D_2021.Full-SBS · Bad.Words…_3D_SBS <span class="src">· all explicit and prefixed forms unchanged</span></li>
+    <li><span class="tag ok">full sweep</span>924-title flip matrix <span class="src">· exactly two intended flips; zero collateral</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 235</span><h2>CONSORTiUM / SilentRogue Remux tier links</h2><span class="sev miss">missing +80/+60 remux preference</span><span class="ver v2">v2 only · new in v2</span></div>
+  <p class="when">Changed 2026-08-07 01:08 UTC · op 235</p>
+  <p class="why">Ops 154 and 155 are explicitly named “Add CONSORTiUM to Remux Tier 2”
+  and “Add SilentRogue to Remux Tier 3”, but their exports contain only the regex
+  creation/correction steps — neither links its regex to the named custom format, so
+  both groups could never receive the intended remux-tier preference in the 1080p and
+  2160p Remux profiles. OP 235 restores exactly the two omitted optional
+  release-group conditions, guarded so it only applies when the expected regex
+  pattern, format description, and +80/+60 profile scores are all still in place.
+  Scores and regex text are unchanged.</p>
+  <div class="diff">
+    <div class="pat before">regex CONSORTiUM / SilentRogue exist
+Remux Tier 2/3  <mark class="del">no condition links the groups</mark></div>
+    <div class="pat after">Remux Tier 2  <mark class="add">+ CONSORTiUM (optional release_group)</mark>
+Remux Tier 3  <mark class="add">+ SilentRogue (optional release_group)</mark></div>
+  </div>
+  <p class="rel-label">Wiring restored</p>
+  <ul class="rels">
+    <li><span class="tag miss">wiring fixed</span>Remux Tier 2 ← CONSORTiUM <span class="src">· op 154's named intent now effective (+80 in 1080p/2160p Remux)</span></li>
+    <li><span class="tag miss">wiring fixed</span>Remux Tier 3 ← SilentRogue <span class="src">· op 155's named intent now effective (+60)</span></li>
+    <li><span class="tag ok">gate</span>601/601 labeled checks · graph invariants green <span class="src">· guarded insert is a no-op if any expectation drifts</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 232</span><h2>Compact Yogi/HONE tier disjointness</h2><span class="sev miss">stacked +940,000 tier score</span><span class="ver both">bug in v1 + v2</span></div>
