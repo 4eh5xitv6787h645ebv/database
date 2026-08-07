@@ -97,6 +97,13 @@
   .src { color: var(--muted); }
   footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.2rem; max-width: 72ch; }
   footer a, header a { color: var(--accent); }
+  .noeffect {
+    border: 1px solid #e0526b; border-left: 4px solid #e0526b;
+    background: rgba(224, 82, 107, .09); border-radius: 6px;
+    padding: .6rem .8rem; margin: 0 0 1rem; font-size: .86rem; line-height: 1.5;
+  }
+  .noeffect b { color: #e0526b; letter-spacing: .01em; }
+  .sev.void { background: rgba(224,82,107,.16); color: #e0526b; border-color: #e0526b; }
   .when { font: 500 .72rem/1 ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; color: var(--muted); margin: .15rem 0 .6rem; }
   h3.grp { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 2.6rem 0 1rem; }
 </style>
@@ -129,6 +136,11 @@
   the existing niche-service convention (iP/NOW/CRAV). DSCP stays strict — TRaSH's
   dcp/disc spelling variants collide with ordinary words. ITVX/MY5/STV/U-NEXT remain
   deferred (zero evidence); the daily evidence feed now hunts for them.</p>
+  <div class="diff">
+    <div class="pat before">no ALL4 or DSCP service pattern</div>
+    <div class="pat after">ALL4  (?&lt;![^\W_])ALL4(?![^\W_])
+DSCP  (?&lt;![^\W_])DSCP(?![^\W_])</div>
+  </div>
   <ul class="rels">
     <li><span class="tag ok">tagged</span>Bangers.and.Cash.S14E03…1080p.ALL4.WEB-DL-RAWR · Battle.on.the.Beach.S03.1080p.DSCP.WEB-DL-FUZEER <span class="src">· evidence corpus</span></li>
     <li><span class="tag ctl">boundary</span>…ALL4ONE… <span class="src">· longer tokens stay unmatched</span></li>
@@ -143,6 +155,12 @@
   the marker regex alone matches 78 evidence titles, most of them fine 10-bit HEVC, so
   x264 is required and x265 required-negated; only true Hi10P encodes take the −10000
   penalty in the hardware-oriented 1080p Compact/Efficient profiles.</p>
+  <div class="diff">
+    <div class="pat before">bit depth was not expressible; Hi10P scored as ordinary x264</div>
+    <div class="pat after">10-bit Marker  (?&lt;![^\W_])(?:Hi10P?|10[ ._-]?bit)(?![^\W_])
+required       x264  ^(?!.*remux).*[xh][ ._-]?264
+required NOT   x265  ^(?!.*remux).*([x][ ._-]?265|\bHEVC(\b|\d))</div>
+  </div>
   <ul class="rels">
     <li><span class="tag miss">penalized</span>Big.Hero.6.2014…DTS.Hi10p.x264-NTb · The Hobbit…Hi10P x264-DON <span class="src">· real Hi10P encodes</span></li>
     <li><span class="tag ctl">HEVC safe</span>The_Shining_1980…x265_10bit_MarkII <span class="src">· x265 negation blocks the penalty</span></li>
@@ -157,6 +175,12 @@
   source conditions exclude Criterion CHANNEL web releases (which stay the CRiT streaming
   tag's business), and a parsed release group literally named Criterion is
   required-negated. Masters of Cinema / Vinegar Syndrome deferred — zero evidence.</p>
+  <div class="diff">
+    <div class="pat before">no boutique-label pattern; CRiT covers the Criterion CHANNEL streaming tag only</div>
+    <div class="pat after">Criterion        (?&lt;![^\W_])Criterion(?![^\W_])
+Criterion Group  (?&lt;=^|[\s.-])Criterion\b   <mark class="add">required-negated</mark>
+sources          <mark class="add">bluray OR dvd</mark>  (keeps Criterion Channel WEB out)</div>
+  </div>
   <ul class="rels">
     <li><span class="tag ok">scored</span>Seven.Samurai.1954.Criterion.1080p.BluRay · Certified.Copy.2010.Criterion.BluRay.Remux…-HiFi</li>
     <li><span class="tag ctl">channel guard</span>Criterion.Channel.Exclusive.2023.1080p.WEB-DL <span class="src">· excluded by source conditions (parser-level)</span></li>
@@ -171,6 +195,10 @@
   <code>Crime.101.2026.1080p.DS4K.WEB-DL.x265…-Kris</code>. Small +25 in 1080p
   Quality/Efficient/Balanced — the token says the master was 4K, not that the encoder is
   good, so it stays a tiebreak.</p>
+  <div class="diff">
+    <div class="pat before">no DS4K pattern in the database</div>
+    <div class="pat after">DS4K  (?&lt;![^\W_])DS4K(?![^\W_])</div>
+  </div>
   <ul class="rels">
     <li><span class="tag ok">scored</span>Crime.101.2026.1080p.DS4K.WEB-DL.x265.10bit.HDR.E-AC-3.5.1-Kris <span class="src">· evidence corpus</span></li>
     <li><span class="tag ctl">boundary</span>DS4Kids.Show.S01… <span class="src">· longer tokens stay unmatched</span></li>
@@ -185,6 +213,10 @@
   became inexpressible. 82 remaster titles live in the evidence corpus; 30 match the new
   post-year-anchored pattern (the rest are space-separated originals covered by the same
   boundary class). +25 in the four Quality/Remux profiles.</p>
+  <div class="diff">
+    <div class="pat before">no pattern for remastered releases (ruled out of Special Edition, sibling never created)</div>
+    <div class="pat after">Remastered  (?&lt;![^\W_])[12]\d{3}(?![^\W_]).*(?&lt;![^\W_])Remaster(?:ed)?(?![^\W_])</div>
+  </div>
   <ul class="rels">
     <li><span class="tag ok">scored</span>Aliens.1986.Remastered.Special.Edition.1080p… · Movie_1989_4K_Remaster_1080p…</li>
     <li><span class="tag ctl">title word</span>Remastering.The.Beatles.2023… <span class="src">· no year anchor before the token</span></li>
@@ -200,6 +232,11 @@
   underscore-tolerant marker regex + a required-negated parsed-group condition so the
   <code>-HYBRID</code> release group can never masquerade as the marker. +100 in the five
   Quality/Remux profiles.</p>
+  <div class="diff">
+    <div class="pat before">no pattern in the database contained "hybrid"</div>
+    <div class="pat after">Hybrid        (?&lt;![^\W_])HYBRID(?:(?![^\W_])|\d)
+HYBRID Group  (?&lt;=^|[\s.-])HYBRID\b   <mark class="add">required-negated release_group</mark></div>
+  </div>
   <ul class="rels">
     <li><span class="tag ok">scored</span>Air.Force.One.1997…HYBRID.REMUX-FraMeSToR · Dune.Part.Two.2024.1080p.Hybrid.WEB-DL…-FLUX</li>
     <li><span class="tag ctl">group guard</span>Movie.2023.2160p.WEB-DL.DV.HDR10.HEVC-HYBRID <span class="src">· parsed group HYBRID is required-negated (parser-level)</span></li>
@@ -253,6 +290,11 @@
   edition formats, so Open Matte itself could be neither preferred nor avoided. It becomes a
   standalone format at score 0 radarr-side in every profile — visible in the arrs and ready
   to flip positive or negative to taste.</p>
+  <div class="diff">
+    <div class="pat before">regex Open Matte  (?&lt;![^\W_])(Open[ ._-]?Matte)(?![^\W_])
+consumers         <mark class="del">negation-only, inside the edition formats</mark></div>
+    <div class="pat after">CF Open Matte  required: Open Matte  ·  <mark class="add">score 0 radarr, every profile</mark></div>
+  </div>
   <p class="rel-label">Wiring and controls</p>
   <ul class="rels">
     <li><span class="tag ok">highlighted</span>The.Abyss.1989.Open.Matte.1080p.WEB-DL <span class="src">· canonical release now carries the format</span></li>
@@ -270,6 +312,11 @@
   and bracketed retags like <code>[rartv]</code>/<code>[TGx]</code>) scored <b>0 in every
   profile</b> — visible, never blocking. An invariant now enforces the score stays 0 until
   deliberately changed.</p>
+  <div class="diff">
+    <div class="pat before">no pattern in the database matched usenet obfuscation or retag tags</div>
+    <div class="pat after">Obfuscated Tags  -(?:Obfuscated|As[-_. ]?Requested|AsRq|AlternativeToRequested|NZBGeek|postbot|xpost|BUYMORE|Scrambled|WhiteRev|CAPTCHA|Rakuv\w*|4Planet|4P|GEROV|Z0iDS3N|Chamele0n)\b
+Retag Tags       \[\s*(?:eztvx?(?:[ ._-]?(?:io|re|to))?|rarbg|rartv|TGx)\s*\]</div>
+  </div>
   <p class="rel-label">Evidence and controls</p>
   <ul class="rels">
     <li><span class="tag ok">noted</span>Criminal.Minds…h264-Obfuscated · Black.Widow…-CAPTCHA · Clueless…-HD4U-xpost · Andor…-OPTiCAL-4P <span class="src">· real evidence-corpus titles</span></li>
@@ -300,15 +347,15 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 234</span><h2>Atmosphere prefix collision in Atmos</h2><span class="sev miss">false Atmos bonus · Missing suppressed</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-07 09:12 UTC · op 234</p>
+  <div class="card-head"><span class="op">OP 10234</span><h2>Atmosphere prefix collision in Atmos</h2><span class="sev miss">false Atmos bonus · Missing suppressed</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 09:12 UTC · op 10234</p>
   <p class="why">Op 226 right-bounded its <em>new</em> Atmos branches against
   Atmosphere-class collisions but kept the legacy unbounded <code>\bATMOS</code>
   prefix branch, so word-boundary-delimited titles (<code>Atmosphere.2023.</code>,
   start-of-title <code>Atmosphere…</code>) still classified as Atmos and wrongly
   suppressed <code>Atmos (Missing)</code>. The legacy branch is a strict subset of the
   bounded <code>(?&lt;![^\W_])ATMOS(?:(?![^\W_])|\d)</code> branch for every genuine
-  marker shape, so OP 234 simply drops it. Underscore-delimited
+  marker shape, so OP 10234 simply drops it. Underscore-delimited
   <code>_Atmosphere_</code> was already protected by <code>\b</code> failing between
   word characters; this closes the remaining dot/start-delimited class.</p>
   <div class="diff">
@@ -325,14 +372,15 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 233</span><h2>SBS broadcaster context in 3D</h2><span class="sev ban">−999999 on Korean broadcaster releases</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-07 09:10 UTC · op 233</p>
+  <div class="card-head"><span class="op">OP 10233</span><h2>SBS broadcaster context in 3D</h2><span class="sev void">−999999 on Korean broadcaster releases</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 09:10 UTC · op 10233</p>
+  <div class="noeffect"><b>No real-world effect — not an upstream bug.</b> Verified 2026-08-07 against real Radarr/Sonarr instances (see <code>scripts/arr_verify.py</code>). The 3D format is radarr-only and is never synced to Sonarr, and every evidenced SBS title is a TV series. No live grab was ever at risk from this class. The migration stays in place as defence-in-depth, but this card originally overstated its impact.</div>
   <p class="why">Op 223 excluded bare <code>SBS</code> only when immediately followed by
   WEB-DL/WEBRip — the evidenced class at the time. The same Korean-broadcaster
   collision exists for the network's other forms: bare <code>SBS</code> immediately
   followed by <code>HDTV</code>, a resolution token (<code>720p</code>/<code>1080i</code>),
   an <code>E</code>-numbered episode marker, or a six-digit broadcast date stamp is a
-  channel tag, not a Side-by-Side packing marker. OP 233 extends both lookaheads
+  channel tag, not a Side-by-Side packing marker. OP 10233 extends both lookaheads
   (yearless corroborated branch and post-year branch) to the full broadcaster-context
   set. Genuine stereoscopic names keep matching: any explicit <code>3D</code> token
   still matches directly, and H/Half/F/Full-prefixed packing forms (HSBS, Half-SBS,
@@ -352,13 +400,13 @@
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 235</span><h2>CONSORTiUM / SilentRogue Remux tier links</h2><span class="sev miss">missing +80/+60 remux preference</span><span class="ver v2">v2 only · new in v2</span></div>
-  <p class="when">Changed 2026-08-07 01:08 UTC · op 235</p>
+  <div class="card-head"><span class="op">OP 10235</span><h2>CONSORTiUM / SilentRogue Remux tier links</h2><span class="sev miss">missing +80/+60 remux preference</span><span class="ver v2">v2 only · new in v2</span></div>
+  <p class="when">Changed 2026-08-07 01:08 UTC · op 10235</p>
   <p class="why">Ops 154 and 155 are explicitly named “Add CONSORTiUM to Remux Tier 2”
   and “Add SilentRogue to Remux Tier 3”, but their exports contain only the regex
   creation/correction steps — neither links its regex to the named custom format, so
   both groups could never receive the intended remux-tier preference in the 1080p and
-  2160p Remux profiles. OP 235 restores exactly the two omitted optional
+  2160p Remux profiles. OP 10235 restores exactly the two omitted optional
   release-group conditions, guarded as one all-or-none change so it only applies when
   both complete pre-fix graphs, expected regex patterns, format descriptions, and
   +80/+60 profile scores are all still in place. Scores, regex text, required Remux/DVD
@@ -381,15 +429,15 @@ Remux Tier 3  <mark class="add">+ SilentRogue (optional release_group)</mark></d
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 232</span><h2>Compact Yogi/HONE tier disjointness</h2><span class="sev miss">stacked +940,000 tier score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-07 00:20 UTC · op 232</p>
+  <div class="card-head"><span class="op">OP 10232</span><h2>Compact Yogi/HONE tier disjointness</h2><span class="sev miss">stacked +940,000 tier score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 00:20 UTC · op 10232</p>
   <p class="why">The <code>QxR</code> release-group expression includes
   <code>YOGI</code>, while the HONE fallback intentionally recognizes a HONE marker in
   the title when the parsed group is not HONE. A real <code>x265-Yogi HONE</code>
   release therefore received both <code>1080p Compact Movie Bluray Tier 4</code>
   (+940,000) and <code>HONE Bluray</code> (+900,000). Op 98 is explicitly named
   “Prevent Yogi Double Matching” and already added required <code>Not HONE</code>
-  guards to the analogous Efficient tiers, but omitted Compact. OP 232 adds the same
+  guards to the analogous Efficient tiers, but omitted Compact. OP 10232 adds the same
   required-negated HONE title guard only to Compact’s two Radarr movie tiers that
   share a live HONE fallback (Bluray and WEB). No regex, score, TV tier, or Sonarr
   behavior changes.</p>
@@ -411,15 +459,15 @@ Result         <mark class="add">exactly one intended tier</mark></div>
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 231</span><h2>Compact Extras hard ban</h2><span class="sev ban">escaped Compact’s −999999 ban</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 23:36 UTC · op 231</p>
+  <div class="card-head"><span class="op">OP 10231</span><h2>Compact Extras hard ban</h2><span class="sev ban">escaped Compact’s −999999 ban</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 23:36 UTC · op 10231</p>
   <p class="why">Every shipped profile except <code>1080p Compact</code> hard-banned
   Extras in both apps. Compact’s direct v1 ancestor originally carried the same Radarr
   <code>Extras</code> and Sonarr <code>TV Extras</code> scores, but commit
   <code>c156dfad</code> removed both during an unrelated source/tier rewrite explicitly
   marked “DO NOT USE COMPACT PROFILE TESTING ONLY.” No policy rationale accompanied the
   deletion, the other special-content bans stayed, and the initial v2 translation
-  inherited the omission. OP 231 restores only Compact’s two missing −999999 rows after
+  inherited the omission. OP 10231 restores only Compact’s two missing −999999 rows after
   verifying the repaired two-branch Extras graph and the exact 10-profile peer matrix.
   The resulting 11-profile × 2-app policy is enforced by a database-level regression
   check.</p>
@@ -440,14 +488,14 @@ Result         <mark class="add">exactly one intended tier</mark></div>
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 230</span><h2>Remux detector union</h2><span class="sev ban">escaped a −999999 Remux ban</span><span class="ver v2">v2 only · v1 kept separate detectors</span></div>
-  <p class="when">Changed 2026-08-06 23:10 UTC · op 230</p>
+  <div class="card-head"><span class="op">OP 10230</span><h2>Remux detector union</h2><span class="sev ban">escaped a −999999 Remux ban</span><span class="ver v2">v2 only · v1 kept separate detectors</span></div>
+  <p class="when">Changed 2026-08-06 23:10 UTC · op 10230</p>
   <p class="why">V2 ops 9–11 collapsed the title, Radarr quality-modifier, and
   Sonarr <code>bluray_raw</code> Remux detectors into one custom format. Arr ANDs
   different condition implementation types, so Radarr effectively required both a
   Remux title token and a parsed Remux modifier; title-only and parser-only releases
   both escaped the hard ban. Sonarr ignored the optional raw-source sibling beside its
-  required source condition. OP 230 restores the two app-native fallback formats,
+  required source condition. OP 10230 restores the two app-native fallback formats,
   negates the shared title on each fallback so the branches cannot double-score, and
   applies <code>Not DVD</code> to every branch. The same −999999 policy now covers the
   intended union in the same nine profiles while DVD Remux eligibility is preserved.</p>
@@ -470,8 +518,8 @@ Sonarr  OR source:bluray_raw AND NOT title AND Not DVD</mark></div>
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 229</span><h2>EA release-group tier overlap</h2><span class="sev miss">stacked +283,000 tier score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 22:35 UTC · op 229</p>
+  <div class="card-head"><span class="op">OP 10229</span><h2>EA release-group tier overlap</h2><span class="sev miss">stacked +283,000 tier score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 22:35 UTC · op 10229</p>
   <p class="why"><code>EA</code> remained in <code>720p Quality Tier 4</code> after the
   authoritative v1 commit <code>a0a23ed</code> explicitly moved it to
   <code>720p Quality Tier 5</code>. Because both tiers have the same effective 720p,
@@ -492,8 +540,8 @@ Sonarr  OR source:bluray_raw AND NOT title AND Not DVD</mark></div>
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 228</span><h2>720p HDTV Tier 3 resolution</h2><span class="sev miss">missed +20,000 / stacked +60,000</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 22:19 UTC · op 228</p>
+  <div class="card-head"><span class="op">OP 10228</span><h2>720p HDTV Tier 3 resolution</h2><span class="sev miss">missed +20,000 / stacked +60,000</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 22:19 UTC · op 10228</p>
   <p class="why"><code>720p HDTV Tier 3</code> carried a required <code>1080p</code>
   resolution condition, making its complete condition graph identical to
   <code>1080p HDTV Tier 3</code>. Both formats are live in all 11 profiles for Radarr and
@@ -513,8 +561,8 @@ Sonarr  OR source:bluray_raw AND NOT title AND Not DVD</mark></div>
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 227</span><h2>DTS / Hi10P video profiles</h2><span class="sev miss">missed +300 DTS score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 18:21 UTC · op 227</p>
+  <div class="card-head"><span class="op">OP 10227</span><h2>DTS / Hi10P video profiles</h2><span class="sev miss">missed +300 DTS score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 18:21 UTC · op 10227</p>
   <p class="why">The shared DTS-HD HRA/ES negator ended its legacy <code>Hi</code>
   shorthand without a boundary. Real releases that put the Hi10P or Hi444PP H.264 video
   profile after ordinary DTS therefore looked like higher-tier DTS audio and lost the +300
@@ -537,8 +585,8 @@ Sonarr  OR source:bluray_raw AND NOT title AND Not DVD</mark></div>
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 226</span><h2>Atmos / 7.1 Surround</h2><span class="sev miss">missed +400 + wrong Atmos bucket</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 17:59 UTC · op 226</p>
+  <div class="card-head"><span class="op">OP 10226</span><h2>Atmos / 7.1 Surround</h2><span class="sev miss">missed +400 + wrong Atmos bucket</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 17:59 UTC · op 10226</p>
   <p class="why">The 7.1 regex required a literal dot and consumed one character on each side,
   missing real space- and underscore-normalized channel markers plus a bundled end-of-title
   marker. Its only consumer drives the +400 Atmos (Missing) score in four profiles. Expanding
@@ -566,8 +614,8 @@ BTN    \bTrue[ .-]?HDA[ .-]?[57]\.1|(?&lt;![^\W_])True[ .-]?HDA[ ._-]?[57][ ._]1
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 225</span><h2>Special / Extended Edition</h2><span class="sev miss">missed +1000 edition scores</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 17:23 UTC · op 225</p>
+  <div class="card-head"><span class="op">OP 10225</span><h2>Special / Extended Edition</h2><span class="sev miss">missed +1000 edition scores</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 17:23 UTC · op 10225</p>
   <p class="why">Word boundaries treat underscores as word characters, so real underscore-heavy
   names missed the scored Special and Extended Edition positives. Both formats score +1000 in
   11 Radarr profiles and share five required negations. Widening only the positives was unsafe:
@@ -592,8 +640,8 @@ Guards    separator-aware IMAX · Open Matte · Theatrical · Extended Clip · S
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 224</span><h2>Extras / Bonus markers</h2><span class="sev ban">escaped a live hard ban</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 16:53 UTC · op 224</p>
+  <div class="card-head"><span class="op">OP 10224</span><h2>Extras / Bonus markers</h2><span class="sev ban">escaped a live hard ban</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 16:53 UTC · op 10224</p>
   <p class="why">The movie and TV Extras regexes used word boundaries around their year,
   season, and extras markers. Because underscore is a word character, real underscore-heavy
   names matched none of those boundaries and escaped the −999999 Extras score in 10 Radarr
@@ -615,8 +663,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 223</span><h2>3D / SBS packing</h2><span class="sev ban">wrong hard bans + missed 3D</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 16:34 UTC · op 223</p>
+  <div class="card-head"><span class="op">OP 10223</span><h2>3D / SBS packing</h2><span class="sev ban">wrong hard bans + missed 3D</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 16:34 UTC · op 10223</p>
   <p class="why">Bare <code>SBS</code> is both a stereoscopic packing tag and a Korean
   broadcaster tag. Three real <code>SBS.WEB-DL</code> releases therefore took the 3D
   format’s −999999 score in all 11 Radarr profiles. In the other direction, the global
@@ -641,8 +689,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 222</span><h2>Repack1 / 2 / 3</h2><span class="sev miss">missed repack score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-07 04:45 UTC · op 222</p>
+  <div class="card-head"><span class="op">OP 10222</span><h2>Repack1 / 2 / 3</h2><span class="sev miss">missed repack score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 04:45 UTC · op 10222</p>
   <p class="why">Underscore-separated names defeat word boundaries (the same class as the CAM
   fix in OP&nbsp;216), so underscore repacks missed the repack scoring across all three
   revision tiers. Boundaries now accept underscores; "Properly" and dotted forms verified
@@ -660,13 +708,13 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 221</span><h2>Apple TV+</h2><span class="sev miss">missed service tag</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-07 04:20 UTC · op 221</p>
+  <div class="card-head"><span class="op">OP 10221</span><h2>Apple TV+</h2><span class="sev miss">missed service tag</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 04:20 UTC · op 10221</p>
   <p class="why">The spelled-out form was a literal with a space (and the group's trailing
   anchor could not even close after "+."), so real dotted naming like
   <code>Apple.TV+.WEB-DL</code> and plus-less <code>Apple.TV.WEB-DL</code> never matched.
   The spelled form now takes a separator class and requires a following WEB token — same
-  guard style as Max/iTunes/Movies Anywhere, and the same fix class as Paramount+ (OP 215).</p>
+  guard style as Max/iTunes/Movies Anywhere, and the same fix class as Paramount+ (OP 10215).</p>
   <div class="diff">
     <div class="pat before">\b(ATVP|ATV|APTV|<mark class="del">Apple TV\+</mark>)\s*\b</div>
     <div class="pat after">\b(ATVP|ATV|APTV)\s*\b|<mark class="add">\bApple[ ._-]?TV\+?(?=[ ._-]?WEB[ ._-]?(DL|RIP)?\b)</mark></div>
@@ -682,8 +730,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 220</span><h2>Dolby Digital</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 20:55 UTC · op 220</p>
+  <div class="card-head"><span class="op">OP 10220</span><h2>Dolby Digital</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 20:55 UTC · op 10220</p>
   <p class="why">Plain spelled-out <code>Dolby.Digital.5.1</code> matched neither DD nor DD+ —
   only the abbreviation was known, even though the Dolby Vision regex has always accepted
   its spelled-out form. The new branch is Plus-guarded so spelled-out Dolby Digital Plus
@@ -701,8 +749,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 219</span><h2>Full Disc</h2><span class="sev ban">was banning ordinary DVDRips</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 20:15 UTC · op 219</p>
+  <div class="card-head"><span class="op">OP 10219</span><h2>Full Disc</h2><span class="sev ban">was banning ordinary DVDRips</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 20:15 UTC · op 10219</p>
   <p class="why">The regex's trailing alternative sat outside its own rip-exclusion guard and
   used unanchored tokens, so ordinary PAL/NTSC DVDRips — whose DVD source the format's
   conditions don't exclude — took the −999999 full-disc ban, and PAL matched inside words
@@ -723,8 +771,9 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 218</span><h2>Extras (format wiring)</h2><span class="sev ban">live ban never fired</span><span class="ver v2">v2 only · v1 wiring was fine</span></div>
-  <p class="when">Changed 2026-08-06 19:20 UTC · op 218</p>
+  <div class="card-head"><span class="op">OP 10218</span><h2>Extras (format wiring)</h2><span class="sev void">live ban never fired</span><span class="ver v2">v2 only · v1 wiring was fine</span></div>
+  <p class="when">Changed 2026-08-06 19:20 UTC · op 10218</p>
+  <div class="noeffect"><b>No real-world effect — not an upstream bug.</b> Verified 2026-08-07 against real Radarr/Sonarr instances (see <code>scripts/arr_verify.py</code>). Same as OP 10217: the sync layer splits the conditions per app, so upstream's Extras ban was never actually unmatchable in a live arr. Verified against a clean Dictionarry v2 Radarr. The migration stays in place as defence-in-depth, but this card originally overstated its impact.</div>
   <p class="why">Same wiring bug as DUBBED, but live: Extras bans bonus-content releases at
   −999999 in 20 profile entries, yet required its movie condition (year anchor) AND its
   series condition (S## anchor) at once. Movie extras carry no season marker and TV extras
@@ -742,8 +791,9 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 217</span><h2>DUBBED (format wiring)</h2><span class="sev miss">format could never match</span><span class="ver v2">v2 only · format absent in v1</span></div>
-  <p class="when">Changed 2026-08-06 18:40 UTC · op 217</p>
+  <div class="card-head"><span class="op">OP 10217</span><h2>DUBBED (format wiring)</h2><span class="sev void">format could never match</span><span class="ver v2">v2 only · format absent in v1</span></div>
+  <p class="when">Changed 2026-08-06 18:40 UTC · op 10217</p>
+  <div class="noeffect"><b>No real-world effect — not an upstream bug.</b> Verified 2026-08-07 against real Radarr/Sonarr instances (see <code>scripts/arr_verify.py</code>). Profilarr filters conditions by <code>arr_type</code> when it syncs, so Radarr only ever receives the movie condition and Sonarr only the TV one. The both-required deadlock cannot occur in the real pipeline — upstream matches these titles too. The migration stays in place as defence-in-depth, but this card originally overstated its impact.</div>
   <p class="why">Not a regex bug: the format required its movie condition (year-anchored)
   AND its series condition (SxxExx-anchored) at the same time — impossible for any real
   title. Both are now optional, which Radarr treats as either-or. The format is not yet
@@ -761,8 +811,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 216</span><h2>CAM</h2><span class="sev ban">cam releases escaped the ban</span><span class="ver v2">v2 only · new in v2</span></div>
-  <p class="when">Changed 2026-08-06 18:05 UTC · op 216</p>
+  <div class="card-head"><span class="op">OP 10216</span><h2>CAM</h2><span class="sev ban">cam releases escaped the ban</span><span class="ver v2">v2 only · new in v2</span></div>
+  <p class="when">Changed 2026-08-06 18:05 UTC · op 10216</p>
   <p class="why">Underscore-separated names defeat regex word boundaries (underscore is a
   word character), so neither the year anchor nor the CAM token could fire — real cams
   slipped past a −999999 ban. Verified against Radarr source: custom formats match the
@@ -780,8 +830,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 215</span><h2>Paramount+</h2><span class="sev miss">missed service tag</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 17:20 UTC · op 215</p>
+  <div class="card-head"><span class="op">OP 10215</span><h2>Paramount+</h2><span class="sev miss">missed service tag</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 17:20 UTC · op 10215</p>
   <p class="why">“Paramount Plus” was matched with a literal space only, while dotted scene
   names write <code>Paramount.Plus</code>. Sibling service regexes (Disney+, HBO&nbsp;Max, Crave)
   already use separator classes; this brings Paramount+ in line.</p>
@@ -797,8 +847,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 214</span><h2>Dolby Digital +</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 16:45 UTC · op 214</p>
+  <div class="card-head"><span class="op">OP 10214</span><h2>Dolby Digital +</h2><span class="sev miss">missed audio score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 16:45 UTC · op 10214</p>
   <p class="why">Canonical <code>E-AC-3</code> (Dolby’s own spelling) and spelled-out
   <code>Dolby.Digital.Plus</code> matched neither DD nor DD+ — those releases got no audio
   format at all, and the DD+ negations inside AAC/DTS/FLAC/TrueHD failed open.</p>
@@ -818,8 +868,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 213</span><h2>Special Edition</h2><span class="sev miss">missed +1000 edition score</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 15:55 UTC · op 213</p>
+  <div class="card-head"><span class="op">OP 10213</span><h2>Special Edition</h2><span class="sev miss">missed +1000 edition score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 15:55 UTC · op 10213</p>
   <p class="why">The post-year token list had no <code>Redux</code>, so Redux cuts neither earned
   the edition score nor tripped the “Not Special Edition” gate in the Theatrical formats.
   No release group named REDUX exists, so the token adds no false-positive surface.</p>
@@ -836,8 +886,9 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 212</span><h2>German DL</h2><span class="sev ban">was banning legit releases</span><span class="ver v2">v2 only · new in v2</span></div>
-  <p class="when">Changed 2026-08-06 14:55 UTC · op 212</p>
+  <div class="card-head"><span class="op">OP 10212</span><h2>German DL</h2><span class="sev void">was banning legit releases</span><span class="ver v2">v2 only · new in v2</span></div>
+  <p class="when">Changed 2026-08-06 14:55 UTC · op 10212</p>
+  <div class="noeffect"><b>No real-world effect — not an upstream bug.</b> Verified 2026-08-07 against real Radarr/Sonarr instances (see <code>scripts/arr_verify.py</code>). Upstream already fixed this class in their own op 209 (their issue #183), which is part of the v2 base this fork builds on. Fork and upstream classify <code>GERMAN.WEB.DL</code>, <code>GERMAN WEB DL</code> and genuine <code>GERMAN.DL</code> identically, so no grab decision changes. The migration stays in place as defence-in-depth, but this card originally overstated its impact.</div>
   <p class="why">The guard that stops the <code>DL</code> of WEB-DL reading as “Dual Language”
   only covered the hyphen spelling. Dotted or spaced WEB-DL made English releases of
   “German”-titled films look dual-language — a −999999 ban in 11 profiles.</p>
@@ -854,8 +905,9 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 212</span><h2>Remux</h2><span class="sev ban">fed a wrongful Full Disc ban</span><span class="ver v2">v2 only · regression (v1 matched BDRemux)</span></div>
-  <p class="when">Changed 2026-08-06 14:55 UTC · op 212</p>
+  <div class="card-head"><span class="op">OP 10212</span><h2>Remux</h2><span class="sev void">fed a wrongful Full Disc ban</span><span class="ver v2">v2 only · regression (v1 matched BDRemux)</span></div>
+  <p class="when">Changed 2026-08-06 14:55 UTC · op 10212</p>
+  <div class="noeffect"><b>No real-world effect — not an upstream bug.</b> Verified 2026-08-07 against real Radarr/Sonarr instances (see <code>scripts/arr_verify.py</code>). Radarr detects <code>BDRemux</code> through its own quality modifier before custom formats run, so the Remux format already matched these releases upstream. The regex is tighter, but no grab decision changes. The migration stays in place as defence-in-depth, but this card originally overstated its impact.</div>
   <p class="why"><code>\b(Remux)\b</code> never matched the joined spellings used by Russian and
   Spanish trackers. This regex is the “Not Remux” gate in 49 formats — worst case, a
   BDRemux with an AVC tag fired the <em>Full Disc</em> format’s −999999 ban in every profile,
@@ -874,8 +926,8 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
 </section>
 
 <section class="card">
-  <div class="card-head"><span class="op">OP 211</span><h2>Dolby Vision (Without Fallback)</h2><span class="sev ban">was banning legit releases</span><span class="ver both">bug in v1 + v2</span></div>
-  <p class="when">Changed 2026-08-06 13:25 UTC · op 211</p>
+  <div class="card-head"><span class="op">OP 10211</span><h2>Dolby Vision (Without Fallback)</h2><span class="sev ban">was banning legit releases</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-06 13:25 UTC · op 10211</p>
   <p class="why">The negation list only knew the spelling <code>BLURAY</code>, so hyphenated
   Blu-ray disc releases — which always carry an HDR10 base layer — were treated as
   fallback-less DV and hard-banned in 7 profiles. Same fix the project itself made for

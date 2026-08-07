@@ -242,6 +242,24 @@
         "Atmos"
       ],
       "note": "evidenced TrueHD 7.1 Atoms typo really is Atmos"
+    },
+    {
+      "op": "10212",
+      "title": "Movie.2023.GERMAN.DL.1080p.BluRay.x264-GRP",
+      "type": "movie",
+      "must_match": [
+        "German DL"
+      ],
+      "note": "genuine German dual-language must stay banned | ARR-LEVEL NOTE: upstream matches this too (their op 209)"
+    },
+    {
+      "op": "10212",
+      "title": "Movie.2023.GERMAN.WEB.DL.x264-GRP",
+      "type": "movie",
+      "must_not_match": [
+        "German DL"
+      ],
+      "note": "German + WEB-DL is not dual-language | ARR-LEVEL NOTE: upstream already excludes it (their op 209), so this fork op changes nothing"
     }
   ]
 }
