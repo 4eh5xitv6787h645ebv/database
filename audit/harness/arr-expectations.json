@@ -260,6 +260,24 @@
         "German DL"
       ],
       "note": "German + WEB-DL is not dual-language | ARR-LEVEL NOTE: upstream already excludes it (their op 209), so this fork op changes nothing"
+    },
+    {
+      "op": "10211",
+      "title": "Love.Actually.2003.2160p.UHD.Blu-ray.DV.x265.10bit.DTS-HD.MA.5.1-HDS",
+      "type": "movie",
+      "must_not_match": [
+        "Dolby Vision (Without Fallback)"
+      ],
+      "note": "Blu-ray DV has a fallback | ARR-LEVEL NOTE: upstream excludes it too — Radarr rewrites Blu-ray to Bluray before CF evaluation, so this fork op changes nothing"
+    },
+    {
+      "op": "10211",
+      "title": "Movie.2023.2160p.WEB-DL.DV.HEVC-GRP",
+      "type": "movie",
+      "must_match": [
+        "Dolby Vision (Without Fallback)"
+      ],
+      "note": "true fallback-less DV control must still match"
     }
   ]
 }
