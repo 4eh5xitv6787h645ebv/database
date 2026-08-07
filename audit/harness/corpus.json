@@ -1676,35 +1676,35 @@
   },
   {
    "title": "Snowdrop.2021.E01.SBS.1080p.HDTV.H264-KOREAN",
-   "note": "op 232: Korean SBS broadcaster HDTV drama, bare channel tag after year must not be 3D",
+   "note": "op 233: Korean SBS broadcaster HDTV drama, bare channel tag after year must not be 3D",
    "expect": {
     "3D": false
    }
   },
   {
    "title": "Running.Man.E653.2023.SBS.720p.HDTV.x264-NEXT",
-   "note": "op 232: Korean SBS variety HDTV, bare broadcaster tag before resolution",
+   "note": "op 233: Korean SBS variety HDTV, bare broadcaster tag before resolution",
    "expect": {
     "3D": false
    }
   },
   {
    "title": "Show.2023.SBS.E05.230113.1080i.HDTV.H264",
-   "note": "op 232: broadcaster context via episode marker, date stamp, and 1080i",
+   "note": "op 233: broadcaster context via episode marker, date stamp, and 1080i",
    "expect": {
     "3D": false
    }
   },
   {
    "title": "Movie.2010.1080p.SBS.BluRay.x264-GRP",
-   "note": "op 232 control: bare SBS in disc context (followed by BluRay) stays a packing marker",
+   "note": "op 233 control: bare SBS in disc context (followed by BluRay) stays a packing marker",
    "expect": {
     "3D": true
    }
   },
   {
    "title": "Atmosphere.2023.1080p.WEB-DL.H264",
-   "note": "op 233: movie titled Atmosphere, dot/start-delimited, must not be Atmos",
+   "note": "op 234: movie titled Atmosphere, dot/start-delimited, must not be Atmos",
    "expect": {
     "Atmos": false,
     "CF:Atmos": false,
@@ -1713,7 +1713,7 @@
   },
   {
    "title": "Atmosphere.1997.Concert.1080p.BluRay.TrueHD.7.1-GRP",
-   "note": "op 233: Atmosphere title with TrueHD 7.1 and no Atmos marker now correctly reaches Atmos (Missing)",
+   "note": "op 234: Atmosphere title with TrueHD 7.1 and no Atmos marker now correctly reaches Atmos (Missing)",
    "expect": {
     "Atmos": false,
     "CF:Atmos": false,
@@ -1722,7 +1722,7 @@
   },
   {
    "title": "Movie.2026.1080p.WEB-DL.DDP5.1.Atmos.H.264-GROUP",
-   "note": "op 233 control: dotted Atmos marker stays matched by the bounded branch",
+   "note": "op 234 control: dotted Atmos marker stays matched by the bounded branch",
    "expect": {
     "Atmos": true,
     "CF:Atmos": true,
@@ -1939,7 +1939,7 @@
    "title": "Dune.Part.Two.2024.1080p.BluRay.REMUX.AVC.TrueHD.7.1.Atmos-CONSORTiUM",
    "type": "movie",
    "should_match": true,
-   "note": "constructed Radarr parser control: op 234 restores CONSORTiUM to its intended Remux Tier 2"
+   "note": "constructed Radarr parser control: op 235 restores CONSORTiUM to its intended Remux Tier 2"
   },
   {
    "custom_format": "Remux Tier 3",
@@ -1967,7 +1967,7 @@
    "title": "Blade.Runner.2049.2017.2160p.UHD.BluRay.REMUX.HEVC.TrueHD.7.1.Atmos-SilentRogue",
    "type": "movie",
    "should_match": true,
-   "note": "constructed Radarr parser control: op 234 restores SilentRogue to its intended Remux Tier 3"
+   "note": "constructed Radarr parser control: op 235 restores SilentRogue to its intended Remux Tier 3"
   },
   {
    "custom_format": "Remux Tier 2",

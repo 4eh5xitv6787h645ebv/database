@@ -2,9 +2,9 @@
 -- @entity: batch
 -- @name: Link CONSORTiUM and SilentRogue to Remux Tiers
 -- @exportedAt: 2026-08-07T01:08:00.000Z
--- @opIds: 12598
+-- @opIds: 12600
 
--- --- BEGIN op 12598 ( restore omitted Remux tier memberships )
+-- --- BEGIN op 12600 ( restore omitted Remux tier memberships )
 -- Ops 154 and 155 are explicitly named "Add CONSORTiUM to Remux Tier 2"
 -- and "Add SilentRogue to Remux Tier 3", but their exports contain only the
 -- regex creation/correction steps. Neither export links its regex to the named
@@ -221,4 +221,4 @@ SELECT
   regular_expression_name
 FROM configured
 WHERE (SELECT COUNT(*) FROM configured) = 2;
--- --- END op 12598
+-- --- END op 12600
