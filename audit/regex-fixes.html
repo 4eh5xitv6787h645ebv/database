@@ -150,8 +150,8 @@
 </header>
 
 <div class="stats">
-  <div class="stat"><b>39</b>migrations (fork ops 10211–10249)</div>
-  <div class="stat"><b>42</b>regex updates + 19 format-graph/score changes</div>
+  <div class="stat"><b>40</b>migrations (fork ops 10211–10250)</div>
+  <div class="stat"><b>55</b>regex updates + 19 format-graph/score changes</div>
   <div class="stat"><b>683 / 683</b>.NET labeled checks green</div>
   <div class="stat"><b>249 / 249</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
@@ -171,10 +171,64 @@ across how many profiles. Whether the same bug also exists in the v1 database is
 v1 is dead. Anything verified to change nothing in a real arr scores 0.</p>
 
 
+<section class="card" data-op="10250" data-when="2026-08-07T16:40" data-impact="18" data-why="tidying: real in isolation, below the noise floor of a live search">
+  <div class="card-head"><span class="op">OP 10250</span><h2>Year-anchored marker regexes</h2><span class="sev perf">13 patterns · 5.8× combined</span><span class="ver both">present in v1 + v2</span></div>
+  <p class="when"><span class="impact" title="tidying: real in isolation, below the noise floor of a live search">impact 18</span> · Changed 2026-08-07 16:40 UTC · op 10250</p>
+  <div class="noeffect" style="border-color:#d0a215;background:rgba(208,162,21,.10)">
+    <b style="color:#d0a215">Measured end to end — the honest ceiling.</b> These speedups are real and
+    verified in isolation, but a live test says they barely matter. On a disposable Sonarr with a mock
+    indexer returning all 2,247 Dragon Ball releases, a full interactive search takes <b>9.37 s</b> with
+    185 custom formats and <b>8.31 s</b> with none — so <b>custom-format evaluation is only 11.3% of a
+    search</b> (470 µs per release), and regex work can never save more than that slice. A fork-vs-upstream
+    search came out 10.00 s vs 9.87 s: no measurable win, because the fork also carries 13 more formats.
+    Treat this family of ops as tidying, not as a user-visible speed improvement.
+  </div>
+  <p class="why">Thirteen expressions shared one shape — <code>(?&lt;=\b[12]\d{3}\b).*TOKEN</code> —
+  whose leading lookbehind gives the engine no anchor, so it retried the year test at every position, and
+  most of these formats match nothing on a normal feed. Each becomes
+  <code>^(?=.*GATE).*?(?&lt;=YEAR).*TOKEN</code>, where GATE is a plain literal that is a strict superset
+  of anything the body can match. Combined <b>14,449 → 2,476 ns per title</b>.</p>
+  <div class="diff">
+    <div class="pat before">(?&lt;=\b[12]\d{3}\b).*\b(Noir)\b(?!$)</div>
+    <div class="pat after">^(?=.*Noir).*?(?&lt;=\b[12]\d{3}\b).*\b(Noir)\b(?!$)</div>
+  </div>
+  <p class="rel-label">Patterns rewritten</p>
+  <ul class="rels">
+    <li><span class="tag ok">3.77×</span>CAM <span class="src">· 2,288 → 625 ns/title</span></li>
+    <li><span class="tag ok">16.53×</span>Grayscale <span class="src">· 1,523 → 83 ns/title</span></li>
+    <li><span class="tag ok">14.91×</span>Color <span class="src">· 1,418 → 83 ns/title</span></li>
+    <li><span class="tag ok">12.98×</span>Noir <span class="src">· 1,297 → 87 ns/title</span></li>
+    <li><span class="tag ok">5.36×</span>AI Movie Upscale <span class="src">· 1,416 → 285 ns/title</span></li>
+    <li><span class="tag ok">3.15×</span>Black &amp; White <span class="src">· 1,558 → 469 ns/title</span></li>
+    <li><span class="tag ok">5.28×</span>AI TV Upscale <span class="src">· 1,282 → 224 ns/title</span></li>
+    <li><span class="tag ok">12.76×</span>Shush Cut <span class="src">· 1,007 → 68 ns/title</span></li>
+    <li><span class="tag ok">10.46×</span>Darkness &amp; Light <span class="src">· 1,049 → 119 ns/title</span></li>
+    <li><span class="tag ok">13.99×</span>Monochrome <span class="src">· 879 → 57 ns/title</span></li>
+    <li><span class="tag ok">2.4×</span>Sing Along <span class="src">· 276 → 115 ns/title</span></li>
+    <li><span class="tag ok">2.51×</span>Theatrical Edition <span class="src">· 247 → 108 ns/title</span></li>
+    <li><span class="tag ok">1.73×</span>Extended Edition <span class="src">· 210 → 153 ns/title</span></li>
+  </ul>
+  <p class="rel-label">Rejected on evidence, not taste</p>
+  <ul class="rels">
+    <li><span class="tag ctl">not a superset</span>Movie Extras <span class="src">· the proposed gate missed <code>Extended[ ._-]Clip</code>, the equivalence check failed, dropped</span></li>
+    <li><span class="tag ctl">already anchored</span>Special Edition · TV Extras <span class="src">· ops 10224/10225 anchored them; adding a gate measured 0.42× and 0.43× — a slowdown</span></li>
+    <li><span class="tag ok">gate</span>683/683 labeled checks · 12/12 invariants · zero flips over 6,272 titles</li>
+  </ul>
+</section>
+
 <section class="card" data-op="10249" data-when="2026-08-07T16:15" data-impact="34" data-why="218x faster on the second most expensive regex; no grab decision changes">
   <div class="card-head"><span class="op">OP 10249</span><h2>German DL matching performance</h2><span class="sev perf">218× faster · identical matches</span><span class="ver both">present in v1 + v2</span></div>
   <p class="when"><span class="impact" title="218x faster; no grab decision changes">impact 34</span> · Changed 2026-08-07 16:15 UTC · op 10249</p>
-  <p class="why">Second most expensive regex in the 2160p Remux profile at <b>54,233 ns per release</b>
+    <div class="noeffect" style="border-color:#d0a215;background:rgba(208,162,21,.10)">
+    <b style="color:#d0a215">Measured end to end — the honest ceiling.</b> These speedups are real and
+    verified in isolation, but a live test says they barely matter. On a disposable Sonarr with a mock
+    indexer returning all 2,247 Dragon Ball releases, a full interactive search takes <b>9.37 s</b> with
+    185 custom formats and <b>8.31 s</b> with none — so <b>custom-format evaluation is only 11.3% of a
+    search</b> (470 µs per release), and regex work can never save more than that slice. A fork-vs-upstream
+    search came out 10.00 s vs 9.87 s: no measurable win, because the fork also carries 13 more formats.
+    Treat this family of ops as tidying, not as a user-visible speed improvement.
+  </div>
+<p class="why">Second most expensive regex in the 2160p Remux profile at <b>54,233 ns per release</b>
   (20.7% of that profile). The expression was unanchored, so the engine restarted it at every position
   and each attempt ran two lookaheads that scan the whole remainder of the title. Because
   <code>(?=.*X)</code> already searches to the end from wherever it starts, a match at any position
@@ -195,7 +249,16 @@ v1 is dead. Anything verified to change nothing in a real arr scores 0.</p>
 <section class="card" data-op="10248" data-when="2026-08-07T16:14" data-impact="46" data-why="355x faster on the single most expensive regex in the database; no grab decision changes">
   <div class="card-head"><span class="op">OP 10248</span><h2>Dolby Vision (Without Fallback) performance</h2><span class="sev perf">355× faster · identical matches</span><span class="ver both">present in v1 + v2</span></div>
   <p class="when"><span class="impact" title="355x faster on the most expensive regex in the database">impact 46</span> · Changed 2026-08-07 16:14 UTC · op 10248</p>
-  <p class="why">The single most expensive regex in the database: <b>132,217 ns per release</b> in the
+    <div class="noeffect" style="border-color:#d0a215;background:rgba(208,162,21,.10)">
+    <b style="color:#d0a215">Measured end to end — the honest ceiling.</b> These speedups are real and
+    verified in isolation, but a live test says they barely matter. On a disposable Sonarr with a mock
+    indexer returning all 2,247 Dragon Ball releases, a full interactive search takes <b>9.37 s</b> with
+    185 custom formats and <b>8.31 s</b> with none — so <b>custom-format evaluation is only 11.3% of a
+    search</b> (470 µs per release), and regex work can never save more than that slice. A fork-vs-upstream
+    search came out 10.00 s vs 9.87 s: no measurable win, because the fork also carries 13 more formats.
+    Treat this family of ops as tidying, not as a user-visible speed improvement.
+  </div>
+<p class="why">The single most expensive regex in the database: <b>132,217 ns per release</b> in the
   2160p Remux profile — <b>50.5% of that profile's entire matching cost</b> — while matching nothing at
   all on the benchmark set. The cause was shape, not intent:
   <code>(?&lt;=^(?!.*(HDR|HULU|REMUX|BLURAY)).*?)</code> is a variable-length lookbehind starting at
@@ -218,7 +281,16 @@ v1 is dead. Anything verified to change nothing in a real arr scores 0.</p>
 <section class="card" data-op="10247" data-when="2026-08-07T15:40" data-impact="22" data-why="faster matching only — no grab decision changes">
   <div class="card-head"><span class="op">OP 10247</span><h2>3D matcher performance</h2><span class="sev perf">4.81× faster · identical matches</span><span class="ver both">present in v1 + v2</span></div>
   <p class="when"><span class="impact" title="faster matching only — no grab decision changes">impact 22</span> · Changed 2026-08-07 15:40 UTC · op 10247</p>
-  <p class="why">The 3D expression was the most expensive regex in the database, at
+    <div class="noeffect" style="border-color:#d0a215;background:rgba(208,162,21,.10)">
+    <b style="color:#d0a215">Measured end to end — the honest ceiling.</b> These speedups are real and
+    verified in isolation, but a live test says they barely matter. On a disposable Sonarr with a mock
+    indexer returning all 2,247 Dragon Ball releases, a full interactive search takes <b>9.37 s</b> with
+    185 custom formats and <b>8.31 s</b> with none — so <b>custom-format evaluation is only 11.3% of a
+    search</b> (470 µs per release), and regex work can never save more than that slice. A fork-vs-upstream
+    search came out 10.00 s vs 9.87 s: no measurable win, because the fork also carries 13 more formats.
+    Treat this family of ops as tidying, not as a user-visible speed improvement.
+  </div>
+<p class="why">The 3D expression was the most expensive regex in the database, at
   <b>2,559 ns per title</b> across the 1,451-title evidence corpus. Two structural reasons: branch A
   paid for the full 3D-token alternation, with its <code>\b|_</code> boundary pairs, on every title
   even though almost none contain “3D” at all; and branch B opened with a lookbehind, which gives the
