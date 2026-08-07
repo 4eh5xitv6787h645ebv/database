@@ -142,6 +142,73 @@ VALUES (
   )
 );
 
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'Late Remux groups retain their intended tier links',
+  (
+    SELECT COUNT(*) = 2
+    FROM custom_format_conditions c
+    JOIN condition_patterns p
+      ON p.custom_format_name = c.custom_format_name
+     AND p.condition_name = c.name
+    WHERE (
+        (
+          c.custom_format_name = 'Remux Tier 2'
+          AND c.name = 'CONSORTiUM'
+          AND p.regular_expression_name = 'CONSORTiUM'
+        )
+        OR (
+          c.custom_format_name = 'Remux Tier 3'
+          AND c.name = 'SilentRogue'
+          AND p.regular_expression_name = 'SilentRogue'
+        )
+      )
+      AND c.type = 'release_group'
+      AND c.arr_type = 'all'
+      AND c.negate = 0
+      AND c.required = 0
+  )
+  AND NOT EXISTS (
+    SELECT 1
+    FROM (
+      SELECT
+        'Remux Tier 2' AS custom_format_name,
+        'CONSORTiUM' AS regular_expression_name,
+        80 AS score
+      UNION ALL
+      SELECT 'Remux Tier 3', 'SilentRogue', 60
+    ) expected
+    WHERE NOT EXISTS (
+      SELECT 1
+      FROM custom_format_conditions c
+      JOIN condition_patterns p
+        ON p.custom_format_name = c.custom_format_name
+       AND p.condition_name = c.name
+      WHERE c.custom_format_name = expected.custom_format_name
+        AND c.name = expected.regular_expression_name
+        AND c.type = 'release_group'
+        AND c.arr_type = 'all'
+        AND c.negate = 0
+        AND c.required = 0
+        AND p.regular_expression_name = expected.regular_expression_name
+        AND (
+          SELECT COUNT(*)
+          FROM condition_patterns exact_backing
+          WHERE exact_backing.custom_format_name = c.custom_format_name
+            AND exact_backing.condition_name = c.name
+        ) = 1
+    )
+    OR (
+      SELECT COUNT(*)
+      FROM quality_profile_custom_formats score
+      WHERE score.custom_format_name = expected.custom_format_name
+        AND score.quality_profile_name IN ('1080p Remux', '2160p Remux')
+        AND score.arr_type = 'all'
+        AND score.score = expected.score
+    ) <> 2
+  )
+);
+
 SELECT label || ': ok'
 FROM audit_assertions
 ORDER BY label;
