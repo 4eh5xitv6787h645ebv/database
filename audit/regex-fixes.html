@@ -105,21 +105,51 @@
 <div class="wrap">
 <header>
   <h1>Dictionarry v2 — what the fork fixes</h1>
-  <p class="sub">Twenty-two fixes on
+  <p class="sub">Twenty-three fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
   versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
   Every change is proven by real release names and gated so nothing else moves. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>21</b>migrations (ops 211–231)</div>
-  <div class="stat"><b>27</b>regex updates + 6 format-graph fixes</div>
+  <div class="stat"><b>22</b>migrations (ops 211–232)</div>
+  <div class="stat"><b>27</b>regex updates + 7 format-graph fixes</div>
   <div class="stat"><b>588 / 588</b>.NET matrix checks green</div>
-  <div class="stat"><b>227 / 227</b>Profilarr parser tests green</div>
+  <div class="stat"><b>235 / 235</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 232</span><h2>Compact Yogi/HONE tier disjointness</h2><span class="sev miss">stacked +940,000 tier score</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 00:20 UTC · op 232</p>
+  <p class="why">The <code>QxR</code> release-group expression includes
+  <code>YOGI</code>, while the HONE fallback intentionally recognizes a HONE marker in
+  the title when the parsed group is not HONE. A real <code>x265-Yogi HONE</code>
+  release therefore received both <code>1080p Compact Movie Bluray Tier 4</code>
+  (+940,000) and <code>HONE Bluray</code> (+900,000). Op 98 is explicitly named
+  “Prevent Yogi Double Matching” and already added required <code>Not HONE</code>
+  guards to the analogous Efficient tiers, but omitted Compact. OP 232 adds the same
+  required-negated HONE title guard only to Compact’s two Radarr movie tiers that
+  share a live HONE fallback (Bluray and WEB). No regex, score, TV tier, or Sonarr
+  behavior changes.</p>
+  <div class="diff">
+    <div class="pat before">Compact tier  QxR/YOGI + x265 + source
+HONE fallback  title:HONE + parsed group != HONE
+Result         <mark class="del">both positive tiers stack</mark></div>
+    <div class="pat after">Compact tier  QxR/YOGI + x265 + source + <mark class="add">NOT title:HONE</mark>
+HONE fallback  unchanged
+Result         <mark class="add">exactly one intended tier</mark></div>
+  </div>
+  <p class="rel-label">Score correction and controls</p>
+  <ul class="rels">
+    <li><span class="tag miss">score fixed</span>The Dark Knight 2008 PROPER IMAX 1080p BluRay DD+ 5.1 x265-Yogi HONE <span class="src">· bundled fixture 917 · 1,840,606 → 900,606; now below Compact’s 1,000,000 upgrade ceiling</span></li>
+    <li><span class="tag ctl">plain Yogi</span>Inception 2010 1080p BluRay DD+ 5.1 x265-Yogi <span class="src">· retains Compact Bluray Tier 4; HONE fallback stays false</span></li>
+    <li><span class="tag ctl">WEB proof</span>Movie.2026.1080p.WEB-DL.H265.DDP5.1-Yogi HONE <span class="src">· 1,803,600 → 920,600; HONE WEB remains the sole tier</span></li>
+    <li><span class="tag ok">full sweep</span>1,734 bundled releases <span class="src">· exactly one intended delta; post-fix maximum 993,080; zero −999999 ban escapes</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 231</span><h2>Compact Extras hard ban</h2><span class="sev ban">escaped Compact’s −999999 ban</span><span class="ver both">bug in v1 + v2</span></div>
@@ -608,10 +638,10 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
   <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
   IgnoreCase flag Radarr/Sonarr use) over a 181-title corpus; before/after diffs must show
   only intended rows. Format wiring and representative CF behavior are additionally
-  covered by 227 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  covered by 235 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
   The regex loop stopped after five consecutive dry iterations; the custom-format loop is
-  active. This page reflects ops 211–231. Full reasoning lives in the
+  active. This page reflects ops 211–232. Full reasoning lives in the
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/LEDGER.md">regex ledger</a>
   and <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/blob/fix/regex-audit/CUSTOM-FORMAT-AUDIT-LEDGER.md">custom-format ledger</a>.
   Generated 2026-08-06.</p>
