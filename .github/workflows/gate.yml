@@ -1,0 +1,114 @@
+# Regression gate for the Profilarr database.
+# gate: replay schema+ops into SQLite, run the labeled corpus through RegexMatrix
+#       (exact Radarr/Sonarr .NET regex semantics), then assert DB graph invariants.
+# flips: PR-only — rebuilds the base branch DB, diffs every regex pattern, and runs
+#        changed patterns over evidence/titles.txt; every before/after flip is posted
+#        as a PR comment so unintended matches are visible before merge.
+name: Regression gate
+on:
+  push:
+    branches: [fix/regex-audit, v2, stable, custom]
+    paths:
+      - 'ops/**'
+      - 'tweaks/**'
+      - 'audit/harness/**'
+      - 'evidence/**'
+      - '.github/workflows/gate.yml'
+  pull_request:
+  workflow_dispatch:
+
+env:
+  SCHEMA_REF: 1.1.0   # keep in lock-step with the dependency pinned in pcd.json
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: Dictionarry-Hub/schema
+          ref: ${{ env.SCHEMA_REF }}
+          path: schema
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Replay schema + ops
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q sqlite3
+          SCHEMA_DIR="$GITHUB_WORKSPACE/schema" bash audit/harness/replay.sh ops /tmp/gate.db
+      - name: Labeled corpus checks (RegexMatrix)
+        run: |
+          python3 audit/harness/build_input.py /tmp/gate.db audit/harness/corpus.json > /tmp/labeled.json
+          dotnet run --project audit/harness/RegexMatrix --verbosity quiet < /tmp/labeled.json | tee /tmp/labeled.out
+          tail -1 /tmp/labeled.out >> "$GITHUB_STEP_SUMMARY"
+      - name: Graph invariants
+        run: sqlite3 /tmp/gate.db < audit/harness/check_graph_invariants.sql
+
+  flips:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: head
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+          path: base
+      - uses: actions/checkout@v4
+        with:
+          repository: Dictionarry-Hub/schema
+          ref: ${{ env.SCHEMA_REF }}
+          path: schema
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build base and head databases
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q sqlite3
+          SCHEMA_DIR="$GITHUB_WORKSPACE/schema" bash head/audit/harness/replay.sh head/ops /tmp/head.db
+          SCHEMA_DIR="$GITHUB_WORKSPACE/schema" bash base/audit/harness/replay.sh base/ops /tmp/base.db
+      - name: Diff changed patterns and run flip matrix
+        run: |
+          python3 - <<'PYEOF'
+          import sqlite3, json
+          before = dict(sqlite3.connect("/tmp/base.db").execute("SELECT name, pattern FROM regular_expressions"))
+          after = dict(sqlite3.connect("/tmp/head.db").execute("SELECT name, pattern FROM regular_expressions"))
+          pairs = {}
+          for n, p in after.items():
+              old = before.get(n)
+              if old is None:
+                  pairs[n] = {"before": "(?!x)x", "after": p}   # new pattern: every match is a flip
+              elif old != p:
+                  pairs[n] = {"before": old, "after": p}
+          titles = [l.strip() for l in open("head/evidence/titles.txt") if l.strip()]
+          json.dump({"pairs": pairs, "titles": titles}, open("/tmp/flip-input.json", "w"))
+          print(f"{len(pairs)} changed/new patterns, {len(titles)} evidence titles")
+          PYEOF
+          dotnet run --project head/audit/harness/FlipMatrix --verbosity quiet < /tmp/flip-input.json > /tmp/flips.tsv
+          wc -l < /tmp/flips.tsv
+      - name: Report flips
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          {
+            echo "## Regex flip report"
+            if [ -s /tmp/flips.tsv ]; then
+              echo "Every title below changes match status with this PR. Each one must be an intended fix."
+              echo ""
+              echo '| Pattern | Direction | Title |'
+              echo '|---|---|---|'
+              awk -F'\t' '{printf "| %s | %s | `%s` |\n", $1, $2, $3}' /tmp/flips.tsv | head -100
+              n=$(wc -l < /tmp/flips.tsv)
+              [ "$n" -gt 100 ] && echo "" && echo "…and $((n-100)) more (see job log)."
+            else
+              echo "No evidence-title flips from this PR's pattern changes."
+            fi
+          } > /tmp/comment.md
+          cat /tmp/comment.md >> "$GITHUB_STEP_SUMMARY"
+          gh pr comment "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --body-file /tmp/comment.md
