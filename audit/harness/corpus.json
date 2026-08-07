@@ -1780,6 +1780,48 @@
       "type": "movie",
       "should_match": false,
       "note": "mutual-exclusion control: a title-and-quality Remux is scored only by the base branch"
+    },
+    {
+      "custom_format": "Banned Language Groups",
+      "title": "Avatar Aufbruch nach Pandora 2009 Theatrical German CAN UHDBD 2160p DV HDR10 HEVC AC3 DL Remux-pmHD",
+      "type": "movie",
+      "should_match": true,
+      "note": "REAL bundled fixture 152: pmHD is an unconditional banned language group"
+    },
+    {
+      "custom_format": "Banned Language Groups",
+      "title": "Avatar 2009 Extended NTSC 3xDVD9 DD 5.1-SiGLA",
+      "type": "movie",
+      "should_match": false,
+      "note": "REAL bundled fixture 277: SiGLA without a Dual Audio marker is deliberately preserved and is not in the unconditional group ban"
+    },
+    {
+      "custom_format": "Banned Dual Audio Groups",
+      "title": "Avatar 2009 Extended NTSC 3xDVD9 DD 5.1-SiGLA",
+      "type": "movie",
+      "should_match": false,
+      "note": "REAL bundled fixture 277: the SiGLA group alone must not trigger the conditional Dual Audio ban"
+    },
+    {
+      "custom_format": "Banned Dual Audio Groups",
+      "title": "Movie.2026.1080p.BluRay.Dual.Audio.x264-SiGLA",
+      "type": "movie",
+      "should_match": true,
+      "note": "constructed graph control: required Dual Audio plus optional SiGLA group triggers the conditional ban"
+    },
+    {
+      "custom_format": "Banned Dual Audio Groups",
+      "title": "Movie.2026.1080p.BluRay.Dual.Audio.x264-alfaHD",
+      "type": "movie",
+      "should_match": true,
+      "note": "constructed graph control: required Dual Audio plus optional alfaHD group triggers the conditional ban"
+    },
+    {
+      "custom_format": "Banned Dual Audio Groups",
+      "title": "Movie.2026.1080p.BluRay.Dual.Audio.x264-GROUP",
+      "type": "movie",
+      "should_match": false,
+      "note": "constructed graph control: Dual Audio without alfaHD or SiGLA must not trigger the conditional group ban"
     }
   ]
 }
