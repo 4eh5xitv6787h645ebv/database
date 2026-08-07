@@ -29,6 +29,16 @@ Do exactly ONE work item, end to end:
    check_graph_invariants.sql, and run audit/harness/FlipMatrix over
    evidence/titles.txt for every changed pattern — every flip must be intended
    and listed in the report card.
+4b. **Arr-level proof is mandatory.** Regex tests are necessary but NOT
+   sufficient: the arr normalizes the release title before custom formats run
+   (Radarr rewrites `Blu-ray` to `Bluray`; Profilarr filters conditions by
+   arr_type on sync; Radarr's own quality parser detects things like BDRemux
+   without any title regex). A change that only works at the regex layer is not
+   a fix. Add a case to audit/harness/arr-expectations.json for every op that
+   claims a behaviour change, then run `python3 scripts/arr_verify.py` — zero
+   failures required. Check the differential section: if your op shows NO delta
+   versus the upstream arrs, say so plainly in the report card and the PR
+   instead of claiming a fix, and never report it upstream.
 5. Ship: branch `auto/<slug>`, commit, push, `gh pr create` targeting
    fix/regex-audit with the evidence and flip list in the body and a clean
    `Closes #<issue>` line, then `gh pr merge --auto --squash`. CI (gate +

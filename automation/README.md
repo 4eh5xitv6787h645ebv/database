@@ -26,6 +26,30 @@ obfuscated/retagged releases (`cf-candidate`), and new commits on watched repos
 `Dumpstarr/Database` (ideas only — TRaSH-hybrid policies, never import ops).
 State: `~/.local/state/dictionarry-automation/`.
 
+## 3b. Arr-level verification (daily 06:15, `dictionarry-arr-verify.timer`)
+`scripts/arr_verify.py` asserts that every fork op still does what its report
+card claims **in a real Radarr/Sonarr**, because regex-level tests are not
+enough — the arr normalizes titles before custom formats run (Radarr rewrites
+`Blu-ray`→`Bluray`; Profilarr filters conditions by `arr_type` on sync; Radarr's
+quality parser catches `BDRemux` with no title regex at all). Expectations live
+in `audit/harness/arr-expectations.json`; every behaviour-claiming op needs a
+case. A failure files a `sentinel`+`audit` issue.
+
+Four disposable instances in `~/docker/dictionarry-verify` (compose):
+
+| Instance | Port | Database |
+|---|---|---|
+| dv-radarr-fork | 7891 | this fork |
+| dv-radarr-upstream | 7892 | Dictionarry v2 (A/B baseline) |
+| dv-sonarr-fork | 8996 | this fork |
+| dv-sonarr-upstream | 8997 | Dictionarry v2 |
+
+They hold no media and are driven only through the parse endpoint; the audit
+Profilarr (:6869) syncs them as instances 101–104. The differential section of
+the report is the important part: an op with **no delta versus upstream** either
+duplicates upstream behaviour or only ever worked at the regex layer — never
+report those upstream.
+
 ## 4. Weekly improvement session (Sun 07:00, `dictionarry-improve.timer`)
 `scripts/improve-cron.sh` clones a disposable copy and runs headless Claude
 with `automation/improve-prompt.md`: pick ONE open backlog issue

@@ -1,0 +1,247 @@
+{
+  "_comment": "Arr-level truth table: what a REAL Radarr/Sonarr must report for each fork op. Regex-level tests (RegexMatrix/FlipMatrix) are necessary but NOT sufficient — the arr parser normalizes titles before custom formats run (e.g. Radarr rewrites 'Blu-ray' to 'Bluray', which silently defeats regex-only reasoning). Every op that claims a behaviour change must have an entry here. Verified by scripts/arr_verify.py.",
+  "cases": [
+    {
+      "op": "10216",
+      "title": "28_Years_Later_2025_1080p_HDCAM_REPACK_x264-SyncUP",
+      "type": "movie",
+      "must_match": [
+        "CAM"
+      ],
+      "note": "underscore-separated cam must be banned"
+    },
+    {
+      "op": "10233",
+      "title": "Snowdrop.2021.E01.SBS.1080p.HDTV.H264-KOREAN",
+      "type": "series",
+      "must_not_match": [
+        "3D"
+      ],
+      "note": "Korean SBS broadcaster is not stereoscopic | ARR-LEVEL NOTE: the 3D format is radarr-only and is not synced to Sonarr at all, so TV broadcaster titles were never at risk in practice."
+    },
+    {
+      "op": "10212",
+      "title": "Interstellar.2014.1080p.BDRemux.AVC.DTS-HD.MA.5.1-HDCLUB",
+      "type": "movie",
+      "must_match": [
+        "Remux"
+      ],
+      "note": "joined BDRemux must be detected as remux | ARR-LEVEL NOTE: upstream ALSO matches Remux here — Radarr detects BDRemux via its own quality modifier, so the title-regex gap never changed arr behaviour for this class."
+    },
+    {
+      "op": "10236",
+      "title": "The.Beekeeper.2024.HDRip.x264-EVO",
+      "type": "movie",
+      "must_match": [
+        "EVO (No WEB)"
+      ],
+      "note": "EVO non-WEB is the fake-source class"
+    },
+    {
+      "op": "10236",
+      "title": "Monkey.Man.2024.1080p.AMZN.WEB-DL.DDP5.1.H.264-EVO",
+      "type": "movie",
+      "must_not_match": [
+        "EVO (No WEB)"
+      ],
+      "note": "EVO WEB-DL carve-out"
+    },
+    {
+      "op": "10237",
+      "title": "Criminal.Minds.S01E03.720p.WEB-DL.Dolby.Digital.5.1.h264-Obfuscated",
+      "type": "series",
+      "must_match": [
+        "Obfuscated"
+      ],
+      "note": "usenet obfuscation tag (informational, score 0)"
+    },
+    {
+      "op": "10237",
+      "title": "Movie.2023.1080p.WEB-DL.H264-GROUP",
+      "type": "movie",
+      "must_not_match": [
+        "Obfuscated"
+      ],
+      "note": "ordinary group control"
+    },
+    {
+      "op": "10238",
+      "title": "The.Abyss.1989.Open.Matte.1080p.WEB-DL.H264-GRP",
+      "type": "movie",
+      "must_match": [
+        "Open Matte"
+      ],
+      "note": "standalone Open Matte format"
+    },
+    {
+      "op": "10239",
+      "title": "The.Pale.Blue.Eye.2022.1080p.WEB-DL.DD5.1.H264-NTb",
+      "type": "movie",
+      "must_match": [
+        "5.1 Surround"
+      ],
+      "must_not_match": [
+        "7.1 Surround",
+        "Full Disc"
+      ],
+      "note": "5.1 wiring + Full Disc FP control"
+    },
+    {
+      "op": "10239",
+      "title": "Movie.2026.1080p.BluRay.TrueHD.7.1-GRP",
+      "type": "movie",
+      "must_match": [
+        "7.1 Surround"
+      ],
+      "must_not_match": [
+        "5.1 Surround"
+      ],
+      "note": "channel exclusivity"
+    },
+    {
+      "op": "10241",
+      "title": "Air.Force.One.1997.PROPER.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR-AsRequested",
+      "type": "movie",
+      "must_match": [
+        "Hybrid",
+        "Obfuscated"
+      ],
+      "note": "hybrid marker + retag tag on one real title"
+    },
+    {
+      "op": "10242",
+      "title": "Back.to.the.Future.Part.III.1990.Remastered.REPACK.1080p.BluRay.DDP.7.1.x265-edge2020",
+      "type": "movie",
+      "must_match": [
+        "Remaster"
+      ],
+      "note": "post-year remaster marker"
+    },
+    {
+      "op": "10243",
+      "title": "Crime.101.2026.1080p.DS4K.WEB-DL.x265.10bit.HDR.E-AC-3.5.1-Kris",
+      "type": "movie",
+      "must_match": [
+        "DS4K"
+      ],
+      "note": "live DS4K evidence title"
+    },
+    {
+      "op": "10244",
+      "title": "Seven.Samurai.1954.Criterion.1080p.BluRay.x264-TayTo",
+      "type": "movie",
+      "must_match": [
+        "Criterion"
+      ],
+      "note": "boutique disc label"
+    },
+    {
+      "op": "10245",
+      "title": "Big.Hero.6.2014.1080p.BluRay.DTS.Hi10p.x264-NTb",
+      "type": "movie",
+      "must_match": [
+        "10-bit AVC"
+      ],
+      "note": "Hi10P AVC forces software transcode"
+    },
+    {
+      "op": "10245",
+      "title": "The_Shining_1980_Directors_Cut_1080p_BDRip_AAC_5_1_x265_10bit_MarkII",
+      "type": "movie",
+      "must_not_match": [
+        "10-bit AVC"
+      ],
+      "note": "10-bit HEVC must stay unpenalized"
+    },
+    {
+      "op": "10246",
+      "title": "Bangers.and.Cash.S14E03.Nash.Metropolitan-AC.Ace-Ariel.Atom-Vectra.1080p.ALL4.WEB-DL.AAC2.0.H.264-RAWR",
+      "type": "series",
+      "must_match": [
+        "ALL4"
+      ],
+      "note": "Channel 4 service tag"
+    },
+    {
+      "op": "10246",
+      "title": "Battle.on.the.Beach.S03.1080p.DSCP.WEB-DL.DDP2.0.H.264-FUZEER",
+      "type": "series",
+      "must_match": [
+        "DSCP"
+      ],
+      "note": "Discovery+ service tag"
+    },
+    {
+      "op": "10218",
+      "title": "American.Reunion.2012.EXTRAS.1080p.BluRay.H264-RMXTRAS",
+      "type": "movie",
+      "must_match": [
+        "Extras"
+      ],
+      "note": "Extras ban was unmatchable before the wiring fix | ARR-LEVEL NOTE: upstream also matches — Profilarr filters conditions by arr_type on sync, so Radarr only ever receives the Movie Extras condition. The both-required deadlock does not occur in the real pipeline."
+    },
+    {
+      "op": "10224",
+      "title": "Show_S01_2023_Extras_1080p",
+      "type": "series",
+      "must_match": [
+        "Extras"
+      ],
+      "note": "underscore-separated extras"
+    },
+    {
+      "op": "10213",
+      "title": "Apocalypse.Now.1979.Redux.1080p.BluRay.DD.7.1.x264-playHD",
+      "type": "movie",
+      "must_match": [
+        "Special Edition"
+      ],
+      "note": "Redux edition token"
+    },
+    {
+      "op": "10214",
+      "title": "Hamilton.2020.2160p.WEB-DL.DSNP.Dolby.Vision.HEVC.E-AC-3.5.1-LEWIS",
+      "type": "movie",
+      "must_match": [
+        "Dolby Digital +"
+      ],
+      "note": "canonical E-AC-3 spelling"
+    },
+    {
+      "op": "10215",
+      "title": "Infinite.2021.2160p.WEB-DL.Paramount.Plus.Dolby.Vision.HEVC.E-AC-3.5.1-MZABI",
+      "type": "movie",
+      "must_match": [
+        "PMTP"
+      ],
+      "note": "dotted Paramount.Plus service spelling"
+    },
+    {
+      "op": "10225",
+      "title": "Movie_2009_Special_Edition_1080p_BluRay-GROUP",
+      "type": "movie",
+      "must_match": [
+        "Special Edition"
+      ],
+      "note": "underscore edition boundaries"
+    },
+    {
+      "op": "10234",
+      "title": "Movie_2026_1080p_BluRay_TrueHD_7_1_Atmosphere_GROUP",
+      "type": "movie",
+      "must_not_match": [
+        "Atmos"
+      ],
+      "note": "Atmosphere must not read as an Atmos marker"
+    },
+    {
+      "op": "10226",
+      "title": "Pusher.II.2004.DANiSH.1080p.BluRay.x264.TrueHD7.1.Atoms-ADDICTION",
+      "type": "movie",
+      "must_match": [
+        "Atmos"
+      ],
+      "note": "evidenced TrueHD 7.1 Atoms typo really is Atmos"
+    }
+  ]
+}
