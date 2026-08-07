@@ -59,7 +59,7 @@ VALUES (
     FROM quality_profile_custom_formats
     WHERE custom_format_name = 'Extras'
       AND arr_type IN ('radarr', 'sonarr')
-      AND score = -999999
+      AND score <= -999999
   )
   AND (
     SELECT COUNT(*) = 22
@@ -80,7 +80,7 @@ VALUES (
       WHERE scores.quality_profile_name = profile.name
         AND scores.custom_format_name = 'Extras'
         AND scores.arr_type = app.arr_type
-        AND scores.score = -999999
+        AND scores.score <= -999999
     )
   )
 );
@@ -94,7 +94,7 @@ VALUES (
     WHERE quality_profile_name = '1080p Compact'
       AND custom_format_name = 'Extras'
       AND arr_type IN ('radarr', 'sonarr')
-      AND score = -999999
+      AND score <= -999999
   )
 );
 
@@ -282,6 +282,61 @@ VALUES (
     SELECT 1 FROM custom_format_conditions
     WHERE custom_format_name = '5.1 Surround'
       AND name = 'Not 7.1 Surround' AND negate = 1 AND required = 1
+  )
+);
+
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'Ban magnitude dominates every naive positive stack (issue #20)',
+  -- Upper bound per profile+arr: max quality-ladder CF + max tier CF + sum of
+  -- all other positives. Overcounts real co-occurrence, so bound < |ban| is
+  -- sufficient proof. Op 10232 recorded a real 1,840,606 stack, which beat the
+  -- old -999999 magnitude; bans are now -99999999 and this guards the margin.
+  NOT EXISTS (
+    WITH scored AS (
+      SELECT quality_profile_name AS profile,
+             CASE WHEN arr_type = 'all' THEN 'radarr' ELSE arr_type END AS arr,
+             custom_format_name AS cf, score
+      FROM quality_profile_custom_formats WHERE score > 0
+      UNION ALL
+      SELECT quality_profile_name, 'sonarr', custom_format_name, score
+      FROM quality_profile_custom_formats WHERE score > 0 AND arr_type = 'all'
+    ),
+    classed AS (
+      SELECT profile, arr, score,
+        CASE
+          WHEN cf LIKE '% Tier %' THEN 'tier'
+          WHEN cf LIKE '%WEB-DL' OR cf LIKE '%Bluray' OR cf LIKE '%WEBRip'
+            OR cf LIKE '%HDTV' OR cf IN ('DVD', 'DVD Remux', 'SDTV') THEN 'ladder'
+          ELSE 'other'
+        END AS klass
+      FROM scored
+    ),
+    bounds AS (
+      SELECT profile, arr,
+        MAX(CASE WHEN klass = 'ladder' THEN score ELSE 0 END)
+        + MAX(CASE WHEN klass = 'tier' THEN score ELSE 0 END)
+        + SUM(CASE WHEN klass = 'other' THEN score ELSE 0 END) AS bound
+      FROM classed GROUP BY profile, arr
+    ),
+    bans AS (
+      SELECT quality_profile_name AS profile, MIN(score) AS worst_ban
+      FROM quality_profile_custom_formats WHERE score < 0
+      GROUP BY quality_profile_name
+    )
+    SELECT 1 FROM bounds b JOIN bans n ON n.profile = b.profile
+    WHERE b.bound >= ABS(n.worst_ban)
+  )
+);
+
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'No legacy-magnitude ban rows remain',
+  -- Exactly the old ban value: mid-range negatives like the deliberate
+  -- x265 (Bluray) -820000 counterweight are legitimate and stay allowed.
+  NOT EXISTS (
+    SELECT 1 FROM quality_profile_custom_formats
+    WHERE score = -999999
   )
 );
 

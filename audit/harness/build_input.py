@@ -15,13 +15,14 @@ REGEX_NAMES = [
     "iTunes", "AAC", "Dolby Digital", "Dolby Digital +", "FLAC", "PCM",
     "TrueHD", "DTS", "DTS-ES", "DTS-HD HRA", "DTS-HD HRA ES",
     "DTS-HD MA", "DTS-X", "5.1 Surround", "7.1 Surround", "Atmos", "BTN Atmos",
-    "Obfuscated Tags", "Retag Tags", "WEB-DL",
+    "Obfuscated Tags", "Retag Tags", "WEB-DL", "Hybrid", "Remastered", "DS4K",
     "German DL", "Full Disc", "x264", "Special Edition",
     "Extended Edition", "IMAX", "Open Matte", "Theatrical Edition", "Extended Clip",
     "Sing Along", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED",
     "Movie Extras", "TV Extras", "Repack1", "3D",
 ]
-GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS", "EVO"]
+GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS", "EVO",
+                 "HYBRID Group"]
 
 patterns = {}
 for name in REGEX_NAMES:
@@ -52,6 +53,11 @@ composites = [
     {"name": "CF:7.1 Surround", "all": ["7.1 Surround"]},
     {"name": "CF:Open Matte", "all": ["Open Matte"]},
     {"name": "CF:Obfuscated", "any": ["Obfuscated Tags", "Retag Tags"]},
+    # Title-level approximation: the real CF also required-negates parsed
+    # release_group HYBRID, which only the arr parser can evaluate.
+    {"name": "CF:Hybrid", "all": ["Hybrid"]},
+    {"name": "CF:Remaster", "all": ["Remastered"]},
+    {"name": "CF:DS4K", "all": ["DS4K"]},
     {"name": "CF:DTS", "all": ["DTS"],
      "none": ["AAC", "Dolby Digital", "Dolby Digital +", "DTS-HD MA",
               "DTS-HD HRA ES", "DTS-X", "FLAC", "PCM", "TrueHD"]},
