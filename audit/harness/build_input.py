@@ -16,6 +16,7 @@ REGEX_NAMES = [
     "TrueHD", "DTS", "DTS-ES", "DTS-HD HRA", "DTS-HD HRA ES",
     "DTS-HD MA", "DTS-X", "5.1 Surround", "7.1 Surround", "Atmos", "BTN Atmos",
     "Obfuscated Tags", "Retag Tags", "WEB-DL", "Hybrid", "Remastered", "DS4K",
+    "Criterion", "10-bit Marker", "ALL4", "DSCP",
     "German DL", "Full Disc", "x264", "Special Edition",
     "Extended Edition", "IMAX", "Open Matte", "Theatrical Edition", "Extended Clip",
     "Sing Along", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED",
@@ -58,6 +59,12 @@ composites = [
     {"name": "CF:Hybrid", "all": ["Hybrid"]},
     {"name": "CF:Remaster", "all": ["Remastered"]},
     {"name": "CF:DS4K", "all": ["DS4K"]},
+    # Title-level approximations: Criterion's bluray/dvd source guard and the
+    # group negations are parser-level.
+    {"name": "CF:Criterion", "all": ["Criterion"]},
+    {"name": "CF:10-bit AVC", "all": ["10-bit Marker", "x264"], "none": ["x265"]},
+    {"name": "CF:ALL4", "all": ["ALL4"]},
+    {"name": "CF:DSCP", "all": ["DSCP"]},
     {"name": "CF:DTS", "all": ["DTS"],
      "none": ["AAC", "Dolby Digital", "Dolby Digital +", "DTS-HD MA",
               "DTS-HD HRA ES", "DTS-X", "FLAC", "PCM", "TrueHD"]},
