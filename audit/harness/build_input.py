@@ -14,13 +14,14 @@ REGEX_NAMES = [
     "HDR", "HDR10+", "SDR", "x265", "Movies Anywhere", "Remux", "UHD Bluray",
     "iTunes", "AAC", "Dolby Digital", "Dolby Digital +", "FLAC", "PCM",
     "TrueHD", "DTS", "DTS-ES", "DTS-HD HRA", "DTS-HD HRA ES",
-    "DTS-HD MA", "DTS-X", "7.1 Surround", "Atmos", "BTN Atmos",
+    "DTS-HD MA", "DTS-X", "5.1 Surround", "7.1 Surround", "Atmos", "BTN Atmos",
+    "Obfuscated Tags", "Retag Tags", "WEB-DL",
     "German DL", "Full Disc", "x264", "Special Edition",
     "Extended Edition", "IMAX", "Open Matte", "Theatrical Edition", "Extended Clip",
     "Sing Along", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED",
     "Movie Extras", "TV Extras", "Repack1", "3D",
 ]
-GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS"]
+GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS", "EVO"]
 
 patterns = {}
 for name in REGEX_NAMES:
@@ -47,6 +48,10 @@ composites = [
     {"name": "CF:Atmos", "any": ["Atmos", "BTN Atmos"]},
     {"name": "CF:Atmos (Missing)",
      "all": ["TrueHD", "7.1 Surround"], "none": ["Atmos", "BTN Atmos"]},
+    {"name": "CF:5.1 Surround", "all": ["5.1 Surround"], "none": ["7.1 Surround"]},
+    {"name": "CF:7.1 Surround", "all": ["7.1 Surround"]},
+    {"name": "CF:Open Matte", "all": ["Open Matte"]},
+    {"name": "CF:Obfuscated", "any": ["Obfuscated Tags", "Retag Tags"]},
     {"name": "CF:DTS", "all": ["DTS"],
      "none": ["AAC", "Dolby Digital", "Dolby Digital +", "DTS-HD MA",
               "DTS-HD HRA ES", "DTS-X", "FLAC", "PCM", "TrueHD"]},

@@ -112,14 +112,90 @@
 </header>
 
 <div class="stats">
-  <div class="stat"><b>25</b>migrations (ops 211–235)</div>
-  <div class="stat"><b>29</b>regex updates + 8 format-graph fixes</div>
-  <div class="stat"><b>601 / 601</b>.NET labeled checks green</div>
+  <div class="stat"><b>29</b>migrations (fork ops 10211–10239)</div>
+  <div class="stat"><b>30</b>regex updates + 12 format-graph changes</div>
+  <div class="stat"><b>639 / 639</b>.NET labeled checks green</div>
   <div class="stat"><b>249 / 249</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10239</span><h2>5.1 / 7.1 Surround formats wired</h2><span class="sev miss">+50/+100 Balanced tiebreak</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 11:11 UTC · op 10239 · closes #15</p>
+  <p class="why">The <code>5.1 Surround</code> regex existed since v1 “for people who want to
+  rank it” with zero consumers, and LEDGER iteration 19 proved its improved
+  separator/end-boundary form (+210 bundled titles, zero losses) but ruled it could only
+  ship atomically with wiring. This is that wiring: the pattern updates to the op-10226
+  7.1 form (<code>(?&lt;!\d)5[ ._]1(?!\d)</code>), and both channel counts become formats
+  scoring +50/+100 in the two Balanced profiles only. The 5.1 format required-negates 7.1
+  so exactly one fires; bonuses sit far below the 1000-point tier gap.</p>
+  <div class="diff">
+    <div class="pat before"><mark class="del">\D5\.1\D</mark> · no consumers</div>
+    <div class="pat after"><mark class="add">(?&lt;!\d)5[ ._]1(?!\d)</mark> · CF 5.1 (¬7.1) +50 · CF 7.1 +100 · Balanced only</div>
+  </div>
+  <p class="rel-label">Wiring and controls</p>
+  <ul class="rels">
+    <li><span class="tag ok">now scored</span>Show_2026_S01_720p_WEB-DL_AAC_5_1 <span class="src">· underscore + end-of-title boundary (iteration-19 recovered class)</span></li>
+    <li><span class="tag ctl">exclusive</span>Movie.2026…DDP5.1.and.Atmos.7.1-GRP <span class="src">· dual-marker titles resolve to 7.1 only</span></li>
+    <li><span class="tag ctl">number guard</span>Movie.2026.Part.15.1.Documentary <span class="src">· digits inside larger numbers stay unmatched</span></li>
+    <li><span class="tag ok">gate</span>639/639 labeled checks · 6 intended flips in the 924-title matrix, zero lost matches</li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10238</span><h2>Open Matte standalone format</h2><span class="sev miss">neutral highlight · score 0</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 11:09 UTC · op 10238 · closes #11</p>
+  <p class="why">The audit-hardened Open Matte regex was wired only as a negation inside the
+  edition formats, so Open Matte itself could be neither preferred nor avoided. It becomes a
+  standalone format at score 0 radarr-side in every profile — visible in the arrs and ready
+  to flip positive or negative to taste.</p>
+  <p class="rel-label">Wiring and controls</p>
+  <ul class="rels">
+    <li><span class="tag ok">highlighted</span>The.Abyss.1989.Open.Matte.1080p.WEB-DL <span class="src">· canonical release now carries the format</span></li>
+    <li><span class="tag ctl">split tokens</span>Open.Season.2006.Matte.Painting.Featurette <span class="src">· stays unmatched</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10237</span><h2>Obfuscated / retag note format</h2><span class="sev miss">informational · score 0 everywhere</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 11:07 UTC · op 10237 · closes #7</p>
+  <p class="why">Usenet obfuscation and retag suffixes replace the real release group, so
+  group tiers cannot score those releases (11 live examples in the evidence corpus). Per
+  maintainer decision the new <code>Obfuscated</code> format is a note only: two new
+  regexes (per-group tags like <code>-AsRequested</code>/<code>-CAPTCHA</code>/<code>-4P</code>,
+  and bracketed retags like <code>[rartv]</code>/<code>[TGx]</code>) scored <b>0 in every
+  profile</b> — visible, never blocking. An invariant now enforces the score stays 0 until
+  deliberately changed.</p>
+  <p class="rel-label">Evidence and controls</p>
+  <ul class="rels">
+    <li><span class="tag ok">noted</span>Criminal.Minds…h264-Obfuscated · Black.Widow…-CAPTCHA · Clueless…-HD4U-xpost · Andor…-OPTiCAL-4P <span class="src">· real evidence-corpus titles</span></li>
+    <li><span class="tag ok">retags</span>The.Flash…-CasStudio[rartv] · Show…[TGx]</li>
+    <li><span class="tag ctl">no prefix theft</span>…x264-4Planeteers · Captcha.Solving.Robots.2023 <span class="src">· longer group names and title words stay unmatched</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10236</span><h2>EVO (No WEB) ban wired</h2><span class="sev ban">−999999 radarr · WEB carve-out</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 11:05 UTC · op 10236 · closes #3</p>
+  <p class="why">The EVO group regex existed since v1 with zero condition links. EVO's
+  non-WEB output is the classic fake-early-Bluray/retagged-cam class that beats the CAM ban
+  by using HDRip/BluRay naming; their genuine WEB-DLs are ordinary. The new format requires
+  parsed group EVO and negates WEB-DL/WEBRip sources plus the WEB-DL title token, then bans
+  −999999 radarr-side in the same 11 profiles as CAM. (TRaSH now bans EVO outright; the WEB
+  carve-out follows issue #3's decision.)</p>
+  <div class="diff">
+    <div class="pat before">regex EVO exists · <mark class="del">orphaned, nothing consumes it</mark></div>
+    <div class="pat after"><mark class="add">group EVO ∧ ¬web_dl ∧ ¬webrip ∧ ¬WEB-DL-title → −999999 (radarr ×11)</mark></div>
+  </div>
+  <p class="rel-label">Victims and controls</p>
+  <ul class="rels">
+    <li><span class="tag ban">banned</span>The.Beekeeper.2024.HDRip.x264-EVO <span class="src">· fake-source class</span></li>
+    <li><span class="tag ctl">carve-out</span>Monkey.Man.2024.1080p.AMZN.WEB-DL.DDP5.1.H.264-EVO <span class="src">· WEB-DL token blocks the graph</span></li>
+    <li><span class="tag ctl">boundary</span>Movie.2024.1080p.BluRay.x264-EVOLVE <span class="src">· EVOLVE is not EVO</span></li>
+  </ul>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 234</span><h2>Atmosphere prefix collision in Atmos</h2><span class="sev miss">false Atmos bonus · Missing suppressed</span><span class="ver both">bug in v1 + v2</span></div>
