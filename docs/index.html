@@ -316,23 +316,6 @@ HYBRID Group  (?&lt;=^|[\s.-])HYBRID\b   <mark class="add">required-negated rele
     <div class="pat before"><mark class="del">\D5\.1\D</mark> · no consumers</div>
     <div class="pat after"><mark class="add">(?&lt;!\d)5[ ._]1(?!\d)</mark> · CF 5.1 (¬7.1) +50 · CF 7.1 +100 · Balanced only</div>
   </div>
-  <p class="rel-label">Same release in a live Radarr · Test Parsing</p>
-  <div class="shots">
-    <figure>
-      <figcaption class="lose">Before · upstream Dictionarry v2</figcaption>
-      <img src="img/yogi-before.png" loading="lazy" alt="Radarr Test Parsing on upstream Dictionarry v2: the release matches both 1080p Compact Movie Bluray Tier 4 and HONE Bluray.">
-    </figure>
-    <figure>
-      <figcaption class="win">After · this fork, op 10232</figcaption>
-      <img src="img/yogi-after.png" loading="lazy" alt="Radarr Test Parsing on the fork: the same release matches HONE Bluray only, with no Compact tier.">
-    </figure>
-  </div>
-  <p class="why" style="margin-top:-.4rem"><b>1,840,606 &rarr; 900,606</b> in 1080p Compact. Upstream fires
-  <code>1080p Compact Movie Bluray Tier 4</code> (+940,000) <em>and</em> <code>HONE Bluray</code> (+900,000)
-  on one release; the fork fires exactly one. Captured on two disposable Radarr instances synced from the
-  same Profilarr — upstream v2 on :7892, this fork on :7891. The modal's own "Custom Format Score: 0" is
-  Radarr's unmatched-movie display and is not profile-aware; the profile totals above come from the API.
-  The <code>English</code> token keeps the unrelated language ban out of the comparison.</p>
 
   <p class="rel-label">Wiring and controls</p>
   <ul class="rels">
@@ -509,6 +492,23 @@ Result         <mark class="del">both positive tiers stack</mark></div>
 HONE fallback  unchanged
 Result         <mark class="add">exactly one intended tier</mark></div>
   </div>
+  <p class="rel-label">Same release in a live Radarr · Test Parsing</p>
+  <div class="shots">
+    <figure>
+      <figcaption class="lose">Before · upstream Dictionarry v2</figcaption>
+      <img src="img/yogi-before.png" loading="lazy" alt="Radarr Test Parsing on upstream Dictionarry v2: the release matches both 1080p Compact Movie Bluray Tier 4 and HONE Bluray.">
+    </figure>
+    <figure>
+      <figcaption class="win">After · this fork, op 10232</figcaption>
+      <img src="img/yogi-after.png" loading="lazy" alt="Radarr Test Parsing on the fork: the same release matches HONE Bluray only, with no Compact tier.">
+    </figure>
+  </div>
+  <p class="why" style="margin-top:-.4rem"><b>1,840,606 &rarr; 900,606</b> in 1080p Compact. Upstream fires
+  <code>1080p Compact Movie Bluray Tier 4</code> (+940,000) <em>and</em> <code>HONE Bluray</code> (+900,000)
+  on one release; the fork fires exactly one. Captured on two disposable Radarr instances synced from the
+  same Profilarr — upstream v2 on :7892, this fork on :7891. The modal's own "Custom Format Score: 0" is
+  Radarr's unmatched-movie display and is not profile-aware; the profile totals above come from the API.
+  The <code>English</code> token keeps the unrelated language ban out of the comparison.</p>
   <p class="rel-label">Score correction and controls</p>
   <ul class="rels">
     <li><span class="tag miss">score fixed</span>The Dark Knight 2008 PROPER IMAX 1080p BluRay DD+ 5.1 x265-Yogi HONE <span class="src">· bundled fixture 917 · 1,840,606 → 900,606; now below Compact’s 1,000,000 upgrade ceiling</span></li>
