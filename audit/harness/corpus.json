@@ -1933,6 +1933,62 @@
    "type": "movie",
    "should_match": false,
    "note": "constructed WEB control: a plain Yogi release does not enter the HONE title fallback"
+  },
+  {
+   "custom_format": "Remux Tier 2",
+   "title": "Dune.Part.Two.2024.1080p.BluRay.REMUX.AVC.TrueHD.7.1.Atmos-CONSORTiUM",
+   "type": "movie",
+   "should_match": true,
+   "note": "constructed Radarr parser control: op 234 restores CONSORTiUM to its intended Remux Tier 2"
+  },
+  {
+   "custom_format": "Remux Tier 3",
+   "title": "Dune.Part.Two.2024.1080p.BluRay.REMUX.AVC.TrueHD.7.1.Atmos-CONSORTiUM",
+   "type": "movie",
+   "should_match": false,
+   "note": "constructed Radarr tier-separation control: CONSORTiUM must not enter Remux Tier 3"
+  },
+  {
+   "custom_format": "Remux Tier 2",
+   "title": "The.Expanse.S01E01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-CONSORTiUM",
+   "type": "series",
+   "should_match": true,
+   "note": "constructed Sonarr parser control: the all-app CONSORTiUM link reaches Remux Tier 2"
+  },
+  {
+   "custom_format": "Remux Tier 3",
+   "title": "The.Expanse.S01E01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-CONSORTiUM",
+   "type": "series",
+   "should_match": false,
+   "note": "constructed Sonarr tier-separation control: CONSORTiUM must not enter Remux Tier 3"
+  },
+  {
+   "custom_format": "Remux Tier 3",
+   "title": "Blade.Runner.2049.2017.2160p.UHD.BluRay.REMUX.HEVC.TrueHD.7.1.Atmos-SilentRogue",
+   "type": "movie",
+   "should_match": true,
+   "note": "constructed Radarr parser control: op 234 restores SilentRogue to its intended Remux Tier 3"
+  },
+  {
+   "custom_format": "Remux Tier 2",
+   "title": "Blade.Runner.2049.2017.2160p.UHD.BluRay.REMUX.HEVC.TrueHD.7.1.Atmos-SilentRogue",
+   "type": "movie",
+   "should_match": false,
+   "note": "constructed Radarr tier-separation control: SilentRogue must not enter Remux Tier 2"
+  },
+  {
+   "custom_format": "Remux Tier 3",
+   "title": "The.Expanse.S01E01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-SilentRogue",
+   "type": "series",
+   "should_match": true,
+   "note": "constructed Sonarr parser control: the all-app SilentRogue link reaches Remux Tier 3"
+  },
+  {
+   "custom_format": "Remux Tier 2",
+   "title": "The.Expanse.S01E01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-SilentRogue",
+   "type": "series",
+   "should_match": false,
+   "note": "constructed Sonarr tier-separation control: SilentRogue must not enter Remux Tier 2"
   }
  ]
 }
