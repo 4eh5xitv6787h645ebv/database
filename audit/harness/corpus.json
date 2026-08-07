@@ -1868,6 +1868,106 @@
     "Open Matte": false,
     "CF:Open Matte": false
    }
+  },
+  {
+   "title": "Togo.2019.2160p.WEB-DL.[DV.HDR10].HEVC-SiC",
+   "note": "issue #21 regression (st-sha fork class): bracket-style DV+HDR10 has a fallback; HDR substring exclusion already covers it",
+   "expect": {
+    "Dolby Vision (Without Fallback)": false
+   }
+  },
+  {
+   "title": "Movie.2023.2160p.WEB-DL.DV.HDR10+.HEVC-GRP",
+   "note": "issue #21: DV with HDR10+ fallback stays excluded",
+   "expect": {
+    "Dolby Vision (Without Fallback)": false
+   }
+  },
+  {
+   "title": "Movie.2023.2160p.WEB-DL.DV.HEVC-GRP2",
+   "note": "issue #21 positive control: bare DV with no fallback marker still matches",
+   "expect": {
+    "Dolby Vision (Without Fallback)": true
+   }
+  },
+  {
+   "title": "Dune.Part.Two.2024.1080p.Hybrid.WEB-DL.DDP5.1.Atmos.H.264-FLUX",
+   "note": "op 10241: hybrid WEB-DL marker",
+   "expect": {
+    "Hybrid": true,
+    "CF:Hybrid": true
+   }
+  },
+  {
+   "title": "Movie_2024_2160p_UHD_BluRay_HYBRID_REMUX_DV_HDR10_HEVC_Atmos-GRP",
+   "note": "op 10241: underscore-separated hybrid remux",
+   "expect": {
+    "Hybrid": true,
+    "CF:Hybrid": true
+   }
+  },
+  {
+   "title": "Movie.2023.2160p.WEB-DL.DV.HDR10.HEVC-HYBRID",
+   "note": "op 10241: HYBRID as parsed release group — title regex fires but the real CF required-negates the parsed group (parser-level; not expressible in this matrix)",
+   "expect": {
+    "Hybrid": true,
+    "grp:HYBRID Group": true
+   }
+  },
+  {
+   "title": "Hybrid.Theory.Documentary.2023.1080p.WEB-DL-GRP",
+   "note": "op 10241 control: title word before separators still matches marker regex by design (no year anchor); CF bonus is +100 tiebreak only",
+   "expect": {
+    "Hybrid": true
+   }
+  },
+  {
+   "title": "Aliens.1986.Remastered.Special.Edition.1080p.BluRay.DTS-HD.MA.5.1.x264-GRP",
+   "note": "op 10242: canonical remaster (evidence corpus has the space-separated original)",
+   "expect": {
+    "Remastered": true,
+    "CF:Remaster": true
+   }
+  },
+  {
+   "title": "Movie_1989_4K_Remaster_1080p_BluRay_x264-GRP",
+   "note": "op 10242: underscore + 4K Remaster form",
+   "expect": {
+    "Remastered": true,
+    "CF:Remaster": true
+   }
+  },
+  {
+   "title": "Remastering.The.Beatles.2023.1080p.WEB-DL.H264-GRP",
+   "note": "op 10242 control: Remastering as leading title word (no year before it; longer word)",
+   "expect": {
+    "Remastered": false,
+    "CF:Remaster": false
+   }
+  },
+  {
+   "title": "Crime.101.2026.1080p.DS4K.WEB-DL.x265.10bit.HDR.E-AC-3.5.1-Kris",
+   "note": "op 10243: live evidence DS4K title",
+   "expect": {
+    "DS4K": true,
+    "CF:DS4K": true
+   }
+  },
+  {
+   "title": "Movie_2026_1080p_DS4K_WEB-DL_x265-GRP",
+   "note": "op 10243: underscore boundaries",
+   "expect": {
+    "DS4K": true,
+    "CF:DS4K": true
+   }
+  },
+  {
+   "title": "DS4Kids.Show.S01.1080p.WEB-DL.H264-GRP",
+   "note": "op 10243 control: longer token stays unmatched",
+   "expect": {
+    "DS4K": false,
+    "CF:DS4K": false
+   }
   }
  ],
  "cf_cases": [

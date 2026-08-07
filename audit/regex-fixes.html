@@ -112,14 +112,74 @@
 </header>
 
 <div class="stats">
-  <div class="stat"><b>29</b>migrations (fork ops 10211–10239)</div>
-  <div class="stat"><b>30</b>regex updates + 12 format-graph changes</div>
-  <div class="stat"><b>639 / 639</b>.NET labeled checks green</div>
+  <div class="stat"><b>33</b>migrations (fork ops 10211–10243)</div>
+  <div class="stat"><b>34</b>regex updates + 16 format-graph/score changes</div>
+  <div class="stat"><b>661 / 661</b>.NET labeled checks green</div>
   <div class="stat"><b>249 / 249</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
 <h3 class="grp">Changelog · newest first</h3>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10243</span><h2>DS4K format</h2><span class="sev miss">+25 in 1080p profiles</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 12:28 UTC · op 10243 · closes #12</p>
+  <p class="why">DS4K (1080p downscaled from the 2160p master) is a widespread tracker
+  convention with no pattern anywhere in the database. Live evidence:
+  <code>Crime.101.2026.1080p.DS4K.WEB-DL.x265…-Kris</code>. Small +25 in 1080p
+  Quality/Efficient/Balanced — the token says the master was 4K, not that the encoder is
+  good, so it stays a tiebreak.</p>
+  <ul class="rels">
+    <li><span class="tag ok">scored</span>Crime.101.2026.1080p.DS4K.WEB-DL.x265.10bit.HDR.E-AC-3.5.1-Kris <span class="src">· evidence corpus</span></li>
+    <li><span class="tag ctl">boundary</span>DS4Kids.Show.S01… <span class="src">· longer tokens stay unmatched</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10242</span><h2>Remaster format</h2><span class="sev miss">+25 Quality/Remux</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 12:26 UTC · op 10242 · closes #9</p>
+  <p class="why">LEDGER iteration 1 ruled Remastered out of Special Edition ("Radarr
+  classes them separately") but the sibling format was never created — the phenomenon
+  became inexpressible. 82 remaster titles live in the evidence corpus; 30 match the new
+  post-year-anchored pattern (the rest are space-separated originals covered by the same
+  boundary class). +25 in the four Quality/Remux profiles.</p>
+  <ul class="rels">
+    <li><span class="tag ok">scored</span>Aliens.1986.Remastered.Special.Edition.1080p… · Movie_1989_4K_Remaster_1080p…</li>
+    <li><span class="tag ctl">title word</span>Remastering.The.Beatles.2023… <span class="src">· no year anchor before the token</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10241</span><h2>Hybrid format</h2><span class="sev miss">+100 Quality/Remux tiebreak</span><span class="ver both">gap in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 12:24 UTC · op 10241 · closes #8</p>
+  <p class="why">Zero patterns contained “hybrid” despite hybrids being the flagship
+  output of this database's own top-tier groups — 110 hybrid titles (103 hybrid remuxes)
+  in the evidence corpus scored identically to their non-hybrid siblings. New
+  underscore-tolerant marker regex + a required-negated parsed-group condition so the
+  <code>-HYBRID</code> release group can never masquerade as the marker. +100 in the five
+  Quality/Remux profiles.</p>
+  <ul class="rels">
+    <li><span class="tag ok">scored</span>Air.Force.One.1997…HYBRID.REMUX-FraMeSToR · Dune.Part.Two.2024.1080p.Hybrid.WEB-DL…-FLUX</li>
+    <li><span class="tag ctl">group guard</span>Movie.2023.2160p.WEB-DL.DV.HDR10.HEVC-HYBRID <span class="src">· parsed group HYBRID is required-negated (parser-level)</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="op">OP 10240</span><h2>Ban magnitude raised above stackable positives</h2><span class="sev ban">−999999 → −99999999 (421 rows)</span><span class="ver both">bug in v1 + v2</span></div>
+  <p class="when">Changed 2026-08-07 12:20 UTC · op 10240 · closes #20</p>
+  <p class="why">Fork-sweep finding, corroborated locally: −999999 is not safely above
+  every reachable positive stack. Computed per-profile upper bounds (max ladder CF + max
+  tier CF + all other positives) reach 1.07M in 1080p Quality and 11.15M in 2160p
+  Efficient — and op 10232 documented a <em>real</em> release stacking to 1,840,606
+  before its fix, which would have flipped any −999999 ban net-positive. Every ban row
+  moves two orders of magnitude down; two new graph invariants hold the line (naive bound
+  &lt; |worst ban| per profile; no legacy-magnitude rows). The deliberate −820000
+  x265 (Bluray) counterweight is exempt by design.</p>
+  <div class="diff">
+    <div class="pat before">worst realistic stack seen: <mark class="del">1,840,606 &gt; 999,999</mark></div>
+    <div class="pat after">ban floor <mark class="add">−99,999,999</mark> · invariant: naive bound &lt; |ban| per profile</div>
+  </div>
+</section>
 
 <section class="card">
   <div class="card-head"><span class="op">OP 10239</span><h2>5.1 / 7.1 Surround formats wired</h2><span class="sev miss">+50/+100 Balanced tiebreak</span><span class="ver both">gap in v1 + v2</span></div>
