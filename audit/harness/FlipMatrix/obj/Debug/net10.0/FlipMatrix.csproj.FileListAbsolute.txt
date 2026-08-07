@@ -1,0 +1,15 @@
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/bin/Debug/net10.0/FlipMatrix
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/bin/Debug/net10.0/FlipMatrix.deps.json
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/bin/Debug/net10.0/FlipMatrix.runtimeconfig.json
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/bin/Debug/net10.0/FlipMatrix.dll
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/bin/Debug/net10.0/FlipMatrix.pdb
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.GeneratedMSBuildEditorConfig.editorconfig
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.AssemblyInfoInputs.cache
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.AssemblyInfo.cs
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.csproj.CoreCompileInputs.cache
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.sourcelink.json
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.dll
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/refint/FlipMatrix.dll
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.pdb
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/FlipMatrix.genruntimeconfig.cache
+/home/jake/work/tier-doc-loop/audit/harness/FlipMatrix/obj/Debug/net10.0/ref/FlipMatrix.dll

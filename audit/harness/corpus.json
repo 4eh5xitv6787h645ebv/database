@@ -783,10 +783,12 @@
   },
   {
    "title": "Black.Widow.2021.Web-Dl.1080p.HEVC.10bit.HDR.Dolby.Digital.Plus.with.Dolby.Atmos.6ch-CAPTCHA",
-   "note": "REAL (Prowlarr metadata): spelled-out DDP, HDR 1080p",
+   "note": "REAL (Prowlarr metadata): spelled-out DDP, HDR 1080p | op 10237: also an obfuscation-tag victim",
    "expect": {
     "Dolby Digital +": true,
-    "HDR": true
+    "HDR": true,
+    "Obfuscated Tags": true,
+    "CF:Obfuscated": true
    }
   },
   {
@@ -1010,10 +1012,12 @@
   },
   {
    "title": "Criminal.Minds.S01E03.720p.WEB-DL.Dolby.Digital.5.1.h264-Obfuscated",
-   "note": "REAL (Prowlarr): plain spelled-out Dolby Digital (usenet obfuscated-repost class); fixed by op 220",
+   "note": "REAL (Prowlarr): plain spelled-out Dolby Digital (usenet obfuscated-repost class); fixed by op 220 | op 10237: also an obfuscation-tag victim",
    "expect": {
     "Dolby Digital": true,
-    "Dolby Digital +": false
+    "Dolby Digital +": false,
+    "Obfuscated Tags": true,
+    "CF:Obfuscated": true
    }
   },
   {
@@ -1727,6 +1731,142 @@
     "Atmos": true,
     "CF:Atmos": true,
     "CF:Atmos (Missing)": false
+   }
+  },
+  {
+   "title": "The.Beekeeper.2024.HDRip.x264-EVO",
+   "note": "op 10236: EVO fake-HDRip victim class; group fires, WEB-DL title guard stays false",
+   "expect": {
+    "grp:EVO": true,
+    "WEB-DL": false
+   }
+  },
+  {
+   "title": "Monkey.Man.2024.1080p.AMZN.WEB-DL.DDP5.1.H.264-EVO",
+   "note": "op 10236 carve-out: EVO WEB-DL carries the WEB-DL title token so the ban graph cannot fire",
+   "expect": {
+    "grp:EVO": true,
+    "WEB-DL": true
+   }
+  },
+  {
+   "title": "Movie.2024.1080p.BluRay.x264-EVOLVE",
+   "note": "op 10236 control: EVOLVE is not EVO",
+   "expect": {
+    "grp:EVO": false
+   }
+  },
+  {
+   "title": "Clueless.1995.720p.BluRay.x264-HD4U-xpost",
+   "note": "op 10237: xpost trailer after the real group (evidence corpus)",
+   "expect": {
+    "Obfuscated Tags": true,
+    "CF:Obfuscated": true
+   }
+  },
+  {
+   "title": "Air.Force.One.1997.PROPER.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR-AsRequested",
+   "note": "op 10237: AsRequested trailer (evidence corpus) | op 10237: also an obfuscation-tag victim",
+   "expect": {
+    "Obfuscated Tags": true,
+    "CF:Obfuscated": true
+   }
+  },
+  {
+   "title": "The.Flash.S04E01.1080p.WEB-DL.DD5.1.H264-CasStudio[rartv]",
+   "note": "op 10237: bracketed rartv retag",
+   "expect": {
+    "Retag Tags": true,
+    "CF:Obfuscated": true
+   }
+  },
+  {
+   "title": "Show.S01E01.1080p.WEB.h264-GRP.[TGx]",
+   "note": "op 10237: bracketed TGx retag",
+   "expect": {
+    "Retag Tags": true,
+    "CF:Obfuscated": true
+   }
+  },
+  {
+   "title": "Movie.2023.1080p.WEB-DL.H264-GROUP",
+   "note": "op 10237 control: ordinary group, no tags",
+   "expect": {
+    "Obfuscated Tags": false,
+    "Retag Tags": false,
+    "CF:Obfuscated": false
+   }
+  },
+  {
+   "title": "The.Great.Escape.1963.1080p.BluRay.x264-4Planeteers",
+   "note": "op 10237 control: 4Planet/4P must not prefix-match longer group names",
+   "expect": {
+    "Obfuscated Tags": false
+   }
+  },
+  {
+   "title": "Captcha.Solving.Robots.2023.1080p.WEB-DL.H264-GRP",
+   "note": "op 10237 control: CAPTCHA as title word lacks the hyphen anchor",
+   "expect": {
+    "Obfuscated Tags": false
+   }
+  },
+  {
+   "title": "Movie.2026.1080p.WEB-DL.DDP5.1.H.264-GROUP",
+   "note": "op 10239: dotted 5.1 marker",
+   "expect": {
+    "5.1 Surround": true,
+    "CF:5.1 Surround": true,
+    "CF:7.1 Surround": false
+   }
+  },
+  {
+   "title": "Show_2026_S01_720p_WEB-DL_AAC_5_1",
+   "note": "op 10239: underscore separators and end-of-title boundary (iteration-19 class)",
+   "expect": {
+    "5.1 Surround": true,
+    "CF:5.1 Surround": true
+   }
+  },
+  {
+   "title": "Movie.2026.1080p.BluRay.TrueHD.7.1-GRP2",
+   "note": "op 10239: 7.1 release is not 5.1; exclusivity via negation",
+   "expect": {
+    "5.1 Surround": false,
+    "CF:5.1 Surround": false,
+    "CF:7.1 Surround": true
+   }
+  },
+  {
+   "title": "Movie.2026.Part.15.1.Documentary.1080p.WEB-DL",
+   "note": "op 10239 control: digits embedded in larger numbers stay unmatched",
+   "expect": {
+    "5.1 Surround": false
+   }
+  },
+  {
+   "title": "Movie.2026.1080p.WEB-DL.DDP5.1.and.Atmos.7.1-GRP",
+   "note": "op 10239: dual-marker title resolves to 7.1 only (5.1 CF negated)",
+   "expect": {
+    "5.1 Surround": true,
+    "CF:5.1 Surround": false,
+    "CF:7.1 Surround": true
+   }
+  },
+  {
+   "title": "The.Abyss.1989.Open.Matte.1080p.WEB-DL.H264-GRP",
+   "note": "op 10238: canonical Open Matte release",
+   "expect": {
+    "Open Matte": true,
+    "CF:Open Matte": true
+   }
+  },
+  {
+   "title": "Open.Season.2006.Matte.Painting.Featurette.1080p",
+   "note": "op 10238 control: split tokens are not Open Matte",
+   "expect": {
+    "Open Matte": false,
+    "CF:Open Matte": false
    }
   }
  ],

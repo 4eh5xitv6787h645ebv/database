@@ -209,6 +209,82 @@ VALUES (
   )
 );
 
+-- Jojont54-inspired structural audits (fork sweep 2026-08-07): tier formats
+-- must never be reachable through optional conditions alone, and policy
+-- decisions encoded as scores must not drift silently.
+
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'Every scored tier format keeps at least one required gate',
+  NOT EXISTS (
+    SELECT 1
+    FROM quality_profile_custom_formats s
+    JOIN custom_formats cf ON cf.name = s.custom_format_name
+    WHERE cf.name LIKE '% Tier %'
+      AND s.score > 0
+      AND NOT EXISTS (
+        SELECT 1 FROM custom_format_conditions c
+        WHERE c.custom_format_name = cf.name
+          AND c.required = 1
+      )
+  )
+);
+
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'Multi-group tier OR-lists stay optional and non-negated',
+  -- Single-group tiers (e.g. 1080p Bluray HEVC Tier 1 = HONE required) may
+  -- require their one group; tiers with 2+ group conditions must keep them
+  -- all optional/non-negated or members silently stop OR-ing.
+  NOT EXISTS (
+    SELECT 1 FROM custom_format_conditions c
+    WHERE c.custom_format_name LIKE '% Tier %'
+      AND c.type = 'release_group'
+      AND (c.required = 1 OR c.negate = 1)
+      AND (
+        SELECT COUNT(*) FROM custom_format_conditions g
+        WHERE g.custom_format_name = c.custom_format_name
+          AND g.type = 'release_group'
+      ) >= 2
+  )
+);
+
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'EVO (No WEB) keeps its full negation graph',
+  (
+    SELECT COUNT(*) = 4 FROM custom_format_conditions
+    WHERE custom_format_name = 'EVO (No WEB)' AND required = 1
+  )
+  AND (
+    SELECT COUNT(*) = 3 FROM custom_format_conditions
+    WHERE custom_format_name = 'EVO (No WEB)' AND negate = 1
+  )
+);
+
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'Obfuscated stays informational: score 0 in every profile',
+  NOT EXISTS (
+    SELECT 1 FROM quality_profile_custom_formats
+    WHERE custom_format_name = 'Obfuscated' AND score <> 0
+  )
+  AND (
+    SELECT COUNT(*) FROM quality_profile_custom_formats
+    WHERE custom_format_name = 'Obfuscated'
+  ) = (SELECT COUNT(*) FROM quality_profiles)
+);
+
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  '5.1/7.1 Surround exclusivity wiring intact',
+  EXISTS (
+    SELECT 1 FROM custom_format_conditions
+    WHERE custom_format_name = '5.1 Surround'
+      AND name = 'Not 7.1 Surround' AND negate = 1 AND required = 1
+  )
+);
+
 SELECT label || ': ok'
 FROM audit_assertions
 ORDER BY label;
