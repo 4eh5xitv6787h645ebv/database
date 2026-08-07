@@ -139,11 +139,10 @@ def main() -> int:
             f"Retags penalty CF (see cf backlog).\n\nExamples:\n{ex}",
             ["sentinel", "cf-candidate"])
 
-    # 3. watched-repo drift (upstream Dictionarry + idea sources)
+    # 3. upstream drift (Dictionarry-Hub/database is THE upstream; other forks
+    # like Dumpstarr/Database are occasional manual idea sources, not watched)
     for repo, why in [
         (UPSTREAM, "Review new upstream ops for replay/adaptation onto this fork."),
-        ("Dumpstarr/Database", "Idea source (TRaSH+Dictionarry hybrid): review their new "
-         "ops for phenomena we miss — never import ops directly, policies differ."),
     ]:
         sha = json.loads(sh("gh", "api", f"repos/{repo}/commits?per_page=1"))[0]["sha"]
         seen_f = STATE / f"watched-{repo.replace('/', '-')}-sha"
