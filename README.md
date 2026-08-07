@@ -15,6 +15,14 @@
 
 # Dictionarry Database
 
+> **This fork's audit report → https://4eh5xitv6787h645ebv.github.io/jakes-profilarr-database/**
+>
+> Every regex and custom-format change made on the `fix/regex-audit` branch, with the exact
+> before/after pattern, the real release names affected, and an impact score. Sort by newest,
+> by impact, or by op number; changes proven to make no difference in a live Radarr/Sonarr are
+> flagged in red. See [`automation/README.md`](automation/README.md) for how the fixes are
+> found, gated and verified.
+
 The [Official Dictionarry Database](https://github.com/Dictionarry-Hub/database) serves two main purposes:
 
 - Powers our [Documentation](https://dictionarry.dev)
