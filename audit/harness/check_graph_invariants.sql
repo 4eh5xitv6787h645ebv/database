@@ -98,6 +98,50 @@ VALUES (
   )
 );
 
+INSERT INTO audit_assertions (label, ok)
+VALUES (
+  'Compact Radarr QxR tiers exclude the HONE title fallback',
+  (
+    SELECT COUNT(*) = 2
+    FROM custom_format_conditions c
+    JOIN condition_patterns p
+      ON p.custom_format_name = c.custom_format_name
+     AND p.condition_name = c.name
+    WHERE c.custom_format_name IN (
+        '1080p Compact Movie Bluray Tier 4',
+        '1080p Compact Movie WEB Tier 1'
+      )
+      AND c.name = 'Not HONE'
+      AND c.type = 'release_title'
+      AND c.arr_type = 'all'
+      AND c.negate = 1
+      AND c.required = 1
+      AND p.regular_expression_name = 'HONE'
+  )
+  AND NOT EXISTS (
+    SELECT 1
+    FROM (
+      SELECT '1080p Compact Movie Bluray Tier 4' AS custom_format_name
+      UNION ALL
+      SELECT '1080p Compact Movie WEB Tier 1'
+    ) expected
+    WHERE NOT EXISTS (
+      SELECT 1
+      FROM custom_format_conditions c
+      JOIN condition_patterns p
+        ON p.custom_format_name = c.custom_format_name
+       AND p.condition_name = c.name
+      WHERE c.custom_format_name = expected.custom_format_name
+        AND c.name = 'Not HONE'
+        AND c.type = 'release_title'
+        AND c.arr_type = 'all'
+        AND c.negate = 1
+        AND c.required = 1
+        AND p.regular_expression_name = 'HONE'
+    )
+  )
+);
+
 SELECT label || ': ok'
 FROM audit_assertions
 ORDER BY label;
