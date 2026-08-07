@@ -115,7 +115,7 @@
   <div class="stat"><b>21</b>migrations (ops 211–231)</div>
   <div class="stat"><b>27</b>regex updates + 6 format-graph fixes</div>
   <div class="stat"><b>588 / 588</b>.NET matrix checks green</div>
-  <div class="stat"><b>221 / 221</b>Profilarr parser tests green</div>
+  <div class="stat"><b>227 / 227</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
 
@@ -608,7 +608,7 @@ TV     (?&lt;![^\W_])S\d+(?![^\W_]).*(?&lt;![^\W_])(?:Extras|Bonus|Extended[ ._-
   <p>Every regex fix is validated by a .NET-semantics matrix (the same engine and
   IgnoreCase flag Radarr/Sonarr use) over a 181-title corpus; before/after diffs must show
   only intended rows. Format wiring and representative CF behavior are additionally
-  covered by 221 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
+  covered by 227 Profilarr parser-backed tests (database&nbsp;2 in the audit container at
   <code>localhost:6869</code>).
   The regex loop stopped after five consecutive dry iterations; the custom-format loop is
   active. This page reflects ops 211–231. Full reasoning lives in the
