@@ -24,19 +24,25 @@
 (AS2D5.PAL.DVD9) [158/163] - "AS2D5.PAL.DVD9.vol169+20.PAR2" CPP
 (NZBSpots.org) [031/138] - "P.S.I.1989.PAL.DVD9.part030.rar" BW
 (SKMD) Shelter BDRemux [000abc40]
+(chsck).Nekojiru-sou.(2001).(REPACK2).(U-NEXT.WEB-DL.1080p.AVC.Opus.E-AC-3).(3E58BECD)
 (www.Thunder-News.org) >XII.Twelve.Die.Jury.2008.German.DL.1080p.BluRay.x264-ENCOUNTERS< <Sponsored by AstiNews> - (88/89) - "encounters-xiitwdiju_1080p.vol097+53.par2"
 .oO "Lady.and.the.Tramp.1955.Diamond.Edition.MULTi.COMPLETE.BLURAY-FULLSiZE__www.realmom.info__.r12" Oo. [015/102] 39,05 GB
 .oO "Princess.and.the.Pony.2011.DUAL-COMPLETE.BLURAY-TRexHD__www.realmom.info__.r04" Oo. [07/64] 21,03 GB
 00-va-the_magic_sound_of_deep_presents_deep_dance_154-repack_proper-cdr-flac-2017
+000-spandau_ballet-true-special_edition-2cd-remastered-2010
+000-va-miles_davis_birth_of_a_legend-remastered_special_edition-2cd-flac-2011
 007.Contra.Goldfinger.1964.LATiN.SPANiSH.MULTi.2160p.UHD.BluRay.x265-CEBRAY
 007.Road.To.A.Million.S01E01.HDR.2160p.WEB.H265-BIGCOX
 007.Road.to.a.Million.S02E01.2160p.WEB.h265-GRACE
 01.avi
 100.Litraa.Sahtia.2024.1080p.WEB-DL.AC-3.5.1-EstEngSub
+1000.Ways.To.Die.S03E31.Deadliest.Kitsch.1080p.WEBRip.10bit.EAC3.2.0.x265-iVy
 101.Dalmatians.1961.German.1080p.BluRay.DTS.DL.x264-HDC
 11.22.63.2016.Season.1.S01.+.Extras.1080p.BluRay.x265.HEVC.10bit.AAC.5.1.Silence.QxR
+12 Angry Men (1957) Criterion (1080p BluRay x265 10bit Opus 1.0 - mAck)
 12.Angry.Men.1957.1080p.Blu-ray.Remux.AVC.FLAC1.0-CiNEPHiLES
 12.Angry.Men.1957.Criterion.1080p.BluRay.x265-ZiTO
+12.Hommes.en.colere.1957.CRITERION.MULTi.BluRay.1080p.HEVC.FLAC.-AZAZE
 12.Rounds.2009.Extended.Harder.Cut.MULTi.VFF.1080p.BluRay.AC3.AV1-TiFou
 13.Reasons.Why.S02E03.The.Drunk.Slut.1080p.NF.WEB-DL.DDP5.1.H.264-Kitsune
 13.Reasons.Why.S02E04.The.Second.Polaroid.1080p.NF.WEB-DL.DDP5.1.H.264-Kitsune
@@ -206,6 +212,7 @@ A.Shot.in.the.Dark.1964.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 A.Simple.Plan.1998.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 A.Single.Man.2009.1080p.BDRemux.AVC.DTS-MA
 A.Tale.of.Two.Mice.1945.1080p.BluRay.AAC.2.0.x264-PTP
+A.Trap.Called.Desire.2026.S01E03.1080p.KCW.WEB-DL.AAC2.0.H.264-DUSKLiGHT
 A.Very.Harold.And.Kumar.Christmas.2011.3D.Bluray3DRip.1080p.Half-SBS_ZMP
 A.Very.Harold.and.Kumar.3D.Christmas.2011.Extended.Cut.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
 A.fegyverek.istene.1992.RETAIL.HUN.PAL.DVD9-TRASH
@@ -238,6 +245,7 @@ A018-01-audio-only.flac
 A018-02-audio-only.mp3
 A018-03-audio-only.opus
 A3D.Ayumi.Hamasaki.Arena.Tour.2009.A.Next.Level.2010.3D.Half-SBS.DTS.5.1
+ABBA-Waterloo-SPECIAL_EDITION_REMASTERED-CD-FLAC-2004-DeVOiD
 ABD_Premiere_S13E06_Tom_Baker_The_Seeds_of_Doom_D1_(PAL_DVD9)
 ABD_Premiere_S13E06_Tom_Baker_The_Seeds_of_Doom_D2_(PAL_DVD9)
 ABD_Premiere_S21E05_Peter_Davison_KT2_2_Planet_of_Fire_(PAL_DVD9)
@@ -289,6 +297,7 @@ Abominable.2019.1080p.3D.BluRay.Half-SBS.x264.DTS-HD.MA.7.1-FGT
 Abominable.2019.1080p.3D.BluRay.Half-SBS.x264.TrueHD.7.1.Atmos-FGT
 Accel.World.Infinite.Burst.2016.UHD.BluRay.2160p.DTS-HD.MA.5.1.HEVC.REMUX-FraMeSToR
 Ace.Ventura.When.Nature.Calls.1995.2160p.UHD.BluRay.REMUX.DV.HDR10.HEVC.DTS-HD.MA.5.0-ATELiER
+Ace.Ventura.When.Nature.Calls.1995.PROPER.BluRay.1080p.DTS-HD.MA.5.0.AVC.HYBRID.REMUX-FraMeSToR
 Act.Of.Valor.2012.Open.Matte.Bluray.1080p.BluRay.x264-MonteDiaz
 Act.of.Valor.2012.1080p.Open.Matte.BDRip.x265.AC3-Webhiker
 Act.of.Valor.2012.Open.Matte.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
@@ -335,6 +344,7 @@ Alien.1979.Directors.Cut.UHD.BluRay.1080p.DDP.5.1.DoVi.HDR10x265-SM737
 Alien.3.1992.Extended.Cut.BluRay.1080p.DTS.x264-PRoDJi
 Alien.Die.Wiedergeburt.Special.Edition.1997.German.DL.DTS.PAL.HD2DVD.DVD9-COX (27/96) - "Alien.Die.Wiedergeburt.Special.Edition.1997.German.DL.DTS.PAL.HD2DVD.DVD9-COX.part26.rar" - 8,39 GB >>>German-DVD-CREW<<<
 Alien.Resurrection.1997.Extended.Cut.1080p.Bluray.OPUS.5.1.AV1-WhiskeyJack
+Aliens (1986) Special Edition 4K REMASTERED 720p 10bit BluRay x265 HEVC [Org HDTV Hindi DDP 2.0 ~ 192Kbps + English AAC 5.1] ESub ~ OlaM
 Aliens 1986 Remastered Special Edition 1080p BluRay Opus 5 1 AV1-KIMJI
 Aliens.1986.EXTENDED.CUT.MULTi.VFi.4K.UHD.BluRay.REMUX.DV.HDR.HEVC.TrueHD.Atmos.7.1-HDForever
 Aliens.1986.Remastered.Special.Edition.1080p.BluRay.Opus.5.1.AV1-KIMJI
@@ -384,6 +394,7 @@ Andor.S01D01.COMPLETE.UHD.BLURAY-OPTiCAL-4P
 Andor.S01D01.COMPLETE.UHD.BLURAY-OPTiCAL-AsRequested
 Andor.S01D02.COMPLETE.UHD.BLURAY-OPTiCAL-AsRequested
 Andor.S01D03.COMPLETE.UHD.BLURAY-OPTiCAL-AsRequested
+Andrei.Rublev.1966.Criterion.1080p.BluRay.AAC.x264-HANDJOB
 Andrei.Rublev.1966.Criterion.Collection.Directors.Cut.BluRay.1080p.FLAC.1.0.x264-HDH
 Andrei.Rublev.1966.Criterion.Collection.Directors.Cut.BluRay.1080p.x265.10bit.FLAC.1.0-HDH
 Angel.Has.Fallen.2019.1080p.BluRay.x264.DD5.1-Pahe.in
@@ -417,6 +428,8 @@ Ant-Man.and.the.Wasp.Quantumania.2023.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.HDR.H.2
 Ant-Man.and.the.Wasp.Quantumania.2023.IMAX.2160p.DSNP.WEB-DL.TrueHD.Atmos.7.1.DV.HDR.H.265-FLUX
 Ant-Man.and.the.Wasp.Quantumania.2023.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.Hybrid.REMUX-FraMeSToR
 Antichrist.2009.CRITERION.COLLECTION.1080p.BluRay.DD+5.1.x264-playHD
+Antichrist.2009.CRITERION.COLLECTION.1080p.BluRay.DD.5.1.x264-playHD
+Antichrist.2009.Criterion.Collection.1080p.BluRay.DD+5.1.x264-playHD
 Antiviral.2012.2160p.UHD.BluRay.DTS-HD.MA.5.1.DV.HDR.x265-RandomBytes
 Antz.1998..German.DL.1080p.BDRip.h265-WOTT
 Anyone But You 2023 2160p UHD BluRay REMUX DV HDR10 HEVC TrueHD 7.1 Atmos + Multi-d3g
@@ -498,14 +511,20 @@ Army.of.Shadows.1969.Criterion.Collection.Blu-ray.1080p.DTS-HD.MA.2.0.x265-HDH
 Arrival.2016.Open.Matte.1080p.BluRay.x265.10bit-KONTRAST
 Arsenic.and.Old.Lace.1944.MULTi.COMPLETE.BLURAY-PtBM
 Article.99.1992.1080p.BluRay.DD+2.0.x264-playHD
+As.Tears.Go.By.1988.1080p.Criterion.Bluray.REMUX.AVC.FLAC.1.0-WHRen
+Assassination.Classroom.S02E02.Kaede.Time.1080p.FLAC.2.0.AVC.HYBRID.REMUX-FraMeSToR
+Assassination.Classroom.S02E19.Outer.Space.Time.1080p.FLAC.2.0.AVC.HYBRID.REMUX-FraMeSToR
+Assassination.Classroom.S02E22.Happy.Birthday.Time.1080p.FLAC.2.0.AVC.HYBRID.REMUX-FraMeSToR
 Asterix.and.Obelix.vs.Caesar.1999.REMASTERED.VOF.1080p.COMPLETE.BLURAY.DTS-HD.MA.5.1-JTR
 Asterix.und.Kleopatra.1968.German.DTS.DL.1080p.WebDL.AVC-iND
+Atame.1989.REMUX.VOSTFR.Criterion.1080p.Bluray.DTS.HDMA.AVC-MeMyI
 Atelier.Ryza.Ever.Darkness.The.Secret.Hideout.The.Animation.S01.1080p.BluRay.FLAC2.0.x264-Anitsu
 Atlanta.S04E08.REPACK.1080p.WEB.H264-PLZPROPER
 Atmosphere.1997.Concert.1080p.BluRay.TrueHD.7.1-GRP
 Atmosphere.2023.1080p.WEB-DL.H264
 Atomic.Thrill.1987.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Atoms.2026.1080p.BluRay.TrueHD.7.1-GROUP
+Au-dela.des.collines.2012.CRITERION.VOSTF.1080p.BluRay.x265.DTS.HDMA.5.1-AZAZE
 Augen.ohne.Gesicht.DL.German.PAL.1960.DVD9.Untouched (19/82) - "Augen.ohne.Gesicht.DL.German.PAL.1960.DVD9.Untouched.part18.rar" - 7,14 GB - (www.usenetrevolution.info + www.town.ag sponsored by www.ssl-news.info)
 Avanti.popolo.1986.PAL.DVD9-IL-DownRev
 Avatar (2009) PAL Retail DVD9 Custom NL[002/136] - "Avatar (2009) PAL Retail DVD9 Custom NL.part001.rar"
@@ -536,6 +555,7 @@ Avatar.Fire.and.Ash.3D.2025.COMPLETE.BLURAY.DISC.1-Unk-AsRequested
 Avatar.Fire.and.Ash.3D.2025.COMPLETE.BLURAY.DISC.2-Unk-AsRequested
 Avatar.The.Way.Of.Water.2022.2160p.3D.Half-SBS.Ai-Upscaled.HEVC.DDP7.1-RIFE.4.25v2-90fps-DirtyHippie
 Avatar.The.Way.of.Water.2022.1080p.3D.BluRay.Half-SBS.DD+7.1.x264-GS88
+Avatar.The.Way.of.Water.2022.Hybrid.2160p.UHD.Blu-ray.Remux.DV.HDR10P.HEVC.TrueHD.Atmos.7.1.CiNEPHiLES.Dual-Highvoltage
 Avatar_2009_Collectors_Edition_With_Bonus
 Avcodec.Internals.2023.1080p.WEB-DL
 Avengers.Endgame.2019.1080p.3D.BluRay.Half-SBS.x264.DTS-HD.MA.7.1-FGT
@@ -553,6 +573,7 @@ Avengers.Infinity.War.2018.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.H.265-PiRaTeS
 Avengers.Infinity.War.2018.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.HDR.H.265-PiRaTeS
 Avengers.Infinity.War.2018.IMAX.4K.HDR.2160p.WEB-DL.Ita.Eng.x265-NAHOM
 Avengers.Infinity.War.2018.IMAX.4K.HDR.DV.2160p.WEB-DL.Ita.Eng.x265-NAHOM
+Avengers.Infinity.War.2018.MULTi.VFF.2160p.UHD.BluRay.REMUX.HEVC.HYBRID.DV.HDR.TrueHD.Atmos.7.1-OPTIMUM
 Awesome.I.Shot.That.2006.576p.PAL.DVD9.DD.5.1
 Az.enekesno.2022.RETAIL.HUN.PAL.DVD9-TRASH
 Az.unoka.2022.RETAIL.HUN.PAL.DVD9-TRASH
@@ -621,6 +642,7 @@ BEEF.2023.S01E09.1080p.NF.WEB-DL.DDP5.1.x265.Silence-QxR
 BEEF.2023.S01E10.1080p.NF.WEB-DL.DDP5.1.x265.Silence-QxR
 BK In The 25th Century S1 DVD5 RETAiL PAL DVD9
 Babygirl.2024.1080p.BluRay.DD+7.1.x264-SPHD
+Babylon.2022.MULTi.VF2.2160p.UHD.BluRay.REMUX.HYBRiD.DV.HDR10plus.TrueHD.Atmos.7.1.HEVC-REBiRTH
 Bachelor.Party.1984.BDRemux.X264.DTS-HD
 Back.To.The.Future.1985.2160p.UHD.BluRay.ATMOS.DV.HDR10+.x265-W4NK3R
 Back.To.The.Future.Part.II.1989.1080p.3D.Half-SBS.x264.TrueHD.Atmos.7.1-JFC
@@ -641,6 +663,11 @@ Bad.Boys.for.Life.2020.COMPLETE.UHD.BLURAY-WhiteRhino-AsRequested
 Bad.Boys.for.Life.2020.German.EAC3.DL.1080p.BluRay.x265-VECTOR
 Bad.Santa.2003.3D.Half-SBS.AC3.5.1-x264-JFC
 Bad.Words.2013.BluRay.1080p-DTS_3D_SBS
+Badehotellet.S09E01.720p.WEB-DL.AVC.E-AC-3
+Badehotellet.S09E02.720p.WEB-DL.AVC.E-AC-3
+Badehotellet.S09E03.720p.WEB-DL.AVC.E-AC-3
+Badehotellet.S09E04.720p.WEB-DL.AVC.E-AC-3
+Badehotellet.S09E05.720p.WEB-DL.AVC.E-AC-3
 Bajillion.Dollar.Properties.S03E01.REPACK.Deans.Legacy.1080p.SESO.WEB-DL.AAC2.0.x264-monkee-AsRequested
 Bajillion.Dollar.Properties.S03E01.REPACK.Deans.Legacy.1080p.SESO.WEB-DL.AAC2.0.x264-monkee-AsRequested-Obfuscated
 Bake.Squad.S01E07.Super.Sweet.16.2160p.NF.WEB-DL.DDP5.1.H.265-FLUX
@@ -649,7 +676,9 @@ Balls.Up.2026.1080p.WEBRip.DDP.5.1.Atmos.10bit.H.265-iVy
 Bambi.1942.BluRay.1080p.DDP.5.1.x264-hallowed
 Bambi.The.Reckoning.2025.Complete.1080p.FRA.BluRay-P4RT4GE
 Bambi.The.Reckoning.2025.Complete.2160p.FRA.UHD.BluRay-P4RT4GE
+Band Melam (2026) Telugu ZEE5 WEB-DL [1080p HEVC 3057kbps] [E-AC-3 6ch 192kbps] [AAC 2ch 319kbps] [ESub] -TQrips
 Band Melam (2026) Telugu ZEE5 WEB-DL [720p HEVC 1131kbps] [E-AC-3 6ch 192kbps] [ESub] -TQrips
+Band of Outsiders (1964) Criterion (1080p BluRay x265 r00t)
 Bandits.2001.Open.Matte.1080p.WEB-DL.HEVC.x265.5.1.BONE
 Bangalore.Days.2014.1080p.BluRay.DD5.1.x264-TmG4Plex
 Bangalore.Days.2014.1080p.BluRay.DTS.x264-TmG
@@ -663,9 +692,11 @@ Banned.1989.OPEN.MATTE.BLURAY.720p.BluRay.x264.AAC-LAMA
 Banned.1989.Open.Matte.BluRay.1080p.DDP.2.0.x265-SM737
 Bao.2018.2160p.DSNP.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FLUX
 Barbarella.PAL.DL.German.1968.DVD9.Untouched (02/71) - "Barbarella.PAL.DL.German.1968.DVD9.Untouched.part01.rar" - 6,06 GB >>>German-DVD-CREW<<<
+Barbarian.2022.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
 Barbie.2023.3D.Half-SBS.x264.AC3.5.1-JFC
 Barrons.Cove.2024.BluRay.1080p.x264.DTS-HD.MA.5.1-UBits
 Barry.Lyndon.1975.CRITERION.MULTi.VFi.1080p.HDLight.AC3.5.1.H264-LiHDL
+Barry.Lyndon.1975.Criterion.Edition.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
 Based.on.a.True.Story.S01E03.Whos.Next.2160p.PCOK.WEB-DL.DDP5.1.HDR.H.265-Tyrell
 Basic.Instinct.1992.UNRATED.DIRECTORS.CUT.REMASTERED.1080p
 Basic.Instinct.1992.Unrated.Directors.Cut.1080p.UHD.BluRay.DD.5.1.x264-LoRD
@@ -679,6 +710,25 @@ Batman.Caped.Crusader.S02.1080p.WEBRip.x265-KONTRAST
 Batman.Forever.1995.3D.Half-SBS.x264.AC3.5.1-JFC
 Batman.Returns.1992.3D.Half-SBS.x264.AC3.5.1-JFC
 Batman.Soul.of.the.Dragon.2021.COMPLETE.UHD.BLURAY-B0MBARDiERS-AsRequested
+Batman.The.Brave.and.the.Bold.S01E03.Evil.Under.the.Sea.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S01E13.Game.Over.for.Owlman.2.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S01E23.When.OMAC.Attacks.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S02E03.Revenge.of.the.Reach.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S02E13.The.Siege.of.Starro.1.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S02E23.Darkseid.Descending.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E01.Battle.of.the.Superheroes.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E02.Joker.The.Vile.and.the.Villainous.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E03.Shadow.of.the.Bat.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E04.Night.of.the.Batmen.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E05.Scorn.of.the.Star.Sapphire.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E06.Time.Out.for.Vengeance.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E07.Sword.of.the.Atom.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E08.Triumvirate.of.Terror.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E09.Bold.Beginnings.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E10.Powerless.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E11.Crisis.22300.Miles.Above.Earth.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E12.Four.Star.Spectacular.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Batman.The.Brave.and.the.Bold.S03E13.Mitefall.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
 Batman.V.Superman.Dawn.Of.Justice.2016.Remastered.IMAX.Extended.Ultimate.Edition.2160p.UHD.BluRay.DV.HDR10.DDP.5.1.X265-BiTOR-AsRequested
 Batman.and.Robin.1997.3D.Half-SBS.x264.AC3.5.1-JFC
 Batman.v.Superman.Dawn.of.Justice.2016.Extended.IMAX.2160p.UHD.BDRip.HEVC.10bit.HDR.TrueHD.7.1.Atmos-MUSHR00M
@@ -709,6 +759,7 @@ Beast.Race.2026.German.DL.HDR.2160p.WEB.h265-W4K
 Beast.Wars.Transformers.R4.S01.4xDVD9.PAL
 Beast.Wars.Transformers.R4.S02.3xDVD9.PAL
 Beast.Wars.Transformers.R4.S03.3xDVD9.PAL
+Beasts.of.No.Nation.2015.Criterion.1080p.BluRay.x265-YAWNTiC
 Beauty.and.The.Beast.1946.Criterion.Collection.1080p.Blu-ray.AVC.DTS.HD.MA.5.1.T
 Beauty.and.the.Briefcase.2010.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
 Beetlejuice.Beetlejuice.2024.2160p.UHD.BluRay.REMUX.HEVC.HDR10.10bit.TrueHD.7.1.Atmos.DUAL-AUDIO.PT-BR-GuyZo
@@ -743,12 +794,88 @@ Berlusconi.Condemned.to.Win.S01E01.1080p.WEBRip.x264-CBFM
 Berlusconi.Condemned.to.Win.S01E02.1080p.WEBRip.x264-CBFM
 Berlusconi.Condemned.to.Win.S01E03.1080p.WEBRip.x264-CBFM
 Bernard.Baer.Eine.tierische.Verschwoerung.2021.German.DL.1080p.WEB.h264-DUNGHiLL
+Better.Call.Saul.S06E03.Rock.and.Hard.Place.2160p.STAN.WEB-DL.DDP5.1.H.265-NTb
 Betty.Blue.1986.Criterion.Collection.BluRay.1080p.x264.LPCM.1.0-UBits
+Beverly.Hills.90210.S03E18.Midlife.Now.What.1080p.AMZN.WEBRip.10bit.EAC3.2.0.x265-iVy
 Beverly.Hills.Cop.1984.MULTi.COMPLETE.UHD.BLURAY-GERUDO
 Beverly.Hills.Cop.II.1987.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.REMUX-FraMeSToR
 Bewitched.2005.REPACK.PROPER.1080p.AMZN.WEB-DL
 Bewitched.2005.REPACK.PROPER.1080p.AMZN.WEB-DL.DDP5.1.H.264-monkee
 Bewitched.2005.REPACK.PROPER.1080p.AMZN.WEB.DL.DDP5.1.H.264.monkee
+Bewitched.S01E03.It.Shouldnt.Happen.to.a.Dog.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E13.Love.Is.Blind.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E23.Red.Light.Green.Light.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E30.George.the.Warlock.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E31.That.Was.My.Wife.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E32.Illegal.Separation.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E33.A.Change.of.Face.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E34.Remember.the.Main.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E35.Eat.at.Marios.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S01E36.Cousin.Edgar.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E03.Were.in.for.a.Bad.Spell.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E13.My.Boss.The.Teddy.Bear.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E23.Double.Tate.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E30.Follow.That.Witch.1.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E32.A.Bum.Raps.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E33.Divided.He.Falls.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E34.Mans.Best.Friend.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E35.The.Catnapper.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E36.What.Every.Young.Man.Should.Know.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E37.The.Girl.with.the.Golden.Nose.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S02E38.Prodigy.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E01.Nobodys.Perfect.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E02.The.Moment.of.Truth.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E03.Witches.and.Warlocks.Are.My.Favorite.Things.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E04.Accidental.Twins.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E05.A.Most.Unusual.Wood.Nymph.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E06.Endora.Moves.in.for.a.Spell.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E07.Twitch.or.Treat.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E08.Dangerous.Diaper.Dan.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E09.The.Short.Happy.Circuit.of.Aunt.Clara.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E10.Id.Rather.Twitch.Than.Fight.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E11.Oedipus.Hex.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E12.Sams.Spooky.Chair.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E13.My.Friend.Ben.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E14.Samantha.for.the.Defense.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E15.A.Gazebo.Never.Forgets.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E16.Soapbox.Derby.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E17.Sam.in.the.Moon.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E18.Hoho.the.Clown.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E19.Super.Car.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E20.The.Corn.Is.as.High.as.a.Guernseys.Eye.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E21.The.Trial.and.Error.of.Aunt.Clara.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E22.Three.Wishes.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E24.Art.for.Sams.Sake.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E25.Charlie.Harper.Winner.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E26.Aunt.Claras.Victoria.Victory.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E27.The.Crone.of.Cawdor.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E28.No.More.Mr.Nice.Guy.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E29.Its.Wishcraft.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E30.How.to.Fail.in.Business.with.All.Kinds.of.Help.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E31.Bewitched.Bothered.and.Infuriated.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E32.Nobody.but.a.Frog.Knows.How.to.Live.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S03E33.Theres.Gold.in.Them.Thar.Pills.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S04E03.Business.Italian.Style.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S04E13.Solid.Gold.MotherinLaw.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S04E23.McTavish.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S04E30.Samanthas.Secret.Saucer.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S04E31.The.NoHarm.Charm.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S04E32.Man.of.the.Year.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S04E33.Splitsville.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S05E03.Samantha.on.the.Keyboard.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S05E13.Instant.Courtesy.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S05E23.Tabithas.Weekend.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S05E30.Samantha.and.Darrin.in.Mexico.City.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S06E03.Samanthas.Caesar.Salad.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S06E13.Youre.So.Agreeable.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S06E23.Just.a.Kid.Again.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S06E30.Make.Love.Not.Hate.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S07E03.The.Salem.Saga.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S07E13.Sisters.at.Heart.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S07E23.Money.Happy.Returns.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S08E03.Samantha.and.the.Loch.Ness.Monster.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S08E13.Three.Men.and.a.Witch.on.a.Horse.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
+Bewitched.S08E23.School.Days.School.Daze.720p.TUBI.WEB-DL.AAC2.0.x264-AndreMor
 Beyond.the.Valley.of.the.Dolls.1970.Criterion.Collection.1080p.REPACK.Blu.ray.Remux.AVC.FLAC1.0.HypStu
 Bickford.Shmecklers.Cool.Ideas.2006.1080p.COMPLETE.BLURAY.AVC.DD.2.0-mintHD
 Big.1988.Extended.Cut.1080p.BluRay.DTS.x264-HDS-AsRequested
@@ -758,6 +885,21 @@ Big.Booty.Anal.Maids.2.[Bruthas.Inc.2026].XXX.WEB-DL.2160p.MP4-P2P
 Big.Chicken-A.Fast.Food.Conspiracy.2026.(2160p.NF.WEB-DL.Hybrid.H265.DV.HDR.DDP.Atmos.5.1.English-HONE)
 Big.Fish.2003.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Big.Hero.6.2014.1080p.BluRay.DTS.Hi10p.x264-NTb
+Big.Hero.6.The.Series.S01E03.Big.Roommates.2.MULTI.1080p.DSNP.WEB-DL.AAC2.0.x264-AndreMor
+Big.Time.Rush.S03E01.Backstage.Rush.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E02.Big.Time.Returns.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E03.Bel.Air.Rush.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E04.Big.Time.Double.Date.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E05.Big.Time.Merchandise.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E06.Big.Time.Surprise.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E07.Big.Time.Decision.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E08.Big.Time.Babysitting.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E09.Big.Time.Gold.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E10.Big.Time.Camping.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E11.Big.Time.Rescue.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S03E12.Big.Time.Bloopers.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S04E03.Big.Time.Lies.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
+Big.Time.Rush.S04E13.Sueos.en.Grande.Segunda.Parte.2.2022.MULTI.1080p.PMTP.WEB-DL.AAC2.0.H.264-AndreMor
 Billy.Joel.A.Matter.of.Trust.The.Bridge.to.Russia.1987.1080p.BDRemux.x264.FLAC
 Billy.Liar.1963.REPACK.PROPER.1080p.BluRay.x264-GHOULS
 Billy.Liar.1963.REPACK.PROPER.720p.BluRay.x264-GHOULS
@@ -777,7 +919,10 @@ Black.Hawk.Down.2001.EXTENDED.CUT.1080p.BluRay.x265-YAWNTiC
 Black.Hawk.Down.2001.Extended.Cut.1080p.BluRay.x265-SWAXXON
 Black.Hawk.Down.2001.Extended.Cut.1080p.UHD.BluRay.DD+7.1.DV.HDR.x265-HiDt
 Black.Hawk.Down.2001.Extended.Cut.BluRay.1080p.DDP.Atmos.5.1.x264-hallowed
+Black.Mirror.S07E04.2160p.NF.WEB-DL.H.265.DDP5.1.Atmos-Tyrell
 Black.Moon-Luna.nera.1975.Criterion.1080p.H.264.Ac3.Eng.Sub.Ita.Eng-MIRCrew
+Black.Moon.1975.Criterion.1080p.BluRay.REMUX.AVC.FLAC.AVS
+Black.Moon.1975.Criterion.Collection.1080p.BluRay.REMUX.AVC.FLAC.1.0-EPSiLON
 Black.Narcissus.1947.Criterion.Collection.BluRay.1080p.x265.10bit.LPCM.1.0-UBits
 Black.Panther.2018.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.H.265-PiRaTeS
 Black.Panther.2018.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.HDR.H.265-PiRaTeS
@@ -812,13 +957,16 @@ Blade.Runner.2049.1080p.10bit.DS4K.Open.Matte.[Org.AMZN.Hindi.DDP.2.0-English.DD
 Blade.Runner.2049.2017.1080p.3D.BluRay.Half-SBS.x264.TrueHD.7.1.Atmos-FGT
 Blade.Runner.2049.2017.2160p.UHD.BDRemux.TrueHD.Atmos.HDR.DoVi.Hybrid.P8.by.DVT
 Blade.Runner.2049.2017.2160p.UHD.BluRay.REMUX.HEVC.TrueHD.7.1.Atmos-SilentRogue
+Blade.Runner.2049.2017.Hybrid.2160p.UHD.BluRay.Remux.HDR.DV.HEVC.TrueHD.7.1.Atmos-HDT
 Blade.Runner.2049.2017.Open.Matte.1080p.BluRay.x265.10bit-KONTRAST
 Blade.Runner.2049.2017.Open.Matte.2160p.BluRay.TrueHD.7.1.Atmos.DV.HDR.H.265-SasukeducK
 Blade.Runner.2049.2017.Open.Matte.REPACK.2160p.BluRay.TrueHD.7.1.Atmos.DV.HDR.H.265-SasukeducK
 Blade.Runner.2049.2017.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
 Blade.Runner.2049.OpenMatte.2160p.DV.HDR10+Ai-Enhanced.HEVC.TrueHD.Atmos.7.1-RIFE.4.18v2-60fps-DirtyHippie
+Blame.2017.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR
 Blast.of.Silence.1961.Criterion.Special.Edition.1080p.BluRay.REMUX.PCM1.AVC-d3g
 Blazing.Saddles.1974.3D.Half-SBS.x264.AC3.5.1-JFC
+Blithe.Spirit.1945.1080p.Criterion.Collection.Bluray.Opus.1.0.x264-RetroPeeps
 Blood.from.the.Mummys.Tomb.1971.Alternate.AR.BluRay.1080p.FLAC.2.0.AVC.HYBRID.REMUX-FraMeSToR
 Blood.from.the.Mummys.Tomb.1971.BluRay.1080p.FLAC.2.0.AVC.HYBRID.REMUX-FraMeSToR
 Bloodsport (1988) LDRip [Open Matte]
@@ -829,24 +977,41 @@ Bloodstorm.2025.Uncut.Dual.Complete.BluRay-MAMA
 Blue Crush 2 (2011).PAL.DVD9_M4E
 Blue.Beetle.2023.3D.Half-SBS.x264.AC3.5.1-JFC
 Blue.Crush.2002.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
+Blue.Giant.2023.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR
 Blue.Velvet.1986.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
 Blue.Velvet.Revisited.2016.1080p.Criterion.Bluray.REMUX.AVC.AC3-WHRen
+Blue.is.the.Warmest.Color.2013.CRITERION.1080p.BDRip.10bit.DDP5.1.x265-FaS
 Blur-13-Remastered Special Edition-2CD-2012-DLiTE
+Blur-13-Remastered Special Edition-2CD-FLAC-2012-REETKEVER
 Blur-13-Remastered Special Edition-2CD-FLAC-2012-WRE-T1T
+Blur-13-Remastered_Special_Edition-2CD-FLAC
+Blur-13-Remastered_Special_Edition-2CD-FLAC-2012-WRE
+Blur-Blur-Remastered Special Edition-2CD-FLAC-2012-REETKEVER
 Blur-Blur-Remastered Special Edition-2CD-FLAC-2012-WRE
 Blur-Blur-Remastered Special Edition-2CD-FLAC-2012-WRE-T1T
 Blur-Blur-Remastered.Special.Edition-2CD-FLAC-2012-WRE
+Blur-Blur-Remastered_Special_Edition-2CD-FLAC
 Blur-Leisure-Remastered Special Edition-2CD-2012-DLiTE
+Blur-Leisure-Remastered Special Edition-2CD-FLAC-2012-REETKEVER
 Blur-Leisure-Remastered Special Edition-2CD-FLAC-2012-WRE-T1T
+Blur-Leisure-Remastered_Special_Edition-2CD-FLAC
+Blur-Modern Life Is Rubbish-Remastered Special Edition-2CD-FLAC-2012-REETKEVER
 Blur-Modern Life Is Rubbish-Remastered Special Edition-2CD-FLAC-2012-WRE-T1T
 Blur-Modern.Life.Is.Rubbish-Remastered.Special.Edition-2CD-FLAC-2012-WRE
+Blur-Modern_Life_Is_Rubbish-Remastered_Special_Edition-2CD-FLAC
+Blur-Parklife-Remastered Special Edition-2CD-FLAC-2012-REETKEVER
 Blur-Parklife-Remastered Special Edition-2CD-FLAC-2012-WRE
 Blur-Parklife-Remastered.Special.Edition-2CD-FLAC-2012-WRE
+Blur-Parklife-Remastered_Special_Edition-2CD-FLAC
+Blur-The Great Escape-Remastered Special Edition-2CD-FLAC-2012-REETKEVER
 Blur-The Great Escape-Remastered Special Edition-2CD-FLAC-2012-WRE
 Blur-The.Great.Escape-Remastered.Special.Edition-2CD-FLAC-2012-WRE
+Blur-The_Great_Escape-Remastered_Special_Edition-2CD-FLAC
+Blur-Think Tank-Remastered Special Edition-2CD-FLAC-2012-REETKEVER
 Blur-Think Tank-Remastered Special Edition-2CD-FLAC-2012-WRE
 Blur-Think Tank-Remastered Special Edition-2CD-FLAC-2012-WRE-T1T
 Blur-Think.Tank-Remastered.Special.Edition-2CD-FLAC-2012-WRE
+Blur-Think_Tank-Remastered_Special_Edition-2CD-FLAC
 Blutbad.Des.Schreckens.1973.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 BoJack.Horseman.S01E01.German.DD51.DL.1080p.NetflixHD.x264-4SJ
 BoJack.Horseman.S01E02.German.DD51.DL.1080p.NetflixHD.x264-4SJ
@@ -871,17 +1036,20 @@ Borderlands.2024.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR
 Born to be wild 3D half sbs (2011)Fre.Eng.Taotseu [71/72]Born to be wild 3D half sbs (Born to be wild 3D half sbs (2011)Fre.Eng.Taotseu.vol276+53.PAR2) Fre.mkv.Taotseu
 Born.in.Flames.1983.Criterion.Collection.BluRay.1080p.DD1.0.x264.BMDru
 Bound.1996.1080p.Criterion.Collection.Blu-ray.AVC.DTS-HD.MA5.1-DiYHDHome
+Bound.1996.Criterion.1080p.BluRay.x264-OFT
 Bound.1996.Criterion.Unrated.1080p.BluRay.HEVC-HQ.x265.Opus.5.1-MrTentsaw
 Bound.1996.Criterion.Unrated.1080p.BluRay.REMUX.AVC.H.264.DTS-HD.MA.5.1-MrTentsaw
 Bowfinger.1999.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
 Boxcar.Bertha.1972.COMPLETE.UHD.BLURAY-B0MBARDiERS-AsRequested
 Boyz.n.the.Hood.1991.Criterion.Collection.1080p.UHD.BluRay.DDP7.1.Atmos.DV.HDR.x265
+Boyz.n.the.Hood.1991.Criterion.Collection.1080p.UHD.BluRay.DDP7.1.Atmos.DV.HDR.x265.HiDt
 Brahms.The.Boy.II.2020.Directors.Cut.1080p.BluRay.REMUX.Dts-HDMa5.1.AVC-d3g
 Bram.Stokers.Dracula.1992.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Brand.Of.Shame.1968.GERMAN.DUB.1080p.BluRay.x264.AAC-LAMA
 Branded.to.Kill.1967.BluRay.Criterion.Collection.1080p.AVC.LPCM1.0-DiYHDHome
 Brave.2012.3D.Half-SBS.1080p.HebDub-SBS
 Bravo.Virtuoso.AKA.Bravo.Virtuose.2016.MULTi.PAL.COMPLETE.DVD9.3545020049280-KRT
+Brazil.1985.Criterion.Collection.1080p.Blu-ray.AVC.DTS-HD.MA.2.0
 Brazil.1985.DirectorsCut.MULTI.1080p.x265.HEVC.FLAC.2.0.BluRay-AZAZE
 Breaking.&amp;.Exiting.2018.1080p.BluRay.DD+5.1.x264-playHD
 Breaking.the.Waves.1996.4K.SDR.2160p.BDRemux.Ita.Eng.x265-NAHOM
@@ -890,12 +1058,18 @@ Brick.Mansions.2014.Extended.Cut.1080p.BluRay.DTS.x264-DON
 Brick.Mansions.2014.Extended.Cut.1080p.BluRay.x265.DD+5.
 Brick.Mansions.2014.Extended.Cut.720p.BluRay.x265.10Bit-
 Bridge.to.Terabithia.2007.3D.Half-SBS.x264.AC3.5.1-.JFC
+Bridge.to.Terabithia.2007.Hybrid.1080p.BluRay.REMUX.AVC.TrueHD.5.1-BLURANiUM
 Bridget Jones Mad About The Boy 2025 1080p BluRay REMUX AVC TrueHD 7 1-UnKn0wn
+Bridget.Jones.Mad.About.The.Boy.2025.REPACK.Hybrid.1080p.BluRay.REMUX.AVC.TrueHD.Atmos.7.1-12GaugeShotgun
+Bridget.Jones.Mad.About.The.Boy.2025.REPACK2.Hybrid.1080p.BluRay.REMUX.AVC.TrueHD.Atmos.7.1-12GaugeShotgun
 Bridget.Jones.S.Baby.2016.PROPER.REPACK.1080p.BluRay.DD5.1.x264-CRiME
 Bridget.Joness.Baby.2016.PROPER.REPACK.1080p.BluRay.DD5.1.x264-CRiME
 Bringing.Out.the.Dead.1999.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Broadcast News (1987) Criterion (1080p BluRay x265 SDR DDP 2 0 English - DarQ HONE
+Broadcast.News.(1987).Criterion.(1080p.BluRay.x265.SDR.DDP.2.0.English-DarQ.HONE
 Broadcast.News.1987.Criterion.1080p.BluRay.x265.SDR.DDP.2.0.English.-.DarQ
+Broadcast.News.1987.Criterion.1080p.BluRay.x265.SDR.DDP.2.0.English.-.DarQ.HONE
+Broadcast.News.1987.Criterion.1080p.BluRay.x265.SDR.DDP.2.0.English.DarQ-HONE
 Broadcast.News.1987.Criterion.Collection.BluRay.1080p.DTS-HD.MA.2.0.AVC.REMUX-FraMeSToR
 Broadcast.News.[1987].Criterion.[1080p.BluRay.x265.SDR.DDP.2.0.English-DarQ.HONE
 Brokeback.Mountain.2005.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
@@ -927,6 +1101,7 @@ Brothers.2024.3D.Half-SBS.AC3.5.1-x264-JFC
 Buck.Rogers.in.the.25th.Century.1979.OPEN.MATTE.1080p.BluRay.x264-GUACAMOLE
 Buck.Rogers.in.the.25th.Century.1979.OPEN.MATTE.1080p.BluRay.x265
 Buck.Rogers.in.the.25th.Century.1979.OPEN.MATTE.720p.BluRay.x264-GUACAMOLE
+Buck.and.the.Preacher.1972.Criterion.MULTi.VFi.1080p.HDLight.AC3.2.0.AC3.1.0.x264-Fz
 Bud.Abbott.and.Lou.Costello.Meet.Frankenstein.1948.4K.HDR.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Buena Vista Social Club [1999] Criterion [1080p BluRay x265 Cassidy]
 Buena.Vista.Social.Club.1999.Criterion.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi
@@ -963,6 +1138,7 @@ Bugs.Bunny.S1957E11.Piker's.Peak.1080p.BluRay.REMUX.AVC.DD.2.0-paradox
 Bugs.Bunny.S1957E18.Bugsy.and.Mugsy.1080p.BluRay.REMUX.AVC.DD.2.0-paradox
 Bugs.Bunny.S1957E22.Show.Biz.Bugs.1080p.BluRay.REMUX.AVC.DD.2.0-paradox
 Bull.2016.S06E02.REPACK.1080p.WEB.H264-PLZPROPER
+Bull.Durham.1988.Criterion.Collection.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
 Bullet.In.The.Head.1990.EXTENDED.FESTIVAL.CUT.1080P.BLURAY.H264-UNDERTAKERS
 Bullet.In.The.Head.1990.EXTENDED.FESTIVAL.CUT.1080P.BLURAY.X264-WATCHABLE
 Bumblebee.2018.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
@@ -981,6 +1157,10 @@ CFFC.158.Liam.Hamill.vs.Ethan.Pauley.UFP.1080p.WEBRip.H.264-Star
 CHVRCHES-The Bones Of What You Believe-Remastered Special Edition-2CD-FLAC-2023-PERFECT
 CHVRCHES-The.Bones.Of.What.You.Believe-.Remastered.Special.Edition.-2CD-2023-C
 CHVRCHES-The.Bones.Of.What.You.Believe-Remastered.Special.Edition-2CD-FLAC-2023-PERFECT
+CHVRCHES-The_Bones_Of_What_You_Believe-(Remastered_Special_Edition)-2CD-2023-C4
+CHVRCHES-The_Bones_Of_What_You_Believe-.Remastered_Special_Edition.-2CD-2023-C
+CHVRCHES-The_Bones_Of_What_You_Believe-Remastered_Special_Edition-2CD-FLAC-2023-PERFEC
+CHVRCHES-The_Bones_Of_What_You_Believe-Remastered_Special_Edition-2CD-FLAC-2023-PERFECT
 COL001 BT601 Limited (2026).mkv
 COL002 BT709 Full Range (2026).mkv
 COL003 BT709 Limited Range (2026).mkv
@@ -1002,6 +1182,7 @@ Cant.Stop.The.Music.1980.1080p.BluRay.x264.DTS-FGT
 Cape.Fear.S01.1080p.WEBRip.x265-KONTRAST
 Capit__.Marvel.2019.2160p.IMAX.DSNP.WEB-DL.DDP5.1.Atmos.DV.H265.DUAL-andrehsa
 Captain America The First Avenger 2011 BRRip XvidHD 720p-NPW_Nederlands ingebakken
+Captain.America.Brave.New.World.2025.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR-Dual.ByJames
 Captain.America.Civil.War.2016.1080p.3D.BluRay.Half-SBS.x264.DTS-HD.MA.7.1-FGT
 Captain.America.Civil.War.2016.IMAX.1080p.3D.BluRay.Half-SBS.DTS.x264-DON
 Captain.America.Civil.War.2016.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.H.265-PiRaTeS
@@ -1019,10 +1200,14 @@ Captain.Marvel.2019.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.HDR.H.265-PiRaTeS
 Captain.Marvel.2019.IMAX.2160p.DSNP.WEB-DL.DDPa.5.1.DV.H.265-PIRATES
 Captain.Marvel.2019.IMAX.2160p.DSNP.WEB-DL.DDPa.5.1.DV.HDR.H.265-PIRATES
 Car.SOS.S00E29-Great.German.Cars.1080p.WEB-DL.AAC2.0.H.264-WH
+Carlitos.Way.1993.MULTi.VFi.2160p.UHD.BluRay.REMUX.HYBRiD.DV.HDR10.DTS.X.7.1.HEVC-REBiRTH
 Carnage.2011.Fi.NO.SE.COMPLETE.BLURAY-MiSERABLE
 Carousel.1956.MULTi.1080p.BDRemux.x264.DTS-HD.MA
 Carry.on.Pickpocket.1982.BDRemux.1080p
+Cars.2.2011.Hybrid.2160p.UHD.Blu-ray.Remux.HEVC.DoVi.HDR10.TrueHD.Atmos.7.1-SPHD
+Cars.2006.Hybrid.2160p.UHD.Blu-ray.Remux.HEVC.DoVi.HDR10.TrueHD.Atmos.7.1-SPHD
 Cars.2006.Open.Matte.1080p.KP.WEB-DL.FLAC5.1.H.264-MUM
+Cars.3.2017.Hybrid.2160p.UHD.Blu-ray.Remux.HEVC.DoVi.HDR10.TrueHD.Atmos.7.1-SPHD
 Cars.Toons.S01E02.Mater.The.Greater.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-EPSiLON
 Casino.1995.CUSTOM.HYBRiD.OPEN.MATTE.MULTi.1080p.WEB.x264-STEVEDUDDY
 Cast.a.Deadly.Spell.1991.1080p.WEBRip.DD2.0.x264-NTb
@@ -1030,6 +1215,7 @@ Cats.2019.2160p.AMZN.WEB-DL.TrueHD.Atmos.7.1.HDR.H.265-FLUX
 Cats.2019.3D.Half-SBS.x264.AC3.5.1-JFC
 Catwoman.Hunted.2022.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
 Celebrity.2023.S01E07.whatahotmess.turnthetables.2160p.NF.WEB-DL.DUAL.DDP5.1.DV.HDR.H.265-FLUX
+Celine.and.Julie.Go.Boating.1974.1080p.Criterion.Bluray.FLAC.1.0.x264-SaL
 Cemetery.Man.1994.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Cemetery.Man.1994.REPACK.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Central.do.Brasil.1998.4K.SDR.2160p.BDRemux.Ita.Por.x265-NAHOM
@@ -1078,7 +1264,10 @@ Civil.War.2024.3D.Half-SBS.AC3.5.1-x264-JFC
 Clarksons.Farm.S02E08.Climaxing.2160p.AMZN.WEB-DL.DDP5.1.HDR.H.265-FLUX
 Classe.tous.risques.1960.4K.Remaster.Criterion.Collection.BluRay.1080p.DD1.0.x264.BMDru
 Click.2006.COMPLETE.UHD.BLURAY-B0MBARDiERS
+Click.2006.Hybrid.2160p.UHD.BluRay.REMUX.DV.HDR10P.HEVC.DTS-HD.MA.5.1-ATELiER
+Click.2006.REMASTERED.MULTi.VF2.2160p.UHD.BluRay.REMUX.HYBRiD.DV.HDR10plus.TrueHD.Atmos.7.1.HEVC-REBiRTH
 Click.2006.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Close-Up (1990) Criterion (1080p BluRay x265 HEVC 10bit AAC 1.0 afm72)
 Closer.2004.PROPER.REPACK.1080p.BluRay.x264-SADPANDA
 Cloud.Atlas.2012.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Cloud.Atlas.2012.CUSTOM.MULTi.Open.Matte.1080p.BluRay.DTS.5.1.x264-QWERTZ
@@ -1088,6 +1277,7 @@ Clueless.1995.2160p.UHD.BluRay.x265-SURCODE
 Clueless.1995.720p.BluRay.x264-HD4U-xpost
 Clueless.1995.BluRay.1080p.DDP.5.1.x264-hallowed
 Clueless.1995.BluRay.1080p.DTS-HD.MA.5.1.AVC.REMUX-FraMeSToR
+Cluny.Brown.1946.Criterion.Collection.1080p.BluRay.FLAC1.0.x264.PTer
 Cmon.Cmon.2021.2160p.UHD.BluRay.REMUX.DV-HDR10.HEVC.TrueHD.7.1.Atmos-d3g
 Cocaine.Bear.2023.3D.Half-SBS.x264.AC3.5.1-JFC
 Coco.2017.1080P.x264.3D.Half-SBS.NL.Ondertiteld
@@ -1100,6 +1290,9 @@ Community (2009) S06E02 (2160p NF WEB-DL Hybrid H265 DV HDR DDP 5.1 English - HO
 Companion.2025.3D.Half-SBS.x264.AC3.5.1-JFC
 Companion.2025.Hybrid.REPACK2.2160p.UHD.Blu-ray.Remux.DV.HDR10Plus.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
 Compass.S2026E23.1080p.Webrip.x264.AAC2.0-MasterCylinder
+Compensation (1999) 4K.REMASTER.CRITERION.COLLECTION.BLURAY 1080p BluRay-LAMA
+Compensation.(1999).4K.REMASTER.CRITERION.COLLECTION.BLURAY.1080p.BluRay-LAMA
+Compensation.1999.4K.Remaster.Criterion.Collection.BluRay.1080p.DD2.0.x264.BMDru
 Conan.The.Barbarian.1982.2160p.Extended.Cut.UHD.BluRay.Remux.DV.P7.HDR.MULTi-Ben.The
 Conan.The.Barbarian.1982.2160p.Extended.Cut.UHD.BluRay.Remux.DV.P7.HDR.MULTi-Ben.The.Men
 Conan.The.Barbarian.1982.2160p.Extended.Cut.UHD.BluRay.Remux.DV.P7.HDR.MULTi.TrueHD.Atmos.H265-BEN.THE.MEN
@@ -1137,6 +1330,7 @@ Creature.from.the.Black.Lagoon.1954.4K.HDR.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Creepshow.1982.PROPER.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR
 Cries.and.Shadows.The.Return.of.the.Exorcist.1975.1080p.BluRay.AVC.DTS-HD.MA.2.0.REMUX
 Crime.101.2026.1080p.DS4K.WEB-DL.x265.10bit.HDR.E-AC-3.5.1-Kris
+Crime.101.2026.CUSTOM.MULTi.VF2.2160p.HYBRID.UHD.BLURAY.REMUX.DV.HDR10Plus.TrueHD.7.1.HEVC-LaFistiniere
 Crime.101.2026.Hybrid.2160p.UHD.Blu-ray.Remux.DV.HDR10P.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
 Crime.101.2026.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
 Crime.360.S01E01.Willkommen.im.Morddezernat.GERMAN.DUBBED.DOKU.WS.DVDRip.XviD.REPACK.PROPER-TVP
@@ -1253,6 +1447,7 @@ Dawn.of.the.Dead.2004.Unrated.Directors.Cut.PROPER.UHD.BluRay.1080p.DDP.5.1.DoVi
 Day.of.the.Dead.1985.OPEN.MATTE.2160p.UHD.BluRay.H265-GAZPROM
 Daybreakers.2009.BluRay.1080p.DTS-HD.MA.7.1.AVC.REMUX-FraMeSToR
 Daylight.1996.REMASTERED.PROPER.REPACK.German.DL.1080p.BluRay.x264-CONTRiBUTiON
+Days.of.Being.Wild.1990.Criterion.1080p.BluRay.x264-OFT
 Dazed.and.Confused.1993.Criterion.1080p.BluRay.DD5.1.x265-iMAGiNE
 Dazed.and.Confused.1993.Criterion.Collection.1080p.Blu-ray.AVC.DTS-HD.MA.5.1
 Dazed.and.Confused.1993.Criterion.Collection.1080p.BluRay.AVC.DTS-HD.MA.5.1-DiYHDHome
@@ -1286,6 +1481,7 @@ Death.Ship.1980.Uncut.German.DL.Untouched.BONUS.PAL.DVD9-K4miK4z3
 Death.Squad.1987.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Death.Wish.1974.COMPLETE.BLURAY-PCH
 Death.by.Hanging.1968.Criterion.Collection.1080p.BluRay.AVC.LPCM.1.0-DiYHDHome
+Death.in.Venice.1971.CUSTOM.REMUX.VOSTFR.1080p.Criterion.Bluray.PCM.AVC-MeMyI
 Death.of.a.Gunfighter.1969.1080p.BluRay.DD+2.0.x264-playHD
 Death.of.a.Unicorn.2025.3D.Half-SBS.x264.AC3.5.1-.JFC
 Death.on.the.Nile.2022.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
@@ -1298,6 +1494,7 @@ Deep.Impact.1998.Open.Matte.1080p.WEBRip.x265.10bit-KONTRAST
 Deep.Ocean.Experience.3D.2011.1080p.BluRay.Half-SBS.DTS.x264-timland
 Deep.Star.Six.1989.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Deep.Water.2026.1080p.Remux.BluRay.DTS-HD.MA.5.1.H264-d3g
+Deep_Purple-Stormbringer-REMASTERED_SPECIAL_EDITION-16BIT-WEB-FLAC-2009-GP-FLAC
 Deepsea.Challenge.2014.1080p.3D.BluRay.Half-SBS.DD5.1.x264-HDAccess
 Delta.Force.1986.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Demon.Slayer.S01E01.German.DL.AAC.1080p.BluRay.10bit.x265.Repack-snk
@@ -1305,6 +1502,7 @@ Den.Aegte.Vare.Live.I.Cirkusbygningen.2002.DANiSH.PAL.DVD9-BiscrokDVD
 Den.Of.Thieves.2.Pantera.2025.Complete.2160p.FRA.UHD.BluRay-P4RT4GE
 Den.Of.Thieves.2.Pantera.V2.2025.1080p.HDCAM-C1NEM4
 Den.Of.Thieves.2018.Extended.Cut.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR
+Depeche.Mode.M.2025.WEB-DL.2160p.HDR10+.HEVC.AC-3.5.1.x265-E
 Depeche.Mode.M.2025.WEB-DL.2160p.HDR10.HEVC.AC-3.5.1.x265-E
 Der.Feuerteufel.1984.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Der.Mann.Ohne.Gnade.1982.Unrated.German.DL.Untouched.PAL.DVD9-K4miK4z3
@@ -1390,6 +1588,7 @@ Detektiv.Conan.S05E26.German.DL.DTS.1080p.BluRay.x265.10bit-ABJ
 Detektiv.Downs.2013.Norwegian.1080p.BDRemux.AVC.FLAC.5.1-NDF
 Detour.1945.Criterion.Collection.1080p.Blu-ray.Remux.AVC.DTS-HD.MA.1.0.KRaLiMaRKo
 Deutschlands.grosse.Clans.S02E01.Die.Aldi.Story.GERMAN.DOKU.HDTV.x264.PROPER.REPACK-RiO
+Devi (1960) Criterion (1080p BluRay x265 10bit Tigole)
 Dexter (2006) - S01E07 - Circle of Friends (1080p BluRay x265 ImE)
 Dexter (2006) - S01E11 - Truth Be Told (1080p BluRay x265 ImE)
 Dexter (2006) - S02E01 - It's Alive! (1080p BluRay x265 ImE)
@@ -1407,13 +1606,21 @@ Dexter S02E07 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
 Dexter S03E08 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
 Dexter S04E04 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
 Dexter S04E06 720p AMZN WEB-DL DDP5 1 H 264-ViSTA
+Dexter S04E07 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
+Dexter S04E12 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
 Dexter S05E01 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
+Dexter S05E12 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
 Dexter S06E02 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
 Dexter S06E06 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
+Dexter S08E04 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA
+Dexter.S01E02.1080p.AMZN.WEB-DL.DDP5.1.H.264-ViSTA
 Dexter.S01E04.720p.AMZN.WEB-DL.DDP5.1.H.264-ViSTA
+Dexter.S01E05.1080p.AMZN.WEB-DL.DDP5.1.H.264-ViSTA
 Dexter.S01E08.720p.AMZN.WEB-DL.DDP5.1.H.264-ViSTA
+Dexter.S01E10.1080p.AMZN.WEB-DL.DDP5.1.H.264-ViSTA
 Dexter.S01E10.720p.AMZN.WEB-DL.DDP5.1.H.264-ViSTA
 Dexter.S01E12.720p.AMZN.WEB-DL.DDP5.1.H.264-ViSTA
+Dheepan.2015.1080p.Criterion.BluRay.10Bit.HEVC.EAC3-SARTRE
 Diana Ross - 2014 - Why Do Fools Fall In Love (Remastered Special Edition)
 Diana Ross-Ross-(FTG 385)-Remastered Special Edition-CD-FLAC-2014-WRE
 Diana Ross-Ross-FTG 385-Remastered Special Edition-CD-FLAC-2014-WRE-T1T
@@ -1436,6 +1643,7 @@ Dickinson.S03E09.German.DL.1080p.WEB.h264-OHD
 Dicks.The.Musical.2023.3D.Half-SBS.x264.AC3.5.1-JFC
 Die.Glorreichen-Les.morfalous.1984.Uncut.Dual.Complete.BluRay-MAMA
 Die.Hard.1988.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
+Die.Hard.1988.Hybrid.2160p.UHD.BluRay.REMUX.DV.HDR10+.HEVC.DTS-HD.MA.5.1-UPiNSMOKE
 Die.Hard.1988.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR.DUAL-LACTATO
 Die.My.Love.2025.REPACK.2160p.UHD.Blu-ray.Remux.HDR.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
 Die.My.Love.2025.REPACK.Hybrid.2160p.UHD.Blu-ray.Remux.HDR10P.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
@@ -1486,6 +1694,7 @@ Does It Matter-Apart Open The Hatch-SVR013-WEB-2021-PTC
 Doganin.Kanunu.2026.S01E09.1080p.Amazon.WEB-DL.H.264.EAC3.TSRG
 Dogfight.1991.Criterion.1080p.BluRay.x264-OFT
 Doggone.Cats.1947.1080p.BluRay.AAC.2.0.x264-PTP
+Dogma.1999.MULTi.VF2.2160p.UHD.BluRay.REMUX.HYBRiD.DV.HDR10.TrueHD.Atmos.7.1.HEVC-REBiRTH
 Dogville.2003.4K.SDR.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Dolby.Digital.A.History.2023.1080p.WEB-DL
 Dollman.vs.Demonic.Toys.1993.1080p.BDRemux
@@ -1528,9 +1737,26 @@ Drive.(2011).1080p.Open.Matte.BluRay.DD.5.1.H.265-Hurtom
 Drive.2011.1080p.Open.Matte.BluRay.DD.5.1.H.265-Hurtom
 Drive.2011.2160p.OpenMatte.DV.HDR10+Ai-Upscaled.HEVC.DTS.5.1-RIFE.4.18v2-60fps-DirtyHippie
 Drive.2011.Open.Matte.1080p.BluRay.DTS-HD.MA.5.1.H.264-SasukeducK
+Drive.He.Said.1971.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0-HiFi
 Drop.2025.1080p.BluRay.DD+5.1.x264-SPHD
 Drops.Of.God.S01E02.Sky.Earth.Humans.2160p.Apple.TV.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV
 Drops.of.God.S01E01.A.Father.2160p.Apple.TV+.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV
+Druck.S03.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E01.Einfach.abhauen.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E02.Joints.&amp;.Sandwiches.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E03.Neon-Schmetterlinge.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E04.Unter.Wasser.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E05.Ich.bin.nicht.schwul.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E06.Das.Wichtigste.im.Leben.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E07.Zusammen.oder.allein.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E08.Outing.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E09.Liebe.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S03E10.Unsere.Zeit.ist.jetzt.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S04E03.Herzklopfen.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S05E03.Stalker.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S06E03.Supernova.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S07E03.Fuhlst.du.es.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
+Druck.S08E03.Der.erste.Kuss.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
 Drumline.2002.Extended.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-EPSiLON
 Ducktales.1987-1990.Collection.2-3xDVD9-PAL
 Duell.Vor.Sonnenuntergang.1965.Uncut.German.Untouched.PAL.DVD9-K4miK4z3
@@ -1593,6 +1819,7 @@ E001 Shorts 10.mkv
 E001 Trailers 1.mkv
 ESPN.E60.WWE.Behind.The.Curtain.1080p.HDTV.x264-HANDJOB
 ESPN.E60.WWE.Behind.The.Curtain.720p.HDTV.x264-HANDJOB
+E_Nomine_-_DAS_TESTAMENT_SPECIAL_EDITION_.2023_Remastered.-WEB-DE-2002-JUSTiFY_iN
 Eagle Eye 2008 1080p WEB-Rip Open-Matte x265 10bit (Eng 5.1 - Hindi NF 640Kbps) VITOENCODES
 Eagle.Eye.2008.1080p.WEB-Rip.Open-Matte.x265.10bit.Eng.5.1-Hindi.NF.640Kbps.VITOENCODES
 Easy.Rider.1969.3D.Half-SBS.AC3.5.1-x264-JFC
@@ -1612,13 +1839,18 @@ El 47 (2024) [BDRemux 1080p AVC ES DTS-HD MA 5.1 Subs]HDO.par2
 El.Faro.De.Las.Orcas.2016.1080p.BluRay.x264-HANDJOB
 Electronic-Electronic-REMASTERED SPECIAL EDITION-16BIT-WEB-FLAC-2013-OBZEN
 Electronic-Electronic-Remastered-Special Edition-2CD-FLAC-2013-WRE
+Electronic-Electronic-Remastered-Special_Edition-2CD-FLAC-2013-WRE
 Elektra.2005.Directors.Cut.1080p.BluRay.AVC.DTS-HD.MA.5.1-DIY.HDHome
 Eleonore.1975.Uncut.German.Untouched.PAL.DVD9-K4miK4z3
 Elf.2003.3D.Half-SBS.x264.AC3.5.1-JFC
 Elio.2025.MULTi.COMPLETE.BLURAY-ZAHARA
 Elizabeth.The.Unseen.Queen.2022.1080p.WEBRip.DDP.2.0.10bit.H.265-iVy
+Ella Fitzgerald-Airmail Special  Jazz Edition-(222429-444)-REMASTERED-4CD-FLAC-2005-RUTHLESS
 Ella Fitzgerald-Airmail Special Jazz Edition-222429-444-REMASTERED-4CD-FLAC-2005-RUTHLESS
+Ella_Fitzgerald-Airmail_Special__Jazz_Edition-(222429-444)-REMASTERED-4CD-FLAC-2005-RUTHLESS
+Elysium-Dance For The Celestial Beings-(AVA034)-REMASTERED SPECIAL EDITION-16BIT-WEB-FLAC-2005-BABAS
 Elysium-Dance For The Celestial Beings-AVA034-REMASTERED SPECIAL EDITION-16BIT-WEB-FLAC-2005-BABAS
+Elysium-Dance_For_The_Celestial_Beings-(AVA034)-REMASTERED_SPECIAL_EDITION-16BIT-WEB-FLAC-2005-BABAS
 Emily.Owens.MD.S01E02.REPACK.PROPER.HDTV.x264-2HD
 Emily.owens.md.s01e02.repack.proper.hdtv.x264-2hd
 Encanto.2021.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT
@@ -1637,6 +1869,7 @@ Epic.3D.2013.1080p.3D.BluRay.HebDub.Half-SBS.x264-iSrael
 Equilibrium.2002.2160p.Ai-Upscaled.Open.Matte.10Bit.H265.DTS-HD.MA.5.1.RIFE.4.15v2-60fps-DirtyHippie
 Equilibrium.2002.OPEN-MATTE.720p.BDRiP.DD5.1.x264-LEGi0N
 Eraserhead.1977.1080p.BluRay.FLAC.2.0.x264-DON
+Erik Wollo - Images Of Light Special Remastered Edition 19902012 24 BITS FLAC NMR 0043 - Erik Wollo - Images Of Light Special Remastered Edition 19902012 24 BITS FLAC.nzb
 Erik Wollo - Images Of Light [Special Remastered Edition] (1990~2012) @320, NMR [01/26] - "Erik Wollo - Images Of Light [Special Remastered Edition].par2"
 Erik Wollo - Images Of Light [Special Remastered Edition] (1990~2012) @320, NMR [08/26] - "03 String Flow.mp3"
 Erik Wollo - Images Of Light [Special Remastered Edition] (1990~2012) @320, NMR [10/26] - "05 Urban Space.mp3"
@@ -1665,6 +1898,8 @@ Erik WÃ¸llo - Wind Journey [Special Remastered Edition] (2018) @320 [06/35] - 
 Erik WÃ¸llo - Wind Journey [Special Remastered Edition] (2018) @320 [08/35] - "4. Dream Lines (Remastered).mp3"
 Erik WÃ¸llo - Wind Journey [Special Remastered Edition] (2018) @320 [12/35] - "8. Wind Journey 2 (Remastered).mp3"
 Erik.Wollo-Images.Of.Light.[Special.Remastered.Edition].1990~2012.[24.BITS].FLAC,.NMR
+Erik_Wollo--Elevations_(Special_Edition)-REMASTERED-WEB-2007-BABAS
+Erik_Wollo--Wind_Journey_(Special_Edition)-REMASTERED-WEB-2001-BABAS
 Ernest.Scared.Stupid.1991.PROPER.BluRay.1080p.DDP.2.0.AVC.HYBRID.REMUX-FraMeSToR
 Escape.of.Planet.Earth.2013.3D.Half-SBS.1080p.HebDub-SBS-Rakuv01
 Eternals.2021.1080p.3D.BluRay.Half-SBS.DD+7.1.x264-BdC
@@ -1672,6 +1907,7 @@ Eternals.2021.IMAX.2160p.DSNP.WEB-DL.DDP5.1.HDR.H.265-FRATERNiTY.DUAL-C.A.A
 Eternals.2021.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.H.265-PiRaTeS
 Eternals.2021.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.HDR.H.265-PiRaTeS
 Eternals.2021.IMAX.2160p.DSNP.WEB-DL.DDPa.5.1.DV.HDR.H.265-PIRATES
+Euphorie.S01E03.Meeresgrund.German.1080p.RTLP.WEB-DL.AAC2.0.H.264-GLOTZE
 Europe.From.Above.S01E03.Germany.1080p.DSNP.WEB-DL.AAC2.0.H.264-OldT
 Everest.2015.3D.1080p.Bluray.x264.Half-SBS.DD5.1-iFT
 Evil.Bong.2006.COMPLETE.BLURAY
@@ -1693,14 +1929,20 @@ Exorcist.II.The.Heretic.1977.Extended.Cut.1080p.BluRay.DD2.0.x264-playHD
 Expect.no.Mercy.1995.DUAL.COMPLETE.BLURAY-HYPNOKROETE
 Exposed.1983.DVD9.PAL
 Extended.Family.S01E01.720p.HDTV.x264
+Extraordinary.Extensions.S03E03.1080p.ALL4.WEB-DL.AAC2.0.H.264-RAWR
+Extraordinary.Extensions.S03E03.720p.ALL4.WEB-DL.AAC2.0.H.264-RAWR
 Extras.S01E01.2005.720p.HDTV.x264
 Extras.S02E01.1080p.HMAX.WEB-DL.DD2.0.H.264-PeDRO
 Extreme.Ops.2002.OPEN.MATTE.1080p.WEBRip.5.1-LAMA
 Extreme.Ops.2002.OPEN.MATTE.720p.WEBRip-LAMA
 Eyes.Wide.Shut.1999.4K.HDR.DV.2160p.BDRemux.Ita.Eng.Fre.x265-NAHOM
 Eyes.Wide.Shut.1999.Criterion.1080p.BluRay.HEVC-HQ.x265.Opus.5.1-MrTentsaw
+Eyes.Wide.Shut.1999.Criterion.1080p.BluRay.HEVC.x265.5.1.BONE
 Eyes.Wide.Shut.1999.Criterion.1080p.BluRay.REMUX.AVC.H.264.DTS-HD.MA.5.1-MrTentsaw
+Eyes.Wide.Shut.1999.Criterion.1080p.BluRay.x265.HEVC.EAC3.SARTRE
+Eyes.Wide.Shut.1999.Criterion.Collection.1080p.BluRay.x264.DTS-WiKi
 Eyes.Wide.Shut.1999.Criterion.Collection.BluRay.1080p.x265.10bit.DTS-HD.MA.5.1-UBits
+Eyes.Wide.Shut.1999.Criterion.REPACK.UHD.BluRay.1080p.DDP.5.1.DoVi.HDR10.x265-SM737
 Eyes.Without.a.Face.1960.4K.HDR.DV.2160p.BDRemux.Ita.Fre.x265-NAHOM
 F001 Frame Rate 24000_1001 (2026).mkv
 F002 Frame Rate 24 (2026).mkv
@@ -1727,13 +1969,17 @@ FIFA.World.Cup.2026.Group.E.Ecuador.vs.Germany.1080p.AP.WEB-DL.H.264.AAC2.0-SPWE
 FIFA.World.Cup.2026.Group.E.Germany.vs.Curacao.1080p.AP.WEB-DL.AVC.AAC2.0.H.264-SPWEB
 FIFA.World.Cup.2026.Round.of.32.Germany.vs.Paraguay.1080p.AP.WEB-DL.H.264.AAC2.0-SPWEB
 FINALLY!! - DOCTOR.WHO.214.THE.IMPOSSIBLE.ASTRONAUT.DVD9.PAL.SUBS.part001.rar
+FLCL.S01E01.Fooly.Cooly.1080p.FLAC.2.0.AVC.HYBRID.REMUX-FraMeSToR
+FLCL.S01E02.Fire.Starter.1080p.FLAC.2.0.AVC.HYBRID.REMUX-FraMeSToR
 FRIENDS.WITH.BENEFITS.(2011).BDREMUX.BRADJE
 FRONTLINE.S2021E13.Germanys.Neo-Nazis.and.the.Far.Right.1080p.WEB-DL.AAC.2.0.H.264-ARCHIVED
+Fabulous.Beasts.S06E03.1080p.BILI.WEB-DL.ZHO.AAC2.0.H.265.MSubs-ToonsHub
 Faceless.1987.UHD.BluRay.2160p.FLAC.2.0.HEVC.REMUX-FraMeSToR
 Fackham.Hall.2025.COMPLETE.UHD.BLURAY-BAKED
 Fail Safe 1964 Criterion 1080p BluRay x264 DuaL-TURKO
 Fail-Safe 1964 Criterion BluRay Remux 1080p AVC FLAC 1 0-ZQ
 Fail-Safe.1964.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0-ZQ
+Fail.Safe.1964.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0.ZQ
 Fake.or.Fortune.S14E02.A.Passage.to.India.1080p.WEBRip.x264-CBFM
 Fake.or.Fortune.S14E03.The.Last.Gift.1080p.WEBRip.x264-CBFM
 Fake.or.Fortune.S14E04.Freud.or.Fraud.1080p.WEBRip.x264-CBFM
@@ -1767,8 +2013,14 @@ Fargo.S03E07.REPACK.PROPER.720p.HEVC.x265-MeGusta
 Fargo.S03E07.REPACK.PROPER.HDTV.x264-SVA
 Fast.&.Sexy.3D.German.DTS.Half.SBS.x264.1080p.-.NoName
 Fast.And.Furious.5.2011.Extended.Cut.HYBRID.MULTi.VFF.2160p.DV.BluRay.4KLight.DTS-X.7.1.x265-J4CK
+Fast.And.Furious.5.2011.Extended.Cut.HYBRID.MULTi.VFF.2160p.HDR10PLUS.DV.REMUX.HEVC.DTS-X.7.1-J4CK
 Fast.And.Furious.6.2013.Extended.Cut.HYBRID.MULTi.VFF.2160p.DV.BluRay.4KLight.DTS-X.7.1.x265-J4CK
+Fast.And.Furious.6.2013.Extended.Cut.HYBRID.MULTi.VFF.2160p.HDR10PLUS.DV.REMUX.HEVC.DTS-X.7.1-J4CK
+Fast.And.Furious.6.2013.Theatrical.Cut.HYBRID.MULTi.VFF.2160p.HDR10.DV.REMUX.HEVC.DTS-HD.HR.7.1-J4CK
 Fast.And.Furious.7.2015.Extended.Cut.HYBRID.MULTi.VFF.2160p.DV.BluRay.4KLight.DTS-X.7.1.x265-J4CK
+Fast.And.Furious.7.2015.Extended.Cut.HYBRID.MULTi.VFF.2160p.HDR10PLUS.DV.REMUX.HEVC.DTS-X.7.1-J4CK
+Fast.And.Furious.7.2015.Theatrical.Cut.HYBRID.MULTi.VFF.2160p.HDR10.DV.REMUX.HEVC.DTS-X.7.1-J4CK
+Fast.And.Furious.8.2017.Theatrical.Cut.HYBRID.MULTi.VFF.2160p.HDR10.DV.REMUX.HEVC.DTS-X.7.1-J4CK
 Fast.And.Furious.9.2021.Extended.Cut.MULTi.VFF.2160p.DV.BluRay.4KLight.TrueHD.Atmos.7.1.x265-J4CK
 Fast.Five.2011.1080p.HQ.HYBRID.OPEN-MATTE.x265.10bit.HEVC.English.384Kbps.DDP.5.1-Hindi.640Kbps.DDP.5.1.VITOENCODES
 Fast.Five.2011.Extended.Cut.BluRay.1080p.DDP.5.1.x264-hallowed
@@ -1939,6 +2191,7 @@ Frances.Ha-Criterion.2012.1080p.H.265.10bit.iTA.EnG.AAC.Sub.iTA.EnG-MIRCrew
 Frankie.Drake.Mysteries.S01.1080p.BluRay.Remux.DTS-HD.MA.5.1.AVC-TrollHD
 Freakshow.1988.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Freddie.Mercury-Mr.Bad.Guy.Special.Edition.-REMASTERED-WEB-2019-ENTiTLED
+Freddie_Mercury-Mr_Bad_Guy_Special_Edition_-REMASTERED-WEB-2019-ENTiTLED
 Free.Guy.2021.3D.Half-SBS.AC3.5.1-x264-JFC
 Free.Guy.3D_2021.Full-SBS.x-JFC_4k_hevc
 Fresh.Kill.1994.Criterion.1080p.BluRay.x264-OFT
@@ -1951,9 +2204,15 @@ Friends.S02E07.The.One.Where.Ross.Finds.Out.PROPER.1080p.DTS-HD.MA.5.1.AVC.HYBRI
 Friends.S04E10.The.One.with.the.Girl.from.Poughkeepsie.PROPER.1080p.DTS-HD.MA.5.1.AVC.HYBRID.REMUX-FraMeSToR
 Fright.1971.1080p.BluRay.REMUX.AVC.FLAC.2.0-ISA
 Fright.Night.2011.German.DL.untouched.Pal.DVD9-WD (62/78) - "Fright.Night.2011.German.DL.untouched.Pal.DVD9-WD.part61.rar" - 6,77 GB - (www.usenetrevolution.info + www.town.ag sponsored by www.ssl-news.info)
+Frog.and.Toad.S01.1080p.ATVP.WEB-DL.DDP5.1.Atmos.H.264-APEX
+Frog.and.Toad.S01E01.Cookies.&.The.Letter.1080p.ATVP.WEB-DL.DDP5.1.Atmos.H.264-APEX
+Frog.and.Toad.S01E02.Ice.Cream.&.A.Lost.Button.1080p.ATVP.WEB-DL.DDP5.1.Atmos.H.264-APEX
+Frog.and.Toad.S01E05.The.Kite.&.Lost.1080p.ATVP.WEB-DL.DDP5.1.Atmos.H.264-APEX
+Frog.and.Toad.S01E06.The.Story.&.A.List.1080p.ATVP.WEB-DL.DDP5.1.Atmos.H.264-APEX
 From.Noon.Till.Three.1976.CUSTOM.NL.SUBBED.BDREMUX-RVL
 From.Russia.With.Love.1963.1080p.35mm.OPEN-MATTE.x265.10Bit.HEVC.English.224Kbps.DD.2.0-ORG.AMZN.224Kbps.DDP.2.0.VITOENCODES
 Frontier(s).Kennst.Du.Deine.Schmerzgrenze.2007.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
+Frownland.2008.Criterion.1080p.BluRay.x264-OFT
 Frozen.2013.1080p.Dutch.&amp;.English.3D.Half.SBS
 Frozen.2013.Sing-Along.1080p.BluRay
 Frozen.3D.Half-SBS.1080p.Hebrew.Dubbed-P2P-Rakuv01
@@ -2014,6 +2273,7 @@ Genug.Jeder.hat.eine.Grenze.2002.OPEN.MATTE.German.AC3D.DL.1080p.WEB.H264-CLASSi
 Geomeun.sajedeul.2015.1080p.BluRay.DD+5.1.x264-playHD
 George Winston-Ballads and Blues 1972 The Early Recordings-Special Edition-Remastered-CD-FLAC-2006-FORSAKEN
 George.and.A.J.2009.BluRay.1080p.DD5.1.AVC.REMUX-FraMeSToR
+George_Winston-Ballads_and_Blues_1972_The_Early_Recordings-Special_Edition-Remastered-CD-FLAC-2006-FORSAKEN
 Geostorm 2017-1080p-Open Matte-Multi Audio-x264 Tam.Tel BD 5.1 448Kbps.Eng DD 5.1 640Kbps MSubs By.JackSparrow038
 Geostorm.2017.Open.Matte.1080p.WEBRip.x265.10bit-KONTRAST
 Germany.Year.Zero.1948.1080p.Criterion.Collection.BluRay.AVC.LPCM.1.0-DiYHDHome
@@ -2056,9 +2316,11 @@ Ghostbusters.Frozen.Empire.2024.2160p.UHD.BluRay.REMUX.HEVC.HDR10.10bit.TrueHD.7
 Ghostbusters.Frozen.Empire.2024.COMPLETE.UHD.BLURAY-4KDVS-AsRequested
 Ghostbusters_2__1989__MULTI_COMPLETE_UHD_BLURAY-NRG_NZBDUMP.COM
 Gigantic.2008.1080p.BDRemux.AVC.DTS-HD.MA.5.1-kA
+Gilda.1946.Criterion.MULTi.1080p.x264.DTS.1.0.AC3.2.0-BzH29
 Gilmore.Girls.S06.PAL.DVD9-NOGRP
 Gina.Lisa.Lohfink.Sextape.Special.Remastered.Uncut.Edition.German.XXX.DVDRip.XviD-GiNALiSA
 Ginger.Snaps.2000.COMPLETE.UHD.BLURAY-B0MBARDiERS-AsRequested
+Girlfight.2000.Criterion.1080p.BluRay.HEVC.x265.5.1.BONE
 Givat.Halfon.Eina.Ona.AKA.Halfon.Hill.Doesnt.Answer.1976.PAL.DVD9-IL-DownRev
 Givat.Halfon.Eyna.Ona.1976.PAL.DVD9-IL-Anonymous.DownRev
 Givat.Halfon.Eyna.Ona.1976.PAL.DVD9-IL-Anonymous.DownRev-bb5057
@@ -2115,12 +2377,15 @@ Grande.Bouffe.La.1973.BDRemux.1080p.AVC.LPCM.1.0.-BxN
 Grave.of.the.Fireflies.1988.BluRay.1080p.AAC.2.0.x264-hallowed
 Gravity.3D.2013.1080p.BluRay.Half-SBS.DTS.X264-PublicHD
 Gravity.3D.2013.1080p.BluRay.Half-SBS.DTS.x264-PHD
+Grays.Anatomy.1996.Criterion.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi
 Grease.1978.3D.Conv.Half-SBS.AC3.5.1
+Green Book 2018 REPACK2 Hybrid 2160p ReMuX HEVC TrueHD 7.1-BiZKiT
 Green Lantern (2011) Extended Cut 1080p 10bit BluRay HEVC [O
 Green.Lantern.2011.Extended.Cut.BluRay.1080p.DDP.5.1.x264-hallowed
 Green.Lantern.2011.Extended.Cut.BluRay.1080p.DDP.5.1.x264.hallowed
 Green.Lantern.German.DL.PAL.DVD9.Untouched-NL (04/79) - "Green.Lantern.German.DL.PAL.DVD9.Untouched-NL.part03.rar" - 6,83 GB >>>German-DVD-CREW<<<
 Green.Lantern.The.Animated.Series.S01E16.Steam.Lantern.1080p.FLAC.2.0.AVC.REMUX-FraMeSToR
+Green_Book_2018_REPACK2_Hybrid_2160p_ReMuX_HEVC_TrueHD_7.1-BiZKiT
 Greenland.2020.Complete.2160p.FRA.UHD.BluRay-P4RT4GE
 Gregorian.Masters.Of.Chant.Chapter.8.2011.DVD9.BONUS.PAL.MDVDR-RHyTM
 Gremlins.1984.2160p.PCOK.WEB-DL.DDP.5.1.DV.H.265-PIRATES
@@ -2132,6 +2397,7 @@ Gremlins.1984.2160p.PCOK.WEB-DL.DDP.5.1.H.265-PiRaTeS
 Gremlins.2.The.New.Batch.1990.3D.Half-SBS.x264.AC3.5.1-JFCmkv
 Grey.Gardens.1975.Criterion.Collection.1080p.Blu-ray.Remux.AVC.DTS-HD.MA.1.0-KRaLiMaRKo
 Groundhog.Day.1993.4K.HDR.DV.2160p.BDRemux.Ita.Eng.Fre.x265-NAHOM
+Groundhog.Day.1993.Hybrid.1080p.BluRay.REMUX.AVC.TrueHD.Atmos.7.1-BLURANiUM
 Guardians.of.the.Galaxy.2014.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.H.265-PiRaTeS
 Guardians.of.the.Galaxy.2014.IMAX.2160p.DSNP.WEB-DL.DDPA.5.1.DV.HDR.H.265-PiRaTeS
 Guardians.of.the.Galaxy.2014.IMAX.2160p.DSNP.WEB-DL.DDPa.5.1.DV.H.265-PIRATES
@@ -2153,8 +2419,14 @@ Guardians.of.the.Galaxy.Vol.3.2023.IMAX.2160p.MA.WEB-DL.TrueHD.Atmos.7.1.DV.HDR1
 Guardians.of.the.Galaxy.Vol.3.2023.IMAX.2160p.MA.WEB-DL.TrueHD.Atmos.7.1.SDR.H.265-TheFarm
 Guardians.of.the.Galaxy.Vol.3.2023.IMAX.4K.HDR.DV.2160p.WEBDRL.Ita.Eng.x265-NAHOM
 Guardians.of.the.Galaxy.Vol3.2023.IMAX.2160p.UHD.BluRay.HDR.DoVi.TrueHD.7.1.Atmos.x265-SPHD
+Guerre.et.Paix.Partie.2.Andrei.Bolkonsky.1966.VOSTFR.1080p.CRITERION.BDrip.x265.DTS-AZAZE
+Guerre.et.Paix.Partie.3.Andrei.Bolkonsky.1966.VOSTFR.1080p.CRITERION.BDrip.x265.DTS-AZAZE
+Guerre.et.Paix.Partie.4.Andrei.Bolkonsky.1966.VOSTFR.1080p.CRITERION.BDrip.x265.DTS-AZAZE
+Guerre.et.Paix.Partie.I.Andrei.Bolkonsky.1966.VOSTFR.1080p.CRITERION.BDrip.x265.DTS-AZAZE
 Gummo (1997) Criterion 1080P X264 Aac
 Gummo (1997) Criterion 1080p X264 AAC ENG srt
+Gummo (1997) Criterion ENG 1080p H264 [03/51] - Gummo (1997) Criterion 1080P X264 Aac
+Gummo.1997.Criterion.1080p.BluRay.HEVC.x265.BONE
 Gun.Woman.2014.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Gunner.Palace.2004.PROPER.REPACK.DVDRip.XviD-TWiST
 H001 HDR10 1000nit Static Metadata (2026).mkv
@@ -2181,6 +2453,21 @@ HaMadrich.LaMahapecha.2010.PAL.DVD9-IL.Anonymous-DownRev
 HaOfe.MeBerlin.AKA.The.Cakemaker.2017.PAL.DVD9-IL-DownRev
 Hachi.A.Dogs.Tale.2009.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1.DUAL-faBR
 Hahataim.AKA.Past.Life.2016.PAL.DVD9-IL-DownRev
+Haikyu!! S01E07 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E10 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E12 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E14 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E15 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E16 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E17 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E18 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E19 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E20 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E21 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E22 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E23 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E24 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
+Haikyu!! S01E25 HYBRID 1080p BluRay REMUX AVC [Hindi AMZN DDP 2.0 + Japanese-English DTS-HD MA 2.0] x264 (E.N.D-KiNGSMAN)
 Hairspray.1988.Criterion.1080p.BluRay.HEVC.x265.5.1-BONE
 Hairy.Bikers.Bakeation.S01E03.Germany.1080p.UKTV.WEB-DL.AAC2.0.H.264-HiNGS
 Hajyt.2.2025.FiNNiSH.COMPLETE.BLURAY-PPEAK
@@ -2202,6 +2489,7 @@ Hammer.House.of.Horror.S01.1080p.BluRay.x264-OUIJA
 Hamnet.2025.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Hancock.2008.3D.Half-SBS.eac3.5.1-x264-JFC
 Hancock.2008.{edition-Theatrical}.1080p.BluRay.TrueHD.7.1.Atmos.10bit.H.265-iVy
+Hang.em.High.1968.2160p.UHD.BluRay.Hybrid.REMUX.DV.HDR.HEVC.FLAC.2.0-TRiToN
 Hanna.S01E02.REPACK.PROPER.720p.HEVC.X265-MeGusta
 Hanna.S01E02.REPACK.PROPER.720p.HEVC.x265-MeGusta
 Hanna.S01E02.REPACK.PROPER.720p.HEVC.x265-MeGusta-Obfuscated
@@ -2276,11 +2564,14 @@ Heart.of.Dragon.1985.Theatrical.Cut.PROPER.BluRay.1080p.FLAC.1.0.AVC.HYBRID.REMU
 Heart.of.Dragon.1985.Theatrical.Cut.UHD.BluRay.2160p.FLAC.1.0.DV.HEVC.HYBRID.REMUX-FraMeSToR
 Heat.1995.2160p.UHD.BluRay.REMUX.HDR.HEVC.DTS-HD.MA.5.1-FraMeSToR.DUAL-LACTATO
 Heat.1995.Directors.Cut.Remastered.BluRay.1080p.DDP.5.1.x264-hallowed
+Heaven.Can.Wait.1943.Criterion.Collection.CUSTOM.MULTi.VFi.1080p.HDLight
 Heaven.is.for.Real.2014.BluRay.1080p.AVC.DTS-HD.MA5.1.REMUX-FraMeSToR
 Heavy.Mental.2014.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-Tux
+Hedwig.and.the.Angry.Inch.2001.Criterion.1080p.BluRay.x265.10bit.Tigole
 Heel.2025.COMPLETE.BLURAY-UNTOUCHED
 Heimataerde-Gotteskrieger-DE-Special Remastered Edition-CD-2021-FWYH
 Heimataerde-Gotteskrieger-DE-Special.Remastered.Edition-CD-2021-FWYH
+Heimataerde-Gotteskrieger-DE-Special_Remastered_Edition-CD-2021-FWYH
 Heisse.Sporen.1968.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
 Hell.House.LLC.2015.DIRECTORS.CUT.1080p.BluRay.x264.AAC-LAMA
 Hell.House.LLC.2015.Directors.Cut.1080p.BluRay.DD.2.0.x264-j3rico
@@ -2291,6 +2582,7 @@ Hellboy.2004.3D.half.SBS
 Hellboy.2004.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
 Hellboy.2004.Directors.Cut.1080p.BDRip.DDP7.1.Atmos.x265-Vialle
 Hellboy.Animated.Blood.and.Iron.2007.BluRay.1080p.TrueHD.Atmos.7.1.VC-1.HYBRID.REMUX-FraMeSToR
+Hellboy.Animated.Blood.and.Iron.2007.BluRay.1080p.TrueHD.Atmos.7.1.VC-1.HYBRiD.REMUX-FraMeSToR
 Hellraiser.IV.Bloodline.1996.Uncut.German.DL.Untouched.FS.PAL.DVD9-K4miK4z3
 Hellraiser.IV.Bloodline.1996.Uncut.German.DL.Untouched.WS.PAL.DVD9-K4miK4z3
 Hells.Kitchen.US.S16E05.REPACK.PROPER.720p.HDTV.x264-W4F
@@ -2298,11 +2590,24 @@ Hells.Kitchen.US.S16E05.REPACK.PROPER.720p.HDTV.x264-W4F-Obfuscated
 Helvetica.2019.S01.GERMAN.1080p.WEB-DL.DDP2.0.H.264-WAYNE
 Henry.Und.Julie.2010.3D.Half-SBS.German.DTS.DL.720p.BluRay.X264-LeetHD
 Henrys.Crime.2010.German.DTS-HD.DL.1080p.BluRay.AVC.Remux-HDS
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01 Hybrid-Remux
 Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01 Hybrid-Remux/Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E12 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E01 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
 Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E01 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E02 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
 Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E02 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E03 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E04 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
 Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E04 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E05 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E06 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E07 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E08 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E09 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
 Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E09 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-.mkv
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E10 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E11 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Hensuki Are you willing to fall in love with a pervert, as long as she's a cutie S01E12 2019 1080p Bluray Hybrid-REMUX AVC TrueHD 5.1 Dual Audio -ZR-
 Hensuki.Are.You.Willing.To.Fall.In.Love.With.A.Pervert,.As.Long.As.She's.A.Cutie.S00E01.Hensuki.â–½.01.1080p.BluRay.REMUX.MLP.2.0.AVC-iVy
 Hensuki.Are.You.Willing.To.Fall.In.Love.With.A.Pervert,.As.Long.As.She's.A.Cutie.S00E02.Hensuki.â–½.02.1080p.BluRay.REMUX.MLP.2.0.AVC-iVy
 Hensuki.Are.You.Willing.To.Fall.In.Love.With.A.Pervert,.As.Long.As.She's.A.Cutie.S00E03.Hensuki.â–½.03.1080p.BluRay.REMUX.MLP.2.0.AVC-iVy
@@ -2330,6 +2635,7 @@ Hide.from.the.Rain.2023.S01E05.1080p.VIKI.WEB-DL.AAC2.0.H.264-DUSKLiGHT
 Hide.from.the.Rain.2023.S01E07.1080p.VIKI.WEB-DL.AAC2.0.H.264-DUSKLiGHT
 High.Art.1998.Criterion.1080p.BluRay.x264-OFT
 High.Crime.1973.4K.HDR.DV.2160p.BDRemux.Ita.Eng.x265-NAHOM
+High.Tension.2003.UHD.BluRay.2160p.DTS-HD.MA.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
 High.and.Low.1963.Criterion.Collection.Blu-ray.1080p.AVC.DTS-HD.MA.4.0
 Highlander.1986.Directors.Cut.1080p.BluRay.DD+5.1.x264-playHD
 Highlander.1986.Directors.Cut.1080p.BluRay.DD.5.1.x264-playHD
@@ -2428,6 +2734,7 @@ House.Of.The.Dragon.S01E09.2160p.BluRay.COMPLETE.REMUX.DV.P7.HDR.ENG.LATINO.ITA.
 House.Of.The.Dragon.S01E10.2160p.BluRay.COMPLETE.REMUX.DV.P7.HDR.ENG.LATINO.ITA.VFF.GERMAN.HINDI.RUS.TrueHD.Atmos.7.1.H.265-BEN.THE.MEN
 House.Of.The.Dragon.S03E07.iNTERNAL.1080p.AMZN.WEBRip.HEVC.10bit.AAC5.1-LuCY
 House.Party.1990.CRITERION.1080p.BluRay.x264.AAC5.1-LAMA
+House.Party.1990.Criterion.1080p.BluRay.x264-OFT
 How to Train Your Dragon-The Hidden World 2019 1080p 3D BluRay AVC Half-SBS TrueHD Atmos 7.1 REMUX-BiTOR
 How.The.Grinch.Stole.Christmas.2000.3D.Half-SBS.x264.AC3.5.1-JFC
 How.To.Make.A.Killing.2026.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
@@ -2521,6 +2828,7 @@ Invader.ZIM.S02E07.Vindicated.720p.PLUTO.WEB-DL.AAC2.0.x264-AndreMor
 Invader.ZIM.S02E08.The.Voting.of.the.Doomed.720p.PLUTO.WEB-DL.AAC2.0.x264-AndreMor
 Invader.ZIM.S02E09.Gaz.Taster.of.Pork.720p.PLUTO.WEB-DL.AAC2.0.x264-AndreMor
 Invader.ZIM.S02E10.The.Frycook.What.Came.from.All.That.Space.720p.PLUTO.WEB-DL.AAC2.0.x264-AndreMor
+Irma.Vep.1996.CRITERION.VOSTFR.1080p.BDrip.x265.DTS-AZAZE
 Iron Man 2 (2010) [tmdb-10138] [1080p BDrip] [x264] [AC3-DTS 5.1 DUAL] [Subs- Spa, Eng] [16,2 Mbps]
 Iron Man 2 (2010) [tmdb-10138] [1080p BDrip] [x264] [AC3-DTS 5.1 DUAL] [Subs- Spa, Eng] [16,2 Mbps].6821
 Iron. Man. 2. 2010. DVDRip. XviD. AC3-ViSiON
@@ -2538,6 +2846,7 @@ Its.Always.Sunny.S14.1080p.WEB-DL.PROPER.H264
 Jack_Reacher_Never_Go_Back__2016__Multi.COMPLETE.UHD.BLURAY-NRG_NZBDUMP.COM
 Japn.2002.Criterion.Collection.1080p.Blu-ray.Remux.AVC.DTS-HD.MA.2.0-KRaLiMaRKo-AsRequested
 Jawan.2023.1080p.NF.WEB-DL.Dolby.Digital.5.1.H.264-Telly
+Jaws.1975.PROPER.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR
 Jaws.3-D.1983.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
 Jaws.3D.1983.1080p.HMAX.WEB.DL.DD2.0.x264.DUAL.Yatogam1
 Jay.Lenos.Garage.S07E01.REPACK.PROPER.1080p.WEBRip.x264-BAE
@@ -2572,34 +2881,55 @@ Jean.Michel.Jarre-Oxygene.7-13-EK.68009-REPACK-PROPER-CD-FLAC-1997-EMG
 Jenseits.Von.Eden.1955.Uncut.German.ML.Untouched.PAL.DVD9-K4miK4z3
 Jersey.Shore.S02E01.REPACK.PROPER.DVDRip.XviD-NODLABS-AsRequested
 Jersey.Shore.S02E01.REPACK.PROPER.DVDRip.XviD-NODLABS-AsRequested-Obfuscated
+Jimi.Plays.Monterey.1986.The.Criterion.Collection.169.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi
 Joan.of.Arc.1999.Extended.Cut.1080p.BluRay.DD+7.1.x264-playHD
 Joan.of.Arc.1999.Extended.Cut.1080p.BluRay.DD.7.1.x264-playHD
 Joan.of.Arc.1999.Extended.Cut.720p.BluRay.DD+5.1.x264-playHD
 Joan.of.Arc.1999.Extended.Cut.720p.BluRay.DD.5.1.x264-playHD
 Jogos.Trapacas.e.Dois.Canos.Fumegantes.1998.HYBRID.1080p.BluRay.REMUX.AVC.DTS-HD.MA5.1-FraMeSToR.DUAL-C.A.A
 Johan.And.Peewit.2xDVD9.PAL-CultFilms
+John Williams-Music From The Motion Picture Jaws-OST Remastered Special Edition-3CD-FLAC-2025-CALiFLAC-FTP
 John.Sugar.S02E02.GERMAN.DL.1080P.WEB.H264.REPACK-WAYNE
 John_Wick_Chapter_3_Parabellum_2019_COMPLETE_BLURAY_2160p_DV_HDR_TrueHD 7_1_Atmos ENGsubs Retail
 John_Wick_Chapter_3_Parabellum_2019_COMPLETE_BLURAY_2160p_HDR_TrueHD 7_1_Atmos ENGsubs Retail
 John_Wick_Chapter_4_2023_COMPLETE_BLURAY_2160p_DV_HDR_TrueHD 7_1_Atmos ENGsubs Retail
 John_Williams-Music_From_The_Motion_Picture_Jaws-OST_Remastered_Special_Edition-3CD-2025-CR
 John_Williams-Music_From_The_Motion_Picture_Jaws-OST_Remastered_Special_Edition-3CD-FLAC-2025-CALiFLAC
+Johnny Winter-Live Bootleg Series Vol 1 (Special Edition)-REPACK-REMASTERED EP-16BIT-WEB-FLAC-2015-OBZEN
 Johnny Winter-Live Bootleg Series Vol 1 Special Edition-REPACK-REMASTERED EP-16BIT-WEB-FLAC-2015-OBZEN
+Johnny_Winter-Live_Bootleg_Series_Vol_1_(Special_Edition)-REPACK-REMASTERED_EP-16BIT-WEB-FLAC-2015-OBZEN
 Joseon.Attorney.A.Morality.2023.S01E01.1080p.VIKI.WEB-DL.AAC2.0.H.264-DUSKLiGHT
 Joseon.Attorney.A.Morality.2023.S01E02.1080p.VIKI.WEB-DL.AAC2.0.H.264-DUSKLiGHT
 Joseon.Attorney.A.Morality.2023.S01E03.1080p.VIKI.WEB-DL.AAC2.0.H.264-DUSKLiGHT
 Joseon.Attorney.A.Morality.2023.S01E04.1080p.VIKI.WEB-DL.AAC2.0.H.264-DUSKLiGHT
+Journey.to.Italy.1954.Criterion.1080p.BluRay.x264-nikt0.mkv
+Journey.to.Italy.1954.Criterion.Collection.1080p.BluRay.AVC.LPCM.1.0-DiY.HDHome
+Jubal.1956.The.Criterion.Collection.1080p.Blu-Ray.BD25
+Judex.1963.Criterion.1080p.BluRay.x264-OFT
+Judex.1963.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0-HiFi-AsRequested
+Jumanji.The.Next.Level.2019.BluRay.1080p.DTS-X.7.1.AVC.HYBRID.REMUX-FraMeSToR-AsRequested
+Jumanji.The.Next.Level.2019.Hybrid.1080p.BluRay.REMUX.AVC.DTS-X-EPSiLON
 Jumanji__1995__MULTi.COMPLETE.UHD.BLURAY-NRG_NZBDUMP.COM
 Jurassic.World.Dominion.2022.Extended.Cut.1080p.UHD.BluRay.DD.7.1.DoVi.HDR10.x265-DON
 Jurassic.World.Dominion.2022.Extended.Cut.BluRay.1080p.DDP.5.1.x264-hallowed
 Jurassic.World.Rebirth.2025.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
 Just.Listen.To.Teacher.[Mommy.Blows.Best.2026].XXX.WEB-DL.2160p.MP4-P2P
+Justice.League.Dark.Apokolips.War.2020.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
 Justice.League.Throne.of.Atlantis.2015.COMPLETE.UHD.BLURAY-WhiteRhino-AsRequested
 Kalkofe.Klassiker.SE.GERMAN.DL.COMPLETE.PAL.DVD9
+Kamisama Kiss S02E06 2015 1080p BluRay Hybrid REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Kamisama Kiss S02E07 2015 1080p BluRay Hybrid REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Kamisama Kiss S02E08 2015 1080p BluRay Hybrid REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Kamisama Kiss S02E10 2015 1080p BluRay Hybrid REMUX AVC TrueHD 5.1 Dual Audio -ZR-
+Kamisama Kiss S02E12 2015 1080p BluRay Hybrid REMUX AVC TrueHD 5.1 Dual Audio -ZR-
 Katerine-Ayo Technology-REPACK-PROPER-DVDRiP-x264-2009-mV4U
 Keeping.Mum.2005.1080p.BluRay.AVC.DTS-HD.MA.5.1.REMUX-VTM
 Keeping.Mum.2005.1080p.BluRay.x264-PFa
 Kidnapped.Du.Dachtest.Du.Bist.Zuhause.Sicher.2010.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
+Kill.Bill.The.Whole.Bloody.Affair.2004.Hybrid.2160p.UHD.Blu-ray.Remux.DV.HDR10P.HEVC.DTS-HD.MA.5.1-CiNEPHiLES
+Kill.Bill.The.Whole.Bloody.Affair.2004.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Killers.of.the.Flower.Moon.2023.1080p.Criterion.Collection.Blu-ray.AVC.Atmos.TrueHD7.1-DiYHDHome
+Killers.of.the.Flower.Moon.2023.Hybrid.Criterion.1080p.UHD.BluRay.DoVi.HDR10P.x265.BRUTE
 Killing.Eve.S01E01.PROPER.REPACK.720p.HDTV.x264-W4F
 Killing.Eve.S01E01.PROPER.REPACK.720p.HDTV.x264-W4F-Obfuscated
 Killing.Eve.S01E01.proper.repack.720p.HDTV.x264-w4f
@@ -2626,16 +2956,20 @@ Kim.Possible.S01E19.Monkey.Ninjas.in.Space.MULTI.1080p.DSNP.WEB-DL.AAC2.0.x264-A
 Kim.Possible.S01E20.Ron.the.Man.MULTI.1080p.DSNP.WEB-DL.AAC2.0.x264-AndreMor
 Kim.Possible.S01E21.Low.Budget.MULTI.1080p.DSNP.WEB-DL.AAC2.0.x264-AndreMor
 Kimaat.Mefursemet.AKA.Almost.Famous.2017.PAL.DVD9-IL-DownRev
+Kindering.1987.1080p.Criterion.Bluray.REMUX.AVC.AC3-WHRen
 King.Kong.2005.Extended.Cut.1080p.UHD.BluRay.DD.7.1.x264-LoRD
 King.Kong.2005.Extended.Cut.BluRay.1080p.DDP.5.1.x264-hallowed
 King.Kong.2005.Extended.Cut.REPACK.UHD.BluRay.2160p.DDP.7.1.HDR.x265-hallowed
 King.Of.Queens.S08.MULTi.COMPLETE.BLURAY-SharpHD
+King.Queen.and.Joker.1921.Criterion.Collection.1080p.Blu-ray.Remux.AVC.DD.2.0.--KRaLiMaRKo
 Kingdom.Ashin.of.The.North.2021.PROPER.REPACK.1080p.WEB.H264-FLAME
 Kingdom.S04E01.1080p.WEB-DL.E-AC-3.2.0.H.264-GRP
 Kingsman_The_Golden_Circle__2017__COMPLETE.UHD.BLURAY-NRG_NZBDUMP.COM
 Kinski, the genious and madman: Klaus.Kinski.Paganini.1989.PAL.2DISC.READ.NFO.DVD9.D1.Kinofassung - [060/148] - "D1_KINOFASSUNG.part058.rar"
 Kippur.2000.PAL.DVD9-IL.Anonymous-DownRev
 Kiss.And.Tell.1996.PROPER.REPACK.DVDRip.XviD-EPiSODE
+Kiss.of.the.Spider.Woman.1985.1080p.Criterion.Collection.Blu-ray.AVC.DTS-HD.MA5.1-DiYHDHome
+Kiss.of.the.Spider.Woman.2025.Hybrid.2160p.UHD.Blu-ray.Remux.DV.HDR10P.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
 Kisses.2008.PROPER.REPACK.DVDRip.x264-REGRET
 Knight.and.Day.2010.Extended.Cut.720p.BluRay.DD.5.1.x264-SPHD
 Knight.and.Day.2010.Extended.Cut.720p.BluRay.DTS.x264-HiDt
@@ -2646,6 +2980,8 @@ Kollegah-Imperator-DE-REAL_REPACK_PROPER-CD-FLAC-2016-TM
 Kollegah-Imperator-DE-REPACK-PROPER-CD-FLAC-2016-TM
 Kommando.Invasion.1986.Uncut.German.DL.Untouched.PAL.DVD9-K4miKaz3
 Kopfgeld.Ein.Dollar.1966.Uncut.German.ML.Untouched.PAL.DVD9-K4miK4z3
+Kuroneko.1968.Criterion.BluRay.1080p.FLAC.1.0.AVC.REMUX-FraMeSToR
+Kwaidan.1964.Criterion.Collection.Blu-ray.1080p.REMUX.AVC.FLAC.1.0-HDH
 L.A.Law.1986.S06.1080p.DSNP.WEBRip.10bit.EAC3.5.1.x265-iVy
 L.A.Law.1986.S07.1080p.DSNP.WEBRip.10bit.EAC3.5.1.x265-iVy
 L.A.Law.1986.S08.1080p.DSNP.WEBRip.10bit.EAC3.5.1.x265-iVy
@@ -2743,15 +3079,30 @@ L009 Channel Layout 5.1 (2026).mkv
 L010 Channel Layout 6.1 (2026).mkv
 L011 Channel Layout 7.1 (2026).mkv
 L012 Dual Mono In One Stereo Stream (2026).mkv
+LUltime.Razzia.1956.MULTi.Criterion.Collection.1080p.Blu-ray.HEVC.FLAC.AZAZE
 La Bella Gente (2011) - [06/34] - "LA.BELLA.GENTE.2011.PAL.MULTI.DVD9-UTT.part04.rar"
+La Haine 1995 Criterion (1080p x265 10bit Tigole)
+La.Bamba.1987.4K.RESTORED.CUSTOM.CRITERION.MULTi.1080p.BluRay.REMUX.AVC.VF.LaserDisc.PCM.16Bits-BobaFett6969
+La.Bamba.1987.Criterion.1080p.Blu-ray.Remux.AVC.DTS-HD.MA.5.1-CiNEPHiLES
 La.Bride.Sur.Le.Cou.1961.Repack.Proper.1080i.HDTV.DD+2.0.H264-NB
+La.Chevauch&amp;eacute;e.Fantastique.1939.Criterion.MULTI.VFI.1080p.BluRay.PCM.1.0.x264-gismo65
 La.Fille.De.Brest.2016.FRENCH.COMPLETE.BLURAY-RAiEBLEUE-AsRequested
 La.Petite.Mort.2009.Uncut.German.Untouched.PAL.DVD9-K4miK4z3
 La.Tour.de.Glace.2025.Complete.1080p.FRA.BluRay-P4RT4GE
 La.Tour.de.Glace.2025.Complete.2160p.FRA.UHD.BluRay-P4RT4GE
+La.Vie.de.Boheme.1992.Criterion.1080p.BluRay.x265.HEVC.AAC-SARTRE
+La.derniere.seance.1971.CRITERION.DC.MULTi.1080p.BluRay.x265.FLAC-AZAZE
 La.deuxieme.etoile.2017.FRENCH.COMPLETE.BLURAY-BLUTiGER
 La.premiere.etoile.2009.FRENCH.COMPLETE.BLURAY-BLUTiGER
+Labyrinth.1986.Hybrid.2160p.UHD.Blu-ray.Remux.DV.HDR10P.HEVC.FLAC.2.0-CiNEPHiLES
 Landline.2026-08-09.1080p.Webrip.x264-MasterCylinder
+Largent.1983.Criterion.1080p.BluRay.FLAC.x264-BMF
+Largent.1983.Criterion.1080p.BluRay.FLAC.x264.BMF
+Last.Hurrah.for.Chivalry.1979.Criterion.Collection.1080p.USA.Blu-ray.AVC.DTS-HD.MA.5.1-MiXER-AsRequested
+Lastrawze-Instrawmental-REMASTERED SPECIAL EDITION-CD-FLAC-2022-AUDiOFiLE
+Lastrawze-Instrawmental-REMASTERED.SPECIAL.EDITION-CD-FLAC-2022-AUDiOFiLE
+Lastrawze-Instrawmental-REMASTERED_SPECIAL_EDITION-CD-FLAC-2022-AUDiOFiL
+Lastrawze-Instrawmental-REMASTERED_SPECIAL_EDITION-CD-FLAC-2022-AUDiOFiLE
 Lauryn Hill-MTV Unplugged 2.0-5080032-PROPER REPACK-2CD-FLAC-2002-RUTHLESS
 Lauryn.Hill-MTV.Unplugged.2.0-5080032-PROPER.REPACK-2CD-FLAC-2002-RUTHLESS
 Lauryn_Hill-MTV_Unplugged_2.0-(5080032)-PROPER_REPACK-2CD-FLAC-2002-RUTHLESS
@@ -2783,28 +3134,56 @@ Lawless.2012.RB.COMPLETE.BLURAY-PRAWN
 Le.Chat.et.la.Souris.1975.FRENCH.COMPLETE.BLURAY-BB85
 Leben.Larry.und.das.Streben.nach.Unglueck.S01E07.German.DL.HDR.2160p.WEB.h265.INTERNAL-W4K
 Lee Cronins The Mummy (2026) (2160p YKW WEB-DL Hybrid H265 DV HDR DDP Atmos 5.1 English - HONE)
+Lee.Cronin s.The.Mummy.2026.REPACK.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Lee.Cronin s.The.Mummy.2026.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Lee.Cronin's.The.Mummy.2026.REPACK.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Lee.Cronin's.The.Mummy.2026.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Lee.Cronin.s.The.Mummy.2026.REPACK.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Lee.Cronin.s.The.Mummy.2026.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
 Lee.Cronins.The.Mummy.2026.1080p.AMZN.WEB-DL.DUAL.DDP5.1.H.264-TURG
 Lee.Cronins.The.Mummy.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FUZEER
+Lee.Cronins.The.Mummy.2026.REPACK.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Lee.Cronins.The.Mummy.2026.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
 Lee.Cronins.the.Mummy.2026.2160p.AMZN.WEB-DL.DDP5.1.H.265.DUAL-C76
 Legiony.2019.720p.BluRay.DD5.1.x264-EA
 Leichen.Pflastern.Seinen.Weg.1968.Uncut.German.DL.Untouched.PAL.DVD9-K4miK4z3
+Lenny.1974.Criterion.1080p.BluRay.x264-OFT
 Leon.Der.Profi.Directors.Cut.1994.German.DTS.DL.PAL.HD2DVD.DVD9-ALFI - (www.usenetrevolution.info + www.town.ag Partner of SSL-News) - (06/92) - "Leon.Der.Profi.Directors.Cut.1994.German.DTS.DL.PAL.HD2DVD.DVD9-ALFI.part04.rar" - 7,98 GB
 Leprechaun.1992.OAR.COMPLETE.BLURAY-INCUBO
 Les.Anges.Mangent.Aussi.Des.Fayots.1973.Complete.2160p.FRA.UHD.BluRay-P4RT4GE
 Leviticus.2026.2160p.iT.WEB-DL.DDP5.1.DV.HDR.H.265-SCOPE
+Lheure.dete.2008.VOF.CRITERION.1080p.BluRay.x265.DTS-AZAZE
 Licence.To.Drill.S04E01.REPACK.PROPER.HDTV.x264-CROOKS
 Life.After.Fighting.2024.MULTi.COMPLETE.BLURAY-ZAHARA
 Life.In.Pieces.S04E13.Reverse.Burden.District.Germany.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb
 Life.Larry.and.the.Pursuit.of.Unhappiness.An.Almost.History.of.America.S01.NORDiC.2160p.HMAX.WEB-DL.DV.HDR.H.265-NORViNE
 Life.Larry.and.the.Pursuit.of.Unhappiness.An.Almost.History.of.America.S01E01.NORDiC.2160p.HMAX.WEB-DL.DV.HDR.H.265-NORViNE
 Lifeforce.1985.iNTERNATIONAL.CUT.COMPLETE.UHD.BLURAY-4KDVS
+Like Someone in Love (2012) Criterion (1080p BluRay x265 HEVC 10bit AAC 5.1 Japanese afm72)
 Like.A.Complete.Unknown.2024.2160p.UHD.BluRay.DV.REMUX.HDR10.HEVC.TrueHD.7.1.Atmos-UnKn0wn
 Like.Mike.2.Streetball.2006.1080p.WEB.h264-NOMA
 Like.Mike.2002.1080p.WEB.h264-NOMA
 Like.Mike.2002.German.AC3D.DL.1080p.AmazonHD.h264-paranoid06
+Like.Someone.in.Love.2012.Criterion.BluRay.Remux.1080p.AVC.DTS-HD.MA.3.0-HiFi-AsRequested
+Like.Someone.in.Love.2012.Criterion.Collection.1080p.Blu-ray.Remux.AVC.DTS-HD.MA.5.1-KRaLiMaRKo-AsRequested
+Little.Bone.Lodge.2023.BluRay.1080p.DTS-HD.MA.5.1.AVC.HYBRID.REMUX-FraMeSToR
+Little.Fockers.2010.PROPER.BluRay.1080p.TrueHD.Atmos.7.1.VC-1.HYBRID.REMUX-FraMeSToR
+Little.Pink.House.2017.1080p.WEB-DL.x264.AC-3-RuTracker
+Lola.1961.1080p.Criterion.Bluray.DTS.x264-GCJM
 Lone.Ranger.2013.German.DTS.DL.PAL.HD2DVD.DVD9-Braunbaer
+Lone.Wolf.and.Cub.Baby.Cart.at.the.River.Styx.1972.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0-ZQ
+Lone.Wolf.and.Cub.Baby.Cart.to.Hades.1972.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0-ZQ
+Lone.Wolf.and.Cub.Sword.of.Vengeance.1972.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0-ZQ
+Lord.of.the.Flies.1963.Criterion.1080p.BluRay.x264-nikt0.mkv
+Lord.of.the.Flies.1963.Criterion.Collection.1080p.Blu.ray.Remux.AVC.DTS.HD.MA.1.0.HiDeFZeN
+Lord.of.the.Flies.Criterion.Collection.1963.1080p.Blu-ray.AVC.LPCM.1.0-v99
+Lords of Acid - Voodoo-U (Special Remastered Band Edition) (1994) MP3
+Lords_of_Acid-Voodoo-U_(Special_Remastered_Band_Edition)-WEB-2017-01-lords
 Lost.S02.PAL.DVD9.Ro-playON
 Lost.S04.PAL.DVD9.Ro-playON
+Lost.in.America.1985.Criterion.1080p.BluRay.x265.SDR.DDP.1.0.English.DarQ-HONE
+Lost.in.America.1985.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0-ZQ
+Lost.in.America.[1985].Criterion.[1080p.BluRay.x265.SDR.DDP.1.0.English-DarQ.HONE]
 Love.Death.and.Robots.S01E03.THE.WITNESS.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-FLUX
 Love.Death.and.Robots.S01E07.BEYOND.THE.AQUILA.RIFT.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-FLUX
 Love.Death.and.Robots.S01E13.LUCKY.13.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-FLUX
@@ -2854,6 +3233,8 @@ M007 Attached Picture Plus Video (2026).mp4
 M008 One Chapter At Zero (2026).mkv
 M009 Duplicate And Unnamed Chapters (2026).mkv
 M010 Very Close Chapters (2026).mkv
+MICHAEL JACKSON - SPECIAL EDITION SONY REMASTERED COLLECTION (6CD) (1979 - 2001) [MP3 320 Kbps]
+MICHAEL JACKSON - SPECIAL EDITION SONY REMASTERED COLLECTION 6CD 1979 - 2001 MP3 320 Kbps
 MP001 Two Part CD Stack (2026)-cd1.mkv
 MP001 Two Part CD Stack (2026)-cd2.mkv
 MP002 Three Part Mixed Duration (2026)-part-1.mkv
@@ -2875,6 +3256,8 @@ MV003 Artist - Portrait Performance.mkv
 MV004 Artist - High Frame Rate.mkv
 MV005 Artist - Square Lyrics.en.srt
 MV005 Artist - Square Lyrics.mkv
+Maborosi.1995.Hybrid.BluRay.Remux.1080p.AVC.FLAC.2.0-ZQ
+Made.in.Abyss.Dawn.of.the.Deep.Soul.2020.BluRay.1080p.DTS-HD.MA.5.1.AVC.HYBRID.REMUX-FraMeSToR
 Malcolm.In.The.Middle.S03E02.1080p.AMZN.WEB-DL.DDP5.1.H.264-ViSiON
 Malcolm.In.The.Middle.S03E04.1080p.AMZN.WEB-DL.DDP5.1.H.264-ViSiON
 Malcolm.In.The.Middle.S03E05.1080p.AMZN.WEB-DL.DDP5.1.H.264-ViSiON
@@ -2914,11 +3297,34 @@ Malcolm.in.the.Middle.S06E19.Motivational.Seminar.1080p.AMZN.WEB-DL.DDP.5.1.H.26
 Malcolm.in.the.Middle.S06E20.Stilts.1080p.AMZN.WEB-DL.DDP.5.1.H.264-ViSiON
 Malcolm.in.the.Middle.S06E21.Buseys.Take.a.Hostage.1080p.AMZN.WEB-DL.DDP.5.1.H.264-ViSiON
 Malcolm.in.the.Middle.S06E22.Mrs.Tri-County.1080p.AMZN.WEB-DL.DDP.5.1.H.264-ViSiON
+Manbo.Destiny.S01E03.1080p.LINETV.WEB-DL.AAC2.0.H.264-MWeb
+Manbo.Destiny.S01E13.1080p.LINETV.WEB-DL.AAC2.0.H.264-MWeb
+Manbo.Destiny.S01E23.1080p.LINETV.WEB-DL.AAC2.0.H.264-MWeb
 Marty.Supreme.2025.1080p.iT.WEB-DL-Ben.The-Men
 Marty.Supreme.2025.REPACK.2160p.UHD.BluRay.TrueHD.7.1.Atmos.DV.HDR10P.x265-RandomBytes
 Marty.Supreme.2025.REPACK.Hybrid.2160p.UHD.Blu.ray.Remux.DV.HDR10P.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
 Marty.Supreme.2025.UHD.BluRay.2160p.DDP.Atmos.5.1.DV.HDR.x265-hallowed
+Mary.and.The.Witch's.Flower.2017.BluRay.1080p.DTS-X.7.1.AVC.HYBRID.REMUX-FraMeSToR;
+Mary.and.The.Witchs.Flower.2017.BluRay.1080p.DTS-X.7.1.AVC.HYBRID.REMUX-FraMeSToR
+Mary.and.the.Witchs.Flower.2017.BluRay.1080p.DTS-X.7.1.AVC.HYBRiD.REMUX-FraMeSToR
+Matt.Prestons.Plating.Locally.2026.S01E01.1080p.WEB-DL.AAC2.0.H.264-7VFr33104D
+Matthew Halsall--Colour Yes Special Edition-GONDCD003SE-24-96-REMASTERED-WEB-FLAC-2019-BABAS
+Matthew Halsall--Sending My Love Special Edition-24-96-REMASTERED-WEB-FLAC-2019-BABAS
+Matthew_Halsall--Sending_My_Love_(Special_Edition)-24-96-REMASTERED-WEB-FLAC-2019-BABAS
 Maximax.Adventures.2023.1080p
+Mean.Girls.2004.UHD.BluRay.2160p.TrueHD.5.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Memento.10th.Anniversary.Special.Edition.REMASTERED.2000.720p.BluRay.DTS.DXVA.x264-FLAWL3SS
+Memento.10th.Anniversary.Special.Edition.Remastered.2000.BluRay.1080p.DTS-HD.MA.5.1.X264-HDH
+Memento.10th.Anniversary.Special.Edition.Remastered.2000.BluRay.1080p.DTS-HD.MA.5.1.x264-HDH
+Memento.10th.Anniversary.Special.Edition.Remastered.2000.BluRay.1080p.DTS-HD.MA.5.1.x264-HDH-WhiteRev
+Memento.10th.Anniversary.Special.Edition.Remastered.2000.BluRay.1080p.REMUX.DTS-HD.MA.5.1-HDH
+Memento.2000.10th.Anniversary.Special.Edition.REMASTERED.BDRip.XviD.AC3-SANTi
+Mercy.2026.REPACK.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Merry.Christmas.Mr.Lawrence.1983.The.Criterion.Collection.BluRay.Remux.1080p.AVC.FLAC.2.0-HiFi
+Michael Jackson - Dangerous (Special Edition) (Remastered)
+Michael Jackson - Dangerous (Special Edition) [Remastered] MP3
+Michael Jackson-Off The Wall-Special Edition-Remastered-REPACK-CD-FLAC-2001-REETKEVER
+Michael Jackson-Thriller-Special Edition-Remastered-REPACK-CD-FLAC-2001-REETKEVER
 Michael.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
 Michael.2026.2160p.MA.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
 Michael.2026.2160p.UHD.Blu-ray.Remux.DV.HDR.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
@@ -2928,8 +3334,24 @@ Michael.2026.2160p.iT.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR-Scrambled
 Michael.2026.720p.AMZN.WEB-DL.DDP5.1.H.264-KyoGo
 Michael.2026.MULTi.iNTERNAL.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10.REMUX-seedpool
 Michael.2026.iNTERNAL.BluRay.2160p.UHD.MULTi.REMUX.HEVC.(10bit).DV.Atmos.7-1-Aisha
+Millennium.Actress.2001.REPACK.BluRay.1080p.DTS-HD.MA.5.1.AVC.HYBRID.REMUX-FraMeSToR
 Moana.2.2024.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Mobile.Suit.Gundam.0080.War.in.the.Pocket.S01.BluRay.1080p.DTS-HD.MA.5.1.AVC.HYBRID.REMUX-FraMeSToR
+Mona.Lisa.1986.Criterion.Collection.Blu-ray.1080p.FLAC.1.0.x264-HDH
+Money.for.Nothing.S18E11.You.Spin.Me.Round.1080p.IP.WEB-DL.AAC2.0.H.264-7VFr33104D
+Monsieur.Verdoux.1947.Criterion.Collection.BluRay.1080p.DTS-HD.MA.1.0.AVC.REMUX-FraMeSToR
+Monster.Hunter.2020.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Monte Carlo (1930) THE.CRITERION.COLLECTION.BLU-RAY.REMUX 1080p BluRay-LAMA
+Monte.Carlo.(1930).THE.CRITERION.COLLECTION.BLU-RAY.REMUX.1080p.BluRay-LAMA
+Monty.Python.Life.of.Brian.1979.Criterion.1080p.BluRay.HEVC.x265.5.1.BONE
+Monty.Python.and.the.Holy.Grail.1975.PROPER.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR
+Moonrise Kingdom (2012) Criterion (1080p BluRay x265 10bit Tigole)
+Moonstruck.1987.1080p.Repack.Blu.ray.Remux.AVC.DTS.HD.MA.5.1.CRITERION
+Mortal.Kombat.II.2026.Hybrid.2160p.UHD.Blu-ray.Remux.DoVi.HDR10_.HEVC.TrueHD.7.1.Atmos-126811.Dual-Highvoltage
+Mortal.Kombat.II.2026.Hybrid.2160p.UHD.BluRay.REMUX.DV.HDR10P.HEVC.TrueHD.Atmos.7.1-ATELiER
 MotoGP.2023.Round14.Race.1080p.HDTV.Dovizioso.Highlights-GROUP
+Mouchette.1967.1080p.Criterion.Collection.Blu-ray.AVC.LPCM.1.0-DiYHDHome
+Mouchette.1967.Criterion.Collection.Blu-ray.1080p.FLAC.1.0.x264-HDH
 Movie (2023) (2160p Paramount Plus WEB-DL H265 DDP 5.1 English - HONE)
 Movie 2016 2160p WEB-DL Dolby Vision HEVC-GROUP
 Movie 2023 (2160p Apple TV+ WEB-DL H265 DDP 5.1 - HONE)
@@ -3051,21 +3473,49 @@ Movie_2023_TELESYNC_x264
 Movie_2023_TrueHDA_7_1_BluRay
 Movie_2026_1080p_BluRay_TrueHD_7_1_Atmosphere_GROUP
 Movie_2026_TrueHDA7_1_1080p_BluRay-GROUP
+Mr.Smith.Goes.to.Washington.1939.UHD.BluRay.2160p.FLAC.2.0.DV.HEVC.HYBRID.REMUX-FraMeSToR.DUAL-LACTATO
 Mr._Robot_S01_Extras_720p_BluRay_DD2.0_x264-VietHD
+Mulholland.Drive.2001.Criterion.1080p.BluRay.x265.10bit.AAC.5.1.Tigole
+Multiple Maniacs 1970 Criterion BluRay Remux 1080p AVC FLAC 1 0-NCmt
+Multiple.Maniacs.1970.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0.NCmt
 Munich.1972.GERMAN.ML.1080p.BluRay
 My.Adventures.With.Superman.S01E03.My.Interview.With.Superman.EAC3.5.1.1080p.WEBRip.x265-iVy
 My.Adventures.with.Superman.2023.S01E03.1080p.HBOMax.WEB-DL.H.264.TRSub.DDP.51._TSRG
 My.Adventures.with.Superman.S01E03.My.Interview.With.Superman.1080p.HMAX.WEB-DL.DDP5.1.H.264-FROFER
 My.Adventures.with.Superman.S03E02.1080p.WEB.h264-EDITH
 My.Adventures.with.Superman.S03E03.1080p.WEB.h264-EDITH
+My.Adventures.with.Superman.S03E08.1080p.WEB.h264-EDITH
 My.Adventures.with.Superman.S03E08.Its.Reigning.SuperMen.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb
+My.Adventures.with.Superman.S03E09.Vae.Victis.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb
+My.Darling.Clementine.1946.REMUX.CUSTOM.MULTi.TRUEFRENCH.Criterion.1080p.Bluray.PCM.AVC-MeMyI
 My.Hero.Academia.S03E24.720p.BluRay.AAC.2.0.x264-EA
+My.Life.as.a.Dog-1985-Criterion-1080p.BluRay.x265.HEVC.10bit.AAC.1.0.Swedish.Tigole-
+My.Man.Godfrey.1936.1080p.BluRay.CRITERION.FLAC.x264.MaG
+My.Winnipeg.2007.Criterion.Collection.Blu-ray.1080p.DTS-HD.MA.2.0.x264-HDH
+Naked.1993.CRITERION.MULTi.VFF.1080p.BluRay.2.0.x264-RHT
+Nashville.1975.Criterion.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi
 Nature.predatrice.2026.MULTi.AD.1080p.NF.WEB.x264-THESYNDiCATE
+Net (2021) Telugu ZEE5 WEB-DL [1080p AVC 1309kbps] [AAC 2ch 125kbps] [E-AC-3 6ch 192kbps] [ESub] -TQrips
+Net (2021) Telugu ZEE5 WEB-DL [1080p HEVC 738kbps] [E-AC-3 6ch 192kbps] [ESub] -TQrips
+Net (2021) Telugu ZEE5 WEB-DL [2160p HEVC 1287kbps] [AAC 2ch 125kbps] [E-AC-3 6ch 192kbps] [ESub] -TQrips
+Network.1976.Criterion.Collection.1080p.BluRay.DD1.0.x264-BMDru
+New.Police.Story.2004.BluRay.1080p.DTS-HD.MA.5.1.AVC.HYBRID.REMUX-FraMeSToR
 Night.Bloomers.2023.S01.720p.SBS.WEB-DL.AAC.2.0.H.264-MUNFAQQIHA
 Night.Teeth.2021.NORDiC.1080p.WEB-DL.H.264.DDP5.1-PiTBULL
+Night.Train.to.Munich.1940.Criterion.BluRay.Remux.1080p.AVC.FLAC.1.0.ZQ
+Nightwatch.1997.BluRay.1080p.DTS-HD.MA.5.1.AVC.HYBRID.REMUX-FraMeSToR
+Nineteen.Eighty.Four.1984.Criterion.1080p.BluRay.HEVC-HQ.x265.Opus.1.0.incl.Eurhythmics.and.Muldowney.Scores-MrTentsaw
+Nineteen.Eighty.Four.1984.Criterion.1080p.BluRay.x264-nikt0
+No.Mercy.2010.Yongseoneun.Eupda.1080p.Netflix.WEB-DL.x264.Dolby.Digital.AC-3.5.1.mkv
+Normal.2025.BluRay.1080p.TrueHD.Atmos.7.1.AVC.HYBRID.REMUX-FraMeSToR
+Normal.2026.Hybrid.1080p.Blu-ray.Remux.AVC.TrueHD.Atmos.7.1-SPHD
+Notorious.1946.Criterion.1080p.BluRay.FLAC.x264-BMF
 Now.You.See.Me.3.2025.2160p.WEB-DL.H.265.HDR.DDP5.1-HHWEB
 Now.You.See.Me.Now.You.Don't.2025.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Now.You.See.Me.Now.You.Dont.2025.Hybrid.2160p.Remux.HEVC.DoVi.HDR10plus.TrueHD.7.1.3L.Dual-Highvoltage
 Now.You.See.Me.Now.You.Dont.2025.MULTi.iNTERNAL.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10.REMUX-seedpool
+Nowhere.1997.Criterion.1080p.BluRay.x264-OFT
+Nuremberg.2025.PROPER.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
 OAC001 Dolby AC4 Audio_ID_720p_25fps_h264_2ch_64kbps_ac4 (2026).mp4
 OAC002 Dolby AC4 Audio_ID_720p_25fps_h264_6ch_128kbps_ac4 (2026).mp4
 OAC003 Dolby AC4 Audio_ID_720p_25fps_h265_2ch_64kbps_ac4 (2026).mp4
@@ -3146,7 +3596,21 @@ OMK005 Matroska Official test5 (2026).mkv
 OMK006 Matroska Official test6 (2026).mkv
 OMK007 Matroska Official test7 (2026).mkv
 OMK008 Matroska Official test8 (2026).mkv
+Oblivion.2013.2160p.Hybrid.UHD.BluRay.Remux.DV.HDR10+.MULTi-Ben.The.Men
+Okja.2017.1080p.Criterion.Collection.Blu-ray.AVC.Atmos.TrueHD.7.1-DiYHDHome
+On.the.Waterfront.1954.Criterion.BluRay.Remux.1080p.AVC.DTS-HD.MA.5.1-HiFi
+One-Eyed.Jacks.1961.CRITERION.COLLECTION.1080p.Remux.AVC.FLAC.1.0-playBD
+One.Flew.Over.the.Cuckoo s.Nest.1975.PROPER.BluRay.1080p.DTS-HD.MA.5.1.VC-1.HYBRID.REMUX-FraMeSToR
+One.Flew.Over.the.Cuckoo s.Nest.1975.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
+One.Flew.Over.the.Cuckoo.s.Nest.1975.PROPER.BluRay.1080p.DTS-HD.MA.5.1.VC-1.HYBRID.REMUX-FraMeSToR
+One.Flew.Over.the.Cuckoo.s.Nest.1975.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
+One.Flew.Over.the.Cuckoos.Nest.1975.PROPER.BluRay.1080p.DTS-HD.MA.5.1.VC-1.HYBRID.REMUX-FraMeSToR
+One.Flew.Over.the.Cuckoos.Nest.1975.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
 Open.Season.2006.Matte.Painting.Featurette
+Oppenheimer.2023.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR.D
+Oppenheimer.2023.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HEVC.HYBRID.REMUX-FraMeSToR.DUAL-Rick.SD
+Orfeu.Negro.aka.Black.Orpheus.1959.Criterion.Collection.BluRay.1080p.DTS-HD.MA.1.0.AVC.REMUX-FraMeSToR
+Othello.1952.European.Ver.1080p.Criterion.Bluray.REMUX.AVC.FLAC.1.0-WHRen
 Outside.the.Wire.2021.720p.NF.WEB-DL.DDP5.1.Atmos.x264-iKA
 Over-Under.Sports.Betting.2023.720p.WEB-DL
 P001 BluRay (2026).bluray.disc
@@ -3168,20 +3632,52 @@ Palm.Springs.2020.1080p.Blu-ray.Remux.AVC.DTS-HD.MA.5.1-LEONINE
 Palm.Springs.2020.1080p.WEB-DL.DD5.1.AV1-GROUP
 Paltrow.Documentary.2023.1080p.WEB-DL
 Panda.Bear.in.Africa.2024.1080p.AMZN.WEB-DL.DDP2.0.H.264-ERBiUM
+Pans.Labyrinth.2006.UHD.BluRay.2160p.DTS-HD.MA.7.1.HEVC.HYBRID.REMUX-FraMeSToR.Dual-NewtonIsaac
+Paradise_Lost-Gothic-Remastered_Special_Edition-2008-JUST.vol00+01
+Paradise_Lost-Gothic-Remastered_Special_Edition-2008-JUST.vol07+08
+Paradise_Lost-Gothic-Remastered_Special_Edition-2008-JUST.vol15+14
 Paramount.Pictures.100.Years.2012.1080p
 Paramount.Pictures.90th.Anniversary.Collection.1080p.BluRay.x264-GROUP
+Parasite.2019.Criterion.1080p.BluRay.HEVC-HQ.x265.Opus.7.1.incl.Commentary-MrTentsaw
+Parasite.2019.Criterion.1080p.BluRay.REMUX.AVC.H.264.TrueHD.Atmos.7.1.incl.Commentary-MrTentsaw
+Parasite.2019.Criterion.Black.and.White.1080p.BluRay.HEVC-HQ.x265.Opus.7.1.incl.Commentary-MrTentsaw
+Parasite.2019.Criterion.Black.and.White.1080p.BluRay.REMUX.AVC.H.264.TrueHD.Atmos.7.1.incl.Commentary-MrTentsaw
+Paris.Is.Burning.Trailer.1990.Criterion.BluRay.Remux.1080p.AVC.DD1.0-ZQ
+Personal.Shopper.2016.Criterion.Collection.1080p.BluRay.AVC.DTS-HD.MA.5.1-DIYHDHome
+Peter Gabriel-New Blood (Special Edition)-24-48-WEB-FLAC-REMASTERED-2011-OBZEN
+Peter Gabriel-New Blood Special Edition-24-48-WEB-FLAC-REMASTERED-2011-OBZEN
+Peter.Hujars.Day.2025.Criterion.1080p.BluRay.x264-OFT
+Peter_Gabriel-New_Blood_(Special_Edition)-24-48-WEB-FLAC-REMASTERED-2011-OBZEN
+Pierrot.Le.Fou.1965.CRITERION.VOF.1080p.BluRay.x265.FLAC-AZAZE
+Pina.3D.2011.CRITERION.COLLECTION.1080p.BluRay.AVC.DTS.HDMA5.1-insinuendo
+Pirates.of.the.Caribbean.Dead.Man's.Chest.2006.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
+Pirates.of.the.Caribbean.Dead.Man's.Chest.2006.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR;
+Pirates.of.the.Caribbean.Dead.Mans.Chest.2006.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
+Pirates.of.the.Caribbean.On.Stranger.Tides.2011.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.HYBRID.REMUX-FraMeSToR
+Pre.Season.Friendly.2025.07.23.Arsenal.vs.AC.Milan.1080p.WEB-DL.AAC2.0.H.264-FiDDLE
+Pre.Season.Friendly.2025.07.26.Liverpool.vs.AC.Milan.1080p.WEB-DL.DD2.0.H.264-FiDDLE
 Predator.Badlands.2025.2160p.UHD.Remux.HEVC.DoVi.TrueHD.Atmos.7.1-playBD
 Predator.Badlands.2025.Hybrid.2160p.UHD.Blu-ray.Remux.DV.HDR10Plus.TrueHD.Atmos.7.1-12GaugeShotgun
 Predator.Badlands.2025.MULTi.iNTERNAL.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10.REMUX-seedpool
 Predator.Badlands.2025.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR
+Prey.2022.2160p.UHD.Blu-ray.Remux.Hybrid.HEVC.DoVi.HDR.TrueHD.7.1.Atmos-SPHD
 Project.Hail.Mary.2026.1080P.WEB.H264-POKE
+Project.Hail.Mary.2026.1080p.DS4K.WEB-DL.x265.10bit.HDR.E-AC-3.5.1-Kris
 Project.Hail.Mary.2026.2160p.iT.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
 Project.Hail.Mary.2026.Hybrid.2160p.UHD.Blu-ray.Remux.DV.HDR10P.HEVC.TrueHD.Atmos.7.1-CiNEPHiLES
 Project.Hail.Mary.2026.IMAX.2160p.iT.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-BYNDR
 Project.Hail.Mary.2026.IMAX.720p.AMZN.WEB-DL.DDP5.1.Atmos.H.264-BYNDR
 Project.Hail.Mary.2026.NORDiC.1080p.AMZN.WEB-DL.AV1-NORViNE
+Project.Hail.Mary.2026.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Pulp.Fiction.1994.PROPER.UHD.BluRay.2160p.DTS-HD.MA.5.1.DV.HDR10P.HEVC.HYBRID.REMUX-FraMeSToR
+Punch-Drunk Love (2002) Criterion (1080p BluRay x265 HEVC 10bit AC3 5.1 - ACE) [ION]
+Punch_Drunk_Love_2002_Criterion_1080p_BluRay_x265_10bit_Tigole
+Purple.Noon.1960.1080p.Criterion.Collection.Blu-ray.AVC.LPCM.1.0-DiYHDHome
 Pusher 1996 DANiSH 1080p BluRay REMUX AVC TrueHD7 1 Atoms-ADDICTION
 Pusher.II.2004.DANiSH.1080p.BluRay.x264.TrueHD7.1.Atoms-ADDICTION
+Quadrophenia.1979.Criterion.1080p.BluRay.HEVC.x265.5.1.BONE
+Quand.La.Ville.Dort.1950.Criterion.Edition.CUSTOM.MULTi.1080p.BluRay.x264.DTS.AC3-DEPTH
+Quslara.Xutbe.2023.1080p.HC.WEB-DL.AAC2.0.H.264-SPWEB
 R001 8K Badge (2026).mkv
 R002 4K Badge (2026).mkv
 R003 1440p Badge (2026).mkv
@@ -3198,7 +3694,11 @@ R013 Anamorphic PAL (2026).mkv
 R014 240p Resolution (2026).mkv
 RED.2.2013.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR
 RED.2010.UHD.BluRay.2160p.TrueHD.Atmos.7.1.DV.HEVC.REMUX-FraMeSToR
+Rage.Net.1988.1080p.Criterion.Bluray.REMUX.AVC.AC3-WHRen
+Raging.Bull.1980.Criterion.1080p.BluRay.HEVC.x265.BONE
 Raise.Your.Voice.2004.1080p.AMZN.WEB-DL.DDP2.0.x264-ABM
+Rambo.2008.REMASTERED.MULTi.VF2.2160p.UHD.BluRay.REMUX.HYBRiD.DV.HDR10.TrueHD.Atmos.7.1.HEVC-REBiRTH
+Randy Miller - Hellraiser III: Hell On Earth (Remastered Special 25th Anniversary Edition) [Original Motion Picture Score] (1992) MP3
 Reacher.(2022).S02E07.(2160p.AMZN.WEB-DL.Hybrid.H265.DV.HDR10+.DDP.Atmos.5.1-GP-T V-NLsubs
 Reacher.S02E01.Atm.2160p.AMZN.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FLUX
 Reacher.S02E02.What.Happens.in.Atlantic.City.2160p.AMZN.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FLUX
