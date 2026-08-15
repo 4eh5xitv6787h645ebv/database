@@ -19,11 +19,11 @@ REGEX_NAMES = [
     "Criterion", "10-bit Marker", "ALL4", "DSCP",
     "German DL", "Full Disc", "x264", "Special Edition",
     "Extended Edition", "IMAX", "Open Matte", "Theatrical Edition", "Extended Clip",
-    "Sing Along", "Paramount+", "Apple TV+", "CAM", "Movie DUBBED", "TV DUBBED",
+    "Sing Along", "Paramount+", "Apple TV+", "Apple TV", "CAM", "Movie DUBBED", "TV DUBBED",
     "Movie Extras", "TV Extras", "Repack1", "3D",
 ]
 GROUP_REGEXES = ["BiTOR", "DepraveD", "Flights", "SM737", "SumVision", "4KDVS", "EVO",
-                 "HYBRID Group"]
+                 "HYBRID Group", "4kHdHub", "CPTN5DW", "PMI", "ViSTA"]
 
 patterns = {}
 for name in REGEX_NAMES:

@@ -278,6 +278,112 @@
         "Dolby Vision (Without Fallback)"
       ],
       "note": "true fallback-less DV control must still match"
+    },
+    {
+      "op": "211",
+      "title": "13.Reasons.Why.S01E02.Tape.1.Side.B.1080p.NF.WEB-DL.Hindi.DDP5.1-English.DDP5.1.H.264-4kHdHub.Com",
+      "type": "series",
+      "must_match": [
+        "Banned Language Groups"
+      ],
+      "note": "adopted upstream op 211: 4kHdHub multi-audio re-release banned; Sonarr parses group '4kHdHub' (verified 2026-08-16) | differential vs upstream converges to zero once the upstream verify instance pulls upstream ops 211+"
+    },
+    {
+      "op": "211",
+      "title": "13 Going on 30 2004 1080p BluRay x264 AVC [Org NF Hindi DDP 5.1 ~ 640Kbps + English DTS-HDMA 5.1] ESub METiS-4KHDHub",
+      "type": "movie",
+      "must_match": [
+        "Banned Language Groups"
+      ],
+      "note": "adopted upstream op 211: case variant, Radarr parses group '4KHDHub' (verified 2026-08-16)"
+    },
+    {
+      "op": "212",
+      "title": "Human.Vapor.S01E08.Wish.1080p.NF.WEB-DL.DD+5.1.x264-CPTN5DW",
+      "type": "series",
+      "must_match": [
+        "Banned Language Groups"
+      ],
+      "note": "adopted upstream op 212: CPTN5DW banned; evidence/titles.txt title, Sonarr parses group 'CPTN5DW'"
+    },
+    {
+      "op": "213",
+      "title": "A.Decent.Man.S01E03.Episode.Three.2160p.MAX.WEB-DL.DDP5.1.H.265-PMI",
+      "type": "series",
+      "must_match": [
+        "Banned Language Groups"
+      ],
+      "note": "adopted upstream op 213: PMI added to Banned Language Groups"
+    },
+    {
+      "op": "213",
+      "title": "Dexter S02E07 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA",
+      "type": "series",
+      "must_match": [
+        "Banned Language Groups"
+      ],
+      "must_not_match": [
+        "Amazon Channel Enhancement"
+      ],
+      "note": "adopted upstream op 213: ViSTA banned AND removed from Amazon Channel Enhancement's group list (evidence/titles.txt title)"
+    },
+    {
+      "op": "214",
+      "title": "Movie.Name.2023.2160p.ATVP.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FLUX",
+      "type": "movie",
+      "must_match": [
+        "ATVP"
+      ],
+      "must_not_match": [
+        "ATV"
+      ],
+      "note": "adopted upstream op 214: ATVP token stays on the ATVP format after the ATV/ATVP split (no V|P boundary for bare ATV)"
+    },
+    {
+      "op": "215",
+      "title": "Star.Trek.Strange.New.Worlds.S04E03.Human.Best.Friend.2160p.ATV.WEB-DL.DD5.1.DV.HEVC-NTb",
+      "type": "series",
+      "must_match": [
+        "ATV"
+      ],
+      "must_not_match": [
+        "ATVP"
+      ],
+      "note": "adopted upstream ops 214+215: bare ATV token routes to the new ATV format (op 215 fixes the \\b(ATV)b typo); INTENDED flip off ATVP"
+    },
+    {
+      "op": "10251",
+      "title": "Drops.of.God.S01E01.A.Father.2160p.Apple.TV+.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV",
+      "type": "series",
+      "must_match": [
+        "ATVP"
+      ],
+      "must_not_match": [
+        "ATV"
+      ],
+      "note": "fork op 10251: dotted Apple.TV+ (op 10221 evidence) must survive the upstream split — upstream's space-only literal matches NOTHING here, so a fork-vs-upstream delta on this title is the intended fork improvement"
+    },
+    {
+      "op": "10251",
+      "title": "Drops.Of.God.S01E02.Sky.Earth.Humans.2160p.Apple.TV.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV",
+      "type": "series",
+      "must_match": [
+        "ATV"
+      ],
+      "must_not_match": [
+        "ATVP"
+      ],
+      "note": "fork op 10251: plus-less spelled Apple.TV is the spelled form of the bare ATV token and routes to ATV (INTENDED flip off ATVP; upstream matches nothing on it)"
+    },
+    {
+      "op": "10251",
+      "title": "Big.Apple.2023.ATV.Quad.Racing.720p",
+      "type": "movie",
+      "must_not_match": [
+        "ATV",
+        "ATVP"
+      ],
+      "note": "control: all-terrain-vehicle title; the ATV regex flip is inert at arr level because the ATV format also requires a web_dl/webrip source and this title parses source unknown"
     }
   ]
 }

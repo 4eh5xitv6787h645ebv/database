@@ -25,14 +25,16 @@
   },
   {
    "title": "Movie.Name.2023.2160p.ATVP.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-FLUX",
-   "note": "Apple TV+ dual-layer DV+HDR10 fallback",
+   "note": "Apple TV+ dual-layer DV+HDR10 fallback; ATVP token stays on Apple TV+ after the upstream 214 split (no V|P boundary for bare ATV)",
    "expect": {
     "Dolby Vision": true,
     "Basic HDR Formats": true,
     "HDR": true,
     "HDR10+": false,
     "CF:Dolby Vision (Without Fallback)": false,
-    "CF:HDR": true
+    "CF:HDR": true,
+    "Apple TV+": true,
+    "Apple TV": false
    }
   },
   {
@@ -429,10 +431,12 @@
   },
   {
    "title": "Star.Trek.Strange.New.Worlds.S04E03.Human.Best.Friend.2160p.ATV.WEB-DL.DD5.1.DV.HEVC-NTb",
-   "note": "REAL (hdencode): DV-only WEB-DL (paired DV.HDR release exists separately) = P5 without fallback",
+   "note": "REAL (hdencode): DV-only WEB-DL (paired DV.HDR release exists separately) = P5 without fallback; bare ATV token moves to the new Apple TV regex per upstream 214/215 (INTENDED flip off Apple TV+)",
    "expect": {
     "Dolby Vision": true,
-    "CF:Dolby Vision (Without Fallback)": true
+    "CF:Dolby Vision (Without Fallback)": true,
+    "Apple TV": true,
+    "Apple TV+": false
    }
   },
   {
@@ -1030,31 +1034,88 @@
   },
   {
    "title": "Drops.of.God.S01E01.A.Father.2160p.Apple.TV+.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV",
-   "note": "REAL (Prowlarr): dotted Apple.TV+ naming; fixed by op 221; also a P5 DV WEB-DL",
+   "note": "REAL (Prowlarr): dotted Apple.TV+ naming; fixed by op 221, preserved across the upstream 214 split by op 10251; also a P5 DV WEB-DL",
    "expect": {
     "Apple TV+": true,
+    "Apple TV": false,
     "Dolby Vision": true
    }
   },
   {
    "title": "Drops.Of.God.S01E02.Sky.Earth.Humans.2160p.Apple.TV.WEB-DL.DDP.5.1.Atmos.DV.H.265-BlackTV",
-   "note": "REAL (Prowlarr): dotted plus-less Apple.TV.WEB-DL",
+   "note": "REAL (Prowlarr): dotted plus-less Apple.TV.WEB-DL; after the upstream 214 split this is the spelled form of the bare ATV token and routes to Apple TV (INTENDED flip off Apple TV+)",
    "expect": {
-    "Apple TV+": true
+    "Apple TV+": false,
+    "Apple TV": true
    }
   },
   {
    "title": "Movie 2023 (2160p Apple TV+ WEB-DL H265 DDP 5.1 - HONE)",
-   "note": "control: space form already worked",
+   "note": "control: space form already worked; the literal + keeps it on Apple TV+",
    "expect": {
-    "Apple TV+": true
+    "Apple TV+": true,
+    "Apple TV": false
    }
   },
   {
    "title": "Apple.TV.Repair.Man.2020.1080p.BluRay.x264-GRP",
-   "note": "control: Apple TV in a movie title without WEB following stays unmatched",
+   "note": "control: Apple TV in a movie title without WEB following stays unmatched by both split regexes",
    "expect": {
-    "Apple TV+": false
+    "Apple TV+": false,
+    "Apple TV": false
+   }
+  },
+  {
+   "title": "13.Reasons.Why.S01E02.Tape.1.Side.B.1080p.NF.WEB-DL.Hindi.DDP5.1-English.DDP5.1.H.264-4kHdHub.Com",
+   "note": "REAL (Prowlarr '4kHdHub'): Hindi multi-audio NF re-release; upstream op 211 bans the group via Banned Language Groups",
+   "expect": {
+    "grp:4kHdHub": true,
+    "grp:CPTN5DW": false
+   }
+  },
+  {
+   "title": "13 Going on 30 2004 1080p BluRay x264 AVC [Org NF Hindi DDP 5.1 ~ 640Kbps + English DTS-HDMA 5.1] ESub METiS-4KHDHub",
+   "note": "REAL (Prowlarr '4kHdHub'): case variant 4KHDHub still matches (arr regexes are IgnoreCase)",
+   "expect": {
+    "grp:4kHdHub": true
+   }
+  },
+  {
+   "title": "The.4kHdHubbers.2024.1080p.WEB-DL.H264-GROUP",
+   "note": "control (near-miss): trailing word characters defeat the \\b after 4kHdHub",
+   "expect": {
+    "grp:4kHdHub": false
+   }
+  },
+  {
+   "title": "Human.Vapor.S01E08.Wish.1080p.NF.WEB-DL.DD+5.1.x264-CPTN5DW",
+   "note": "REAL (evidence/titles.txt): CPTN5DW NF re-release; upstream op 212 bans the group",
+   "expect": {
+    "grp:CPTN5DW": true,
+    "grp:4kHdHub": false
+   }
+  },
+  {
+   "title": "A.Decent.Man.S01E03.Episode.Three.2160p.MAX.WEB-DL.DDP5.1.H.265-PMI",
+   "note": "REAL (Prowlarr 'WEB-DL PMI'): PMI multi-audio streamer rip; upstream op 213 adds the group to Banned Language Groups",
+   "expect": {
+    "grp:PMI": true,
+    "grp:ViSTA": false
+   }
+  },
+  {
+   "title": "84.Jegopmiteo.2025.1080p.NF.WEB-DL.DD.5.1.Atmos.H.264-playWEB",
+   "note": "control (near-miss, REAL Prowlarr title): pmi inside a word fails the [\\s.-] lookbehind",
+   "expect": {
+    "grp:PMI": false
+   }
+  },
+  {
+   "title": "Dexter S02E07 1080p AMZN WEB-DL DDP5 1 H 264-ViSTA",
+   "note": "REAL (evidence/titles.txt): ViSTA AMZN rip; upstream op 213 adds the group to Banned Language Groups",
+   "expect": {
+    "grp:ViSTA": true,
+    "grp:PMI": false
    }
   },
   {
