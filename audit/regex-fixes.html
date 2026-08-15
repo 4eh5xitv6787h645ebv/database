@@ -145,14 +145,14 @@
   <h1>Dictionarry v2 — what the fork fixes</h1>
   <p class="sub">Twenty-six fixes on
   <a href="https://github.com/4eh5xitv6787h645ebv/jakes-profilarr-database/tree/fix/regex-audit">jakes-profilarr-database @ fix/regex-audit</a>
-  versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (op 210).
+  versus upstream <a href="https://github.com/Dictionarry-Hub/database/tree/v2">Dictionarry-Hub/database @ v2</a> (base op 210; upstream ops 211–215 adopted verbatim 2026-08-16).
   Every change is evidence-backed and gated so nothing else moves; cards identify synthetic controls where no current real-world victim was found. The corner badge on each card says whether the bug also exists in the v1 database (your live profilarr) or only in v2.</p>
 </header>
 
 <div class="stats">
-  <div class="stat"><b>40</b>migrations (fork ops 10211–10250)</div>
-  <div class="stat"><b>55</b>regex updates + 19 format-graph/score changes</div>
-  <div class="stat"><b>683 / 683</b>.NET labeled checks green</div>
+  <div class="stat"><b>41</b>migrations (fork ops 10211–10251) + 5 adopted upstream ops (211–215)</div>
+  <div class="stat"><b>57</b>regex updates + 19 format-graph/score changes</div>
+  <div class="stat"><b>702 / 702</b>.NET labeled checks green</div>
   <div class="stat"><b>249 / 249</b>Profilarr parser tests green</div>
   <div class="stat"><b>0</b>new false positives (diff-gated)</div>
 </div>
@@ -170,6 +170,51 @@ whether a wrong ban was blocking good releases, whether a bad release could win,
 across how many profiles. Whether the same bug also exists in the v1 database is <em>not</em> part of it:
 v1 is dead. Anything verified to change nothing in a real arr scores 0.</p>
 
+
+<section class="card" data-op="10251" data-when="2026-08-16T00:00" data-impact="60" data-why="three real banned groups now excluded everywhere; ATV/ATV+ split adopted without losing the dotted-separator fix">
+  <div class="card-head"><span class="op">OP 10251</span><h2>Upstream sync: 4kHdHub/CPTN5DW/PMI/ViSTA bans + ATV/ATV+ split</h2><span class="sev ban">3 new group bans · ATVP/ATV rescore</span><span class="ver v2">v2 only · upstream ops 211–215 adopted</span></div>
+  <p class="when"><span class="impact" title="three real banned groups now excluded everywhere; split adopted without losing the dotted fix">impact 60</span> · Changed 2026-08-16 00:00 UTC · op 10251 + upstream 211–215 · closes #30</p>
+  <p class="why">Upstream moved (sentinel #30) and its five new ops were adopted <b>byte-identical</b>:
+  <b>211/212</b> ban <code>4kHdHub</code> and <code>CPTN5DW</code> (Banned Language Groups; the fork's
+  −99999999 magnitude from op 10240 applies automatically), <b>213</b> bans <code>PMI</code>/<code>ViSTA</code>
+  and removes both from Amazon Channel Enhancement's group list, <b>214</b> splits Apple TV into
+  <code>ATVP</code> (originals) vs a new <code>ATV</code> format (channel/purchased content) and rescores
+  2160p TV streaming services (NF sonarr 3000, DSNP sonarr 3000→2000, new Netflix Enhancement −2000 sonarr
+  for sub-2160p), <b>215</b> fixes upstream's <code>\b(ATV)b</code> typo. Evidence: 345 distinct 4kHdHub and
+  571-row PMI Prowlarr unions (Hindi/Indian-streamer multi-audio re-releases), CPTN5DW and ViSTA titles
+  already in evidence/titles.txt. Real parsed groups verified on live arrs: <code>4kHdHub</code>,
+  <code>4KHDHub</code>, <code>CPTN5DW</code>, <code>PMI</code>, <code>ViSTA</code>.</p>
+  <p class="why"><b>The reconcile op.</b> Upstream op 214 rewrites the Apple TV+ regex from the same base
+  pattern that fork op 10221 exact-guards on, so 10221 now replays as a silent no-op and upstream's
+  space-only literal (<code>Apple TV\+</code>, whose <code>\s*\b</code> cannot close after
+  <code>+.</code>) would again match nothing on real dotted naming. Op 10251 re-applies the separator
+  class on top of the split, routed per upstream's token semantics: dotted <code>Apple.TV+</code> stays on
+  ATVP; the plus-less spelled form joins bare <code>ATV</code> on the new ATV format.</p>
+  <div class="diff">
+    <div class="pat before">\b(ATVP|APTV|Apple TV\+)\s*\b</div>
+    <div class="pat after">\b(ATVP|APTV)\s*\b|\bApple[ ._-]?TV\+(?=[ ._-]?WEB[ ._-]?(DL|RIP)?\b)</div>
+  </div>
+  <div class="diff">
+    <div class="pat before">\b(ATV)\b</div>
+    <div class="pat after">\b(ATV)\b|\bApple[ ._-]?TV(?!\+)(?=[ ._-]?WEB[ ._-]?(DL|RIP)?\b)</div>
+  </div>
+  <p class="rel-label">Every evidence-title flip (14, all intended)</p>
+  <ul class="rels">
+    <li><span class="tag ok">ban</span>Human.Vapor.S01E08 · If.Wishes.Could.Kill S01E03/E05/E08 <span class="src">· 4 × CPTN5DW NF re-releases now match the ban regex</span></li>
+    <li><span class="tag ok">split</span>Star.Trek.Strange.New.Worlds…2160p.ATV.WEB-DL…-NTb <span class="src">· bare ATV token: Apple TV+ → Apple TV (upstream's intent)</span></li>
+    <li><span class="tag ok">split</span>Avatar.Aang…2160p.ATV.WEB-DL…-Kitsune <span class="src">· same bare-ATV routing</span></li>
+    <li><span class="tag ok">split</span>Drops.Of.God.S01E02…Apple.TV.WEB-DL… · Severance.S01.2160p.Apple.TV.WEB-DL… <span class="src">· plus-less spelled form = spelled ATV, routes to the ATV format</span></li>
+    <li><span class="tag ok">split</span>Big.Apple.2023.ATV.Quad.Racing.720p <span class="src">· all-terrain-vehicle FP leaves ATVP; inert on the ATV format too (no web source), verified at arr level</span></li>
+  </ul>
+  <p class="rel-label">Controls and gates</p>
+  <ul class="rels">
+    <li><span class="tag ctl">held</span>Drops.of.God.S01E01…Apple.TV+.WEB-DL…-BlackTV <span class="src">· dotted + stays ATVP — would match NOTHING under upstream's patterns (the fork-only improvement)</span></li>
+    <li><span class="tag ctl">held</span>Movie…2160p.ATVP.WEB-DL…-FLUX <span class="src">· ATVP token cannot leak into \b(ATV)\b (no V|P boundary)</span></li>
+    <li><span class="tag ctl">held</span>Apple.TV.Repair.Man.2020…BluRay <span class="src">· no WEB token after TV — both split regexes stay unmatched</span></li>
+    <li><span class="tag ctl">held</span>84.Jegopmiteo…-playWEB · The.4kHdHubbers… <span class="src">· in-word pmi/4kHdHub near-misses fail the boundary guards</span></li>
+    <li><span class="tag ok">gate</span>702/702 labeled checks · 12/12 invariants · 14 intended flips over 5,434 evidence titles · arr-level cases added for ops 211–215 + 10251</li>
+  </ul>
+</section>
 
 <section class="card" data-op="10250" data-when="2026-08-07T16:40" data-impact="18" data-why="tidying: real in isolation, below the noise floor of a live search">
   <div class="card-head"><span class="op">OP 10250</span><h2>Year-anchored marker regexes</h2><span class="sev perf">13 patterns · 5.8× combined</span><span class="ver both">present in v1 + v2</span></div>
